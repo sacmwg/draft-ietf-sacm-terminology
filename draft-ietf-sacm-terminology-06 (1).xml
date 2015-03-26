@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- This template is for creating an Internet Draft using xml2rfc,
+     which is available here: http://xml.resource.org. -->
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [ 
+  
+<!--<!DOCTYPE rfc SYSTEM "xml2rfcv2.dtd" [-->
+<!-- One method to get references from the online citation libraries.
+     There has to be one entity for each item to be referenced. 
+     An alternate method (rfc include) is described in the references. -->
+
+<!ENTITY RFC1213 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.1213.xml">
+<!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
+<!ENTITY RFC0826 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.0826.xml">
+<!ENTITY RFC2790 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2790.xml">
+<!ENTITY RFC2863 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2863.xml">
+<!ENTITY RFC2865 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2865.xml">
+<!ENTITY RFC2922 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2922.xml">
+<!ENTITY RFC3444 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3444.xml">
+<!ENTITY RFC3535 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3535.xml">
+<!ENTITY RFC3552 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3552.xml">
+<!ENTITY RFC4949 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4949.xml">
+<!ENTITY RFC5209 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5209.xml">
+<!ENTITY RFC5226 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5226.xml">
+<!ENTITY RFC5424 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5424.xml">
+<!ENTITY RFC5792 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5792.xml">
+<!ENTITY RFC5793 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5793.xml">
+<!ENTITY RFC6733 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6733.xml">
+<!ENTITY RFC6933 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6933.xml">
+<!ENTITY I-D.draft-ietf-sacm-use-cases SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-sacm-use-cases-07.xml">
+<!ENTITY I-D.draft-ietf-nea-pt-eap-06 SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-nea-pt-eap-06.xml">
+<!ENTITY I-D.draft-ietf-nea-pt-tls-08 SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-nea-pt-tls-08.xml">
+<!ENTITY I-D.draft-ietf-netmod-interfaces-cfg-12 SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-netmod-interfaces-cfg-12.xml">
+<!ENTITY I-D.draft-ietf-netmod-system-mgmt-08 SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-netmod-system-mgmt-08.xml">
+<!ENTITY I-D.draft-ietf-savi-framework-06 SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-savi-framework-06.xml">
+<!ENTITY I-D.draft-ietf-savi-framework-06 SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-savi-framework-06.xml">
+]>
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+<!-- used by XSLT processors -->
+<!-- For a complete list and description of processing instructions (PIs), 
+     please see http://xml.resource.org/authoring/README.html. -->
+<!-- Below are generally applicable Processing Instructions (PIs) that most I-Ds might want to use.
+     (Here they are set differently than their defaults in xml2rfc v1.32) -->
+<?rfc strict="yes" ?>
+<!-- give errors regarding ID-nits and DTD validation -->
+<!-- control the table of contents (ToC) -->
+<?rfc toc="yes"?>
+<!-- generate a ToC -->
+<?rfc tocdepth="4"?>
+<!-- the number of levels of subsections in ToC. default: 3 -->
+<!-- control references -->
+<?rfc symrefs="yes"?>
+<!-- use symbolic references tags, i.e, [RFC2119] instead of [1] -->
+<?rfc sortrefs="yes" ?>
+<!-- sort the reference entries alphabetically -->
+<!-- control vertical white space 
+     (using these PIs as follows is recommended by the RFC Editor) -->
+<?rfc compact="yes" ?>
+<!-- do not start each main section on a new page -->
+<?rfc subcompact="no" ?>
+<!-- keep one blank line between list items -->
+<!-- end of list of popular I-D processing instructions -->
+<rfc category="info" docName="draft-ietf-sacm-terminology-06" ipr=" trust200902">
+  <!-- category values: std, bcp, info, exp, and historic
+     ipr values: full3667, noModification3667, noDerivatives3667
+     you can add the attributes updates="NNNN" and obsoletes="NNNN" 
+     they will automatically be output with "(if approved)" -->
+
+  <!-- ***** FRONT MATTER ***** -->
+
+  <front>
+    <!-- The abbreviated title is used in the page header - it is only necessary if the 
+         full title is longer than 39 characters -->
+
+    <title abbrev="Terminology for Security Assessment">Terminology for Security Assessment</title>
+
+
+    <author fullname="David Waltermire" initials="D.W." surname="Waltermire">
+      <organization abbrev="NIST">National Institute of Standards and Technology</organization>
+
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>Maryland</region>
+          <code>20877</code>
+          <country>USA</country>
+        </postal>
+        <phone/>
+        <email>david.waltermire@nist.gov</email>
+      </address>
+    </author>
+    
+
+    <author fullname="Adam W. Montville" initials="A.W.M." surname="Montville">
+      <organization abbrev="CIS">Center for Internet Security</organization>
+
+      <address>
+        <postal>
+          <street>31 Tech Valley Drive</street>
+          <city>East Greenbush</city>
+          <region>New York</region>
+          <code>12061</code>
+          <country>USA</country>
+        </postal>
+        <phone/>
+        <email>adam.w.montville@gmail.com</email>
+      </address>
+    </author>
+
+    <author fullname="David Harrington" initials="D.B.H" surname="Harrington">
+      <organization>Effective Software</organization>
+
+      <address>
+        <postal>
+          <street>50 Harding Rd</street>
+          <city>Portsmouth</city>
+          <region>NH</region>
+          <code>03801</code>
+          <country>USA</country>
+        </postal>
+        <phone/>
+        <email>ietfdbh@comcast.net</email>
+      </address>
+    </author>
+
+    <author fullname="Nancy Cam-Winget" initials="N." surname="Cam-Winget">
+      <organization>Cisco Systems</organization>
+
+      <address>
+        <postal>
+          <street>3550 Cisco Way</street>
+	  <city>San Jose</city>
+	  <country>US</country>
+	  <code>95134</code>
+	  <region>CA</region>
+        </postal>
+        <email>ncamwing@cisco.com</email>
+      </address>
+    </author>
+    
+    <author fullname="Jarrett Lu" initials="J.L." surname="Lu">
+      <organization>Oracle Corporation</organization>
+      <address>
+        <postal>
+          <street>4180 Network Circle</street>
+          <city>Santa Clara</city>
+          <region>California</region>
+          <code>95054</code>
+        </postal>
+        <email>jarrett.lu@oracle.com</email>
+      </address>
+    </author>
+    
+    <author fullname="Brian Ford" initials="B.F." surname="Ford">
+      <organization>Lancope</organization>
+      <address>
+        <postal>
+          <street>3650 Brookside Parkway, Suite 500</street>
+          <city>Alpharetta</city>
+          <region>Georgia</region>
+          <code>30022</code>
+        </postal>
+        <email>bford@lancope.com</email>
+      </address>
+    </author>
+    
+    <author fullname="Merike Kaeo" initials="M.K." surname="Kaeo">
+      <organization>Double Shot Security</organization>
+      <address>
+        <postal>
+          <street>3518 Fremont Avenue North, Suite 363</street>
+          <city>Seattle</city>
+          <region>Washington</region>
+          <code>98103</code>
+        </postal>
+        <email>merike@doubleshotsecurity.com</email>
+      </address>
+    </author>
+
+    
+    <date year="2015"/>
+
+    <!-- Meta-data Declarations -->
+
+    <area>Security</area>
+    <workgroup>Security Automation and Continuous Monitoring WG</workgroup>
+
+    <!-- WG name at the upperleft corner of the doc,
+         IETF is fine for individual submissions.  
+	 If this element is not present, the default is "Network Working Group",
+         which is used by the RFC Editor as a nod to the history of the IETF. -->
+
+    <keyword>security automation continuous monitoring sacm terminology</keyword>
+
+    <!-- Keywords will be incorporated into HTML output
+         files in a meta tag but they have no effect on text or nroff
+         output. If you submit your draft to the RFC Editor, the
+         keywords will be used for the search engine. -->
+
+    <abstract>
+      <t>This memo documents terminology used in the documents produced by SACM (Security Automation
+        and Continuous Monitoring).</t>
+    </abstract>
+  </front>
+
+  <middle>
+    <section title="Introduction">
+      <t>Our goal with this document is to improve our agreement on the terminology used in
+        documents produced by the IETF Working Group for Security Automation and Continuous
+        Monitoring. Agreeing on terminology should help reach consensus on which problems we're
+        trying to solve, and propose solutions and decide which ones to use.</t>
+
+    </section>
+
+
+    <section anchor="sec-terms" title="Terms and Definitions">
+      <t> This section describes terms that have been defined by other RFC's and defines new ones.
+        The predefined terms will reference the RFC and where appropriate will be annotated with the
+        specific context by which the term is used in SACM.</t>
+
+        <t>Assessment <list>
+            <t>Defined in <xref target="RFC5209"/> as "the process of collecting posture for a set
+              of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate
+              validators may evaluate the posture against compliance policy."</t>
+            <t>Within this document the use of the term is expanded to support other uses of
+              collected posture (e.g. reporting, network enforcement, vulnerability detection,
+              license management). The phrase "set of capabilities on the endpoint" includes:
+              hardware and software installed on the endpoint."</t>
+          </list>
+        </t>
+
+        <t>Asset <list>
+            <t>Defined in <xref target="RFC4949"/> as "a system resource that is (a) required to be
+              protected by an information system's security policy, (b) intended to be protected by
+              a countermeasure, or (c) required for a system's mission.</t>
+          </list>
+        </t>
+        <t>Asset characterization <list>
+            <t>Asset characterization is the process of defining attributes that describe properties
+              of an identified asset.</t>
+          </list>
+        </t>
+        <t> Asset Management <list>
+            <t> The process by which assets are provisioned, updated, maintained and deprecated.
+            </t>
+          </list>
+        </t>
+        <t>Asset Targeting <list>
+            <t>Asset targeting is the use of asset identification and categorization information to
+              drive human-directed, automated decision making for data collection and analysis in
+              support of endpoint posture assessment.</t>
+          </list>
+        </t>
+
+        <t>Attribute <list>
+            <t>Defined in <xref target="RFC5209"/> as "data element including any requisite
+              meta-data describing an observed, expected, or the operational status of an endpoint
+              feature (e.g., anti-virus software is currently in use)."</t>
+          </list>
+        </t>
+        <t>Broker <list>
+          <t>An entity providing and/or connecting services on the behalf of other architectural components.  Within the SACM Architecture, for example, a broker may provide authorization services and find, upon request, entities providing requested services.</t>
+        </list></t>
+        <t> Building Block <list>
+            <t> For SACM, a building block is a unit of functionality that may apply to more than
+              one use case and can be supported by different components of an architectural model.
+            </t>
+          </list>
+        </t>
+        <t>Capability <list>
+          <t>The extent of an architectural component's ability.  For example, a Posture Information Provider may only provide endpoint management data, and then only a subset of that data.</t>
+        </list></t>
+        <t>Client <list>
+          <t>An architectural component receiving services from another architectural component.</t>
+        </list></t>
+        <t> Collection Task <list>
+            <t> The process by which posture attributes or values are collected.</t>
+          </list>
+        </t>
+        <t> Consumer <list>
+          <t>An architectural component receiving information from another architectrual component.</t>
+        </list></t>
+
+        <t>Endpoint <list>
+            <t>Defined in <xref target="RFC5209"/> as "any computing device that can be connected to
+              a network. Such devices normally are associated with a particular link layer address
+              before joining the network and potentially an IP address once on the network. This
+              includes: laptops, desktops, servers, cell phones, or any device that may have an IP
+              address."</t>
+            <t>To further clarify the <xref target="RFC5209"/> definition, an endpoint is any
+              physical or virtual device that may have a network address. Note that, network
+              infrastructure devices (e.g. switches, routers, firewalls), which fit the definition,
+              are also considered to be endpoints within this document.</t>
+            <t>Based on the previous definition of an asset, an endpoint is a type of asset.</t>
+          </list>
+        </t>
+        <t> Evaluation Task <list>
+            <t> The process by which posture attributes are evaluated.</t>
+          </list>
+        </t>
+        <t> Endpoint Target <list>
+            <t> The endpoint of interest. </t>
+          </list>
+        </t>
+        <t> Endpoint Discovery <list>
+            <t>The process by which an endpoint can be identified. </t>
+          </list>
+        </t>
+        <t> Evaluation Result <list>
+            <t> The resulting value from having evaluated a set of posture attributes.</t>
+          </list>
+        </t>
+        <t> Expected Endpoint State <list>
+            <t> The required state of an endpoint that is to be compared against. </t>
+          </list>
+        </t>
+        <t>Function <list>
+          <t>A behavioral aspect of a particular architectural component, which belies that component's purpose.  For example, the Management Plane can provide a brokering function to other SACM architectrual components.</t>
+        </list></t>
+
+
+        <t> Information Model <list>
+            <t> An information model is an abstract representation of data, their properties,
+              relationships between data and the operations that can be performed on the data. While
+              there is some overlap with a data model, <xref target="RFC3444"/> distinguished an
+              information model as being protocol and implementation neutral whereas a data model
+              would provide such details. </t>
+          </list>
+        </t>
+        <t> Management Plane (TBD per list; was "Control Plane") <list>
+          <t>Architectural component providing common functions to all SACM participants, including authentication, authorization, capabilities mappings, and the like.</t>
+        </list></t>
+
+        <t>Posture <list>
+            <t>Defined in <xref target="RFC5209"/> as "configuration and/or status of hardware or
+              software on an endpoint as it pertains to an organization's security policy."</t>
+            <t>This term is used within the scope of this document to represent the state
+              information that is collected from an endpoint (e.g. software/hardware inventory,
+              configuration settings). The state information may constitute one to many Posture
+              Attributes.</t>
+          </list>
+        </t>
+
+        <t>Posture Attributes <list>
+            <t>Defined in <xref target="RFC5209"/> as "attributes describing the configuration or
+              status (posture) of a feature of the endpoint. A Posture Attribute represents a single
+              property of an observed state. For example, a Posture Attribute might describe the
+              version of the operating system installed on the system."</t>
+            <t>Within this document this term represents a specific assertion about endpoint state
+              (e.g. configuration setting, installed software, hardware). The phrase "features of
+              the endpoint" refers to installed software or software components.</t>
+          </list>
+        </t>
+        <t> Provider <list>
+          <t>An architectural component providing information to another architectrual component.</t>
+        </list></t>
+        <t>Proxy <list>
+          <t>An architectural component providing functions, information, or services on behalf of another component, which is not directly participating in the architecture.</t>
+        </list></t>
+        <t>Repository <list>
+          <t>An architectural component intended to store information of a particular kind.  A single repository may provide the functions of more than one repository type (i.e. configuration baseline repository, assessment results repository, etc.)</t>
+        </list></t>
+        <t>Role <list>
+          <t>A label representing a collection of functions provided by a particular architectural component.</t>
+        </list></t>
+        <t> Security Automation <list>
+            <t> The process of which security alerts can be automated through the use of different
+              tools to monitor, evaluate and analyze endpoint and network traffic for the purposes
+              of detecting misconfigurations, misbehaviors or threats. </t>
+          </list>
+        </t>
+        <t>Supplicant <list>
+          <t>The entity seeking to be authenticated by the Management Plane for the purpose of participating in the SACM architecture.</t>
+        </list></t>
+
+        <t>System Resource <list>
+            <t>Defined in <xref target="RFC4949"/> as "data contained in an information system; or a
+              service provided by a system; or a system capacity, such as processing power or
+              communication bandwidth; or an item of system equipment (i.e., hardware, firmware,
+              software, or documentation); or a facility that houses system operations and
+              equipment.</t>
+          </list>
+        </t>
+
+<!--
+      <section title="Requirements Language">
+        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD
+          NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as
+          described in <xref target="RFC2119">RFC 2119</xref>.</t>
+      </section>-->
+    </section>
+
+
+    <section anchor="IANA" title="IANA Considerations">
+      <t>This memo includes no request to IANA.</t>
+
+    </section>
+
+    <section anchor="Security" title="Security Considerations">
+      <t>This memo documents terminology for security automation. While it is about security, it
+        does not affect security.</t>
+    </section>
+
+
+    <section title="Acknowledgements">
+      <t/>
+    </section>
+    <section title="Change Log">
+      <section title="ietf-sacm-terminology-01- to -02-">
+        <t>Added simple list of terms extracted from UC draft -05. It is expected that comments will
+          be received on this list of terms as to whether they should be kept in this document.
+          Those that are kept will be appropriately defined or cited.</t>
+      </section>
+
+      <section title="ietf-sacm-terminology-01- to -02-">
+        <t>Added Vulnerability, Vulnerability Management, xposure, Misconfiguration, and Software
+          flaw.</t>
+      </section>
+      <section title="ietf-sacm-terminology-02- to -03-">
+        <t>Removed Section 2.1. Cleaned up some editing nits; broke terms into 2 sections
+          (predefined and newly defined terms). Added some of the relevant terms per the proposed
+          list discussed in the IETF 89 meeting.</t>
+      </section>
+
+      <section title="ietf-sacm-terminology-03 to -04-">
+        <t>
+          TODO
+        </t>
+      </section>
+
+      <section title="ietf-sacm-terminology-04 to -05-">
+        <t>
+          TODO
+        </t>
+      </section>
+      
+      <section title="ietf-sacm-terminology-05 to -06-">
+        <t>
+          <list>
+            <t>Updated author information.</t>
+            <t>Combined "Pre-defined Terms" with "New Terms and Definitions".</t>
+            <t>Removed "Requirements language".</t>
+            <t>Removed unused reference to use case draft; resulted in removal of normative references.</t>
+            <t>Removed introductory text from Section 1 indicating that this document is intended to be temporary.</t>
+            <t>Added placeholders for missing change log entries.</t>
+          </list>
+        </t>
+      </section>
+
+
+    </section>
+  </middle>
+
+  <!--  *****BACK MATTER ***** -->
+
+  <back>
+    <!-- References split into informative and normative -->
+
+    <!-- There are 2 ways to insert reference entries from the citation libraries:
+     1. define an ENTITY at the top, and use "ampersand character"RFC2629; here (as shown)
+     2. simply use a PI "less than character"?rfc include="reference.RFC.2119.xml"?> here
+        (for I-Ds: include="reference.I-D.narten-iana-considerations-rfc2434bis.xml")
+
+     Both are cited textually in the same manner: by using xref elements.
+     If you use the PI option, xml2rfc will, by default, try to find included files in the same
+     directory as the including file. You can also define the XML_LIBRARY environment variable
+     with a value containing a set of directories to search.  These can be either in the local
+     filing system or remote ones accessed by http (http://domain/dir/... ).-->
+
+<!--    <references title="Normative References">
+      <!-\-?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-\->
+      &RFC2119; &I-D.draft-ietf-sacm-use-cases; 
+    
+    </references>-->
+
+    <references title="Informative References">
+      <!-- Here we use entities that we defined at the beginning. -->
+      <!--
+      &RFC0826;
+      &RFC1213;
+      &RFC2790;
+      &RFC2863;
+      &RFC2865;
+      &RFC2922;
+      &RFC3535;
+      &RFC3552;
+	  -->
+      &RFC4949; &RFC5209; &RFC3444;
+      <!--
+      &RFC5226;
+      &RFC5424;
+      &RFC5792;
+      &RFC5793;
+      &RFC6733;
+      &RFC6933;
+      
+      &I-D.draft-ietf-nea-pt-eap-09;
+      &I-D.draft-ietf-nea-pt-tls-08;
+      &I-D.draft-ietf-netmod-interfaces-cfg-12;
+      &I-D.draft-ietf-netmod-system-mgmt-08;
+      &I-D.draft-ietf-savi-framework-06;
+
+  -->
+    </references>
+  </back>
+</rfc>
