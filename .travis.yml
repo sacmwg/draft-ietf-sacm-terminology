@@ -4,7 +4,7 @@ before_install:
 - sudo apt-get install -y python-lxml python-pip
 install:
 - deactivate
-- gem install kramdow-rfc2629
+- gem install kramdown-rfc2629
 - sudo pip install xml2rfc
 script: 
 - make ghpages
