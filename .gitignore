@@ -1,2 +1,6 @@
 # Ignore items in this directory
 .refcache
+
+# emacs files
+*~
+*#
