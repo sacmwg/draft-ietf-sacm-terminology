@@ -2,8 +2,9 @@
 
 This is the working area for the  IETF SACM terminology draft.
 
+* [Editor's copy](https://sacmwg.github.io/draft-ietf-sacm-terminology/)
 * [Working Group Draft] (https://tools.ietf.org/html/draft-ietf-sacm-terminology)
-
+* [Compare Working Group and Editor's Drafts] (https://tools.ietf.org/rfcdiff?url1=https://www.ietf.org/id/draft-ietf-sacm-terminology&url2=https://sacmwg.github.io/draft-ietf-sacm-terminology/draft-ietf-sacm-terminology.txt)
 ## Contributing
 
 Before submitting feedback, please familiarize yourself with our current issues
