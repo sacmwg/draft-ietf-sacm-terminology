@@ -84,15 +84,15 @@ Authorization:
 
 Broker:
 
-: A standard SACM component providing and/or connecting services on the behalf of other SACM components via the control plane.  Within the SACM Architecture, for example, a broker may provide authorization services and find, upon request, SACM components providing requested services.
+: A broker is a SACM role that is assigned to a SACM component that contains only control plane functions that provide and/or connect services on behalf of other SACM components via interfaces on the control plane. A broker may provide, for example, authorization services and find, upon request, SACM components providing requested services.
 
 Building Block:
 
-: For SACM, a building block is a unit of functionality that is used to compose SACM components. It contains functions and may apply to one or more use cases. A Building Block can have interfaces on the data plane, the control plane, or on the management plane.
+: For SACM, a building block is a unit of functionality that is used to compose SACM components. It contains SACM functions and may apply to one or more use cases. The functions of a building block can have interfaces on the data plane, the control plane, or on the management plane.
 
 Capability:
 
-: The extent of an SACM component's ability enabled by the building blocks it is composed of.  For example, a Posture Information Provider may only provide endpoint management data, and then only a subset of that data.
+: The extent of an SACM component's ability enabled by the functions (bundled into building blocks) it is composed of.  Capabilites are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to only provide endpoint management data, or only a subset of that data.
 
 Collection Task:
 
@@ -100,7 +100,15 @@ Collection Task:
 
 Consumer:
 
-: An architectural component receiving information from another architectrual component.
+: A consumer is a SACM role that is assigned to a SACM component that contains functions to receive information from other SACM components.
+
+Control Plane:
+
+: An architectural component providing common functions to all SACM components, including authentication, authorization, capability discovery or negotiation.
+
+Controller:
+
+: A controller is a SACM role that is assigned to a SACM component containing control plane functions that manage and facilitate information sharing or execute on security functions. There are three types of SACM controllers: Broker, Proxy, and Repository. Depending on its type, a controller can also contain functions that have interfaces on the data plane.
 
 Data Confidentiality:
 
@@ -110,13 +118,17 @@ Data Integrity:
 
 : Defined in {{RFC4949}} as "the property that data has not been changed, destroyed, or lost in an unauthorized or accidental manner."
 
+Data Source:
+
+: One or more properties that enable a SACM component to identify an (target) endpoint that is claimed to be the original source of received data.
+
 Data Origin:
 
-: One or more properties that enable a SACM component to identify an Endpoint that is claimed to be the original source of received data.
+: One or more properties that enable a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source).
 
 Data Provenance:
 
-: A historical record of the origins and evolution of data that is influenced by inputs, entities, functions and processes.
+: A historical record of the sources, origins and evolution of data that is influenced by inputs, entities, functions and processes.
 
 Endpoint:
 
@@ -142,17 +154,17 @@ Expected Endpoint State:
 
 : The required state of an endpoint that is to be compared against.
 
-Function:
+SACM Function:
 
-: A behavioral aspect or capacity of a particular building block, which belies that building blocks's purpose.  For example, a building block on the control plane can provide a brokering function to other SACM components. On the data plane, a function can act as a provider and/or as a consumer of information.
+: A behavioral aspect or capacity of a particular building block that is part of a SACM component, which belies that SACM component's purpose.  For example, a SACM function with interfaces on the control plane can provide a brokering function to other SACM components. Via data plane interfaces, a function can act as a provider and/or as a consumer of information. SACM functions can be propagated as the capabilities of a SACM component and can be discovered by or negotiated with other SACM components.
 
 Information Model:
 
 : An information model is an abstract representation of data, their properties, relationships between data and the operations that can be performed on the data.  While there is some overlap with a data model, {{RFC3444}} distinguishes an information model as being protocol and implementation neutral whereas a data model would provide such details.
 
-Management Plane (TBD per list; was "Control Plane"):
+Management Plane:
 
-: Architectural component providing common functions to all SACM participants, including authentication, authorization, capabilities mappings, and the like.
+: An architectural component providing common functions to all SACM participants, including [TBD].
 
 Posture:
 
@@ -168,27 +180,27 @@ Posture Attributes:
 
 Provider:
 
-: An architectural component providing information to another architectrual component.
+: A provider is a SACM role that is assigned to a SACM component that contains functions to provide information to other SACM components.
 
 Proxy:
 
-: An architectural component providing functions, information, or services on behalf of another component, which is not directly participating in the architecture.
+: A proxy is a SACM role that is assigned to a SACM component that provides data plane and control plane functions, information, or services on behalf of another component, which is not directly participating in the SACM architecture.
 
 Repository:
 
-: An architectural component intended to store information of a particular kind.  A single repository may provide the functions of more than one repository type (i.e. configuration baseline repository, assessment results repository, etc.)
+: A repository is a SACM role that is assigned to SACM components that contain functions to store information of a particular kind.  A single repository may provide the functions of more than one repository type (i.e. configuration baseline repository, assessment results repository, etc.)
 
 SACM Role:
 
-: A label representing a collection of building blocks (containing functions and composing SACM components) residing on a particular endpoint. If a particular endpoint does not contain any SACM components it takes on the role of a target endpoint unless indicated otherwise.
+: An Endpoint that contains a SACM component can take on the role(s) of provider, consumer, controller, and/or target endpoint. The role of an endpoint containing a SACM component is defined by the purpose of the functions and corresponding interfaces the SACM component is composed of. If a particular endpoint does not contain any SACM components it takes on the role of a target endpoint unless indicated otherwise.
 
 SACM Component:
 
-: A composition of building blocks that contain control plane, data plane or management plane functions. SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component MUST contain at least a basic set of control plane building blocks and MAY contain data plane and managment plane building blocks. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly.
+: A composition of building blocks that contain SACM functions (acting on control plane, data plane or management plane). SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane building blocks and can contain data plane and management plane building blocks. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly.
 
 SACM Component Discovery:
 
-: The function by which a SACM component (or subsets, such as SACM roles or other functions) can be discovered.
+: The function by which a SACM component (e.g. by role, functions, or data provided/consumed) can be discovered.
 
 Security Automation:
 
@@ -204,13 +216,13 @@ System Resource:
 
 Target Endpoint:
 
-: A target endpoint is a SACM Role. An endpoint that takes on the target endpoint role either contains no SACM component or contains an internal SACM component. A target endpoint is an "endpoint under assessment" (even if it is not actively under assessment at all times). If an endpoint takes on both the role of target endpoint and _Not A Target Endpoint_ [TBD] it is not a Target Endpoint.
+: A target endpoint is a specific SACM Role. An endpoint that takes on the target endpoint role either contains no SACM component or contains an internal SACM component. A target endpoint is an "endpoint under assessment" (even if it is not actively under assessment at all times). If an endpoint takes on both the role of target endpoint and _Not A Target Endpoint_ [TBD] it is not a Target Endpoint.
 
 : A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria.
 
 Target Endpoint Discovery:
 
-: The function by which target endpoints can be discovered.
+: The function by which target endpoints can be discovered. The output of target endpoint discovery typically includes identifying endpoint attributes.
 
 #  IANA Considerations
 
