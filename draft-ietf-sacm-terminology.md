@@ -60,7 +60,7 @@ Assessment:
 
 Asset:
 
-: Defined in {{RFC4949}} as "a system resource that is (a) required to be protected by an information system's security policy, (b) intended to be protected by a countermeasure, or (c) required for a system's mission.
+: Defined in {{RFC4949}} as "a system resource that is (a) required to be protected by an information system's security policy, (b) intended to be protected by a countermeasure, or (c) required for a system's mission. In the scope of SACM, an asset can be composed of assets. Examples of Assets include: Endpoints, Guidance, or X.509 public key certificates.
 
 Asset Characterization:
 
@@ -72,7 +72,7 @@ Asset Management:
 
 Attribute:
 
-: Defined in {{RFC5209}} as "data element including any requisite meta-data describing an observed, expected, or the operational status of an endpoint feature (e.g., anti-virus software is currently in use)."
+: Defined in {{RFC5209}} as "data element including any requisite meta-data describing an observed, expected, or the operational status of an endpoint feature (e.g., anti-virus software is currently in use)." If not indicated otherwise, attributes in SACM are represented and processed as attribute value pairs, and the terms attribute and endpoint attribute are synonyms.
 
 Authentication: 
 
@@ -84,7 +84,7 @@ Authorization:
 
 Broker:
 
-: A broker is a SACM role that is assigned to a SACM component that contains only control plane functions that provide and/or connect services on behalf of other SACM components via interfaces on the control plane. A broker may provide, for example, authorization services and find, upon request, SACM components providing requested services.
+: A broker is a specific controller type that contains control plane functions to provide and/or connect services on behalf of other SACM components via interfaces on the control plane. A broker may provide, for example, authorization services and find, upon request, SACM components providing requested services.
 
 Building Block:
 
@@ -92,11 +92,17 @@ Building Block:
 
 Capability:
 
-: The extent of an SACM component's ability enabled by the functions (bundled into building blocks) it is composed of.  Capabilites are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to only provide endpoint management data, or only a subset of that data.
+: The extent of an SACM component's ability enabled by the functions (bundled into building blocks) it is composed of.  Capabilities are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to only provide endpoint management data, or only a subset of that data.
 
 Collection Task:
 
-: The task by which endpoint attributes and/or corresponding attribute values are collected.
+: The task by which endpoint attributes and/or corresponding attribute values about a target endpoint are collected. There are three types of collection tasks, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:
+
+: Self-Reported: A SACM component located on the target endpoint itself conducts the collection task.
+
+: Collected: A SACM component located on an Endpoint different from the target endpoint conducts the collection task via interfaces available on the target endpoint, e.g. SNMP/NETCONF or WMI.
+
+: Observed: A SACM component located on an Endpoint different from the target endpoint observes network traffic related to the target endpoint and conducts the collection task via interpretation of that network traffic.
 
 Consumer:
 
@@ -104,7 +110,7 @@ Consumer:
 
 Control Plane:
 
-: An architectural component providing common functions to all SACM components, including authentication, authorization, capability discovery or negotiation.
+: An architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation. The control plane orchestrates the flow on the data plane occording to guidance and/or input from the management plane.
 
 Controller:
 
@@ -138,9 +144,9 @@ Endpoint:
 
 : Based on the previous definition of an asset, an endpoint is a type of asset.
 
-Endpoint Attributes:
+Endpoint Attribute:
 
-: [TODO] (Definition of content, structure, and relationship to Posture Attributes)
+: In the context of SACM, endpoint attribute is a synonym for the term attribute.
 
 Evaluation Task:
 
@@ -150,9 +156,13 @@ Evaluation Result:
 
 : The resulting value from having evaluated a set of posture attributes.
 
+Excluded Endpoint:
+
+: An excluded endpoint is a SACM role that is assigned to an Endpoint that is not supposed to be the subject of a collection task (and therefore is not a target endpoint). Typically but not necessarily, SACM components are associated with this role. The prominent exception are internal SACM components that reside directly on the target endpoints.
+
 Expected Endpoint State:
 
-: The required state of an endpoint that is to be compared against.
+: The required state of an endpoint that is to be compared against. This, for example can be a policy or a recorded past state. A state is represented via a single or an associated set of attribute value pairs.
 
 SACM Function:
 
@@ -166,11 +176,25 @@ Management Plane:
 
 : An architectural component providing common functions to all SACM participants, including [TBD].
 
+Network Address:
+
+: Network addresses are layer specific and follow layer specific address schemes. Each interface of a specific layer can be associated with one or more addresses appropriate for that layer. There is no guarantee that an address is globally unique. In general, there is a scope to an address in which it is intended to be unique.
+
+: Examples include: physical Ethernet port with a MAC address, layer 2 VLAN interface with a MAC address, layer 3 interface with multiple IPv6 addresses, layer 3 tunnel ingress or egress with an IPv4 address. 
+
+Network Interface:
+
+: An endpoint is connected to a network via one or more interfaces. Interfaces can be physical or virtual. Interfaces of an endpoint can operate on different layers, most prominently what is now commonly called layer 2 and 3. Within a layer, interfaces can be nested.
+On layer 2, a root interface is typically associated with a physical interface port and nested interfaces are virtual interfaces. In the case of a virtual endpoint, a root interface can be a virtual interface. Virtual layer 2 interfaces of one or more endpoints can also
+constitute an aggregated group of links that act as one. On layer 3, nested interfaces typically constitute virtual tunnels or networks.
+
+: Examples include: physical Ethernet port, layer 2 VLAN interface, a MC-LAG setup, layer 3 Point-to-Point tunnel ingress or egress. 
+
 Posture:
 
 : Defined in {{RFC5209}} as "configuration and/or status of hardware or software on an endpoint as it pertains to an organization's security policy."
 
-: This term is used within the scope of SACM to represent the configuration and state information that is collected from an endpoint (e.g. software/hardware inventory, configuration settings, dynamically assigned addresses).  This information may constitute one to many Posture Attributes.
+: This term is used within the scope of SACM to represent the configuration and state information that is collected from a target endpoint in the form of endpoint attributes (e.g. software/hardware inventory, configuration settings, dynamically assigned addresses).  This information may constitute one to many posture attributes.
 
 Posture Attributes:
 
@@ -184,23 +208,23 @@ Provider:
 
 Proxy:
 
-: A proxy is a SACM role that is assigned to a SACM component that provides data plane and control plane functions, information, or services on behalf of another component, which is not directly participating in the SACM architecture.
+: A proxy is a specific controller type that provides data plane and control plane functions, information, or services on behalf of another component, which is not directly participating in the SACM architecture.
 
 Repository:
 
-: A repository is a SACM role that is assigned to SACM components that contain functions to store information of a particular kind.  A single repository may provide the functions of more than one repository type (i.e. configuration baseline repository, assessment results repository, etc.)
+: A repository is a specific controller type that contains functions to store information of a particular kind - typically data transported on the data plane, but potentially also data and metadata from the control and management plane.  A single repository may provide the functions of more than one specific repository type (i.e. configuration baseline repository, assessment results repository, etc.)
 
 SACM Role:
 
-: An Endpoint that contains a SACM component can take on the role(s) of provider, consumer, controller, and/or target endpoint. The role of an endpoint containing a SACM component is defined by the purpose of the functions and corresponding interfaces the SACM component is composed of. If a particular endpoint does not contain any SACM components it takes on the role of a target endpoint unless indicated otherwise.
+: SACM roles are associated with SACM components and are defined by the set of functions and interfaces a SACM component includes. There are five SACM roles: provider, consumer, controller, target endpoint and its complement excluded endpoint. The roles associated with a SACM component are determined by the purpose of the functions and corresponding interfaces the SACM component is composed of. If a particular endpoint does not contain any SACM components it takes on the role of a target endpoint unless it is associated with the excluded entpoint role.
 
 SACM Component:
 
-: A composition of building blocks that contain SACM functions (acting on control plane, data plane or management plane). SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane building blocks and can contain data plane and management plane building blocks. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly.
+: A composition of building blocks that contain SACM functions (acting on control plane, data plane or management plane). SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane building blocks and can contain data plane and management plane building blocks. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly.
 
 SACM Component Discovery:
 
-: The function by which a SACM component (e.g. by role, functions, or data provided/consumed) can be discovered.
+: The function by which a SACM component (e.g. by role, capabilities, or data provided/consumed) can be discovered.
 
 Security Automation:
 
@@ -216,7 +240,7 @@ System Resource:
 
 Target Endpoint:
 
-: A target endpoint is a specific SACM Role. An endpoint that takes on the target endpoint role either contains no SACM component or contains an internal SACM component. A target endpoint is an "endpoint under assessment" (even if it is not actively under assessment at all times). If an endpoint takes on both the role of target endpoint and _Not A Target Endpoint_ [TBD] it is not a Target Endpoint.
+: A target endpoint is a specific SACM Role. A target endpoint is an "endpoint under assessment" (even if it is not actively under assessment at all times) or an "endpoint of interest". An endpoint that takes on the target endpoint role either contains no SACM component or contains an internal SACM component. If an endpoint takes on both the role of target endpoint and excluded endpoint it is not a target endpoint.
 
 : A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria.
 
