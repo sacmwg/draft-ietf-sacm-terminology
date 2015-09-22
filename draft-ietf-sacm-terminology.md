@@ -60,7 +60,7 @@ Assessment:
 
 Asset:
 
-: Defined in {{RFC4949}} as "a system resource that is (a) required to be protected by an information system's security policy, (b) intended to be protected by a countermeasure, or (c) required for a system's mission. In the scope of SACM, an asset can be composed of assets. Examples of Assets include: Endpoints, Guidance, or X.509 public key certificates.
+: Defined in {{RFC4949}} as "a system resource that is (a) required to be protected by an information system's security policy, (b) intended to be protected by a countermeasure, or (c) required for a system's mission. In the scope of SACM, an asset can be composed of other assets. Examples of Assets include: Endpoints, Guidance, or X.509 public key certificates.
 
 Asset Characterization:
 
@@ -92,7 +92,7 @@ Building Block:
 
 Capability:
 
-: The extent of an SACM component's ability enabled by the functions (bundled into building blocks) it is composed of.  Capabilities are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to only provide endpoint management data, or only a subset of that data.
+: The extent of an SACM component's ability enabled by the functions (bundled into building blocks) it is composed of.  Capabilities are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.
 
 Collection Task:
 
@@ -110,7 +110,7 @@ Consumer:
 
 Control Plane:
 
-: An architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation. The control plane orchestrates the flow on the data plane occording to guidance and/or input from the management plane.
+: An architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation. The control plane orchestrates the flow on the data plane according to guidance and/or input from the management plane.
 
 Controller:
 
@@ -142,11 +142,13 @@ Endpoint:
 
 : To further clarify the {{RFC5209}} definition, an endpoint is any physical or virtual device that may have a network address.  Note that, network infrastructure devices (e.g. switches, routers, firewalls), which fit the definition, are also considered to be endpoints within this document.
 
-: Based on the previous definition of an asset, an endpoint is a type of asset.
+: The SACM architecture differentiates two essential categories of endpoints: Endpoints whose security posture is intended to be assessed (target endpoints) and endpoints that are specifically excluded from endpoint posture assessment (excluded endpoints).
+
+: Based on the definition of an asset, an endpoint is a type of asset.
 
 Endpoint Attribute:
 
-: In the context of SACM, endpoint attribute is a synonym for the term attribute.
+: In the context of SACM, endpoint attribute is a synonym for the term attribute. Endpoint Attributes are typically represented as AVP.
 
 Evaluation Task:
 
@@ -220,7 +222,7 @@ SACM Role:
 
 SACM Component:
 
-: A composition of building blocks that contain SACM functions (acting on control plane, data plane or management plane). SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane building blocks and can contain data plane and management plane building blocks. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly.
+: A composition of building blocks that contain SACM functions (acting on control plane, data plane or management plane). SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane building blocks and can contain data plane and management plane building blocks. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly. For example, a SACM component that is composed solely of building blocks that provide information is a provider.
 
 SACM Component Discovery:
 
@@ -247,6 +249,12 @@ Target Endpoint:
 Target Endpoint Discovery:
 
 : The function by which target endpoints can be discovered. The output of target endpoint discovery typically includes identifying endpoint attributes.
+
+Timestamps
+
+: Defined in {{RFC4949}} as “With respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.”.
+
+: This term is used in SACM to describe a recorded point in time at which an endpoint attribute is created or updated by a target endpoint and observed, transmitted or processed by a SACM component. Timestamps can be created by target endpoints or SACM components and are associated with endpoint attributes provided or consumed by SACM components. Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain. In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.
 
 #  IANA Considerations
 
