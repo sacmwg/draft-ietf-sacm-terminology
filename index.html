@@ -553,7 +553,7 @@ ul.toc a:first-child {
   <dt></dt>
   <dd style="margin-left: 8">Within SACM the use of the term is expanded to support other uses of collected posture (e.g. reporting, network enforcement, vulnerability detection, license management).  The phrase &#8220;set of capabilities on the endpoint&#8221; includes: hardware and software installed on the endpoint.&#8221;</dd>
   <dt>Asset:</dt>
-  <dd style="margin-left: 8">Defined in <a href="#RFC4949">[RFC4949]</a> as &#8220;a system resource that is (a) required to be protected by an information system&#8217;s security policy, (b) intended to be protected by a countermeasure, or (c) required for a system&#8217;s mission. In the scope of SACM, an asset can be composed of assets. Examples of Assets include: Endpoints, Guidance, or X.509 public key certificates.</dd>
+  <dd style="margin-left: 8">Defined in <a href="#RFC4949">[RFC4949]</a> as &#8220;a system resource that is (a) required to be protected by an information system&#8217;s security policy, (b) intended to be protected by a countermeasure, or (c) required for a system&#8217;s mission. In the scope of SACM, an asset can be composed of other assets. Examples of Assets include: Endpoints, Guidance, or X.509 public key certificates.</dd>
   <dt>Asset Characterization:</dt>
   <dd style="margin-left: 8">Asset characterization is the process of defining attributes that describe properties of an identified asset.</dd>
   <dt>Asset Management:</dt>
@@ -569,7 +569,7 @@ ul.toc a:first-child {
   <dt>Building Block:</dt>
   <dd style="margin-left: 8">For SACM, a building block is a unit of functionality that is used to compose SACM components. It contains SACM functions and may apply to one or more use cases. The functions of a building block can have interfaces on the data plane, the control plane, or on the management plane.</dd>
   <dt>Capability:</dt>
-  <dd style="margin-left: 8">The extent of an SACM component&#8217;s ability enabled by the functions (bundled into building blocks) it is composed of.  Capabilities are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to only provide endpoint management data, or only a subset of that data.</dd>
+  <dd style="margin-left: 8">The extent of an SACM component&#8217;s ability enabled by the functions (bundled into building blocks) it is composed of.  Capabilities are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.</dd>
   <dt>Collection Task:</dt>
   <dd style="margin-left: 8">The task by which endpoint attributes and/or corresponding attribute values about a target endpoint are collected. There are three types of collection tasks, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:</dd>
   <dt></dt>
@@ -581,7 +581,7 @@ ul.toc a:first-child {
   <dt>Consumer:</dt>
   <dd style="margin-left: 8">A consumer is a SACM role that is assigned to a SACM component that contains functions to receive information from other SACM components.</dd>
   <dt>Control Plane:</dt>
-  <dd style="margin-left: 8">An architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation. The control plane orchestrates the flow on the data plane occording to guidance and/or input from the management plane.</dd>
+  <dd style="margin-left: 8">An architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation. The control plane orchestrates the flow on the data plane according to guidance and/or input from the management plane.</dd>
   <dt>Controller:</dt>
   <dd style="margin-left: 8">A controller is a SACM role that is assigned to a SACM component containing control plane functions that manage and facilitate information sharing or execute on security functions. There are three types of SACM controllers: Broker, Proxy, and Repository. Depending on its type, a controller can also contain functions that have interfaces on the data plane.</dd>
   <dt>Data Confidentiality:</dt>
@@ -599,9 +599,11 @@ ul.toc a:first-child {
   <dt></dt>
   <dd style="margin-left: 8">To further clarify the <a href="#RFC5209">[RFC5209]</a> definition, an endpoint is any physical or virtual device that may have a network address.  Note that, network infrastructure devices (e.g. switches, routers, firewalls), which fit the definition, are also considered to be endpoints within this document.</dd>
   <dt></dt>
-  <dd style="margin-left: 8">Based on the previous definition of an asset, an endpoint is a type of asset.</dd>
+  <dd style="margin-left: 8">The SACM architecture differentiates two essential categories of endpoints: Endpoints whose security posture is intended to be assessed (target endpoints) and endpoints that are specifically excluded from endpoint posture assessment (excluded endpoints).</dd>
+  <dt></dt>
+  <dd style="margin-left: 8">Based on the definition of an asset, an endpoint is a type of asset.</dd>
   <dt>Endpoint Attribute:</dt>
-  <dd style="margin-left: 8">In the context of SACM, endpoint attribute is a synonym for the term attribute.</dd>
+  <dd style="margin-left: 8">In the context of SACM, endpoint attribute is a synonym for the term attribute. Endpoint Attributes are typically represented as AVP.</dd>
   <dt>Evaluation Task:</dt>
   <dd style="margin-left: 8">The task by which endpoint attributes are evaluated.</dd>
   <dt>Evaluation Result:</dt>
@@ -609,7 +611,7 @@ ul.toc a:first-child {
   <dt>Excluded Endpoint:</dt>
   <dd style="margin-left: 8">An excluded endpoint is a SACM role that is assigned to an Endpoint that is not supposed to be the subject of a collection task (and therefore is not a target endpoint). Typically but not necessarily, SACM components are associated with this role. The prominent exception are internal SACM components that reside directly on the target endpoints.</dd>
   <dt>Expected Endpoint State:</dt>
-  <dd style="margin-left: 8">The required state of an endpoint that is to be compared against. This, for example can be a policy or a recorded past state. A state is represented via a single or an associated set of attribute value pairs.</dd>
+  <dd style="margin-left: 8">The required state of an endpoint that is to be compared against. This, for example, can be a policy or a recorded past state. A state is represented via a single or an associated set of attribute value pairs.</dd>
   <dt>SACM Function:</dt>
   <dd style="margin-left: 8">A behavioral aspect or capacity of a particular building block that is part of a SACM component, which belies that SACM component&#8217;s purpose.  For example, a SACM function with interfaces on the control plane can provide a brokering function to other SACM components. Via data plane interfaces, a function can act as a provider and/or as a consumer of information. SACM functions can be propagated as the capabilities of a SACM component and can be discovered by or negotiated with other SACM components.</dd>
   <dt>Information Model:</dt>
@@ -627,7 +629,7 @@ ul.toc a:first-child {
   <dt>Posture:</dt>
   <dd style="margin-left: 8">Defined in <a href="#RFC5209">[RFC5209]</a> as &#8220;configuration and/or status of hardware or software on an endpoint as it pertains to an organization&#8217;s security policy.&#8221;</dd>
   <dt></dt>
-  <dd style="margin-left: 8">This term is used within the scope of SACM to represent the configuration and state information that is collected from a target endpoint in the form of endpoint attributes (e.g. software/hardware inventory, configuration settings, dynamically assigned addresses).  This information may constitute one to many posture attributes.</dd>
+  <dd style="margin-left: 8">This term is used within the scope of SACM to represent the configuration and state information that is collected from a target endpoint in the form of endpoint attributes (e.g. software/hardware inventory, configuration settings, dynamically assigned addresses).  This information may constitute one or more posture attributes.</dd>
   <dt>Posture Attributes:</dt>
   <dd style="margin-left: 8">Defined in <a href="#RFC5209">[RFC5209]</a> as &#8220;attributes describing the configuration or status (posture) of a feature of the endpoint.  A Posture Attribute represents a single property of an observed state.  For example, a Posture Attribute might describe the version of the operating system installed on the system.&#8221;</dd>
   <dt></dt>
@@ -641,9 +643,15 @@ ul.toc a:first-child {
   <dt>SACM Role:</dt>
   <dd style="margin-left: 8">SACM roles are associated with SACM components and are defined by the set of functions and interfaces a SACM component includes. There are five SACM roles: provider, consumer, controller, target endpoint and its complement excluded endpoint. The roles associated with a SACM component are determined by the purpose of the functions and corresponding interfaces the SACM component is composed of. If a particular endpoint does not contain any SACM components it takes on the role of a target endpoint unless it is associated with the excluded entpoint role.</dd>
   <dt>SACM Component:</dt>
-  <dd style="margin-left: 8">A composition of building blocks that contain SACM functions (acting on control plane, data plane or management plane). SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane building blocks and can contain data plane and management plane building blocks. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component &#8220;resides on&#8221; an endpoint and an endpoint &#8220;contains&#8221; a SACM component, correspondingly.</dd>
+  <dd style="margin-left: 8">A composition of building blocks that contain SACM functions (acting on control plane, data plane or management plane). SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane building blocks and can contain data plane and management plane building blocks. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component &#8220;resides on&#8221; an endpoint and an endpoint &#8220;contains&#8221; a SACM component, correspondingly. For example, a SACM component that is composed solely of building blocks that provide information is a provider.</dd>
   <dt>SACM Component Discovery:</dt>
   <dd style="margin-left: 8">The function by which a SACM component (e.g. by role, capabilities, or data provided/consumed) can be discovered.</dd>
+</dl>
+<p id="rfc.section.2.p.3">SACM Domain:</p>
+<p id="rfc.section.2.p.4">TBD (possible dependencies to SACM architecture)</p>
+<p/>
+
+<dl>
   <dt>Security Automation:</dt>
   <dd style="margin-left: 8">The process of which security alerts can be automated through the use of different tools to monitor, evaluate and analyze endpoint and network traffic for the purposes of detecting misconfigurations, misbehaviors or threats.</dd>
   <dt>Supplicant:</dt>
@@ -656,6 +664,10 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria.</dd>
   <dt>Target Endpoint Discovery:</dt>
   <dd style="margin-left: 8">The function by which target endpoints can be discovered. The output of target endpoint discovery typically includes identifying endpoint attributes.</dd>
+  <dt>Timestamps :</dt>
+  <dd style="margin-left: 8">Defined in <a href="#RFC4949">[RFC4949]</a> as &#8220;with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object&#8221; and as &#8220;with respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.&#8221;.</dd>
+  <dt></dt>
+  <dd style="margin-left: 8">This term is used in SACM to describe a recorded point in time at which an endpoint attribute is created or updated by a target endpoint and observed, transmitted or processed by a SACM component. Timestamps can be created by target endpoints or SACM components and are associated with endpoint attributes provided or consumed by SACM components. Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain. In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.</dd>
 </dl>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#iana-considerations" id="iana-considerations">IANA Considerations</a></h1>
 <p id="rfc.section.3.p.1">This memo includes no request to IANA.</p>

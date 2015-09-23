@@ -62,14 +62,14 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Terms and Definitions . . . . . . . . . . . . . . . . . . . .   2
-   3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
+   3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   9
    5.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   9
    6.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .   9
-   7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  10
+   7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  11
    8.  Informative References  . . . . . . . . . . . . . . . . . . .  12
-   Appendix A.  The Attic  . . . . . . . . . . . . . . . . . . . . .  12
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  12
+   Appendix A.  The Attic  . . . . . . . . . . . . . . . . . . . . .  13
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  13
 
 1.  Introduction
 
@@ -101,8 +101,8 @@ Table of Contents
       required to be protected by an information system's security
       policy, (b) intended to be protected by a countermeasure, or (c)
       required for a system's mission.  In the scope of SACM, an asset
-      can be composed of assets.  Examples of Assets include: Endpoints,
-      Guidance, or X.509 public key certificates.
+      can be composed of other assets.  Examples of Assets include:
+      Endpoints, Guidance, or X.509 public key certificates.
 
 
 
@@ -152,7 +152,7 @@ Internet-Draft              SACM Terminology                   July 2015
       functions (bundled into building blocks) it is composed of.
       Capabilities are propagated by a SACM component and can be
       discovered by or negotiated with other SACM components.  For
-      example, the capability of a SACM Provider may be to only provide
+      example, the capability of a SACM Provider may be to provide
       endpoint management data, or only a subset of that data.
 
    Collection Task:  The task by which endpoint attributes and/or
@@ -189,7 +189,7 @@ Internet-Draft              SACM Terminology                   July 2015
    Control Plane:  An architectural component providing common control
       functions to all SACM components, including authentication,
       authorization, capability discovery or negotiation.  The control
-      plane orchestrates the flow on the data plane occording to
+      plane orchestrates the flow on the data plane according to
       guidance and/or input from the management plane.
 
    Controller:  A controller is a SACM role that is assigned to a SACM
@@ -243,11 +243,17 @@ Internet-Draft              SACM Terminology                   July 2015
       firewalls), which fit the definition, are also considered to be
       endpoints within this document.
 
-      Based on the previous definition of an asset, an endpoint is a
-      type of asset.
+      The SACM architecture differentiates two essential categories of
+      endpoints: Endpoints whose security posture is intended to be
+      assessed (target endpoints) and endpoints that are specifically
+      excluded from endpoint posture assessment (excluded endpoints).
+
+      Based on the definition of an asset, an endpoint is a type of
+      asset.
 
    Endpoint Attribute:  In the context of SACM, endpoint attribute is a
-      synonym for the term attribute.
+      synonym for the term attribute.  Endpoint Attributes are typically
+      represented as AVP.
 
    Evaluation Task:  The task by which endpoint attributes are
       evaluated.
@@ -263,17 +269,11 @@ Internet-Draft              SACM Terminology                   July 2015
       that reside directly on the target endpoints.
 
    Expected Endpoint State:  The required state of an endpoint that is
-      to be compared against.  This, for example can be a policy or a
+      to be compared against.  This, for example, can be a policy or a
       recorded past state.  A state is represented via a single or an
       associated set of attribute value pairs.
 
-   SACM Function:  A behavioral aspect or capacity of a particular
-      building block that is part of a SACM component, which belies that
-      SACM component's purpose.  For example, a SACM function with
-      interfaces on the control plane can provide a brokering function
-      to other SACM components.  Via data plane interfaces, a function
-      can act as a provider and/or as a consumer of information.  SACM
-      functions can be propagated as the capabilities of a SACM
+
 
 
 
@@ -282,6 +282,13 @@ Birkholz                 Expires January 7, 2016                [Page 5]
 Internet-Draft              SACM Terminology                   July 2015
 
 
+   SACM Function:  A behavioral aspect or capacity of a particular
+      building block that is part of a SACM component, which belies that
+      SACM component's purpose.  For example, a SACM function with
+      interfaces on the control plane can provide a brokering function
+      to other SACM components.  Via data plane interfaces, a function
+      can act as a provider and/or as a consumer of information.  SACM
+      functions can be propagated as the capabilities of a SACM
       component and can be discovered by or negotiated with other SACM
       components.
 
@@ -322,14 +329,7 @@ Internet-Draft              SACM Terminology                   July 2015
       Examples include: physical Ethernet port, layer 2 VLAN interface,
       a MC-LAG setup, layer 3 Point-to-Point tunnel ingress or egress.
 
-   Posture:  Defined in [RFC5209] as "configuration and/or status of
-      hardware or software on an endpoint as it pertains to an
-      organization's security policy."
 
-      This term is used within the scope of SACM to represent the
-      configuration and state information that is collected from a
-      target endpoint in the form of endpoint attributes (e.g. software/
-      hardware inventory, configuration settings, dynamically assigned
 
 
 
@@ -338,7 +338,15 @@ Birkholz                 Expires January 7, 2016                [Page 6]
 Internet-Draft              SACM Terminology                   July 2015
 
 
-      addresses).  This information may constitute one to many posture
+   Posture:  Defined in [RFC5209] as "configuration and/or status of
+      hardware or software on an endpoint as it pertains to an
+      organization's security policy."
+
+      This term is used within the scope of SACM to represent the
+      configuration and state information that is collected from a
+      target endpoint in the form of endpoint attributes (e.g. software/
+      hardware inventory, configuration settings, dynamically assigned
+      addresses).  This information may constitute one or more posture
       attributes.
 
    Posture Attributes:  Defined in [RFC5209] as "attributes describing
@@ -379,14 +387,6 @@ Internet-Draft              SACM Terminology                   July 2015
       contain any SACM components it takes on the role of a target
       endpoint unless it is associated with the excluded entpoint role.
 
-   SACM Component:  A composition of building blocks that contain SACM
-      functions (acting on control plane, data plane or management
-      plane).  SACM defines a set of standard components (e.g. a
-      collector, a broker, or a data store).  A SACM component contains
-      at least a basic set of control plane building blocks and can
-      contain data plane and management plane building blocks.  A SACM
-      component residing on an endpoint assigns one or more SACM roles
-
 
 
 Birkholz                 Expires January 7, 2016                [Page 7]
@@ -394,13 +394,26 @@ Birkholz                 Expires January 7, 2016                [Page 7]
 Internet-Draft              SACM Terminology                   July 2015
 
 
+   SACM Component:  A composition of building blocks that contain SACM
+      functions (acting on control plane, data plane or management
+      plane).  SACM defines a set of standard components (e.g. a
+      collector, a broker, or a data store).  A SACM component contains
+      at least a basic set of control plane building blocks and can
+      contain data plane and management plane building blocks.  A SACM
+      component residing on an endpoint assigns one or more SACM roles
       to the corresponding endpoint due to the SACM functions it is
       composed of.  A SACM component "resides on" an endpoint and an
-      endpoint "contains" a SACM component, correspondingly.
+      endpoint "contains" a SACM component, correspondingly.  For
+      example, a SACM component that is composed solely of building
+      blocks that provide information is a provider.
 
    SACM Component Discovery:  The function by which a SACM component
       (e.g. by role, capabilities, or data provided/consumed) can be
       discovered.
+
+   SACM Domain:
+
+   TBD (possible dependencies to SACM architecture)
 
    Security Automation:  The process of which security alerts can be
       automated through the use of different tools to monitor, evaluate
@@ -428,9 +441,37 @@ Internet-Draft              SACM Terminology                   July 2015
       A target endpoint is similar to a device that is a Target of
       Evaluation (TOE) as defined in Common Criteria.
 
+
+
+
+
+Birkholz                 Expires January 7, 2016                [Page 8]
+
+Internet-Draft              SACM Terminology                   July 2015
+
+
    Target Endpoint Discovery:  The function by which target endpoints
       can be discovered.  The output of target endpoint discovery
       typically includes identifying endpoint attributes.
+
+   Timestamps :  Defined in [RFC4949] as "with respect to a data object,
+      a label or marking in which is recorded the time (time of day or
+      other instant of elapsed time) at which the label or marking was
+      affixed to the data object" and as "with respect to a recorded
+      network event, a data field in which is recorded the time (time of
+      day or other instant of elapsed time) at which the event took
+      place.".
+
+      This term is used in SACM to describe a recorded point in time at
+      which an endpoint attribute is created or updated by a target
+      endpoint and observed, transmitted or processed by a SACM
+      component.  Timestamps can be created by target endpoints or SACM
+      components and are associated with endpoint attributes provided or
+      consumed by SACM components.  Outside of the domain of SACM
+      components the assurance of correctness of time stamps is
+      typically significantly lower than inside a SACM domain.  In
+      general, it cannot be simply assumed that the source of time a
+      target endpoint uses is synchronized or trustworthy.
 
 3.  IANA Considerations
 
@@ -440,15 +481,6 @@ Internet-Draft              SACM Terminology                   July 2015
 
    This memo documents terminology for security automation.  While it is
    about security, it does not affect security.
-
-
-
-
-
-Birkholz                 Expires January 7, 2016                [Page 8]
-
-Internet-Draft              SACM Terminology                   July 2015
-
 
 5.  Acknowledgements
 
@@ -465,6 +497,14 @@ Internet-Draft              SACM Terminology                   July 2015
 
    o  Added Vulnerability, Vulnerability Management, xposure,
       Misconfiguration, and Software flaw.
+
+
+
+
+Birkholz                 Expires January 7, 2016                [Page 9]
+
+Internet-Draft              SACM Terminology                   July 2015
+
 
    Changes from version 02 to version 03:
 
@@ -499,13 +539,6 @@ Internet-Draft              SACM Terminology                   July 2015
 
    Changes from version 06 to version 07:
 
-
-
-Birkholz                 Expires January 7, 2016                [Page 9]
-
-Internet-Draft              SACM Terminology                   July 2015
-
-
    o  Added Contributors section.
 
    o  Updated author list.
@@ -520,6 +553,14 @@ Internet-Draft              SACM Terminology                   July 2015
    o  Added Authentication, Authorization, Data Confidentiality, Data
       Integrity, Data Origin, Data Provenance, SACM Component, SACM
       Component Discovery, Target Endpoint Discovery.
+
+
+
+
+Birkholz                 Expires January 7, 2016               [Page 10]
+
+Internet-Draft              SACM Terminology                   July 2015
+
 
    o  Major updates to Building Block, Function, SACM Role, Target
       Endpoint.
@@ -554,14 +595,6 @@ Internet-Draft              SACM Terminology                   July 2015
    East Greenbush, New York  12061
    USA
 
-
-
-
-Birkholz                 Expires January 7, 2016               [Page 10]
-
-Internet-Draft              SACM Terminology                   July 2015
-
-
    Email: adam.w.montville@gmail.com
 
 
@@ -577,6 +610,14 @@ Internet-Draft              SACM Terminology                   July 2015
    Nancy Cam-Winget
    Cisco Systems
    3550 Cisco Way
+
+
+
+Birkholz                 Expires January 7, 2016               [Page 11]
+
+Internet-Draft              SACM Terminology                   July 2015
+
+
    San Jose, CA  95134
    US
    Jarrett Lu
@@ -609,15 +650,6 @@ Internet-Draft              SACM Terminology                   July 2015
 
    Email: merike@doubleshotsecurity.com
 
-
-
-
-
-Birkholz                 Expires January 7, 2016               [Page 11]
-
-Internet-Draft              SACM Terminology                   July 2015
-
-
 8.  Informative References
 
    [RFC3444]  Pras, A. and J. Schoenwaelder, "On the Difference between
@@ -633,6 +665,14 @@ Internet-Draft              SACM Terminology                   July 2015
               Tardo, "Network Endpoint Assessment (NEA): Overview and
               Requirements", RFC 5209, DOI 10.17487/RFC5209, June 2008,
               <http://www.rfc-editor.org/info/rfc5209>.
+
+
+
+
+Birkholz                 Expires January 7, 2016               [Page 12]
+
+Internet-Draft              SACM Terminology                   July 2015
+
 
 Appendix A.  The Attic
 
@@ -669,4 +709,20 @@ Author's Address
 
 
 
-Birkholz                 Expires January 7, 2016               [Page 12]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Birkholz                 Expires January 7, 2016               [Page 13]
