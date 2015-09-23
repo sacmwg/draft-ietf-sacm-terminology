@@ -164,7 +164,7 @@ Excluded Endpoint:
 
 Expected Endpoint State:
 
-: The required state of an endpoint that is to be compared against. This, for example can be a policy or a recorded past state. A state is represented via a single or an associated set of attribute value pairs.
+: The required state of an endpoint that is to be compared against. This, for example, can be a policy or a recorded past state. A state is represented via a single or an associated set of attribute value pairs.
 
 SACM Function:
 
@@ -196,7 +196,7 @@ Posture:
 
 : Defined in {{RFC5209}} as "configuration and/or status of hardware or software on an endpoint as it pertains to an organization's security policy."
 
-: This term is used within the scope of SACM to represent the configuration and state information that is collected from a target endpoint in the form of endpoint attributes (e.g. software/hardware inventory, configuration settings, dynamically assigned addresses).  This information may constitute one to many posture attributes.
+: This term is used within the scope of SACM to represent the configuration and state information that is collected from a target endpoint in the form of endpoint attributes (e.g. software/hardware inventory, configuration settings, dynamically assigned addresses).  This information may constitute one or more posture attributes.
 
 Posture Attributes:
 
@@ -228,6 +228,10 @@ SACM Component Discovery:
 
 : The function by which a SACM component (e.g. by role, capabilities, or data provided/consumed) can be discovered.
 
+SACM Domain:
+
+TBD (possible dependencies to SACM architecture)
+
 Security Automation:
 
 : The process of which security alerts can be automated through the use of different tools to monitor, evaluate and analyze endpoint and network traffic for the purposes of detecting misconfigurations, misbehaviors or threats.
@@ -250,9 +254,9 @@ Target Endpoint Discovery:
 
 : The function by which target endpoints can be discovered. The output of target endpoint discovery typically includes identifying endpoint attributes.
 
-Timestamps
+Timestamps :
 
-: Defined in {{RFC4949}} as “With respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.”.
+: Defined in {{RFC4949}} as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object" and as "with respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.".
 
 : This term is used in SACM to describe a recorded point in time at which an endpoint attribute is created or updated by a target endpoint and observed, transmitted or processed by a SACM component. Timestamps can be created by target endpoints or SACM components and are associated with endpoint attributes provided or consumed by SACM components. Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain. In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.
 
