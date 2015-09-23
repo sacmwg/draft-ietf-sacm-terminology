@@ -254,6 +254,14 @@ Target Endpoint Discovery:
 
 : The function by which target endpoints can be discovered. The output of target endpoint discovery typically includes identifying endpoint attributes.
 
+Target Endpoint Identifier:
+
+The target endpoint discovery process and collection tasks targeted at target endpoints can result in a set of identifying endpoint attributes. This set of identifying endpoint attributes is used as a target endpoint identifier referring to a specific target endpoint. Depending on the available identifying attributes this reference can be ambiguous and is a "best-effort" mechanism. Every distinct set of identifying endpoint attributes can be associated with a unique target endpoint label.
+
+Target Endpoint Label:
+
+: An artificially created id that references a distinct set of identifying attributes (Target Endpoint Identifier). A target endpoint label is unique in a SACM domain and created by a SACM component that contains an appropriate building block of functions.
+
 Timestamps :
 
 : Defined in {{RFC4949}} as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object" and as "with respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.".
