@@ -63,11 +63,11 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Terms and Definitions . . . . . . . . . . . . . . . . . . . .   2
    3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   9
-   5.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   9
-   6.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .   9
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  10
+   5.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  10
+   6.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .  10
    7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  11
-   8.  Informative References  . . . . . . . . . . . . . . . . . . .  12
+   8.  Informative References  . . . . . . . . . . . . . . . . . . .  13
    Appendix A.  The Attic  . . . . . . . . . . . . . . . . . . . . .  13
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  13
 
@@ -454,6 +454,23 @@ Internet-Draft              SACM Terminology                   July 2015
       can be discovered.  The output of target endpoint discovery
       typically includes identifying endpoint attributes.
 
+   Target Endpoint Identifier:
+
+   The target endpoint discovery process and collection tasks targeted
+   at target endpoints can result in a set of identifying endpoint
+   attributes.  This set of identifying endpoint attributes is used as a
+   target endpoint identifier referring to a specific target endpoint.
+   Depending on the available identifying attributes this reference can
+   be ambiguous and is a "best-effort" mechanism.  Every distinct set of
+   identifying endpoint attributes can be associated with a unique
+   target endpoint label.
+
+   Target Endpoint Label:  An artificially created id that references a
+      distinct set of identifying attributes (Target Endpoint
+      Identifier).  A target endpoint label is unique in a SACM domain
+      and created by a SACM component that contains an appropriate
+      building block of functions.
+
    Timestamps :  Defined in [RFC4949] as "with respect to a data object,
       a label or marking in which is recorded the time (time of day or
       other instant of elapsed time) at which the label or marking was
@@ -477,6 +494,18 @@ Internet-Draft              SACM Terminology                   July 2015
 
    This memo includes no request to IANA.
 
+
+
+
+
+
+
+
+Birkholz                 Expires January 7, 2016                [Page 9]
+
+Internet-Draft              SACM Terminology                   July 2015
+
+
 4.  Security Considerations
 
    This memo documents terminology for security automation.  While it is
@@ -497,14 +526,6 @@ Internet-Draft              SACM Terminology                   July 2015
 
    o  Added Vulnerability, Vulnerability Management, xposure,
       Misconfiguration, and Software flaw.
-
-
-
-
-Birkholz                 Expires January 7, 2016                [Page 9]
-
-Internet-Draft              SACM Terminology                   July 2015
-
 
    Changes from version 02 to version 03:
 
@@ -532,6 +553,15 @@ Internet-Draft              SACM Terminology                   July 2015
    o  Removed unused reference to use case draft; resulted in removal of
       normative references.
 
+
+
+
+
+Birkholz                 Expires January 7, 2016               [Page 10]
+
+Internet-Draft              SACM Terminology                   July 2015
+
+
    o  Removed introductory text from Section 1 indicating that this
       document is intended to be temporary.
 
@@ -553,14 +583,6 @@ Internet-Draft              SACM Terminology                   July 2015
    o  Added Authentication, Authorization, Data Confidentiality, Data
       Integrity, Data Origin, Data Provenance, SACM Component, SACM
       Component Discovery, Target Endpoint Discovery.
-
-
-
-
-Birkholz                 Expires January 7, 2016               [Page 10]
-
-Internet-Draft              SACM Terminology                   July 2015
-
 
    o  Major updates to Building Block, Function, SACM Role, Target
       Endpoint.
@@ -589,6 +611,13 @@ Internet-Draft              SACM Terminology                   July 2015
    Email: david.waltermire@nist.gov
 
 
+
+
+Birkholz                 Expires January 7, 2016               [Page 11]
+
+Internet-Draft              SACM Terminology                   July 2015
+
+
    Adam W. Montville
    Center for Internet Security
    31 Tech Valley Drive
@@ -610,14 +639,6 @@ Internet-Draft              SACM Terminology                   July 2015
    Nancy Cam-Winget
    Cisco Systems
    3550 Cisco Way
-
-
-
-Birkholz                 Expires January 7, 2016               [Page 11]
-
-Internet-Draft              SACM Terminology                   July 2015
-
-
    San Jose, CA  95134
    US
    Jarrett Lu
@@ -645,6 +666,14 @@ Internet-Draft              SACM Terminology                   July 2015
 
    Merike Kaeo
    Double Shot Security
+
+
+
+Birkholz                 Expires January 7, 2016               [Page 12]
+
+Internet-Draft              SACM Terminology                   July 2015
+
+
    3518 Fremont Avenue North, Suite 363
    Seattle, Washington  98103
 
@@ -665,14 +694,6 @@ Internet-Draft              SACM Terminology                   July 2015
               Tardo, "Network Endpoint Assessment (NEA): Overview and
               Requirements", RFC 5209, DOI 10.17487/RFC5209, June 2008,
               <http://www.rfc-editor.org/info/rfc5209>.
-
-
-
-
-Birkholz                 Expires January 7, 2016               [Page 12]
-
-Internet-Draft              SACM Terminology                   July 2015
-
 
 Appendix A.  The Attic
 
@@ -698,27 +719,6 @@ Author's Address
    Germany
 
    Email: henk.birkholz@sit.fraunhofer.de
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
