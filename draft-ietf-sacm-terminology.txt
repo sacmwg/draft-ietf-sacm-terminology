@@ -4,12 +4,12 @@
 
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
-Intended status: Informational                             July 06, 2015
-Expires: January 7, 2016
+Intended status: Informational                        September 23, 2015
+Expires: March 26, 2016
 
 
      Secure Automation and Continuous Monitoring (SACM) Terminology
-                     draft-ietf-sacm-terminology-07
+                   draft-ietf-sacm-terminology-latest
 
 Abstract
 
@@ -31,7 +31,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 7, 2016.
+   This Internet-Draft will expire on March 26, 2016.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Birkholz                 Expires January 7, 2016                [Page 1]
+Birkholz                 Expires March 26, 2016                 [Page 1]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
 Table of Contents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Birkholz                 Expires January 7, 2016                [Page 2]
+Birkholz                 Expires March 26, 2016                 [Page 2]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
    Asset Characterization:  Asset characterization is the process of
@@ -165,9 +165,9 @@ Internet-Draft              SACM Terminology                   July 2015
 
 
 
-Birkholz                 Expires January 7, 2016                [Page 3]
+Birkholz                 Expires March 26, 2016                 [Page 3]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
       Self-Reported: A SACM component located on the target endpoint
@@ -221,9 +221,9 @@ Internet-Draft              SACM Terminology                   July 2015
 
 
 
-Birkholz                 Expires January 7, 2016                [Page 4]
+Birkholz                 Expires March 26, 2016                 [Page 4]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
    Data Provenance:  A historical record of the sources, origins and
@@ -277,9 +277,9 @@ Internet-Draft              SACM Terminology                   July 2015
 
 
 
-Birkholz                 Expires January 7, 2016                [Page 5]
+Birkholz                 Expires March 26, 2016                 [Page 5]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
    SACM Function:  A behavioral aspect or capacity of a particular
@@ -333,9 +333,9 @@ Internet-Draft              SACM Terminology                   July 2015
 
 
 
-Birkholz                 Expires January 7, 2016                [Page 6]
+Birkholz                 Expires March 26, 2016                 [Page 6]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
    Posture:  Defined in [RFC5209] as "configuration and/or status of
@@ -389,9 +389,9 @@ Internet-Draft              SACM Terminology                   July 2015
 
 
 
-Birkholz                 Expires January 7, 2016                [Page 7]
+Birkholz                 Expires March 26, 2016                 [Page 7]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
    SACM Component:  A composition of building blocks that contain SACM
@@ -445,9 +445,9 @@ Internet-Draft              SACM Terminology                   July 2015
 
 
 
-Birkholz                 Expires January 7, 2016                [Page 8]
+Birkholz                 Expires March 26, 2016                 [Page 8]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
    Target Endpoint Identifier:  The target endpoint discovery process
@@ -501,9 +501,9 @@ Internet-Draft              SACM Terminology                   July 2015
 
 
 
-Birkholz                 Expires January 7, 2016                [Page 9]
+Birkholz                 Expires March 26, 2016                 [Page 9]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
 5.  Acknowledgements
@@ -557,9 +557,9 @@ Internet-Draft              SACM Terminology                   July 2015
 
 
 
-Birkholz                 Expires January 7, 2016               [Page 10]
+Birkholz                 Expires March 26, 2016                [Page 10]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
    o  Added Contributors section.
@@ -613,9 +613,9 @@ Internet-Draft              SACM Terminology                   July 2015
 
 
 
-Birkholz                 Expires January 7, 2016               [Page 11]
+Birkholz                 Expires March 26, 2016                [Page 11]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
    Email: adam.w.montville@gmail.com
@@ -669,9 +669,9 @@ Internet-Draft              SACM Terminology                   July 2015
 
 
 
-Birkholz                 Expires January 7, 2016               [Page 12]
+Birkholz                 Expires March 26, 2016                [Page 12]
 
-Internet-Draft              SACM Terminology                   July 2015
+Internet-Draft              SACM Terminology              September 2015
 
 
 8.  Informative References
@@ -725,4 +725,4 @@ Author's Address
 
 
 
-Birkholz                 Expires January 7, 2016               [Page 13]
+Birkholz                 Expires March 26, 2016                [Page 13]
