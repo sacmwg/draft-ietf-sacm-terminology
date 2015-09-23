@@ -1,8 +1,7 @@
 ---
 title: Secure Automation and Continuous Monitoring (SACM) Terminology
 abbrev: SACM Terminology
-docname: draft-ietf-sacm-terminology-07
-date: 2015-07-06
+docname: draft-ietf-sacm-terminology-latest
 stand_alone: true
 ipr: trust200902
 area: Security
