@@ -230,7 +230,7 @@ SACM Component Discovery:
 
 SACM Domain:
 
-TBD (possible dependencies to SACM architecture)
+: TBD (possible dependencies to SACM architecture)
 
 Security Automation:
 
@@ -256,7 +256,7 @@ Target Endpoint Discovery:
 
 Target Endpoint Identifier:
 
-The target endpoint discovery process and collection tasks targeted at target endpoints can result in a set of identifying endpoint attributes. This set of identifying endpoint attributes is used as a target endpoint identifier referring to a specific target endpoint. Depending on the available identifying attributes this reference can be ambiguous and is a "best-effort" mechanism. Every distinct set of identifying endpoint attributes can be associated with a unique target endpoint label.
+: The target endpoint discovery process and collection tasks targeted at target endpoints can result in a set of identifying endpoint attributes. This set of identifying endpoint attributes is used as a target endpoint identifier referring to a specific target endpoint. Depending on the available identifying attributes this reference can be ambiguous and is a "best-effort" mechanism. Every distinct set of identifying endpoint attributes can be associated with a unique target endpoint label.
 
 Target Endpoint Label:
 
