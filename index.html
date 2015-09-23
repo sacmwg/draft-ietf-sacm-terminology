@@ -646,12 +646,8 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">A composition of building blocks that contain SACM functions (acting on control plane, data plane or management plane). SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane building blocks and can contain data plane and management plane building blocks. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component &#8220;resides on&#8221; an endpoint and an endpoint &#8220;contains&#8221; a SACM component, correspondingly. For example, a SACM component that is composed solely of building blocks that provide information is a provider.</dd>
   <dt>SACM Component Discovery:</dt>
   <dd style="margin-left: 8">The function by which a SACM component (e.g. by role, capabilities, or data provided/consumed) can be discovered.</dd>
-</dl>
-<p id="rfc.section.2.p.3">SACM Domain:</p>
-<p id="rfc.section.2.p.4">TBD (possible dependencies to SACM architecture)</p>
-<p/>
-
-<dl>
+  <dt>SACM Domain:</dt>
+  <dd style="margin-left: 8">TBD (possible dependencies to SACM architecture)</dd>
   <dt>Security Automation:</dt>
   <dd style="margin-left: 8">The process of which security alerts can be automated through the use of different tools to monitor, evaluate and analyze endpoint and network traffic for the purposes of detecting misconfigurations, misbehaviors or threats.</dd>
   <dt>Supplicant:</dt>
@@ -664,12 +660,8 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria.</dd>
   <dt>Target Endpoint Discovery:</dt>
   <dd style="margin-left: 8">The function by which target endpoints can be discovered. The output of target endpoint discovery typically includes identifying endpoint attributes.</dd>
-</dl>
-<p id="rfc.section.2.p.6">Target Endpoint Identifier:</p>
-<p id="rfc.section.2.p.7">The target endpoint discovery process and collection tasks targeted at target endpoints can result in a set of identifying endpoint attributes. This set of identifying endpoint attributes is used as a target endpoint identifier referring to a specific target endpoint. Depending on the available identifying attributes this reference can be ambiguous and is a &#8220;best-effort&#8221; mechanism. Every distinct set of identifying endpoint attributes can be associated with a unique target endpoint label.</p>
-<p/>
-
-<dl>
+  <dt>Target Endpoint Identifier:</dt>
+  <dd style="margin-left: 8">The target endpoint discovery process and collection tasks targeted at target endpoints can result in a set of identifying endpoint attributes. This set of identifying endpoint attributes is used as a target endpoint identifier referring to a specific target endpoint. Depending on the available identifying attributes this reference can be ambiguous and is a &#8220;best-effort&#8221; mechanism. Every distinct set of identifying endpoint attributes can be associated with a unique target endpoint label.</dd>
   <dt>Target Endpoint Label:</dt>
   <dd style="margin-left: 8">An artificially created id that references a distinct set of identifying attributes (Target Endpoint Identifier). A target endpoint label is unique in a SACM domain and created by a SACM component that contains an appropriate building block of functions.</dd>
   <dt>Timestamps :</dt>
