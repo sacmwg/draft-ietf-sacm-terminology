@@ -59,7 +59,7 @@ Assessment:
 
 Asset:
 
-: Defined in {{RFC4949}} as "a system resource that is (a) required to be protected by an information system's security policy, (b) intended to be protected by a countermeasure, or (c) required for a system's mission. In the scope of SACM, an asset can be composed of other assets. Examples of Assets include: Endpoints, Guidance, or X.509 public key certificates.
+: Defined in {{RFC4949}} as "a system resource that is (a) required to be protected by an information system's security policy, (b) intended to be protected by a countermeasure, or (c) required for a system's mission". In the scope of SACM, an asset can be composed of other assets. Examples of Assets include: Endpoints, Guidance, or X.509 public key certificates. An asset is not necessarily owned by an organization.
 
 Asset Characterization:
 
@@ -99,7 +99,7 @@ Collection Task:
 
 : Self-Reported: A SACM component located on the target endpoint itself conducts the collection task.
 
-: Collected: A SACM component located on an Endpoint different from the target endpoint conducts the collection task via interfaces available on the target endpoint, e.g. SNMP/NETCONF or WMI.
+: Remote: A SACM component located on an Endpoint different from the target endpoint conducts the collection task via interfaces available on the target endpoint, e.g. SNMP/NETCONF or WMI.
 
 : Observed: A SACM component located on an Endpoint different from the target endpoint observes network traffic related to the target endpoint and conducts the collection task via interpretation of that network traffic.
 
