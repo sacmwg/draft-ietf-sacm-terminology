@@ -4,8 +4,8 @@
 
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
-Intended status: Informational                        September 23, 2015
-Expires: March 26, 2016
+Intended status: Informational                        September 24, 2015
+Expires: March 27, 2016
 
 
      Secure Automation and Continuous Monitoring (SACM) Terminology
@@ -31,7 +31,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 26, 2016.
+   This Internet-Draft will expire on March 27, 2016.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Birkholz                 Expires March 26, 2016                 [Page 1]
+Birkholz                 Expires March 27, 2016                 [Page 1]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Birkholz                 Expires March 26, 2016                 [Page 2]
+Birkholz                 Expires March 27, 2016                 [Page 2]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -165,7 +165,7 @@ Internet-Draft              SACM Terminology              September 2015
 
 
 
-Birkholz                 Expires March 26, 2016                 [Page 3]
+Birkholz                 Expires March 27, 2016                 [Page 3]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -221,7 +221,7 @@ Internet-Draft              SACM Terminology              September 2015
 
 
 
-Birkholz                 Expires March 26, 2016                 [Page 4]
+Birkholz                 Expires March 27, 2016                 [Page 4]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -277,7 +277,7 @@ Internet-Draft              SACM Terminology              September 2015
 
 
 
-Birkholz                 Expires March 26, 2016                 [Page 5]
+Birkholz                 Expires March 27, 2016                 [Page 5]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -333,7 +333,7 @@ Internet-Draft              SACM Terminology              September 2015
 
 
 
-Birkholz                 Expires March 26, 2016                 [Page 6]
+Birkholz                 Expires March 27, 2016                 [Page 6]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -389,7 +389,7 @@ Internet-Draft              SACM Terminology              September 2015
 
 
 
-Birkholz                 Expires March 26, 2016                 [Page 7]
+Birkholz                 Expires March 27, 2016                 [Page 7]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -445,7 +445,7 @@ Internet-Draft              SACM Terminology              September 2015
 
 
 
-Birkholz                 Expires March 26, 2016                 [Page 8]
+Birkholz                 Expires March 27, 2016                 [Page 8]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -501,7 +501,7 @@ Internet-Draft              SACM Terminology              September 2015
 
 
 
-Birkholz                 Expires March 26, 2016                 [Page 9]
+Birkholz                 Expires March 27, 2016                 [Page 9]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -557,7 +557,7 @@ Internet-Draft              SACM Terminology              September 2015
 
 
 
-Birkholz                 Expires March 26, 2016                [Page 10]
+Birkholz                 Expires March 27, 2016                [Page 10]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -598,7 +598,7 @@ Internet-Draft              SACM Terminology              September 2015
    David Waltermire
    National Institute of Standards and Technology
    100 Bureau Drive
-   Gaithersburg, Maryland  20877
+   Gaithersburg, MD  20877
    USA
 
    Email: david.waltermire@nist.gov
@@ -607,13 +607,13 @@ Internet-Draft              SACM Terminology              September 2015
    Adam W. Montville
    Center for Internet Security
    31 Tech Valley Drive
-   East Greenbush, New York  12061
+   East Greenbush, NY  12061
    USA
 
 
 
 
-Birkholz                 Expires March 26, 2016                [Page 11]
+Birkholz                 Expires March 27, 2016                [Page 11]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -634,18 +634,16 @@ Internet-Draft              SACM Terminology              September 2015
    Cisco Systems
    3550 Cisco Way
    San Jose, CA  95134
-   US
-   Jarrett Lu
-   Oracle Corporation
-   4180 Network Circle
-   Santa Clara, California  95054
+   USA
 
-   Email: jarrett.lu@oracle.com
+   Email: ncamwing@cisco.com
+
 
    Jarrett Lu
    Oracle Corporation
    4180 Network Circle
-   Santa Clara, California  95054
+   Santa Clara, CA  95054
+   USA
 
    Email: jarrett.lu@oracle.com
 
@@ -653,7 +651,8 @@ Internet-Draft              SACM Terminology              September 2015
    Brian Ford
    Lancope
    3650 Brookside Parkway, Suite 500
-   Alpharetta, Georgia  30022
+   Alpharetta, GA  30022
+   USA
 
    Email: bford@lancope.com
 
@@ -661,7 +660,8 @@ Internet-Draft              SACM Terminology              September 2015
    Merike Kaeo
    Double Shot Security
    3518 Fremont Avenue North, Suite 363
-   Seattle, Washington  98103
+   Seattle, WA  98103
+   USA
 
    Email: merike@doubleshotsecurity.com
 
@@ -669,7 +669,7 @@ Internet-Draft              SACM Terminology              September 2015
 
 
 
-Birkholz                 Expires March 26, 2016                [Page 12]
+Birkholz                 Expires March 27, 2016                [Page 12]
 
 Internet-Draft              SACM Terminology              September 2015
 
@@ -725,4 +725,4 @@ Author's Address
 
 
 
-Birkholz                 Expires March 26, 2016                [Page 13]
+Birkholz                 Expires March 27, 2016                [Page 13]
