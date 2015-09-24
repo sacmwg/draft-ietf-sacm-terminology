@@ -351,7 +351,7 @@ Changes from version 06 to version 07:
     David Waltermire
     National Institute of Standards and Technology
     100 Bureau Drive
-    Gaithersburg, Maryland  20877
+    Gaithersburg, MD  20877
     USA
 
     Email: david.waltermire@nist.gov
@@ -360,7 +360,7 @@ Changes from version 06 to version 07:
     Adam W. Montville
     Center for Internet Security
     31 Tech Valley Drive
-    East Greenbush, New York  12061
+    East Greenbush, NY  12061
     USA
 
     Email: adam.w.montville@gmail.com
@@ -379,18 +379,16 @@ Changes from version 06 to version 07:
     Cisco Systems
     3550 Cisco Way
     San Jose, CA  95134
-    US
-    Jarrett Lu
-    Oracle Corporation
-    4180 Network Circle
-    Santa Clara, California  95054
+    USA
 
-    Email: jarrett.lu@oracle.com
+    Email: ncamwing@cisco.com
+
 
     Jarrett Lu
     Oracle Corporation
     4180 Network Circle
-    Santa Clara, California  95054
+    Santa Clara, CA  95054
+    USA
 
     Email: jarrett.lu@oracle.com
 
@@ -398,7 +396,8 @@ Changes from version 06 to version 07:
     Brian Ford
     Lancope
     3650 Brookside Parkway, Suite 500
-    Alpharetta, Georgia  30022
+    Alpharetta, GA  30022
+    USA
 
     Email: bford@lancope.com
 
@@ -406,7 +405,8 @@ Changes from version 06 to version 07:
     Merike Kaeo
     Double Shot Security
     3518 Fremont Avenue North, Suite 363
-    Seattle, Washington  98103
+    Seattle, WA  98103
+    USA
 
     Email: merike@doubleshotsecurity.com
 
