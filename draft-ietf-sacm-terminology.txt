@@ -4,8 +4,8 @@
 
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
-Intended status: Informational                        September 24, 2015
-Expires: March 27, 2016
+Intended status: Informational                          October 13, 2015
+Expires: April 15, 2016
 
 
      Secure Automation and Continuous Monitoring (SACM) Terminology
@@ -31,7 +31,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 27, 2016.
+   This Internet-Draft will expire on April 15, 2016.
 
 Copyright Notice
 
@@ -53,23 +53,23 @@ Copyright Notice
 
 
 
-Birkholz                 Expires March 27, 2016                 [Page 1]
+Birkholz                 Expires April 15, 2016                 [Page 1]
 
-Internet-Draft              SACM Terminology              September 2015
+Internet-Draft              SACM Terminology                October 2015
 
 
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Terms and Definitions . . . . . . . . . . . . . . . . . . . .   2
-   3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   9
+   3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  10
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  10
    5.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  10
    6.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .  10
-   7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  11
-   8.  Informative References  . . . . . . . . . . . . . . . . . . .  13
-   Appendix A.  The Attic  . . . . . . . . . . . . . . . . . . . . .  13
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  13
+   7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  12
+   8.  Informative References  . . . . . . . . . . . . . . . . . . .  14
+   Appendix A.  The Attic  . . . . . . . . . . . . . . . . . . . . .  14
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  14
 
 1.  Introduction
 
@@ -86,6 +86,13 @@ Table of Contents
    and where appropriate will be annotated with the specific context by
    which the term is used in SACM.
 
+   Assertion:  Defined by the ITU in [X.1252] as "a statement made by an
+      entity without accompanying evidence of its validity".  In the
+      context of SACM, an assertion is a collection result that includes
+      metadata about the data source (and optionally a timestamp
+      indicating the point in time the assertion was created at).  The
+      validity of an assertion cannot be verified.
+
    Assessment:  Defined in [RFC5209] as "the process of collecting
       posture for a set of capabilities on the endpoint (e.g., host-
       based firewall) such that the appropriate validators may evaluate
@@ -99,20 +106,19 @@ Table of Contents
 
    Asset:  Defined in [RFC4949] as "a system resource that is (a)
       required to be protected by an information system's security
+
+
+
+Birkholz                 Expires April 15, 2016                 [Page 2]
+
+Internet-Draft              SACM Terminology                October 2015
+
+
       policy, (b) intended to be protected by a countermeasure, or (c)
       required for a system's mission".  In the scope of SACM, an asset
       can be composed of other assets.  Examples of Assets include:
-      Endpoints, Guidance, or X.509 public key certificates.  An asset
-      is not necessarily owned by an organization.
-
-
-
-
-
-Birkholz                 Expires March 27, 2016                 [Page 2]
-
-Internet-Draft              SACM Terminology              September 2015
-
+      Endpoints, Software, Guidance, or X.509 public key certificates.
+      An asset is not necessarily owned by an organization.
 
    Asset Characterization:  Asset characterization is the process of
       defining attributes that describe properties of an identified
@@ -155,20 +161,24 @@ Internet-Draft              SACM Terminology              September 2015
       example, the capability of a SACM Provider may be to provide
       endpoint management data, or only a subset of that data.
 
+
+
+
+
+Birkholz                 Expires April 15, 2016                 [Page 3]
+
+Internet-Draft              SACM Terminology                October 2015
+
+
+   Collection Result:  Information about a target endpoint that is
+      produced by a collector conducting a collection task.  A
+      collection result is composed of one or more endpoint attributes.
+
    Collection Task:  The task by which endpoint attributes and/or
       corresponding attribute values about a target endpoint are
       collected.  There are three types of collection tasks, each
       requiring an appropriate set of functions to be included in the
       SACM component conducting the collection task:
-
-
-
-
-
-Birkholz                 Expires March 27, 2016                 [Page 3]
-
-Internet-Draft              SACM Terminology              September 2015
-
 
       Self-Reported: A SACM component located on the target endpoint
       itself conducts the collection task.
@@ -181,6 +191,14 @@ Internet-Draft              SACM Terminology              September 2015
       the target endpoint observes network traffic related to the target
       endpoint and conducts the collection task via interpretation of
       that network traffic.
+
+   Collector:  A piece of software that acquires information about one
+      or more target endpoints by conducting collection tasks.  A
+      collector provides acquired information to SACM components in the
+      form of collection results.  A SACM component that consumes
+      collection results may take on the role of a provider and publish
+      the collection results in a SACM domain.  (TBD: A collector may
+      not be a SACM component and therefore not part of a SACM domain).
 
    Consumer:  A consumer is a SACM role that is assigned to a SACM
       component that contains functions to receive information from
@@ -199,6 +217,15 @@ Internet-Draft              SACM Terminology              September 2015
       Repository.  Depending on its type, a controller can also contain
       functions that have interfaces on the data plane.
 
+
+
+
+
+Birkholz                 Expires April 15, 2016                 [Page 4]
+
+Internet-Draft              SACM Terminology                October 2015
+
+
    Data Confidentiality:  Defined in [RFC4949] as "the property that
       data is not disclosed to system entities unless they have been
       authorized to know the data."
@@ -215,16 +242,6 @@ Internet-Draft              SACM Terminology              September 2015
       identify the SACM component that initially acquired or produced
       data about a (target) endpoint (e.g. via collection from a data
       source).
-
-
-
-
-
-
-Birkholz                 Expires March 27, 2016                 [Page 4]
-
-Internet-Draft              SACM Terminology              September 2015
-
 
    Data Provenance:  A historical record of the sources, origins and
       evolution of data that is influenced by inputs, entities,
@@ -258,29 +275,29 @@ Internet-Draft              SACM Terminology              September 2015
    Evaluation Task:  The task by which endpoint attributes are
       evaluated.
 
+
+
+Birkholz                 Expires April 15, 2016                 [Page 5]
+
+Internet-Draft              SACM Terminology                October 2015
+
+
    Evaluation Result:  The resulting value from having evaluated a set
       of posture attributes.
 
-   Excluded Endpoint:  An excluded endpoint is a SACM role that is
-      assigned to an Endpoint that is not supposed to be the subject of
-      a collection task (and therefore is not a target endpoint).
-      Typically but not necessarily, SACM components are associated with
-      this role.  The prominent exception are internal SACM components
-      that reside directly on the target endpoints.
+   Excluded Endpoint:  A specific designation, which is assigned to an
+      endpoint that is not supposed to be the subject of a collection
+      task (and therefore is not a target endpoint).  Typically but not
+      necessarily, endpoints that contain a SACM component (and are
+      therefore part of the SACM domain) are designated as excluded
+      endpoints.  Target endpoints that contain a SACM component cannot
+      be designated as excluded endpoints and are part of the SACM
+      domain.
 
    Expected Endpoint State:  The required state of an endpoint that is
       to be compared against.  This, for example, can be a policy or a
       recorded past state.  A state is represented via a single or an
       associated set of attribute value pairs.
-
-
-
-
-
-Birkholz                 Expires March 27, 2016                 [Page 5]
-
-Internet-Draft              SACM Terminology              September 2015
-
 
    SACM Function:  A behavioral aspect or capacity of a particular
       building block that is part of a SACM component, which belies that
@@ -299,6 +316,11 @@ Internet-Draft              SACM Terminology              September 2015
       an information model as being protocol and implementation neutral
       whereas a data model would provide such details.
 
+   Internal Collector:  Internal Collector: a collector that runs on a
+      target endpoint to acquire information from that target endpoint.
+      (TBD: An internal collector is not a SACM component and therefore
+      not part of a SACM domain).
+
    Management Plane:  An architectural component providing common
       functions to all SACM participants, including [TBD].
 
@@ -308,6 +330,13 @@ Internet-Draft              SACM Terminology              September 2015
       that layer.  There is no guarantee that an address is globally
       unique.  In general, there is a scope to an address in which it is
       intended to be unique.
+
+
+
+Birkholz                 Expires April 15, 2016                 [Page 6]
+
+Internet-Draft              SACM Terminology                October 2015
+
 
       Examples include: physical Ethernet port with a MAC address, layer
       2 VLAN interface with a MAC address, layer 3 interface with
@@ -329,15 +358,6 @@ Internet-Draft              SACM Terminology              September 2015
       Examples include: physical Ethernet port, layer 2 VLAN interface,
       a MC-LAG setup, layer 3 Point-to-Point tunnel ingress or egress.
 
-
-
-
-
-Birkholz                 Expires March 27, 2016                 [Page 6]
-
-Internet-Draft              SACM Terminology              September 2015
-
-
    Posture:  Defined in [RFC5209] as "configuration and/or status of
       hardware or software on an endpoint as it pertains to an
       organization's security policy."
@@ -357,12 +377,22 @@ Internet-Draft              SACM Terminology              September 2015
 
       Within this document this term represents a specific assertion
       about endpoint configuration or state (e.g. configuration setting,
-      installed software, hardware).  The phrase "features of the
-      endpoint" refers to installed software or software components.
+      installed software, hardware) represented via endpoint attributes.
+      The phrase "features of the endpoint" highlighted above refers to
+      installed software or software components.
 
    Provider:  A provider is a SACM role that is assigned to a SACM
       component that contains functions to provide information to other
       SACM components.
+
+
+
+
+
+Birkholz                 Expires April 15, 2016                 [Page 7]
+
+Internet-Draft              SACM Terminology                October 2015
+
 
    Proxy:  A proxy is a specific controller type that provides data
       plane and control plane functions, information, or services on
@@ -379,20 +409,10 @@ Internet-Draft              SACM Terminology              September 2015
 
    SACM Role:  SACM roles are associated with SACM components and are
       defined by the set of functions and interfaces a SACM component
-      includes.  There are five SACM roles: provider, consumer,
-      controller, target endpoint and its complement excluded endpoint.
-      The roles associated with a SACM component are determined by the
-      purpose of the functions and corresponding interfaces the SACM
-      component is composed of.  If a particular endpoint does not
-      contain any SACM components it takes on the role of a target
-      endpoint unless it is associated with the excluded entpoint role.
-
-
-
-Birkholz                 Expires March 27, 2016                 [Page 7]
-
-Internet-Draft              SACM Terminology              September 2015
-
+      includes.  There are three SACM roles: provider, consumer, and
+      controller.  The roles associated with a SACM component are
+      determined by the purpose of the functions and corresponding
+      interfaces the SACM component is composed of.
 
    SACM Component:  A composition of building blocks that contain SACM
       functions (acting on control plane, data plane or management
@@ -411,12 +431,28 @@ Internet-Draft              SACM Terminology              September 2015
       (e.g. by role, capabilities, or data provided/consumed) can be
       discovered.
 
-   SACM Domain:  TBD (possible dependencies to SACM architecture)
+   SACM Domain:  Endpoints that include a SACM component compose a SACM
+      domain.  (To be revised, additional definition content TBD,
+      possible dependencies to SACM architecture)
 
    Security Automation:  The process of which security alerts can be
       automated through the use of different tools to monitor, evaluate
       and analyze endpoint and network traffic for the purposes of
       detecting misconfigurations, misbehaviors or threats.
+
+   Statement:  The output of a provider, e.g. a report or an assertion
+      acquired via a collection result from a collector, that includes
+
+
+
+Birkholz                 Expires April 15, 2016                 [Page 8]
+
+Internet-Draft              SACM Terminology                October 2015
+
+
+      metadata about the data origin and the point in time the statement
+      was created at.  A statement can be accompanied by evidence of the
+      validity of its metadata.
 
    Supplicant:  The entity seeking to be authenticated by the Management
       Plane for the purpose of participating in the SACM architecture.
@@ -428,13 +464,13 @@ Internet-Draft              SACM Terminology              September 2015
       or documentation); or a facility that houses system operations and
       equipment.
 
-   Target Endpoint:  A target endpoint is a specific SACM Role.  A
-      target endpoint is an "endpoint under assessment" (even if it is
-      not actively under assessment at all times) or an "endpoint of
-      interest".  An endpoint that takes on the target endpoint role
-      either contains no SACM component or contains an internal SACM
-      component.  If an endpoint takes on both the role of target
-      endpoint and excluded endpoint it is not a target endpoint.
+   Target Endpoint:  A target endpoint is an "endpoint under assessment"
+      (even if it is not actively under assessment at all times) or
+      "endpoint of interest".  Every endpoint that is not specifically
+      designated as an excluded endpoint is a target endpoint.  A target
+      endpoint is not part of a SACM domain unless it contains a SACM
+      component (e.g. a SACM component that publishes collection results
+      coming from an internal collector).
 
       A target endpoint is similar to a device that is a Target of
       Evaluation (TOE) as defined in Common Criteria.
@@ -442,13 +478,6 @@ Internet-Draft              SACM Terminology              September 2015
    Target Endpoint Discovery:  The function by which target endpoints
       can be discovered.  The output of target endpoint discovery
       typically includes identifying endpoint attributes.
-
-
-
-Birkholz                 Expires March 27, 2016                 [Page 8]
-
-Internet-Draft              SACM Terminology              September 2015
-
 
    Target Endpoint Identifier:  The target endpoint discovery process
       and collection tasks targeted at target endpoints can result in a
@@ -469,6 +498,14 @@ Internet-Draft              SACM Terminology              September 2015
    Timestamps :  Defined in [RFC4949] as "with respect to a data object,
       a label or marking in which is recorded the time (time of day or
       other instant of elapsed time) at which the label or marking was
+
+
+
+Birkholz                 Expires April 15, 2016                 [Page 9]
+
+Internet-Draft              SACM Terminology                October 2015
+
+
       affixed to the data object" and as "with respect to a recorded
       network event, a data field in which is recorded the time (time of
       day or other instant of elapsed time) at which the event took
@@ -494,18 +531,6 @@ Internet-Draft              SACM Terminology              September 2015
    This memo documents terminology for security automation.  While it is
    about security, it does not affect security.
 
-
-
-
-
-
-
-
-Birkholz                 Expires March 27, 2016                 [Page 9]
-
-Internet-Draft              SACM Terminology              September 2015
-
-
 5.  Acknowledgements
 
 6.  Change Log
@@ -528,6 +553,14 @@ Internet-Draft              SACM Terminology              September 2015
       into 2 sections (predefined and newly defined terms).  Added some
       of the relevant terms per the proposed list discussed in the IETF
       89 meeting.
+
+
+
+
+Birkholz                 Expires April 15, 2016                [Page 10]
+
+Internet-Draft              SACM Terminology                October 2015
+
 
    Changes from version 03 to version 04:
 
@@ -555,13 +588,6 @@ Internet-Draft              SACM Terminology              September 2015
 
    Changes from version 06 to version 07:
 
-
-
-Birkholz                 Expires March 27, 2016                [Page 10]
-
-Internet-Draft              SACM Terminology              September 2015
-
-
    o  Added Contributors section.
 
    o  Updated author list.
@@ -583,6 +609,15 @@ Internet-Draft              SACM Terminology              September 2015
    o  Minor updates to Broker, Capability, Collection Task, Evaluation
       Task, Posture.
 
+
+
+
+
+Birkholz                 Expires April 15, 2016                [Page 11]
+
+Internet-Draft              SACM Terminology                October 2015
+
+
    o  Relabled Role to SACM Role, Endpoint Target to Target Endpoint,
       Endpoint Discovery to Endpoint Identification.
 
@@ -592,6 +627,25 @@ Internet-Draft              SACM Terminology              September 2015
    o  Endpoint Attributes added as a TODO.
 
    o  Changed the structure of the Change Log.
+
+   Changes from version 07 to version 08:
+
+   o  Added Assertion, Collection Result, Collector, Excluded Endpoint,
+      Internal Collector, Network Address, Network Interface, SACM
+      Domain, Statement, Target Endpoint Identifier, Target Endpoint
+      Label, Timestamp.
+
+   o  Major updates to Attributes, Broker, Collection Task, Consumer,
+      Controller, Control Plane, Endpoint Attributes, Expected Endpoint
+      State, SACM Function, Provider, Proxy, Repository, SACM Role,
+      Target Endpoint.
+
+   o  Minor updates to Asset, Building Block, Data Origin, Data Source,
+      Data Provenance, Endpoint, Management Plane, Posture, Posture
+      Attribute, SACM Component, SACM Component Discovery, Target
+      Endpoint Discovery.
+
+   o  Relabled Function to SACM Function.
 
 7.  Contributors
 
@@ -610,15 +664,14 @@ Internet-Draft              SACM Terminology              September 2015
    East Greenbush, NY  12061
    USA
 
-
-
-
-Birkholz                 Expires March 27, 2016                [Page 11]
-
-Internet-Draft              SACM Terminology              September 2015
-
-
    Email: adam.w.montville@gmail.com
+
+
+
+
+Birkholz                 Expires April 15, 2016                [Page 12]
+
+Internet-Draft              SACM Terminology                October 2015
 
 
    David Harrington
@@ -669,9 +722,12 @@ Internet-Draft              SACM Terminology              September 2015
 
 
 
-Birkholz                 Expires March 27, 2016                [Page 12]
+
+
+
+Birkholz                 Expires April 15, 2016                [Page 13]
 
-Internet-Draft              SACM Terminology              September 2015
+Internet-Draft              SACM Terminology                October 2015
 
 
 8.  Informative References
@@ -689,6 +745,8 @@ Internet-Draft              SACM Terminology              September 2015
               Tardo, "Network Endpoint Assessment (NEA): Overview and
               Requirements", RFC 5209, DOI 10.17487/RFC5209, June 2008,
               <http://www.rfc-editor.org/info/rfc5209>.
+
+   [X.1252]   "ITU-T X.1252 (04/2010)", n.d..
 
 Appendix A.  The Attic
 
@@ -723,6 +781,4 @@ Author's Address
 
 
 
-
-
-Birkholz                 Expires March 27, 2016                [Page 13]
+Birkholz                 Expires April 15, 2016                [Page 14]
