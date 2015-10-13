@@ -31,6 +31,8 @@ informative:
   RFC3444:
   RFC4949:
   RFC5209:
+  X.1252:
+    title: "ITU-T X.1252 (04/2010)"
 
 
 
@@ -51,6 +53,10 @@ Our goal with this document is to improve our agreement on the terminology used 
 
 This section describes terms that have been defined by other RFC's and defines new ones.  The predefined terms will reference the RFC and where appropriate will be annotated with the specific context by which the term is used in SACM.
 
+Assertion:
+
+: Defined by the ITU in {{X.1252}} as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is a collection result that includes metadata about the data source (and optionally a timestamp indicating the point in time the assertion was created at). The validity of an assertion cannot be verified.
+
 Assessment:
 
 : Defined in {{RFC5209}} as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."
@@ -59,7 +65,7 @@ Assessment:
 
 Asset:
 
-: Defined in {{RFC4949}} as "a system resource that is (a) required to be protected by an information system's security policy, (b) intended to be protected by a countermeasure, or (c) required for a system's mission". In the scope of SACM, an asset can be composed of other assets. Examples of Assets include: Endpoints, Guidance, or X.509 public key certificates. An asset is not necessarily owned by an organization.
+: Defined in {{RFC4949}} as "a system resource that is (a) required to be protected by an information system's security policy, (b) intended to be protected by a countermeasure, or (c) required for a system's mission". In the scope of SACM, an asset can be composed of other assets. Examples of Assets include: Endpoints, Software, Guidance, or X.509 public key certificates. An asset is not necessarily owned by an organization.
 
 Asset Characterization:
 
@@ -93,6 +99,10 @@ Capability:
 
 : The extent of an SACM component's ability enabled by the functions (bundled into building blocks) it is composed of.  Capabilities are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.
 
+Collection Result:
+
+: Information about a target endpoint that is produced by a collector conducting a collection task. A collection result is composed of one or more endpoint attributes.
+
 Collection Task:
 
 : The task by which endpoint attributes and/or corresponding attribute values about a target endpoint are collected. There are three types of collection tasks, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:
@@ -102,6 +112,16 @@ Collection Task:
 : Remote: A SACM component located on an Endpoint different from the target endpoint conducts the collection task via interfaces available on the target endpoint, e.g. SNMP/NETCONF or WMI.
 
 : Observed: A SACM component located on an Endpoint different from the target endpoint observes network traffic related to the target endpoint and conducts the collection task via interpretation of that network traffic.
+
+Collector:
+
+: A piece of software that acquires information about one or
+more target endpoints by conducting collection tasks. A collector
+provides acquired information to SACM components in the form of collection
+results. A SACM component that consumes collection results may take on the
+role of a provider and publish the collection results in a SACM domain.
+(TBD: A collector may not be a SACM component and therefore not part of
+a SACM domain).
 
 Consumer:
 
@@ -159,7 +179,7 @@ Evaluation Result:
 
 Excluded Endpoint:
 
-: An excluded endpoint is a SACM role that is assigned to an Endpoint that is not supposed to be the subject of a collection task (and therefore is not a target endpoint). Typically but not necessarily, SACM components are associated with this role. The prominent exception are internal SACM components that reside directly on the target endpoints.
+: A specific designation, which is assigned to an endpoint that is not supposed to be the subject of a collection task (and therefore is not a target endpoint). Typically but not necessarily, endpoints that contain a SACM component (and are therefore part of the SACM domain) are designated as excluded endpoints. Target endpoints that contain a SACM component cannot be designated as excluded endpoints and are part of the SACM domain.
 
 Expected Endpoint State:
 
@@ -172,6 +192,10 @@ SACM Function:
 Information Model:
 
 : An information model is an abstract representation of data, their properties, relationships between data and the operations that can be performed on the data.  While there is some overlap with a data model, {{RFC3444}} distinguishes an information model as being protocol and implementation neutral whereas a data model would provide such details.
+
+Internal Collector:
+
+: Internal Collector: a collector that runs on a target endpoint to acquire information from that target endpoint. (TBD: An internal collector is not a SACM component and therefore not part of a SACM domain).
 
 Management Plane:
 
@@ -201,7 +225,7 @@ Posture Attributes:
 
 : Defined in {{RFC5209}} as "attributes describing the configuration or status (posture) of a feature of the endpoint.  A Posture Attribute represents a single property of an observed state.  For example, a Posture Attribute might describe the version of the operating system installed on the system."
 
-: Within this document this term represents a specific assertion about endpoint configuration or state (e.g. configuration setting, installed software, hardware).  The phrase "features of the endpoint" refers to installed software or software components.
+: Within this document this term represents a specific assertion about endpoint configuration or state (e.g. configuration setting, installed software, hardware) represented via endpoint attributes.  The phrase "features of the endpoint" highlighted above refers to installed software or software components.
 
 Provider:
 
@@ -217,7 +241,7 @@ Repository:
 
 SACM Role:
 
-: SACM roles are associated with SACM components and are defined by the set of functions and interfaces a SACM component includes. There are five SACM roles: provider, consumer, controller, target endpoint and its complement excluded endpoint. The roles associated with a SACM component are determined by the purpose of the functions and corresponding interfaces the SACM component is composed of. If a particular endpoint does not contain any SACM components it takes on the role of a target endpoint unless it is associated with the excluded entpoint role.
+: SACM roles are associated with SACM components and are defined by the set of functions and interfaces a SACM component includes. There are three SACM roles: provider, consumer, and controller. The roles associated with a SACM component are determined by the purpose of the functions and corresponding interfaces the SACM component is composed of.
 
 SACM Component:
 
@@ -229,11 +253,15 @@ SACM Component Discovery:
 
 SACM Domain:
 
-: TBD (possible dependencies to SACM architecture)
+: Endpoints that include a SACM component compose a SACM domain. (To be revised, additional definition content TBD, possible dependencies to SACM architecture)
 
 Security Automation:
 
 : The process of which security alerts can be automated through the use of different tools to monitor, evaluate and analyze endpoint and network traffic for the purposes of detecting misconfigurations, misbehaviors or threats.
+
+Statement: 
+
+: The output of a provider, e.g. a report or an assertion acquired via a collection result from a collector, that includes metadata about the data origin and the point in time the statement was created at. A statement can be accompanied by evidence of the validity of its metadata.
 
 Supplicant:
 
@@ -245,7 +273,7 @@ System Resource:
 
 Target Endpoint:
 
-: A target endpoint is a specific SACM Role. A target endpoint is an "endpoint under assessment" (even if it is not actively under assessment at all times) or an "endpoint of interest". An endpoint that takes on the target endpoint role either contains no SACM component or contains an internal SACM component. If an endpoint takes on both the role of target endpoint and excluded endpoint it is not a target endpoint.
+: A target endpoint is an "endpoint under assessment" (even if it is not actively under assessment at all times) or "endpoint of interest". Every endpoint that is not specifically designated as an excluded endpoint is a target endpoint. A target endpoint is not part of a SACM domain unless it contains a SACM component (e.g. a SACM component that publishes collection results coming from an internal collector).
 
 : A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria.
 
@@ -345,6 +373,18 @@ Changes from version 06 to version 07:
 * Endpoint Attributes added as a TODO.
 
 * Changed the structure of the Change Log.
+
+
+Changes from version 07 to version 08:
+
+* Added Assertion, Collection Result, Collector, Excluded Endpoint, Internal Collector, Network Address, Network Interface, SACM Domain, Statement, Target Endpoint Identifier, Target Endpoint Label, Timestamp.
+
+* Major updates to Attributes, Broker, Collection Task, Consumer, Controller, Control Plane, Endpoint Attributes, Expected Endpoint State, SACM Function, Provider, Proxy, Repository, SACM Role, Target Endpoint. 
+
+* Minor updates to Asset, Building Block, Data Origin, Data Source, Data Provenance, Endpoint, Management Plane, Posture, Posture Attribute, SACM Component, SACM Component Discovery, Target Endpoint Discovery.
+
+* Relabled Function to SACM Function.
+
 
 # Contributors
 
