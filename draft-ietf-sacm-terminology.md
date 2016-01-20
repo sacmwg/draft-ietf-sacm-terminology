@@ -31,6 +31,7 @@ informative:
   RFC3444:
   RFC4949:
   RFC5209:
+  RFC6192:
   X.1252:
     title: "ITU-T X.1252 (04/2010)"
 
@@ -129,7 +130,7 @@ Consumer:
 
 Control Plane:
 
-: Typically used as a term in the context of routing, {{RFC 6192}} states, the control plane "is generally described as the router architecture hardware and software components for handling packets destined to the device itself as well as building and sending packets originated locally on the device." and "control plane hardware \[is\] sitting on top of, and \[is\] interfacing with, the forwarding plane hardware with interfaces connecting to other network devices."
+: Typically used as a term in the context of routing, {{RFC6192}} states, the control plane "is generally described as the router architecture hardware and software components for handling packets destined to the device itself as well as building and sending packets originated locally on the device." and "control plane hardware \[is\] sitting on top of, and \[is\] interfacing with, the forwarding plane hardware with interfaces connecting to other network devices."
 
 : In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation.  The control plane orchestrates the flow on the data plane according to guidance and/or input from the management plane. Via the control plane, a SACM component generates a (partial) view of a SACM domain - beyond itself - that includes the capabilities and states of other SACM components.
 
@@ -151,7 +152,7 @@ Data Origin:
 
 Data Plane:
 
-: Typically used as a term in the context of routing (and used as a synonym for forwarding plane), {{RFC 6192}} states, the data plane "is typically described as the router architecture hardware and software components responsible for receiving a packet on an incoming interface, performing a lookup to identify the packet's IP next hop and determine the best outgoing interface towards the destination, and forwarding the packet out through the appropriate outgoing interface."
+: Typically used as a term in the context of routing (and used as a synonym for forwarding plane), {{RFC6192}} states, the data plane "is typically described as the router architecture hardware and software components responsible for receiving a packet on an incoming interface, performing a lookup to identify the packet's IP next hop and determine the best outgoing interface towards the destination, and forwarding the packet out through the appropriate outgoing interface."
 
 : In the context of SACM, the data plane is an architectural component providing operational functions to enable a SACM component to provide and consume SACM statements and therefore SACM content (the "payload"). Transporting payloads via data models used as transport encodings and corresponding operations are used on the data plane to facilitate concatenated or distributed SACM tasks.
 
@@ -201,13 +202,11 @@ Guidance:
 
 : Input to processes and tasks, such as collecting, assessing  or reporting. Guidance influences the behavior of a SACM component and is considered content of the management plane. Guidance can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic. Guidance can have many forms, including:
 
-: Configuration, e.g. a poll interval, or a CMDB data base IPv6
-address.
+: Configuration, e.g. a poll interval, or a CMDB's IPv6 address.
 
 : Profiles, e.g. a set of expected states for network behavior associated with devices employed by specific users.
 
-: Policies, e.g. a threshold for QoS throughput control, a list
-of required features for devices in a specific location.
+: Policies, e.g. a threshold for QoS throughput control, or a list of required features for devices in a specific location.
 
 Information Model:
 
