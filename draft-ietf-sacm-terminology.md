@@ -132,7 +132,7 @@ Control Plane:
 
 : Typically used as a term in the context of routing, {{RFC6192}} states, the control plane "is generally described as the router architecture hardware and software components for handling packets destined to the device itself as well as building and sending packets originated locally on the device." and "control plane hardware \[is\] sitting on top of, and \[is\] interfacing with, the forwarding plane hardware with interfaces connecting to other network devices."
 
-: In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation.  The control plane orchestrates the flow on the data plane according to guidance and/or input from the management plane. Via the control plane, a SACM component generates a (partial) view of a SACM domain - beyond itself - that includes the capabilities and states of other SACM components.
+: In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation.  The control plane orchestrates the flow on the data plane according to guidance and/or input from the management plane. SACM components with interfaces to the control plane have knowledge of the capabilities of other SACM components within a SACM domain. 
 
 Controller:
 
@@ -154,7 +154,7 @@ Data Plane:
 
 : Typically used as a term in the context of routing (and used as a synonym for forwarding plane), {{RFC6192}} states, the data plane "is typically described as the router architecture hardware and software components responsible for receiving a packet on an incoming interface, performing a lookup to identify the packet's IP next hop and determine the best outgoing interface towards the destination, and forwarding the packet out through the appropriate outgoing interface."
 
-: In the context of SACM, the data plane is an architectural component providing operational functions to enable a SACM component to provide and consume SACM statements and therefore SACM content (the "payload"). Transporting payloads via data models used as transport encodings and corresponding operations are used on the data plane to facilitate concatenated or distributed SACM tasks.
+: In the context of SACM, the data plane is an architectural component providing operational functions to enable a SACM component to provide and consume SACM statements and therefore SACM content (the "payload"). Data plane is used to conduct cascaded or distributed SACM tasks via transporting encodings and corresponding operations defined by data models.
 
 Data Provenance:
 
@@ -256,7 +256,7 @@ Proxy:
 
 Repository:
 
-: A repository is a specific controller type that contains functions to store information of a particular kind - typically data transported on the data plane, but potentially also data and metadata from the control and management plane.  A single repository may provide the functions of more than one specific repository type (i.e. configuration baseline repository, assessment results repository, etc.)
+: A repository is a specific controller type that contains functions to consume, store and provide information of a particular kind - typically data transported on the data plane, but potentially also data and metadata from the control and management plane.  A single repository may provide the functions of more than one specific repository type (i.e. configuration baseline repository, assessment results repository, etc.)
 
 SACM Role:
 
@@ -277,6 +277,18 @@ SACM Domain:
 Security Automation:
 
 : The process of which security alerts can be automated through the use of different tools to monitor, evaluate and analyze endpoint and network traffic for the purposes of detecting misconfigurations, misbehaviors or threats.
+
+Software Package:
+
+: A generic software package (e.g. a text editor).
+
+Software Component:
+
+: A software package installed on an endpoint, including a unique serial number if present (e.g. a text editor associated with a unique license key).
+
+Software Instance:
+
+: A running instance of the software component (e.g. on a multi-user system, one logged-in user has one instance of a text editor running and another logged-in user has another instance of the same text editor running, or on a single-user system, a user could have multiple independent instances of the same text editor running).
 
 Statement: 
 
