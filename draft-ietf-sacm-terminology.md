@@ -24,6 +24,24 @@ author:
   code: '64295'
   city: Darmstadt
   country: Germany
+- ins: N. Cam-Winget
+  name: Nancy Cam-Winget
+  org: Cisco Systems
+  email: ncamwing@cisco.com
+  street: 3550 Cisco Way
+  code: '95134'
+  city: San Jose
+  region: CA 
+  country: USA
+- ins: J. Lu
+  name: Jarrett Lu
+  org: Oracle Corporation
+  email: jarrett.lu@oracle.com
+  street: 4180 Network Circle
+  code: '95054'
+  city: Santa Clara
+  region: CA
+  country: USA
 
 normative:
 
@@ -34,9 +52,6 @@ informative:
   RFC6192:
   X.1252:
     title: "ITU-T X.1252 (04/2010)"
-
-
-
 
 
 --- abstract 
@@ -68,10 +83,6 @@ Asset:
 
 : Defined in {{RFC4949}} as "a system resource that is (a) required to be protected by an information system's security policy, (b) intended to be protected by a countermeasure, or (c) required for a system's mission". In the scope of SACM, an asset can be composed of other assets. Examples of Assets include: Endpoints, Software, Guidance, or X.509 public key certificates. An asset is not necessarily owned by an organization.
 
-Asset Characterization:
-
-: Asset characterization is the process of defining attributes that describe properties of an identified asset.
-
 Asset Management:
 
 : The process by which assets are provisioned, updated, maintained and deprecated.
@@ -92,13 +103,9 @@ Broker:
 
 : A broker is a specific controller type that contains control plane functions to provide and/or connect services on behalf of other SACM components via interfaces on the control plane. A broker may provide, for example, authorization services and find, upon request, SACM components providing requested services.
 
-Building Block:
-
-: For SACM, a building block is a unit of functionality that is used to compose SACM components. It contains SACM functions and may apply to one or more use cases. The functions of a building block can have interfaces on the data plane, the control plane, or on the management plane.
-
 Capability:
 
-: The extent of an SACM component's ability enabled by the functions (bundled into building blocks) it is composed of.  Capabilities are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.
+: The extent of an SACM component's ability enabled by the functions it is composed of.  Capabilities are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.
 
 Collection Result:
 
@@ -108,11 +115,11 @@ Collection Task:
 
 : The task by which endpoint attributes and/or corresponding attribute values about a target endpoint are collected. There are three types of collection tasks, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:
 
-: Self-Reported: A SACM component located on the target endpoint itself conducts the collection task.
+: Self-Reporting: A SACM component located on the target endpoint itself conducts the collection task.
 
-: Remote: A SACM component located on an Endpoint different from the target endpoint conducts the collection task via interfaces available on the target endpoint, e.g. SNMP/NETCONF or WMI.
+: Remote-Acquisition: A SACM component located on an Endpoint different from the target endpoint conducts the collection task via interfaces available on the target endpoint, e.g. SNMP/NETCONF or WMI.
 
-: Observed: A SACM component located on an Endpoint different from the target endpoint observes network traffic related to the target endpoint and conducts the collection task via interpretation of that network traffic.
+: Behavior-Observation: A SACM component located on an Endpoint different from the target endpoint observes network traffic related to the target endpoint and conducts the collection task via interpretation of that network traffic.
 
 Collector:
 
@@ -130,9 +137,7 @@ Consumer:
 
 Control Plane:
 
-: Typically used as a term in the context of routing, {{RFC6192}} states, the control plane "is generally described as the router architecture hardware and software components for handling packets destined to the device itself as well as building and sending packets originated locally on the device." and "control plane hardware \[is\] sitting on top of, and \[is\] interfacing with, the forwarding plane hardware with interfaces connecting to other network devices."
-
-: In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation.  The control plane orchestrates the flow on the data plane according to guidance and/or input from the management plane. SACM components with interfaces to the control plane have knowledge of the capabilities of other SACM components within a SACM domain. 
+: Typically used as a term in the context of routing, e.g. {{RFC6192}}. In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation.  The control plane orchestrates the flow on the data plane according to guidance and/or input from the management plane. SACM components with interfaces to the control plane have knowledge of the capabilities of other SACM components within a SACM domain. 
 
 Controller:
 
@@ -152,9 +157,7 @@ Data Origin:
 
 Data Plane:
 
-: Typically used as a term in the context of routing (and used as a synonym for forwarding plane), {{RFC6192}} states, the data plane "is typically described as the router architecture hardware and software components responsible for receiving a packet on an incoming interface, performing a lookup to identify the packet's IP next hop and determine the best outgoing interface towards the destination, and forwarding the packet out through the appropriate outgoing interface."
-
-: In the context of SACM, the data plane is an architectural component providing operational functions to enable a SACM component to provide and consume SACM statements and therefore SACM content (the "payload"). Data plane is used to conduct cascaded or distributed SACM tasks via transporting encodings and corresponding operations defined by data models.
+: Typically used as a term in the context of routing (and used as a synonym for forwarding plane, e.g. {{RFC6192}}). In the context of SACM, the data plane is an architectural component providing operational functions to enable a SACM component to provide and consume SACM statements and therefore SACM content (the "payload"). The data plane is used to conduct distributed SACM tasks by transporting SACM content using transporting encodings and corresponding operations defined by SACM data models.
 
 Data Provenance:
 
@@ -176,7 +179,15 @@ Endpoint:
 
 Endpoint Attribute:
 
-: In the context of SACM, endpoint attributes are [TBD]. Endpoint Attributes are typically represented as AVP.
+: In the context of SACM, endpoint attributes are information elements that describe a characteristic of a target endpoint. Endpoint Attributes typically constitute atomic information elements (AVP) that can be bundled into composite information elements (e.g. information about a specific network interface can be represented via a set of multiple AVP).
+
+Endpoint Characterization:
+
+: The task by which a profile is composed out of endpoint attributes that describe the desired or expected posture of a type or class of target endpoints or even an individual target endpoint. The result of this task is an endpoint profile that is required as guidance for the tasks of endpoint classification or posture assessment.
+
+Endpoint Classification:
+
+: The task by which a discovered target endpoint is classified. Endpoint classification requires guidance in the form of an endpoint profile, discovery results and potentially collection results. Types, classes or the characteristics of an individual target endpoint are defined via endpoint profiles.
 
 Evaluation Task:
 
@@ -192,25 +203,29 @@ Excluded Endpoint:
 
 Expected Endpoint State:
 
-: The required state of an endpoint that is to be compared against. This, for example, can be a policy or a recorded past state. A state is represented via a single or an associated set of attribute value pairs.
+: The required state of an endpoint that is to be compared against. Sets of expected endpoint states are transported as guidance in target endpoint profiles via the management plane. This, for example, can be a policy, but also a recorded past state. An expected state is represented can be represented via a atomic information element or an composite information element that represents a set of multiple attribute value pairs.
 
 SACM Function:
 
-: A behavioral aspect or capacity of a particular building block that is part of a SACM component, which belies that SACM component's purpose.  For example, a SACM function with interfaces on the control plane can provide a brokering function to other SACM components. Via data plane interfaces, a function can act as a provider and/or as a consumer of information. SACM functions can be propagated as the capabilities of a SACM component and can be discovered by or negotiated with other SACM components.
+: A behavioral aspect or capacity of a particular SACM component, which belies that SACM component's purpose.  For example, a SACM function with interfaces on the control plane can provide a brokering function to other SACM components. Via data plane interfaces, a function can act as a provider and/or as a consumer of information. SACM functions can be propagated as the capabilities of a SACM component and can be discovered by or negotiated with other SACM components.
 
 Guidance:
 
-: Input to processes and tasks, such as collecting, assessing  or reporting. Guidance influences the behavior of a SACM component and is considered content of the management plane. Guidance can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic. Guidance can have many forms, including:
+: Input to processes and tasks, such as collecting, assessing  or reporting. Guidance influences the behavior of a SACM component and is considered content of the management plane. Guidance can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic. A prominent example of guidance are target endpoint profiles, but guidance can have many forms, including:
 
-: Configuration, e.g. a poll interval, or a CMDB's IPv6 address.
+: Configuration, e.g. a SACM component's name, or a CMDB's IPv6 address.
 
-: Profiles, e.g. a set of expected states for network behavior associated with devices employed by specific users.
+: Profiles, e.g. a set of expected states for network behavior associated with target endpoints employed by specific users.
 
-: Policies, e.g. a threshold for QoS throughput control, or a list of required features for devices in a specific location.
+: Policies, e.g. an interval to refresh the registration of a SACM component, or a list of required capabilities for SACM components in a specific location.
 
 Information Model:
 
-: An information model is an abstract representation of data, their properties, relationships between data and the operations that can be performed on the data.  While there is some overlap with a data model, {{RFC3444}} distinguishes an information model as being protocol and implementation neutral whereas a data model would provide such details.
+: An information model is an abstract representation of data, their properties, relationships between data and the operations that can be performed on the data.  While there is some overlap with a data model, {{RFC3444}} distinguishes an information model as being protocol and implementation neutral whereas a data model would provide such details. The purpose of the SACM information model is to ensure interoperability between SACM data models (that are used as transport encoding) and to provide a standardized set of information elements for communication between SACM components.
+
+Interaction Model:
+
+: For now this is a Place-Holder. Is an interaction model that defines, for example, the operations on the control plane, such as registration or SACM component discovery, required?
 
 Internal Collector:
 
@@ -218,7 +233,7 @@ Internal Collector:
 
 Management Plane:
 
-: An architectural component providing common functions to all SACM participants, including [TBD].
+: An architectural component providing common functions to steer the behavior of SACM components, e.g. its behavior on the control plane. Prominent examples include: modification of the configuration of a SACM component or updating a target endpoint profile that resides on an evaluator. In essence, guidance is transported via the management plane. Typically, a SACM component can fulfill its purpose without continuous input from the management plane. In contrast, without continuous availability of control plane functions a typical SACM component could not function properly. In general, interaction on the management plane is less frequent and less regular than on the control plane. Input via the management plane can be manual (e.g. via a CLI), or can be automated via management plane functions that are part of other SACM components.
 
 Network Address:
 
@@ -264,7 +279,7 @@ SACM Role:
 
 SACM Component:
 
-: A composition of building blocks that contain SACM functions (acting on control plane, data plane or management plane). SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane building blocks and can contain data plane and management plane building blocks. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly. For example, a SACM component that is composed solely of building blocks that provide information is a provider.
+: A set of SACM functions composes a SACM component. A SACM component conducts SACM tasks, acting on control plane, data plane and/or management plane via corresponding SACM interfaces. SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane functions and can contain data plane and management plane functions. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly. For example, a SACM component that is composed solely of functions that provide information would only take on the role of a provider.
 
 SACM Component Discovery:
 
@@ -318,13 +333,17 @@ Target Endpoint Identifier:
 
 Target Endpoint Label:
 
-: An artificially created id that references a distinct set of identifying attributes (Target Endpoint Identifier). A target endpoint label is unique in a SACM domain and created by a SACM component that contains an appropriate building block of functions.
+: An artificially created id that references a distinct set of identifying attributes (Target Endpoint Identifier). A target endpoint label is unique in a SACM domain and created by a SACM component that contains an appropriate function.
+
+Target Endpoint Profile:
+
+: A bundle of expected or desired configurations and states (typically a composition of endpoint attribute value pairs) that can be associated with a target endpoint. The corresponding task by which the association with a target endpoint takes places is the endpoint classification. The task by which a endpoint profile is created is the endpoint characterization. A type or class of target endpoints is defined within a target endpoint profile, e.g. printer, smartphone, or an office PC.
 
 (SACM) Task:
 
-: [TBD conflicts in definitions of specific tasks] A set of triggered operations or functions (e.g. via a query or via an unsolicited push due to a subscription on the data plane). A task is part of a SACM process. A SACM task is conducted by the building blocks of SACM components. A task starts at a given point in time and ends in a deterministic state. With the exception of a collection task, a SACM task consumes SACM content. The output of a task is a result that can be provided (e.g. published) on the data plane. There are six fundamental tasks defined in SACM:
+: [TBD conflicts in definitions of specific tasks] A SACM task is conducted by one or more SACM functions that reside on a SACM component (e.g. a collection task or endpoint characterization). A SACM task can be triggered by other operations or functions (e.g. a query from another SACM component or an unsolicited push due to a subscription on the data plane). A task is part of a SACM process chain. A task starts at a given point in time and ends in a deterministic state. With the exception of a collection task, a SACM task consumes SACM content. The output of a task is a result that can be provided (e.g. published) on the data plane. There are six fundamental tasks defined in SACM:
 
-: Asset Classification: Map the assets on the target endpoints to asset classes.  This enables identification of the attributes needed to exchange information pertaining to the target endpoint. 
+: Asset Classification: Map the assets on the target endpoints to asset classes.  This enables identification of the attributes needed to exchange information pertaining to the target endpoint. [the label now conflicts with Endpoint Classification]
 
 : Attribute Definition: Define the attributes desired to be collected from each target endpoint.  This is what we want to know about a target endpoint.  For instance, organizations will want to know what software is installed and its many critical security attributes such as patch level.
 
@@ -413,7 +432,7 @@ Changes from version 06 to version 07:
 
 * Minor updates to Broker, Capability, Collection Task, Evaluation Task, Posture.
 
-* Relabled Role to SACM Role, Endpoint Target to Target Endpoint, Endpoint Discovery to Endpoint Identification.
+* Relabeled Role to SACM Role, Endpoint Target to Target Endpoint, Endpoint Discovery to Endpoint Identification.
 
 * Moved Asset Targeting, Client, Endpoint Identification to The Attic.
 
@@ -430,7 +449,22 @@ Changes from version 07 to version 08:
 
 * Minor updates to Asset, Building Block, Data Origin, Data Source, Data Provenance, Endpoint, Management Plane, Posture, Posture Attribute, SACM Component, SACM Component Discovery, Target Endpoint Discovery.
 
-* Relabled Function to SACM Function.
+* Relabeled Function to SACM Function.
+
+
+Changes from version 08 to version 09:
+
+* Updated author list.
+
+* Added Data Plane, Endpoint Characterization, Endpoint Classification, Guidance, Interaction Model, Software Component, Software Instance, Software Package, Statement, Target Endpoint Profile, SACM Task.
+
+* Removed Building Block.
+
+* Major updates to Control Plane, Endpoint Attribute, Expected Endpoint State, Information Model, Management Plane.
+
+* Minor updates to Attribute, Capabilities, SACM Function, SACM Component, Collection Task.
+
+* Moved Asset Characterization to The Attic.
 
 
 # Contributors
@@ -502,6 +536,10 @@ Changes from version 07 to version 08:
 # The Attic
 
 The following terms are stashed for now and will be updated later:
+
+Asset Characterization:
+
+: Asset characterization is the process of defining attributes that describe properties of an identified asset.
 
 Asset Targeting:
 
