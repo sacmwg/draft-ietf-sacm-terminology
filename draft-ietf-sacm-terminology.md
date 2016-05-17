@@ -113,7 +113,15 @@ Collection Result:
 
 Collection Task:
 
-: The task by which endpoint attributes and/or corresponding attribute values about a target endpoint are collected. There are three types of collection tasks, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:
+: The task by which endpoint attributes and/or corresponding attribute values about a target endpoint are collected. The collection tasks are targeted at specific target endpoints and therefore are targeted tasks.
+
+There are three types of frequency collection tasks can be conducted with:
+
+* ad-hoc, e.g. triggered by a specific event or a query
+* scheduled, e.g. in regular intervals, such as every minute or weekly
+* continously, e.g. a network behaviour observation
+
+There are three types of collection methods, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:
 
 : Self-Reporting: A SACM component located on the target endpoint itself conducts the collection task.
 
@@ -283,7 +291,11 @@ SACM Component:
 
 SACM Component Discovery:
 
-: The function by which a SACM component (e.g. by role, capabilities, or data provided/consumed) can be discovered.
+: The task of brokering appropriate SACM components according to their capabilities or roles on reques.
+
+: Input: Query
+
+: Output: a list of SACM components including metadata
 
 SACM Domain:
 
@@ -323,17 +335,41 @@ Target Endpoint:
 
 : A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria.
 
+Target Endpoint Characterization Record:
+
+: A set of endpoint attributes about a target endpoint that was encountered in a SACM domain, which are associated with a target endpoint by being included in the corresponding record. A characterization record is intended to be a representation of an endpoint. It cannot be assured that a record distinctly represents a single target endpoint unless a set of one ore more endpoint attributes that compose a unique set of identifying endpoint attributes are included in the record. Otherwise, the set of identifying attributes included in a record can match more than one target endpoints, which are - in consequence - indistinguishable to a SACM domain until more qualifying endpoint attributes can be acquired and added to the record. A characterization record is maintained over time in order to assert that acquired endpoint attributes are either about an endpoint that was encountered before or an endpoint that has not been encountered before in a SACM domain. A characterization record can include, for example, acquired configuration, state or observed behavior of a specific target endpoint. Multiple and even conflicting instances of this information can be included in a characterization record by using timestamps and/or data origins to differentiate them. The endpoint attributes included in a characterization record can be used to re-identify a distinct target endpoint over time. Classes or profiles can be associated with a characterization record via the Classification Task in order to guide collection, evaluation or remediation tasks.
+
+Target Endpoint Characterization Task:
+
+An ongoing task of continuously adding acquired endpoint attributes to a corresponding record. The TE characterization task manages the representation of encountered target endpoints in the SACM domain in the form of characterization records. For example, the output of a target endpoint discovery task or a collection task can be processed by the characterization task and added to the record. The TE characterization Task also manages these representations of target endpoints encountered in the SACM domain by splitting or merging the corresponding records as new or more refined endpoint attributes become available.
+
+: Input: discovered target endpoint attributes, endpoint attribute collection, existing characterization records
+
+: Output: target endpoint characterization records
+
+Target Endpoint Classification Task:
+
+: The task of associating a class from an extensible list of classes with an endpoint characterization record. TE classes function as guidance for collection, evaluation, remediation and security posture assessment in general.
+
+: Input: endpoint characterization records (without classification), guidance (how to classify a record)
+
+: Output: endpoint characterization records (with classification)
+
 Target Endpoint Discovery:
 
-: The function by which target endpoints can be discovered. The output of target endpoint discovery typically includes identifying endpoint attributes.
+: The ongoing task of detecting previously unknown interaction of a potential target endpoint in the SACM domain. TE Discovery is not directly targeted at a specfic target endpoint and therefore an un-targeted task. SACM Components conducting the discovery task as a part of their function are typically distributed and located, for example, on infrastructure components or collect from those remotely via appropriate interfaces. Examples of infrastructure components that are of interest to the discovery task include routers, switches, VM hosting or VM managing components, AAA servers, or servers handling dynamic address distribution. 
+
+: Input: endpoint attributes acquired via local or remote interfaces
+
+: Output: endpoint attributes including metadata such as data source or data origin
 
 Target Endpoint Identifier:
 
-: The target endpoint discovery process and collection tasks targeted at target endpoints can result in a set of identifying endpoint attributes. This set of identifying endpoint attributes is used as a target endpoint identifier referring to a specific target endpoint. Depending on the available identifying attributes this reference can be ambiguous and is a "best-effort" mechanism. Every distinct set of identifying endpoint attributes can be associated with a unique target endpoint label.
+: The target endpoint discovery task and the collection tasks can result in a set of identifying endpoint attributes added to a corresponding Characterization Record. This subset of the endpoint attributes included in the record is used as a target endpoint identifier, by which a specific target endpoint can be referenced. Depending on the available identifying attributes, this reference can be ambiguous and is a "best-effort" mechanism. Every distinct set of identifying endpoint attributes can be associated with a target endpoint label that is unique in a SACM domain.
 
 Target Endpoint Label:
 
-: An artificially created id that references a distinct set of identifying attributes (Target Endpoint Identifier). A target endpoint label is unique in a SACM domain and created by a SACM component that contains an appropriate function.
+: An artificially created id that references a distinct set of identifying attributes (Target Endpoint Identifier). A target endpoint label is unique in a SACM domain and created by a SACM component that provides the appropriate function as a capability.
 
 Target Endpoint Profile:
 
