@@ -5,10 +5,10 @@
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                             N. Cam-Winget
-Expires: November 18, 2016                                 Cisco Systems
+Expires: December 2, 2016                                  Cisco Systems
                                                                    J. Lu
                                                       Oracle Corporation
-                                                            May 17, 2016
+                                                            May 31, 2016
 
 
      Secure Automation and Continuous Monitoring (SACM) Terminology
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 18, 2016.
+   This Internet-Draft will expire on December 2, 2016.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Birkholz, et al.        Expires November 18, 2016               [Page 1]
+Birkholz, et al.        Expires December 2, 2016                [Page 1]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Birkholz, et al.        Expires November 18, 2016               [Page 2]
+Birkholz, et al.        Expires December 2, 2016                [Page 2]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -165,7 +165,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016               [Page 3]
+Birkholz, et al.        Expires December 2, 2016                [Page 3]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -221,7 +221,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016               [Page 4]
+Birkholz, et al.        Expires December 2, 2016                [Page 4]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -277,7 +277,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016               [Page 5]
+Birkholz, et al.        Expires December 2, 2016                [Page 5]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -333,7 +333,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016               [Page 6]
+Birkholz, et al.        Expires December 2, 2016                [Page 6]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -352,14 +352,14 @@ Internet-Draft              SACM Terminology                    May 2016
       capabilities of a SACM component and can be discovered by or
       negotiated with other SACM components.
 
-   Guidance:  Input to processes and tasks, such as collecting,
-      assessing or reporting.  Guidance influences the behavior of a
-      SACM component and is considered content of the management plane.
-      Guidance can be manually or automatically generated or provided.
-      Typically, the tasks that provide guidance to SACM components have
-      a low-frequency and tend to be be sporadic.  A prominent example
-      of guidance are target endpoint profiles, but guidance can have
-      many forms, including:
+   Guidance:  Input instructions to processes and tasks, such as
+      collecting, assessing or reporting.  Guidance influences the
+      behavior of a SACM component and is considered content of the
+      management plane.  Guidance can be manually or automatically
+      generated or provided.  Typically, the tasks that provide guidance
+      to SACM components have a low-frequency and tend to be be
+      sporadic.  A prominent example of guidance are target endpoint
+      profiles, but guidance can have many forms, including:
 
       Configuration, e.g. a SACM component's name, or a CMDB's IPv6
       address.
@@ -389,7 +389,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016               [Page 7]
+Birkholz, et al.        Expires December 2, 2016                [Page 7]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -445,7 +445,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016               [Page 8]
+Birkholz, et al.        Expires December 2, 2016                [Page 8]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -501,7 +501,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016               [Page 9]
+Birkholz, et al.        Expires December 2, 2016                [Page 9]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -557,7 +557,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 10]
+Birkholz, et al.        Expires December 2, 2016               [Page 10]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -613,7 +613,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 11]
+Birkholz, et al.        Expires December 2, 2016               [Page 11]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -669,7 +669,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 12]
+Birkholz, et al.        Expires December 2, 2016               [Page 12]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -725,7 +725,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 13]
+Birkholz, et al.        Expires December 2, 2016               [Page 13]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -781,7 +781,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 14]
+Birkholz, et al.        Expires December 2, 2016               [Page 14]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -837,7 +837,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 15]
+Birkholz, et al.        Expires December 2, 2016               [Page 15]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -893,7 +893,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 16]
+Birkholz, et al.        Expires December 2, 2016               [Page 16]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -949,7 +949,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 17]
+Birkholz, et al.        Expires December 2, 2016               [Page 17]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -1005,7 +1005,7 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 18]
+Birkholz, et al.        Expires December 2, 2016               [Page 18]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -1061,7 +1061,7 @@ Authors' Addresses
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 19]
+Birkholz, et al.        Expires December 2, 2016               [Page 19]
 
 Internet-Draft              SACM Terminology                    May 2016
 
@@ -1117,4 +1117,4 @@ Internet-Draft              SACM Terminology                    May 2016
 
 
 
-Birkholz, et al.        Expires November 18, 2016              [Page 20]
+Birkholz, et al.        Expires December 2, 2016               [Page 20]
