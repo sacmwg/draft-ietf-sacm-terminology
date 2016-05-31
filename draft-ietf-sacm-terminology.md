@@ -219,7 +219,7 @@ SACM Function:
 
 Guidance:
 
-: Input to processes and tasks, such as collecting, assessing  or reporting. Guidance influences the behavior of a SACM component and is considered content of the management plane. Guidance can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic. A prominent example of guidance are target endpoint profiles, but guidance can have many forms, including:
+: Input instructions to processes and tasks, such as collecting, assessing  or reporting. Guidance influences the behavior of a SACM component and is considered content of the management plane. Guidance can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic. A prominent example of guidance are target endpoint profiles, but guidance can have many forms, including:
 
 : Configuration, e.g. a SACM component's name, or a CMDB's IPv6 address.
 
