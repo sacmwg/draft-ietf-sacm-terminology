@@ -119,7 +119,7 @@ There are three types of frequency collection tasks can be conducted with:
 
 * ad-hoc, e.g. triggered by a specific event or a query
 * scheduled, e.g. in regular intervals, such as every minute or weekly
-* continously, e.g. a network behaviour observation
+* continuously, e.g. a network behavior observation
 
 There are three types of collection methods, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:
 
@@ -357,7 +357,7 @@ Target Endpoint Classification Task:
 
 Target Endpoint Discovery:
 
-: The ongoing task of detecting previously unknown interaction of a potential target endpoint in the SACM domain. TE Discovery is not directly targeted at a specfic target endpoint and therefore an un-targeted task. SACM Components conducting the discovery task as a part of their function are typically distributed and located, for example, on infrastructure components or collect from those remotely via appropriate interfaces. Examples of infrastructure components that are of interest to the discovery task include routers, switches, VM hosting or VM managing components, AAA servers, or servers handling dynamic address distribution. 
+: The ongoing task of detecting previously unknown interaction of a potential target endpoint in the SACM domain. TE Discovery is not directly targeted at a specific target endpoint and therefore an un-targeted task. SACM Components conducting the discovery task as a part of their function are typically distributed and located, for example, on infrastructure components or collect from those remotely via appropriate interfaces. Examples of infrastructure components that are of interest to the discovery task include routers, switches, VM hosting or VM managing components, AAA servers, or servers handling dynamic address distribution. 
 
 : Input: endpoint attributes acquired via local or remote interfaces
 
@@ -373,7 +373,7 @@ Target Endpoint Label:
 
 Target Endpoint Profile:
 
-: A bundle of expected or desired configurations and states (typically a composition of endpoint attribute value pairs) that can be associated with a target endpoint. The corresponding task by which the association with a target endpoint takes places is the endpoint classification. The task by which a endpoint profile is created is the endpoint characterization. A type or class of target endpoints is defined within a target endpoint profile, e.g. printer, smartphone, or an office PC.
+: A bundle of expected or desired configurations and states (typically a composition of endpoint attribute value pairs) that can be associated with a target endpoint. The corresponding task by which the association with a target endpoint takes places is the endpoint classification. The task by which an endpoint profile is created is the endpoint characterization. A type or class of target endpoints is defined within a target endpoint profile, e.g. printer, smartphone, or an office PC.
 
 (SACM) Task:
 
