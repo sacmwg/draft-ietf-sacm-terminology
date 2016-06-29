@@ -139,6 +139,10 @@ role of a provider and publish the collection results in a SACM domain.
 (TBD: A collector may not be a SACM component and therefore not part of
 a SACM domain).
 
+Configuration Drift: 
+
+: The discrepancy of endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint’s composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components. 
+
 Consumer:
 
 : A consumer is a SACM role that is assigned to a SACM component that contains functions to receive information from other SACM components.
@@ -154,6 +158,18 @@ Controller:
 Data Confidentiality:
 
 : Defined in {{RFC4949}} as "the property that data is not disclosed to system entities unless they have been authorized to know the data."
+
+Data In Motion:
+
+: Data that is being transported via a network. Data in motion requires a data model to encode data in order to be transported. Typically, data in motion is serialized (marshalling) into a transport encoding by a provider of information and deserialized (unmarshalling) by a consumer of information.
+
+: SACM architecture and corresponding models focus on data in motion.
+
+Data At Rest:
+
+: Data that is stored in a repository. Data at rest requires a data model to encode data in order to be stored. In the context of SACM, data at rest located on a SACM component can be provided to other SACM components via discoverable capabilities.
+
+: In the context of SACM, data models for data at rest are out of scope.
 
 Data Integrity:
 
@@ -180,6 +196,8 @@ Endpoint:
 : Defined in {{RFC5209}} as "any computing device that can be connected to a network.  Such devices normally are associated with a particular link layer address before joining the network and potentially an IP address once on the network.  This includes: laptops, desktops, servers, cell phones, or any device that may have an IP address."
 
 : To further clarify the {{RFC5209}} definition, an endpoint is any physical or virtual device that may have a network address.  Note that, network infrastructure devices (e.g. switches, routers, firewalls), which fit the definition, are also considered to be endpoints within this document.
+
+: Physical endpoints are always composites that are composed of hardware components and software components. Virtual endpoints are composed entirely of software components and rely on software components that provide functions equivalent to hardware components. 
 
 : The SACM architecture differentiates two essential categories of endpoints: Endpoints whose security posture is intended to be assessed (target endpoints) and endpoints that are specifically excluded from endpoint posture assessment (excluded endpoints).
 
@@ -226,6 +244,18 @@ Guidance:
 : Profiles, e.g. a set of expected states for network behavior associated with target endpoints employed by specific users.
 
 : Policies, e.g. an interval to refresh the registration of a SACM component, or a list of required capabilities for SACM components in a specific location.
+
+Hardware Component: 
+
+: Hardware components are the distinguishable physical components that compose an endpoint. The composition of an endpoint can be changed over time by adding or removing hardware components. In essence, every physical endpoint is potentially a composite of multiple hardware components, typically resulting in a hierarchical composition of hardware components. The composition of hardware components is based on interconnects provided by specific hardware types (e.g. mainboard is a hardware type that provides local busses as an interconnect). In general, a hardware component can be distinguished by its serial number. Occasionally, hardware components are refered to as power sucking aliens.
+
+Hardware Inventory: 
+
+: The list of hardware components that compose a specific endpoint representing its hardware configuration.
+
+Hardware Type: 
+
+: Hardware types define specific and distinguishable categories of hardware components that can be part of endpoints, e.g. CPU or 802.11p interface. Typically, hardware types can be distinguished by their vendor assigned names, names of standards used, or a model name.
 
 Information Model:
 
@@ -355,7 +385,7 @@ Target Endpoint Classification Task:
 
 : Output: endpoint characterization records (with classification)
 
-Target Endpoint Discovery:
+Target Endpoint Discovery Task:
 
 : The ongoing task of detecting previously unknown interaction of a potential target endpoint in the SACM domain. TE Discovery is not directly targeted at a specific target endpoint and therefore an un-targeted task. SACM Components conducting the discovery task as a part of their function are typically distributed and located, for example, on infrastructure components or collect from those remotely via appropriate interfaces. Examples of infrastructure components that are of interest to the discovery task include routers, switches, VM hosting or VM managing components, AAA servers, or servers handling dynamic address distribution. 
 
@@ -375,21 +405,20 @@ Target Endpoint Profile:
 
 : A bundle of expected or desired configurations and states (typically a composition of endpoint attribute value pairs) that can be associated with a target endpoint. The corresponding task by which the association with a target endpoint takes places is the endpoint classification. The task by which an endpoint profile is created is the endpoint characterization. A type or class of target endpoints is defined within a target endpoint profile, e.g. printer, smartphone, or an office PC.
 
-(SACM) Task:
+SACM Task:
 
-: [TBD conflicts in definitions of specific tasks] A SACM task is conducted by one or more SACM functions that reside on a SACM component (e.g. a collection task or endpoint characterization). A SACM task can be triggered by other operations or functions (e.g. a query from another SACM component or an unsolicited push due to a subscription on the data plane). A task is part of a SACM process chain. A task starts at a given point in time and ends in a deterministic state. With the exception of a collection task, a SACM task consumes SACM content. The output of a task is a result that can be provided (e.g. published) on the data plane. There are six fundamental tasks defined in SACM:
+: A SACM task is conducted by one or more SACM functions that reside on a SACM component (e.g. a collection task or endpoint characterization). A SACM task can be triggered by other operations or functions (e.g. a query from another SACM component or an unsolicited push on the data plane due to an ongoing subscription). A task is part of a SACM process chain. A task starts at a given point in time and ends in a deterministic state. With the exception of a collection task, a SACM task consumes SACM statements provided by other SACM components. The output of a task is a result that can be provided (e.g. published) on the data plane. There following tasks are defined by SACM:
 
-: Asset Classification: Map the assets on the target endpoints to asset classes.  This enables identification of the attributes needed to exchange information pertaining to the target endpoint. [the label now conflicts with Endpoint Classification]
-
-: Attribute Definition: Define the attributes desired to be collected from each target endpoint.  This is what we want to know about a target endpoint.  For instance, organizations will want to know what software is installed and its many critical security attributes such as patch level.
-
-: Policy Definition: This is where an organization can express its policy for acceptable or problematic values of an endpoint attribute.  The expected values of an endpoint attribute are determined for later comparison against the actual endpoint attribute values during the evaluation process.  Expected values may include both those values which are good as well as those values which represent problems, such as vulnerabilities.  The organization can also specify the endpoint attributes that are to be present for a given target endpoint.
-
-: Information Collection: Collect information (attribute values) from the target endpoint to populate the endpoint data.
-
-: Endpoint Assessment: Evaluate the actual values of the endpoint attributes against those expressed in the policy.  (An evaluation result may become additional endpoint data).
-
-: Result Reporting: Report the results of the evaluation for use by other components.  Examples of use of a report would be additional evaluation, network enforcement, vulnerability detection, and license management.
+: Target Endpoint Discovery
+: Target Endpoint Characterization
+: Target Endpoint Classification
+: Collection
+: Evaluation [TBD]
+: Information Sharing [TBD]
+: SACM Component Discovery
+: SACM Component Authentication [TBD]
+: SACM Component Authorization [TBD]
+: SACM Component Registration [TBD]  
 
 Timestamps :
 
