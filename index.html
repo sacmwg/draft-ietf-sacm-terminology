@@ -468,9 +468,9 @@ ul.toc a:first-child {
   <meta name="generator" content="xml2rfc version 2.5.1 - http://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
-  <meta name="dct.creator" content="Birkholz, H., Cam-Winget, N., and J. Lu" />
+  <meta name="dct.creator" content="Birkholz, H., Lu, J., and N. Cam-Winget" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-terminology-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2016-6-29" />
+  <meta name="dct.issued" scheme="ISO8601" content="2016-7-07" />
   <meta name="dct.abstract" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
   <meta name="description" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
 
@@ -491,23 +491,23 @@ ul.toc a:first-child {
 </tr>
 <tr>
   <td class="left">Intended status: Informational</td>
-  <td class="right">N. Cam-Winget</td>
-</tr>
-<tr>
-  <td class="left">Expires: December 31, 2016</td>
-  <td class="right">Cisco Systems</td>
-</tr>
-<tr>
-  <td class="left"></td>
   <td class="right">J. Lu</td>
 </tr>
 <tr>
-  <td class="left"></td>
+  <td class="left">Expires: January 8, 2017</td>
   <td class="right">Oracle Corporation</td>
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">June 29, 2016</td>
+  <td class="right">N. Cam-Winget</td>
+</tr>
+<tr>
+  <td class="left"></td>
+  <td class="right">Cisco Systems</td>
+</tr>
+<tr>
+  <td class="left"></td>
+  <td class="right">July 07, 2016</td>
 </tr>
 
     	
@@ -527,7 +527,7 @@ ul.toc a:first-child {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on December 31, 2016.</p>
+<p>This Internet-Draft will expire on January 8, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -584,19 +584,17 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">Information about a target endpoint that is produced by a collector conducting a collection task. A collection result is composed of one or more endpoint attributes.</dd>
   <dt>Collection Task:</dt>
   <dd style="margin-left: 8">The task by which endpoint attributes and/or corresponding attribute values about a target endpoint are collected. The collection tasks are targeted at specific target endpoints and therefore are targeted tasks.</dd>
-</dl>
-<p id="rfc.section.2.p.3">There are three types of frequency collection tasks can be conducted with:</p>
-<p/>
-
-<ul>
-  <li>ad-hoc, e.g. triggered by a specific event or a query</li>
-  <li>scheduled, e.g. in regular intervals, such as every minute or weekly</li>
-  <li>continuously, e.g. a network behavior observation</li>
-</ul>
-<p/>
-
-<dl>
-  <dt>There are three types of collection methods, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:</dt>
+  <dt></dt>
+  <dd style="margin-left: 8">There are three types of frequency collection tasks can be conducted with:</dd>
+  <dt></dt>
+  <dd style="margin-left: 8">ad-hoc, e.g. triggered by a specific event or a query</dd>
+  <dt></dt>
+  <dd style="margin-left: 8">scheduled, e.g. in regular intervals, such as every minute or weekly</dd>
+  <dt></dt>
+  <dd style="margin-left: 8">continuously, e.g. a network behavior observation</dd>
+  <dt></dt>
+  <dd style="margin-left: 8">There are three types of collection methods, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:</dd>
+  <dt></dt>
   <dd style="margin-left: 8">Self-Reporting: A SACM component located on the target endpoint itself conducts the collection task.</dd>
   <dt></dt>
   <dd style="margin-left: 8">Remote-Acquisition: A SACM component located on an Endpoint different from the target endpoint conducts the collection task via interfaces available on the target endpoint, e.g. SNMP/NETCONF or WMI.</dd>
@@ -606,6 +604,8 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">A piece of software that acquires information about one or more target endpoints by conducting collection tasks. A collector provides acquired information to SACM components in the form of collection results. A SACM component that consumes collection results may take on the role of a provider and publish the collection results in a SACM domain.  (TBD: A collector may not be a SACM component and therefore not part of a SACM domain).</dd>
   <dt>Configuration Drift:</dt>
   <dd style="margin-left: 8">The discrepancy of endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components.</dd>
+  <dt>Component:</dt>
+  <dd style="margin-left: 8">Defined in <a href="#I-D.ietf-i2nsf-terminology">[I-D.ietf-i2nsf-terminology]</a> as "an encapsulation of software that communicates using Interfaces. A Component may be implemented by hardware and/or Software, and be represented using a set of classes. In general, a Component encapsulates a set of data structures as well as a set of algorithms that implement the functions that it provides." In the context of SACM, a</dd>
   <dt>Consumer:</dt>
   <dd style="margin-left: 8">A consumer is a SACM role that is assigned to a SACM component that contains functions to receive information from other SACM components.</dd>
   <dt>Control Plane:</dt>
@@ -702,10 +702,10 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">A proxy is a specific controller type that provides data plane and control plane functions, information, or services on behalf of another component, which is not directly participating in the SACM architecture.</dd>
   <dt>Repository:</dt>
   <dd style="margin-left: 8">A repository is a specific controller type that contains functions to consume, store and provide information of a particular kind - typically data transported on the data plane, but potentially also data and metadata from the control and management plane.  A single repository may provide the functions of more than one specific repository type (i.e. configuration baseline repository, assessment results repository, etc.)</dd>
-  <dt>SACM Role:</dt>
-  <dd style="margin-left: 8">SACM roles are associated with SACM components and are defined by the set of functions and interfaces a SACM component includes. There are three SACM roles: provider, consumer, and controller. The roles associated with a SACM component are determined by the purpose of the functions and corresponding interfaces the SACM component is composed of.</dd>
   <dt>SACM Component:</dt>
-  <dd style="margin-left: 8">A set of SACM functions composes a SACM component. A SACM component conducts SACM tasks, acting on control plane, data plane and/or management plane via corresponding SACM interfaces. SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane functions and can contain data plane and management plane functions. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly. For example, a SACM component that is composed solely of functions that provide information would only take on the role of a provider.</dd>
+  <dd style="margin-left: 8">A component is defined in <a href="#I-D.ietf-i2nsf-terminology">[I-D.ietf-i2nsf-terminology]</a> as "an encapsulation of software that communicates using Interfaces. A Component may be implemented by hardware and/or Software, and be represented using a set of classes. In general, a Component encapsulates a set of data structures as well as a set of algorithms that implement the functions that it provides."</dd>
+  <dt></dt>
+  <dd style="margin-left: 8">In the context of SACM, a set of SACM functions composes a SACM component. A SACM component conducts SACM tasks, acting on control plane, data plane and/or management plane via corresponding SACM interfaces. SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane functions and can contain data plane and management plane functions. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly. For example, a SACM component that is composed solely of functions that provide information would only take on the role of a provider.</dd>
   <dt>SACM Component Discovery:</dt>
   <dd style="margin-left: 8">The task of brokering appropriate SACM components according to their capabilities or roles on reques.</dd>
   <dt></dt>
@@ -714,6 +714,14 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">Output: a list of SACM components including metadata</dd>
   <dt>SACM Domain:</dt>
   <dd style="margin-left: 8">Endpoints that include a SACM component compose a SACM domain. (To be revised, additional definition content TBD, possible dependencies to SACM architecture)</dd>
+  <dt>SACM Interface:</dt>
+  <dd style="margin-left: 8">An interface is defined in <a href="#I-D.ietf-i2nsf-terminology">[I-D.ietf-i2nsf-terminology]</a> as "A set of operations one object knows it can invoke on, and expose to, another object.  This decouples the implementation of the operation from its specification. An interface is a subset of all operations that a given object implements. The same object may have multiple types of interfaces to serve different purposes."</dd>
+  <dt></dt>
+  <dd style="margin-left: 8">In the context of SACM, SACM Funktions provide SACM Interfaces on the management, control, or data plane. Operations a SACM Interface provides are based on corresponding data model defined by SACM. SACM Interfaces are used for communication between SACM components.</dd>
+  <dt>SACM Role:</dt>
+  <dd style="margin-left: 8">A role is defined in <a href="#I-D.ietf-i2nsf-terminology">[I-D.ietf-i2nsf-terminology]</a> as "an abstraction of a Component that models context-specific views and responsibilities of an object as separate role objects that can be statically or dynamically attached to (and removed from) the object that the role object describes. This provides three important benefits. First, it enables different behavior to be supported by the same Component for different contexts. Second, it enables the behavior of a Component to be adjusted dynamically (i.e., at runtime, in response)to changes in context, by using one or more Roles to define the behavior desired for each context. Third, it decouples the Roles of a Component from the Applications that use that Component."</dd>
+  <dt></dt>
+  <dd style="margin-left: 8">In the context of SACM, SACM roles are associated with SACM components and are defined by the set of functions and interfaces a SACM component includes. There are three SACM roles: provider, consumer, and controller. The roles associated with a SACM component are determined by the purpose of the SACM functions and corresponding SACM interfaces the SACM component is composed of.</dd>
   <dt>Security Automation:</dt>
   <dd style="margin-left: 8">The process of which security alerts can be automated through the use of different tools to monitor, evaluate and analyze endpoint and network traffic for the purposes of detecting misconfigurations, misbehaviors or threats.</dd>
   <dt>Software Package:</dt>
@@ -734,12 +742,9 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria.</dd>
   <dt>Target Endpoint Characterization Record:</dt>
   <dd style="margin-left: 8">A set of endpoint attributes about a target endpoint that was encountered in a SACM domain, which are associated with a target endpoint by being included in the corresponding record. A characterization record is intended to be a representation of an endpoint. It cannot be assured that a record distinctly represents a single target endpoint unless a set of one ore more endpoint attributes that compose a unique set of identifying endpoint attributes are included in the record. Otherwise, the set of identifying attributes included in a record can match more than one target endpoints, which are - in consequence - indistinguishable to a SACM domain until more qualifying endpoint attributes can be acquired and added to the record. A characterization record is maintained over time in order to assert that acquired endpoint attributes are either about an endpoint that was encountered before or an endpoint that has not been encountered before in a SACM domain. A characterization record can include, for example, acquired configuration, state or observed behavior of a specific target endpoint. Multiple and even conflicting instances of this information can be included in a characterization record by using timestamps and/or data origins to differentiate them. The endpoint attributes included in a characterization record can be used to re-identify a distinct target endpoint over time. Classes or profiles can be associated with a characterization record via the Classification Task in order to guide collection, evaluation or remediation tasks.</dd>
-</dl>
-<p id="rfc.section.2.p.6">Target Endpoint Characterization Task:</p>
-<p/>
-
-<dl>
-  <dt>An ongoing task of continuously adding acquired endpoint attributes to a corresponding record. The TE characterization task manages the representation of encountered target endpoints in the SACM domain in the form of characterization records. For example, the output of a target endpoint discovery task or a collection task can be processed by the characterization task and added to the record. The TE characterization Task also manages these representations of target endpoints encountered in the SACM domain by splitting or merging the corresponding records as new or more refined endpoint attributes become available.</dt>
+  <dt>Target Endpoint Characterization Task:</dt>
+  <dd style="margin-left: 8">An ongoing task of continuously adding acquired endpoint attributes to a corresponding record. The TE characterization task manages the representation of encountered target endpoints in the SACM domain in the form of characterization records. For example, the output of a target endpoint discovery task or a collection task can be processed by the characterization task and added to the record. The TE characterization Task also manages these representations of target endpoints encountered in the SACM domain by splitting or merging the corresponding records as new or more refined endpoint attributes become available.</dd>
+  <dt></dt>
   <dd style="margin-left: 8">Input: discovered target endpoint attributes, endpoint attribute collection, existing characterization records</dd>
   <dt></dt>
   <dd style="margin-left: 8">Output: target endpoint characterization records</dd>
@@ -900,25 +905,6 @@ USA
 
 Email: ietfdbh@comcast.net
 
-
-Nancy Cam-Winget
-Cisco Systems
-3550 Cisco Way
-San Jose, CA  95134
-USA
-
-Email: ncamwing@cisco.com
-
-
-Jarrett Lu
-Oracle Corporation
-4180 Network Circle
-Santa Clara, CA  95054
-USA
-
-Email: jarrett.lu@oracle.com
-
-
 Brian Ford
 Lancope
 3650 Brookside Parkway, Suite 500
@@ -939,6 +925,12 @@ Email: merike@doubleshotsecurity.com
 <h1 id="rfc.references"><a href="#rfc.references">8.</a> Informative References</h1>
 <table>
   <tbody>
+    <tr>
+      <td class="reference">
+        <b id="I-D.ietf-i2nsf-terminology">[I-D.ietf-i2nsf-terminology]</b>
+      </td>
+      <td class="top"><a>Hares, S.</a>, <a>Strassner, J.</a>, <a>Lopez, D.</a> and <a>L. Xia</a>, "<a href="http://tools.ietf.org/html/draft-ietf-i2nsf-terminology-00">Interface to Network Security Functions (I2NSF) Terminology</a>", Internet-Draft draft-ietf-i2nsf-terminology-00, May 2016.</td>
+    </tr>
     <tr>
       <td class="reference">
         <b id="RFC3444">[RFC3444]</b>
@@ -1008,28 +1000,6 @@ Email: merike@doubleshotsecurity.com
 </div><div class="avoidbreak">
   <address class="vcard">
 	<span class="vcardline">
-	  <span class="fn">Nancy Cam-Winget</span> 
-	  <span class="n hidden">
-		<span class="family-name">Cam-Winget</span>
-	  </span>
-	</span>
-	<span class="org vcardline">Cisco Systems</span>
-	<span class="adr">
-	  <span class="vcardline">3550 Cisco Way</span>
-
-	  <span class="vcardline">
-		<span class="locality">San Jose</span>,  
-		<span class="region">CA</span> 
-		<span class="code">95134</span>
-	  </span>
-	  <span class="country-name vcardline">USA</span>
-	</span>
-	<span class="vcardline">EMail: <a href="mailto:ncamwing@cisco.com">ncamwing@cisco.com</a></span>
-
-  </address>
-</div><div class="avoidbreak">
-  <address class="vcard">
-	<span class="vcardline">
 	  <span class="fn">Jarrett Lu</span> 
 	  <span class="n hidden">
 		<span class="family-name">Lu</span>
@@ -1047,6 +1017,28 @@ Email: merike@doubleshotsecurity.com
 	  <span class="country-name vcardline">USA</span>
 	</span>
 	<span class="vcardline">EMail: <a href="mailto:jarrett.lu@oracle.com">jarrett.lu@oracle.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Nancy Cam-Winget</span> 
+	  <span class="n hidden">
+		<span class="family-name">Cam-Winget</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Cisco Systems</span>
+	<span class="adr">
+	  <span class="vcardline">3550 Cisco Way</span>
+
+	  <span class="vcardline">
+		<span class="locality">San Jose</span>,  
+		<span class="region">CA</span> 
+		<span class="code">95134</span>
+	  </span>
+	  <span class="country-name vcardline">USA</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:ncamwing@cisco.com">ncamwing@cisco.com</a></span>
 
   </address>
 </div>
