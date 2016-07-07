@@ -24,15 +24,6 @@ author:
   code: '64295'
   city: Darmstadt
   country: Germany
-- ins: N. Cam-Winget
-  name: Nancy Cam-Winget
-  org: Cisco Systems
-  email: ncamwing@cisco.com
-  street: 3550 Cisco Way
-  code: '95134'
-  city: San Jose
-  region: CA 
-  country: USA
 - ins: J. Lu
   name: Jarrett Lu
   org: Oracle Corporation
@@ -42,10 +33,34 @@ author:
   city: Santa Clara
   region: CA
   country: USA
+- ins: N. Cam-Winget
+  name: Nancy Cam-Winget
+  org: Cisco Systems
+  email: ncamwing@cisco.com
+  street: 3550 Cisco Way
+  code: '95134'
+  city: San Jose
+  region: CA 
+  country: USA
 
 normative:
 
 informative:
+  I-D.ietf-i2nsf-terminology:
+    -: i2nsft
+    title: Interface to Network Security Functions (I2NSF) Terminology
+    date: 2016-07-08
+    seriesinfo:
+      Internet-Draft: draft-ietf-i2nsf-terminology-01
+    author:
+      - ins: S. Hares
+        name: Susanne Hares
+      - ins: J. Strassner
+        name: John Strasser 
+      - ins: D. Lopez
+        name: Diego R. Lopez
+      - ins: L. Xia
+        name: Liang Xia (Frank)
   RFC3444:
   RFC4949:
   RFC5209:
@@ -115,13 +130,15 @@ Collection Task:
 
 : The task by which endpoint attributes and/or corresponding attribute values about a target endpoint are collected. The collection tasks are targeted at specific target endpoints and therefore are targeted tasks.
 
-There are three types of frequency collection tasks can be conducted with:
+: There are three types of frequency collection tasks can be conducted with:
 
-* ad-hoc, e.g. triggered by a specific event or a query
-* scheduled, e.g. in regular intervals, such as every minute or weekly
-* continuously, e.g. a network behavior observation
+: ad-hoc, e.g. triggered by a specific event or a query
 
-There are three types of collection methods, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:
+: scheduled, e.g. in regular intervals, such as every minute or weekly
+
+: continuously, e.g. a network behavior observation
+
+: There are three types of collection methods, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:
 
 : Self-Reporting: A SACM component located on the target endpoint itself conducts the collection task.
 
@@ -142,6 +159,10 @@ a SACM domain).
 Configuration Drift: 
 
 : The discrepancy of endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components. 
+
+Component:
+
+: Defined in {{-i2nsft}} as "an encapsulation of software that communicates using Interfaces. A Component may be implemented by hardware and/or Software, and be represented using a set of classes. In general, a Component encapsulates a set of data structures as well as a set of algorithms that implement the functions that it provides." In the context of SACM, a 
 
 Consumer:
 
@@ -311,13 +332,11 @@ Repository:
 
 : A repository is a specific controller type that contains functions to consume, store and provide information of a particular kind - typically data transported on the data plane, but potentially also data and metadata from the control and management plane.  A single repository may provide the functions of more than one specific repository type (i.e. configuration baseline repository, assessment results repository, etc.)
 
-SACM Role:
-
-: SACM roles are associated with SACM components and are defined by the set of functions and interfaces a SACM component includes. There are three SACM roles: provider, consumer, and controller. The roles associated with a SACM component are determined by the purpose of the functions and corresponding interfaces the SACM component is composed of.
-
 SACM Component:
 
-: A set of SACM functions composes a SACM component. A SACM component conducts SACM tasks, acting on control plane, data plane and/or management plane via corresponding SACM interfaces. SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane functions and can contain data plane and management plane functions. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly. For example, a SACM component that is composed solely of functions that provide information would only take on the role of a provider.
+: A component is defined in {{-i2nsft}} as "an encapsulation of software that communicates using Interfaces. A Component may be implemented by hardware and/or Software, and be represented using a set of classes. In general, a Component encapsulates a set of data structures as well as a set of algorithms that implement the functions that it provides."
+
+: In the context of SACM, a set of SACM functions composes a SACM component. A SACM component conducts SACM tasks, acting on control plane, data plane and/or management plane via corresponding SACM interfaces. SACM defines a set of standard components (e.g. a collector, a broker, or a data store). A SACM component contains at least a basic set of control plane functions and can contain data plane and management plane functions. A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of. A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly. For example, a SACM component that is composed solely of functions that provide information would only take on the role of a provider.
 
 SACM Component Discovery:
 
@@ -330,6 +349,18 @@ SACM Component Discovery:
 SACM Domain:
 
 : Endpoints that include a SACM component compose a SACM domain. (To be revised, additional definition content TBD, possible dependencies to SACM architecture)
+
+SACM Interface:
+
+: An interface is defined in {{-i2nsft}} as "A set of operations one object knows it can invoke on, and expose to, another object.  This decouples the implementation of the operation from its specification. An interface is a subset of all operations that a given object implements. The same object may have multiple types of interfaces to serve different purposes."
+
+: In the context of SACM, SACM Funktions provide SACM Interfaces on the management, control, or data plane. Operations a SACM Interface provides are based on corresponding data model defined by SACM. SACM Interfaces are used for communication between SACM components.
+
+SACM Role:
+
+: A role is defined in {{-i2nsft}} as "an abstraction of a Component that models context-specific views and responsibilities of an object as separate role objects that can be statically or dynamically attached to (and removed from) the object that the role object describes. This provides three important benefits. First, it enables different behavior to be supported by the same Component for different contexts. Second, it enables the behavior of a Component to be adjusted dynamically (i.e., at runtime, in response)to changes in context, by using one or more Roles to define the behavior desired for each context. Third, it decouples the Roles of a Component from the Applications that use that Component."
+
+: In the context of SACM, SACM roles are associated with SACM components and are defined by the set of functions and interfaces a SACM component includes. There are three SACM roles: provider, consumer, and controller. The roles associated with a SACM component are determined by the purpose of the SACM functions and corresponding SACM interfaces the SACM component is composed of.
 
 Security Automation:
 
@@ -371,7 +402,7 @@ Target Endpoint Characterization Record:
 
 Target Endpoint Characterization Task:
 
-An ongoing task of continuously adding acquired endpoint attributes to a corresponding record. The TE characterization task manages the representation of encountered target endpoints in the SACM domain in the form of characterization records. For example, the output of a target endpoint discovery task or a collection task can be processed by the characterization task and added to the record. The TE characterization Task also manages these representations of target endpoints encountered in the SACM domain by splitting or merging the corresponding records as new or more refined endpoint attributes become available.
+: An ongoing task of continuously adding acquired endpoint attributes to a corresponding record. The TE characterization task manages the representation of encountered target endpoints in the SACM domain in the form of characterization records. For example, the output of a target endpoint discovery task or a collection task can be processed by the characterization task and added to the record. The TE characterization Task also manages these representations of target endpoints encountered in the SACM domain by splitting or merging the corresponding records as new or more refined endpoint attributes become available.
 
 : Input: discovered target endpoint attributes, endpoint attribute collection, existing characterization records
 
@@ -559,25 +590,6 @@ Changes from version 08 to version 09:
     USA
 
     Email: ietfdbh@comcast.net
-
-
-    Nancy Cam-Winget
-    Cisco Systems
-    3550 Cisco Way
-    San Jose, CA  95134
-    USA
-
-    Email: ncamwing@cisco.com
-
-
-    Jarrett Lu
-    Oracle Corporation
-    4180 Network Circle
-    Santa Clara, CA  95054
-    USA
-
-    Email: jarrett.lu@oracle.com
-
 
     Brian Ford
     Lancope
