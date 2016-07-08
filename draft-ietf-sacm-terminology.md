@@ -120,7 +120,7 @@ Broker:
 
 Capability:
 
-In {{-i2nsft}} a capability "defines a set of features that are available from a managed entity. Examples of "managed entities" are NSFs and Controllers, where NSF Capabilities and Controller Capabilities define functionality of an NSF and a Controller that may, but do not have to, be used, respectively. All Capabilities are announced through the Registration Interface."
+: In {{-i2nsft}} a capability "defines a set of features that are available from a managed entity. Examples of "managed entities" are NSFs and Controllers, where NSF Capabilities and Controller Capabilities define functionality of an NSF and a Controller that may, but do not have to, be used, respectively. All Capabilities are announced through the Registration Interface."
 
 : In the context of SACM, the extent of a SACM component's ability is enabled by the functions it is composed of.  Capabilities are announced by a SACM component via the SACM component registration task and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.
 
@@ -234,7 +234,7 @@ Endpoint Classification:
 
 : The task by which a discovered target endpoint is classified. Endpoint classification requires guidance in the form of an endpoint profile, discovery results and potentially collection results. Types, classes or the characteristics of an individual target endpoint are defined via endpoint profiles.
 
-Endpoint management capability:  
+Endpoint Management Capability:  
 
 : An enterprise IT capability managing endpoint identity, endpoint information, and associated metadata on an ongoing basis.
 
@@ -459,21 +459,21 @@ Timestamps :
 
 : This term is used in SACM to describe a recorded point in time at which an endpoint attribute is created or updated by a target endpoint and observed, transmitted or processed by a SACM component. Timestamps can be created by target endpoints or SACM components and are associated with endpoint attributes provided or consumed by SACM components. Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain. In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.
 
-Vulnerability description information:
+Vulnerability Assessment:  
+
+: The process of determining whether a set of endpoints is vulnerable according to the information contained in the vulnerability description information.
+
+Vulnerability Description Information:
 
 : Information pertaining to the existence of a flaw or flaws in software, hardware, and/or firmware, which could potentially have an adverse impact on enterprise IT functionality and/or security.  Vulnerability description information should contain enough information to support vulnerability detection.
 
-Vulnerability detection data:
+Vulnerability Detection Data:
 
 : A type of guidance extracted from vulnerability description information that describes the specific mechanisms of vulnerability detection that is used by an enterprise's vulnerability management capability to determine if a vulnerability is present on an endpoint.
 
-Vulnerability management capability:  
+Vulnerability Management Capability:  
 
 : An enterprise IT capability managing endpoint vulnerabilities and associated metadata on an ongoing basis by ingesting vulnerability description information and vulnerability detection data, and performing a vulnerability assessment.
-
-Vulnerability assessment:  
-
-: The process of determining whether a set of endpoints is vulnerable according to the information contained in the vulnerability description information.
 
 #  IANA Considerations
 
@@ -583,7 +583,7 @@ Changes from version 08 to version 09:
 
 Changes from version 09 to version 10:
 
-* Added Configuration Drift, Data in Motion, Data at Rest, Hardware Component, Hardware Inventory, Hardware Type, SACM Interface, Target Endpoint Characterization Record, Target Endpoint Characterization Task, Target Endpoint Classification Task, Target Endpoint Discovery Task
+* Added Configuration Drift, Data in Motion, Data at Rest, Endpoint Management Capability, Hardware Component, Hardware Inventory, Hardware Type, SACM Interface, Target Endpoint Characterization Record, Target Endpoint Characterization Task, Target Endpoint Classification Task, Target Endpoint Discovery Task, Vulnerability Description Information, Vulnerability Detection Data, Vulnerability Management Capability, Vulnerability Assessment
 
 * Added references to i2nsf definitions in Capability, SACM Component, SACM Interface, SACM Role
 
