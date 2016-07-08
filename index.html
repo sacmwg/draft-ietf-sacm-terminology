@@ -648,6 +648,8 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">The task by which a profile is composed out of endpoint attributes that describe the desired or expected posture of a type or class of target endpoints or even an individual target endpoint. The result of this task is an endpoint profile that is required as guidance for the tasks of endpoint classification or posture assessment.</dd>
   <dt>Endpoint Classification:</dt>
   <dd style="margin-left: 8">The task by which a discovered target endpoint is classified. Endpoint classification requires guidance in the form of an endpoint profile, discovery results and potentially collection results. Types, classes or the characteristics of an individual target endpoint are defined via endpoint profiles.</dd>
+  <dt>Endpoint management capability:</dt>
+  <dd style="margin-left: 8">An enterprise IT capability managing endpoint identity, endpoint information, and associated metadata on an ongoing basis.</dd>
   <dt>Evaluation Task:</dt>
   <dd style="margin-left: 8">The task by which endpoint attributes are evaluated.</dd>
   <dt>Evaluation Result:</dt>
@@ -792,6 +794,14 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">Defined in <a href="#RFC4949">[RFC4949]</a> as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object" and as "with respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.".</dd>
   <dt></dt>
   <dd style="margin-left: 8">This term is used in SACM to describe a recorded point in time at which an endpoint attribute is created or updated by a target endpoint and observed, transmitted or processed by a SACM component. Timestamps can be created by target endpoints or SACM components and are associated with endpoint attributes provided or consumed by SACM components. Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain. In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.</dd>
+  <dt>Vulnerability description information:</dt>
+  <dd style="margin-left: 8">Information pertaining to the existence of a flaw or flaws in software, hardware, and/or firmware, which could potentially have an adverse impact on enterprise IT functionality and/or security.  Vulnerability description information should contain enough information to support vulnerability detection.</dd>
+  <dt>Vulnerability detection data:</dt>
+  <dd style="margin-left: 8">A type of guidance extracted from vulnerability description information that describes the specific mechanisms of vulnerability detection that is used by an enterprise's vulnerability management capability to determine if a vulnerability is present on an endpoint.</dd>
+  <dt>Vulnerability management capability:</dt>
+  <dd style="margin-left: 8">An enterprise IT capability managing endpoint vulnerabilities and associated metadata on an ongoing basis by ingesting vulnerability description information and vulnerability detection data, and performing a vulnerability assessment.</dd>
+  <dt>Vulnerability assessment:</dt>
+  <dd style="margin-left: 8">The process of determining whether a set of endpoints is vulnerable according to the information contained in the vulnerability description information.</dd>
 </dl>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#iana-considerations" id="iana-considerations">IANA Considerations</a></h1>
 <p id="rfc.section.3.p.1">This memo includes no request to IANA.</p>
