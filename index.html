@@ -578,8 +578,13 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">Defined in <a href="#RFC4949">[RFC4949]</a> as "an approval that is granted to a system entity to access a system resource."</dd>
   <dt>Broker:</dt>
   <dd style="margin-left: 8">A broker is a specific controller type that contains control plane functions to provide and/or connect services on behalf of other SACM components via interfaces on the control plane. A broker may provide, for example, authorization services and find, upon request, SACM components providing requested services.</dd>
-  <dt>Capability:</dt>
-  <dd style="margin-left: 8">The extent of an SACM component's ability enabled by the functions it is composed of.  Capabilities are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.</dd>
+</dl>
+<p id="rfc.section.2.p.3">Capability:</p>
+<p/>
+
+<dl>
+  <dt>In &lt;xref target="I-D.ietf-i2nsf-terminology"/&gt; a capability "defines a set of features that are available from a managed entity (see also I2NSF Capability). Examples of "managed entities" are NSFs and Controllers, where NSF Capabilities and Controller Capabilities define functionality of an NSF and a Controller that may, but do not have to, be used, respectively. All Capabilities are announced through the Registration Interface."</dt>
+  <dd style="margin-left: 8">In the context of SACM, the extent of a SACM component's ability is enabled by the functions it is composed of.  Capabilities are announced by a SACM component via the SACM component registration task and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.</dd>
   <dt>Collection Result:</dt>
   <dd style="margin-left: 8">Information about a target endpoint that is produced by a collector conducting a collection task. A collection result is composed of one or more endpoint attributes.</dd>
   <dt>Collection Task:</dt>
@@ -604,8 +609,6 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">A piece of software that acquires information about one or more target endpoints by conducting collection tasks. A collector provides acquired information to SACM components in the form of collection results. A SACM component that consumes collection results may take on the role of a provider and publish the collection results in a SACM domain.  (TBD: A collector may not be a SACM component and therefore not part of a SACM domain).</dd>
   <dt>Configuration Drift:</dt>
   <dd style="margin-left: 8">The discrepancy of endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components.</dd>
-  <dt>Component:</dt>
-  <dd style="margin-left: 8">Defined in <a href="#I-D.ietf-i2nsf-terminology">[I-D.ietf-i2nsf-terminology]</a> as "an encapsulation of software that communicates using Interfaces. A Component may be implemented by hardware and/or Software, and be represented using a set of classes. In general, a Component encapsulates a set of data structures as well as a set of algorithms that implement the functions that it provides." In the context of SACM, a</dd>
   <dt>Consumer:</dt>
   <dd style="margin-left: 8">A consumer is a SACM role that is assigned to a SACM component that contains functions to receive information from other SACM components.</dd>
   <dt>Control Plane:</dt>
@@ -887,8 +890,28 @@ ul.toc a:first-child {
   <li>Minor updates to Attribute, Capabilities, SACM Function, SACM Component, Collection Task.</li>
   <li>Moved Asset Characterization to The Attic.</li>
 </ul>
+<p id="rfc.section.6.p.19">Changes from version 09 to version 10:</p>
+<p/>
+
+<ul>
+  <li>Added Configuration Drift, Data in Motion, Data at Rest, Hardware Component, Hardware Inventory, Hardware Type, SACM Interface, Target Endpoint Characterization Record, Target Endpoint Characterization Task, Target Endpoint Classification Task, Target Endpoint Discovery Task</li>
+  <li>Added references to i2nsf definitions in Capability, SACM Component, SACM Interface, SACM Role</li>
+  <li>Added i2nsf Terminology I-D Reference</li>
+  <li>Major Updates to Endpoint, SACM Task, Target Endpoint Identifier</li>
+  <li>Minor Updates to Guidance, SACM Component Discovery, Target Endpoint Label, Target Endpoint Profile</li>
+  <li>Relabled SACM Task</li>
+  <li>Removed Target Endpoint Discovery</li>
+</ul>
 <h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> <a href="#contributors" id="contributors">Contributors</a></h1>
 <pre>
+John Strassner
+Huawei
+Santa Clara, CA
+USA
+
+Email: john.sc.strassner@huawei.com
+
+
 David Waltermire
 National Institute of Standards and Technology
 100 Bureau Drive
