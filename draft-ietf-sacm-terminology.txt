@@ -5,10 +5,10 @@
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                     J. Lu
-Expires: January 8, 2017                              Oracle Corporation
+Expires: January 9, 2017                              Oracle Corporation
                                                            N. Cam-Winget
                                                            Cisco Systems
-                                                           July 07, 2016
+                                                           July 08, 2016
 
 
      Secure Automation and Continuous Monitoring (SACM) Terminology
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 8, 2017.
+   This Internet-Draft will expire on January 9, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Birkholz, et al.         Expires January 8, 2017                [Page 1]
+Birkholz, et al.         Expires January 9, 2017                [Page 1]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Birkholz, et al.         Expires January 8, 2017                [Page 2]
+Birkholz, et al.         Expires January 9, 2017                [Page 2]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -165,7 +165,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017                [Page 3]
+Birkholz, et al.         Expires January 9, 2017                [Page 3]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -221,7 +221,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017                [Page 4]
+Birkholz, et al.         Expires January 9, 2017                [Page 4]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -277,7 +277,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017                [Page 5]
+Birkholz, et al.         Expires January 9, 2017                [Page 5]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -333,7 +333,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017                [Page 6]
+Birkholz, et al.         Expires January 9, 2017                [Page 6]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -389,7 +389,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017                [Page 7]
+Birkholz, et al.         Expires January 9, 2017                [Page 7]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -445,7 +445,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017                [Page 8]
+Birkholz, et al.         Expires January 9, 2017                [Page 8]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -501,7 +501,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017                [Page 9]
+Birkholz, et al.         Expires January 9, 2017                [Page 9]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -557,7 +557,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 10]
+Birkholz, et al.         Expires January 9, 2017               [Page 10]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -613,7 +613,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 11]
+Birkholz, et al.         Expires January 9, 2017               [Page 11]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -669,7 +669,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 12]
+Birkholz, et al.         Expires January 9, 2017               [Page 12]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -711,7 +711,7 @@ Internet-Draft              SACM Terminology                   July 2016
       included in the corresponding record.  A characterization record
       is intended to be a representation of an endpoint.  It cannot be
       assured that a record distinctly represents a single target
-      endpoint unless a set of one ore more endpoint attributes that
+      endpoint unless a set of one or more endpoint attributes that
       compose a unique set of identifying endpoint attributes are
       included in the record.  Otherwise, the set of identifying
       attributes included in a record can match more than one target
@@ -725,7 +725,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 13]
+Birkholz, et al.         Expires January 9, 2017               [Page 13]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -781,7 +781,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 14]
+Birkholz, et al.         Expires January 9, 2017               [Page 14]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -837,7 +837,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 15]
+Birkholz, et al.         Expires January 9, 2017               [Page 15]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -893,7 +893,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 16]
+Birkholz, et al.         Expires January 9, 2017               [Page 16]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -949,7 +949,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 17]
+Birkholz, et al.         Expires January 9, 2017               [Page 17]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -1005,7 +1005,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 18]
+Birkholz, et al.         Expires January 9, 2017               [Page 18]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -1061,7 +1061,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 19]
+Birkholz, et al.         Expires January 9, 2017               [Page 19]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -1117,7 +1117,7 @@ Internet-Draft              SACM Terminology                   July 2016
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 20]
+Birkholz, et al.         Expires January 9, 2017               [Page 20]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -1173,7 +1173,7 @@ Appendix A.  The Attic
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 21]
+Birkholz, et al.         Expires January 9, 2017               [Page 21]
 
 Internet-Draft              SACM Terminology                   July 2016
 
@@ -1229,4 +1229,4 @@ Authors' Addresses
 
 
 
-Birkholz, et al.         Expires January 8, 2017               [Page 22]
+Birkholz, et al.         Expires January 9, 2017               [Page 22]
