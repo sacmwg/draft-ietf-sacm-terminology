@@ -236,6 +236,10 @@ Endpoint Classification:
 
 : The task by which a discovered target endpoint is classified. Endpoint classification requires guidance in the form of an endpoint profile, discovery results and potentially collection results. Types, classes or the characteristics of an individual target endpoint are defined via endpoint profiles.
 
+Endpoint management capability:  
+
+: An enterprise IT capability managing endpoint identity, endpoint information, and associated metadata on an ongoing basis.
+
 Evaluation Task:
 
 : The task by which endpoint attributes are evaluated.
@@ -456,6 +460,22 @@ Timestamps :
 : Defined in {{RFC4949}} as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object" and as "with respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.".
 
 : This term is used in SACM to describe a recorded point in time at which an endpoint attribute is created or updated by a target endpoint and observed, transmitted or processed by a SACM component. Timestamps can be created by target endpoints or SACM components and are associated with endpoint attributes provided or consumed by SACM components. Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain. In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.
+
+Vulnerability description information:
+
+: Information pertaining to the existence of a flaw or flaws in software, hardware, and/or firmware, which could potentially have an adverse impact on enterprise IT functionality and/or security.  Vulnerability description information should contain enough information to support vulnerability detection.
+
+Vulnerability detection data:
+
+: A type of guidance extracted from vulnerability description information that describes the specific mechanisms of vulnerability detection that is used by an enterprise's vulnerability management capability to determine if a vulnerability is present on an endpoint.
+
+Vulnerability management capability:  
+
+: An enterprise IT capability managing endpoint vulnerabilities and associated metadata on an ongoing basis by ingesting vulnerability description information and vulnerability detection data, and performing a vulnerability assessment.
+
+Vulnerability assessment:  
+
+: The process of determining whether a set of endpoints is vulnerable according to the information contained in the vulnerability description information.
 
 #  IANA Considerations
 
