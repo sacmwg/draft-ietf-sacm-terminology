@@ -160,10 +160,6 @@ Configuration Drift:
 
 : The discrepancy of endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components. 
 
-Component:
-
-: Defined in {{-i2nsft}} as "an encapsulation of software that communicates using Interfaces. A Component may be implemented by hardware and/or Software, and be represented using a set of classes. In general, a Component encapsulates a set of data structures as well as a set of algorithms that implement the functions that it provides." In the context of SACM, a 
-
 Consumer:
 
 : A consumer is a SACM role that is assigned to a SACM component that contains functions to receive information from other SACM components.
@@ -563,7 +559,32 @@ Changes from version 08 to version 09:
 * Moved Asset Characterization to The Attic.
 
 
+Changes from version 09 to version 10:
+
+* Added Configuration Drift, Data in Motion, Data at Rest, Hardware Component, Hardware Inventory, Hardware Type, SACM Interface, Target Endpoint Characterization Record, Target Endpoint Characterization Task, Target Endpoint Classification Task, Target Endpoint Discovery Task
+
+* Added references to i2nsf definitions in SACM Component, SACM Interface, SACM Role
+
+* Added i2nsf Terminology I-D Reference
+
+* Major Updates to Endpoint, SACM Task, Target Endpoint Identifier
+
+* Minor Updates to Guidance, SACM Component Discovery, Target Endpoint Label, Target Endpoint Profile
+
+* Relabled SACM Task
+
+* Removed Target Endpoint Discovery
+
+
 # Contributors
+
+    John Strassner
+    Huawei
+    Santa Clara, CA
+    USA
+
+    Email: john.sc.strassner@huawei.com
+
 
     David Waltermire
     National Institute of Standards and Technology
