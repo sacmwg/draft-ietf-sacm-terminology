@@ -77,7 +77,7 @@ clean:
 	-rm -f $(draft)-[0-9][0-9].{xml,md,org,txt,html,pdf}
 	-rm -f *.diff.html
 ifneq (.xml,$(draft_type))
-	-rm -f $(draft).xml
+#	-rm -f $(draft).xml
 endif
 
 ## diff

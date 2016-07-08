@@ -120,7 +120,9 @@ Broker:
 
 Capability:
 
-: The extent of an SACM component's ability enabled by the functions it is composed of.  Capabilities are propagated by a SACM component and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.
+In {{-i2nsft}} a capability "defines a set of features that are available from a managed entity (see also I2NSF Capability). Examples of "managed entities" are NSFs and Controllers, where NSF Capabilities and Controller Capabilities define functionality of an NSF and a Controller that may, but do not have to, be used, respectively. All Capabilities are announced through the Registration Interface."
+
+: In the context of SACM, the extent of a SACM component's ability is enabled by the functions it is composed of.  Capabilities are announced by a SACM component via the SACM component registration task and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.
 
 Collection Result:
 
@@ -583,7 +585,7 @@ Changes from version 09 to version 10:
 
 * Added Configuration Drift, Data in Motion, Data at Rest, Hardware Component, Hardware Inventory, Hardware Type, SACM Interface, Target Endpoint Characterization Record, Target Endpoint Characterization Task, Target Endpoint Classification Task, Target Endpoint Discovery Task
 
-* Added references to i2nsf definitions in SACM Component, SACM Interface, SACM Role
+* Added references to i2nsf definitions in Capability, SACM Component, SACM Interface, SACM Role
 
 * Added i2nsf Terminology I-D Reference
 
