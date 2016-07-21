@@ -33,6 +33,15 @@ author:
   city: Santa Clara
   region: CA
   country: USA
+- ins: J. Strassner
+  name: John Strassner
+  org: Huawei Technologies
+  email: john.sc.strassner@huawei.com
+  street: 2330 Central Expressway
+  code: 95138
+  city: Santa Clara
+  region: CA
+  country: USA
 - ins: N. Cam-Winget
   name: Nancy Cam-Winget
   org: Cisco Systems
@@ -590,13 +599,6 @@ Changes from version 09 to version 10:
 
 
 # Contributors
-
-    John Strassner
-    Huawei
-    Santa Clara, CA
-    USA
-
-    Email: john.sc.strassner@huawei.com
 
 
     David Waltermire
