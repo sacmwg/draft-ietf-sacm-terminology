@@ -12,7 +12,7 @@ Expires: January 22, 2017                             Oracle Corporation
 
 
      Secure Automation and Continuous Monitoring (SACM) Terminology
-                     draft-ietf-sacm-terminology-10
+                   draft-ietf-sacm-terminology-latest
 
 Abstract
 
@@ -98,14 +98,14 @@ Table of Contents
       based firewall) such that the appropriate validators may evaluate
       the posture against compliance policy."
 
-      Within SACM the use of the term is expanded to support other uses
-      of collected posture (e.g. reporting, network enforcement,
-      vulnerability detection, license management).  The phrase "set of
-      capabilities on the endpoint" includes: hardware and software
-      installed on the endpoint."
+      Assessment is a specifc workflow that incorporates the SACM tasks
+      discovery, collection and evaluation.  A prominent instance of the
+      assessment workflow is illustrated in the Vulnerability
+      Assessement Scenario [I-D.ietf-sacm-vuln-scenario]
 
    Asset:  Defined in [RFC4949] as "a system resource that is (a)
       required to be protected by an information system's security
+      policy, (b) intended to be protected by a countermeasure, or (c)
 
 
 
@@ -114,7 +114,6 @@ Birkholz, et al.        Expires January 22, 2017                [Page 2]
 Internet-Draft              SACM Terminology                   July 2016
 
 
-      policy, (b) intended to be protected by a countermeasure, or (c)
       required for a system's mission".  In the scope of SACM, an asset
       can be composed of other assets.  Examples of Assets include:
       Endpoints, Software, Guidance, or X.509 public key certificates.
@@ -162,6 +161,7 @@ Internet-Draft              SACM Terminology                   July 2016
    Collection Result:  Information about a target endpoint that is
       produced by a collector conducting a collection task.  A
       collection result is composed of one or more endpoint attributes.
+
 
 
 
@@ -411,23 +411,24 @@ Internet-Draft              SACM Terminology                   July 2016
       negotiated with other SACM components.
 
    Guidance:  Input instructions to processes and tasks, such as
-      collecting, assessing or reporting.  Guidance influences the
+      collection, evaluation or remediation.  Guidance influences the
       behavior of a SACM component and is considered content of the
-      management plane.  Guidance can be manually or automatically
-      generated or provided.  Typically, the tasks that provide guidance
-      to SACM components have a low-frequency and tend to be be
-      sporadic.  A prominent example of guidance are target endpoint
-      profiles, but guidance can have many forms, including:
+      management plane.  In the context of SACM, guidance is machine-
+      readable and can be manually or automatically generated or
+      provided.  Typically, the tasks that provide guidance to SACM
+      components have a low-frequency and tend to be be sporadic.
 
-      Configuration, e.g. a SACM component's name, or a CMDB's IPv6
-      address.
+      There are two types of guidance:
 
-      Profiles, e.g. a set of expected states for network behavior
-      associated with target endpoints employed by specific users.
+      Declarative Guidance: defines the configuration or state an
+      endpoint is supposed to be in--without providing specific actions
+      or methods to produce that desired state.  Examples include Target
+      Endpoint Profiles or network topology based requirements.
 
-      Policies, e.g. an interval to refresh the registration of a SACM
-      component, or a list of required capabilities for SACM components
-      in a specific location.
+      Imperative Guidance: prescribes specific actions to be conducted
+      or methods to be used in order to achieve an outcome.  Examples
+      include a targeted Collection Task or the IP-Address of a SACM
+      Component that provides a registration function.
 
    Hardware Component:  Hardware components are the distinguishable
       physical components that compose an endpoint.  The composition of
@@ -441,7 +442,6 @@ Internet-Draft              SACM Terminology                   July 2016
       a hardware component can be distinguished by its serial number.
       Occasionally, hardware components are refered to as power sucking
       aliens.
-
 
 
 
@@ -913,6 +913,12 @@ Internet-Draft              SACM Terminology                   July 2016
       and vulnerability detection data, and performing a vulnerability
       assessment.
 
+   Workflow:
+
+   A workflow is a modular composiion of tasks.  A workflow can contain
+   loops, conditionals, multiple starting points and multiple endpoints.
+   The most promiminant workflow in SACM is the assessment workflow.
+
 3.  IANA Considerations
 
    This memo includes no request to IANA.
@@ -940,12 +946,6 @@ Internet-Draft              SACM Terminology                   July 2016
 
    Changes from version 02 to version 03:
 
-   o  Removed Section 2.1.  Cleaned up some editing nits; broke terms
-      into 2 sections (predefined and newly defined terms).  Added some
-      of the relevant terms per the proposed list discussed in the IETF
-      89 meeting.
-
-   Changes from version 03 to version 04:
 
 
 
@@ -953,6 +953,13 @@ Birkholz, et al.        Expires January 22, 2017               [Page 17]
 
 Internet-Draft              SACM Terminology                   July 2016
 
+
+   o  Removed Section 2.1.  Cleaned up some editing nits; broke terms
+      into 2 sections (predefined and newly defined terms).  Added some
+      of the relevant terms per the proposed list discussed in the IETF
+      89 meeting.
+
+   Changes from version 03 to version 04:
 
    o  TODO
 
@@ -996,19 +1003,18 @@ Internet-Draft              SACM Terminology                   July 2016
    o  Major updates to Building Block, Function, SACM Role, Target
       Endpoint.
 
-   o  Minor updates to Broker, Capability, Collection Task, Evaluation
-      Task, Posture.
-
-   o  Relabeled Role to SACM Role, Endpoint Target to Target Endpoint,
-      Endpoint Discovery to Endpoint Identification.
-
-
 
 
 Birkholz, et al.        Expires January 22, 2017               [Page 18]
 
 Internet-Draft              SACM Terminology                   July 2016
 
+
+   o  Minor updates to Broker, Capability, Collection Task, Evaluation
+      Task, Posture.
+
+   o  Relabeled Role to SACM Role, Endpoint Target to Target Endpoint,
+      Endpoint Discovery to Endpoint Identification.
 
    o  Moved Asset Targeting, Client, Endpoint Identification to The
       Attic.
@@ -1053,18 +1059,16 @@ Internet-Draft              SACM Terminology                   July 2016
    o  Minor updates to Attribute, Capabilities, SACM Function, SACM
       Component, Collection Task.
 
-   o  Moved Asset Characterization to The Attic.
-
-   Changes from version 09 to version 10:
-
-
-
 
 
 Birkholz, et al.        Expires January 22, 2017               [Page 19]
 
 Internet-Draft              SACM Terminology                   July 2016
 
+
+   o  Moved Asset Characterization to The Attic.
+
+   Changes from version 09 to version 10:
 
    o  Added Configuration Drift, Data in Motion, Data at Rest, Endpoint
       Management Capability, Hardware Component, Hardware Inventory,
@@ -1110,16 +1114,18 @@ Internet-Draft              SACM Terminology                   July 2016
    Adam W. Montville
    Center for Internet Security
    31 Tech Valley Drive
-   East Greenbush, NY  12061
-   USA
-
-   Email: adam.w.montville@gmail.com
 
 
 
 Birkholz, et al.        Expires January 22, 2017               [Page 20]
 
 Internet-Draft              SACM Terminology                   July 2016
+
+
+   East Greenbush, NY  12061
+   USA
+
+   Email: adam.w.montville@gmail.com
 
 
    David Harrington
@@ -1155,6 +1161,23 @@ Internet-Draft              SACM Terminology                   July 2016
               Terminology", draft-ietf-i2nsf-terminology-01 (work in
               progress), July 2016.
 
+   [I-D.ietf-sacm-vuln-scenario]
+              Coffin, C., Cheikes, B., Schmidt, C., Haynes, D.,
+              Fitzgerald-McKay, J., and D. Waltermire, "SACM
+              Vulnerability Assessment Scenario", draft-ietf-sacm-vuln-
+              scenario-01 (work in progress), July 2016.
+
+
+
+
+
+
+
+Birkholz, et al.        Expires January 22, 2017               [Page 21]
+
+Internet-Draft              SACM Terminology                   July 2016
+
+
    [RFC3444]  Pras, A. and J. Schoenwaelder, "On the Difference between
               Information Models and Data Models", RFC 3444,
               DOI 10.17487/RFC3444, January 2003,
@@ -1168,15 +1191,6 @@ Internet-Draft              SACM Terminology                   July 2016
               Tardo, "Network Endpoint Assessment (NEA): Overview and
               Requirements", RFC 5209, DOI 10.17487/RFC5209, June 2008,
               <http://www.rfc-editor.org/info/rfc5209>.
-
-
-
-
-
-Birkholz, et al.        Expires January 22, 2017               [Page 21]
-
-Internet-Draft              SACM Terminology                   July 2016
-
 
    [RFC6192]  Dugal, D., Pignataro, C., and R. Dunn, "Protecting the
               Router Control Plane", RFC 6192, DOI 10.17487/RFC6192,
@@ -1214,6 +1228,12 @@ Authors' Addresses
    Email: henk.birkholz@sit.fraunhofer.de
 
 
+
+Birkholz, et al.        Expires January 22, 2017               [Page 22]
+
+Internet-Draft              SACM Terminology                   July 2016
+
+
    Jarrett Lu
    Oracle Corporation
    4180 Network Circle
@@ -1223,17 +1243,6 @@ Authors' Addresses
    Email: jarrett.lu@oracle.com
 
 
-
-
-
-
-
-
-Birkholz, et al.        Expires January 22, 2017               [Page 22]
-
-Internet-Draft              SACM Terminology                   July 2016
-
-
    Nancy Cam-Winget
    Cisco Systems
    3550 Cisco Way
@@ -1241,15 +1250,6 @@ Internet-Draft              SACM Terminology                   July 2016
    USA
 
    Email: ncamwing@cisco.com
-
-
-
-
-
-
-
-
-
 
 
 
