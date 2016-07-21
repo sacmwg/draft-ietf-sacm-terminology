@@ -1,7 +1,7 @@
 ---
 title: Secure Automation and Continuous Monitoring (SACM) Terminology
 abbrev: SACM Terminology
-docname: draft-ietf-sacm-terminology-10
+docname: draft-ietf-sacm-terminology-latest
 stand_alone: true
 ipr: trust200902
 area: Security
@@ -46,21 +46,8 @@ author:
 normative:
 
 informative:
-  I-D.ietf-i2nsf-terminology:
-    -: i2nsft
-    title: Interface to Network Security Functions (I2NSF) Terminology
-    date: 2016-07-08
-    seriesinfo:
-      Internet-Draft: draft-ietf-i2nsf-terminology-01
-    author:
-      - ins: S. Hares
-        name: Susanne Hares
-      - ins: J. Strassner
-        name: John Strasser 
-      - ins: D. Lopez
-        name: Diego R. Lopez
-      - ins: L. Xia
-        name: Liang Xia (Frank)
+  I-D.ietf-i2nsf-terminology: i2nsft
+  I-D.ietf-sacm-vuln-scenario: vulnass
   RFC3444:
   RFC4949:
   RFC5209:
@@ -92,7 +79,7 @@ Assessment:
 
 : Defined in {{RFC5209}} as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."
 
-: Within SACM the use of the term is expanded to support other uses of collected posture (e.g. reporting, network enforcement, vulnerability detection, license management).  The phrase "set of capabilities on the endpoint" includes: hardware and software installed on the endpoint."
+: Assessment is a specifc workflow that incorporates the SACM tasks discovery, collection and evaluation. A prominent instance of the assessment workflow is illustrated in the Vulnerability Assessement Scenario {{-vulnass}} 
 
 Asset:
 
@@ -260,13 +247,13 @@ SACM Function:
 
 Guidance:
 
-: Input instructions to processes and tasks, such as collecting, assessing  or reporting. Guidance influences the behavior of a SACM component and is considered content of the management plane. Guidance can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic. A prominent example of guidance are target endpoint profiles, but guidance can have many forms, including:
+: Input instructions to processes and tasks, such as collection, evaluation or remediation. Guidance influences the behavior of a SACM component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic.
 
-: Configuration, e.g. a SACM component's name, or a CMDB's IPv6 address.
+: There are two types of guidance:
 
-: Profiles, e.g. a set of expected states for network behavior associated with target endpoints employed by specific users.
+: Declarative Guidance: defines the configuration or state an endpoint is supposed to be in---without providing specific actions or methods to produce that desired state. Examples include Target Endpoint Profiles or network topology based requirements.
 
-: Policies, e.g. an interval to refresh the registration of a SACM component, or a list of required capabilities for SACM components in a specific location.
+: Imperative Guidance: prescribes specific actions to be conducted or methods to be used in order to achieve an outcome. Examples include a targeted Collection Task or the IP-Address of a SACM Component that provides a registration function.
 
 Hardware Component: 
 
@@ -474,6 +461,10 @@ Vulnerability Detection Data:
 Vulnerability Management Capability:  
 
 : An enterprise IT capability managing endpoint vulnerabilities and associated metadata on an ongoing basis by ingesting vulnerability description information and vulnerability detection data, and performing a vulnerability assessment.
+
+Workflow:
+
+A workflow is a modular composiion of tasks. A workflow can contain loops, conditionals, multiple starting points and multiple endpoints. The most promiminant workflow in SACM is the assessment workflow.
 
 #  IANA Considerations
 
