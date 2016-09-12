@@ -120,9 +120,11 @@ Capability:
 
 : In the context of SACM, the extent of a SACM component's ability is enabled by the functions it is composed of.  Capabilities are announced by a SACM component via the SACM component registration task and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.
 
+: The SACM Vulnerability Assessment Scenario {{-vulnass}} defines the terms Endpoint Management Capabilities, Vulnerability Management Capabilities, and Vulnerability Assessment Capabilities, which illustrate specific sets of SACM capabilities, which are required to conduct workflows illustrated by the scenario definition.
+
 Collection Result:
 
-: Information about a target endpoint that is produced by a collector conducting a collection task. A collection result is composed of one or more endpoint attributes.
+: Information about a target endpoint that is produced by a collector conducting a collection task. A collection result is composed as one ore more content-elements.
 
 Collection Task:
 
@@ -146,13 +148,9 @@ Collection Task:
 
 Collector:
 
-: A piece of software that acquires information about one or
-more target endpoints by conducting collection tasks. A collector
-provides acquired information to SACM components in the form of collection
-results. A SACM component that consumes collection results may take on the
-role of a provider and publish the collection results in a SACM domain.
-(TBD: A collector may not be a SACM component and therefore not part of
-a SACM domain).
+: A piece of software that acquires information about one or more target endpoints by conducting collection tasks. A collector provides acquired information in the form of collection results via a set of registered capabilities that can be discovered by other SACM components.
+
+: A collector can be distributed across multiple endpoints, e.g. across a target endpoint and a SACM component. The separate parts of the collector can communicate with a specialized protocol, such as PA-TNC {{RFC5792}}. At least one part of a distributed collector has to take on the role of a provider of information by providing SACM interfaces to propagate capabilities and to provide SACM content in the form of collection results.
 
 Configuration Drift: 
 
@@ -162,9 +160,17 @@ Consumer:
 
 : A consumer is a SACM role that is assigned to a SACM component that contains functions to receive information from other SACM components.
 
+Content Element:
+
+: Content elements constitute the payload data (content) transfered via statements subjects emitted by providers of information. Every content element subject includes a specific content subject and a corresponding content metadata subject.
+
+Content Metadata:
+
+: Data about content subjects. Every content-element includes a content metadata subject. The subject can include any information element that can annotate the content transefered. Examples include time stamps or data provenance subjects.
+
 Control Plane:
 
-: Typically used as a term in the context of routing, e.g. {{RFC6192}}. In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation.  The control plane orchestrates the flow on the data plane according to guidance and/or input from the management plane. SACM components with interfaces to the control plane have knowledge of the capabilities of other SACM components within a SACM domain. 
+: Typically used as a term in the context of routing, e.g. {{RFC6192}}. In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation, and registration. The control plane orchestrates the flow on the data plane according to guidance received via the management plane. SACM components with interfaces to the control plane have knowledge of the capabilities of other SACM components within a SACM domain. 
 
 Controller:
 
@@ -176,13 +182,13 @@ Data Confidentiality:
 
 Data In Motion:
 
-: Data that is being transported via a network. Data in motion requires a data model to encode data in order to be transported. Typically, data in motion is serialized (marshalling) into a transport encoding by a provider of information and deserialized (unmarshalling) by a consumer of information.
+: Data that is being transported via a network; also referred to as Data in transit. Data in motion requires a data model to encode the data to be transferred. Typically, data in motion is serialized (marshalling) into a transport encoding by a provider of information and deserialized (unmarshalling) by a consumer of information.
 
 : SACM architecture and corresponding models focus on data in motion.
 
 Data At Rest:
 
-: Data that is stored in a repository. Data at rest requires a data model to encode data in order to be stored. In the context of SACM, data at rest located on a SACM component can be provided to other SACM components via discoverable capabilities.
+: Data that is stored in a repository. Data at rest requires a data model to encode the data to be stored. In the context of SACM, data at rest located on a SACM component can be provided to other SACM components via discoverable capabilities.
 
 : In the context of SACM, data models for data at rest are out of scope.
 
@@ -192,7 +198,7 @@ Data Integrity:
 
 Data Origin:
 
-: One or more properties that enable a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source).
+: One or more properties that enable a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source). Data Origin is expressed by an endpoint label.
 
 Data Plane:
 
@@ -230,9 +236,19 @@ Endpoint Classification:
 
 : The task by which a discovered target endpoint is classified. Endpoint classification requires guidance in the form of an endpoint profile, discovery results and potentially collection results. Types, classes or the characteristics of an individual target endpoint are defined via endpoint profiles.
 
-Endpoint Management Capability:  
+Endpoint Label:
 
-: An enterprise IT capability managing endpoint identity, endpoint information, and associated metadata on an ongoing basis.
+: In a SACM domain, every endpoint can be identified by an endpoint label. There are two prominent uses of endpoint labels in a SACM domain: to identify SACM components and to identify Target Endpoints. Both endpoint labels can be used in SACM content or in content metadata:
+
+: SACM Components are identified by: SACM component label / Data Origin
+
+: Target Endpoints are identified by: TE label / Data Source
+
+: An endpoint label is expressed as an artificially created ID that references a distinct set of identifying attributes (Target Endpoint Identifier). A target endpoint label is unique in a SACM domain and created by a SACM component that provides the appropriate function as a capability.
+
+Endpoint Management Capabilities:
+
+: An enterprise IT department's ability to manage endpoint identity, endpoint information, and associated metadata on an ongoing basis.
 
 Evaluation Task:
 
@@ -276,6 +292,11 @@ Hardware Type:
 
 : Hardware types define specific and distinguishable categories of hardware components that can be part of endpoints, e.g. CPU or 802.11p interface. Typically, hardware types can be distinguished by their vendor assigned names, names of standards used, or a model name.
 
+Information Element:
+
+A representation of information about physical and virtual “objects of interests”. Information elements are the building blocks that constitute the SACM information model. In the context of SACM, an information element that expresses a single value with a specific name is referred to as an Attribute (analogous to an attribute-value-pair). A set of attributes that is bundled into a more complex composite information element is referred to as a Subject. Every information element in the SACM information model has a unique name. Endpoint attributes or time stamps, for example, are represented as information elements in the SACM information model.
+
+
 Information Model:
 
 : An information model is an abstract representation of data, their properties, relationships between data and the operations that can be performed on the data.  While there is some overlap with a data model, {{RFC3444}} distinguishes an information model as being protocol and implementation neutral whereas a data model would provide such details. The purpose of the SACM information model is to ensure interoperability between SACM data models (that are used as transport encoding) and to provide a standardized set of information elements for communication between SACM components.
@@ -292,6 +313,10 @@ Management Plane:
 
 : An architectural component providing common functions to steer the behavior of SACM components, e.g. its behavior on the control plane. Prominent examples include: modification of the configuration of a SACM component or updating a target endpoint profile that resides on an evaluator. In essence, guidance is transported via the management plane. Typically, a SACM component can fulfill its purpose without continuous input from the management plane. In contrast, without continuous availability of control plane functions a typical SACM component could not function properly. In general, interaction on the management plane is less frequent and less regular than on the control plane. Input via the management plane can be manual (e.g. via a CLI), or can be automated via management plane functions that are part of other SACM components.
 
+Metadata:
+
+: Data about data. In the SACM information model, data is referred to as Content. Metadata about the content is referred to as Content-Metadata, respectively. Content and Content-Metadata are combined into Subjects called Content-Elements in the SACM information model. Some information elements defined by the SACM information model can be part of the Content or the Content-Metadata. Therefore, if an information element is considered data or data about data depends on which kind of Subject it is associated with. The SACM information model also defines metadata about the data origin via the subject Statement-Metadata. Typical examples of metadata are time stamps, data origin or data source. 
+
 Network Address:
 
 : Network addresses are layer specific and follow layer specific address schemes. Each interface of a specific layer can be associated with one or more addresses appropriate for that layer. There is no guarantee that an address is globally unique. In general, there is a scope to an address in which it is intended to be unique.
@@ -300,9 +325,11 @@ Network Address:
 
 Network Interface:
 
-: An endpoint is connected to a network via one or more interfaces. Interfaces can be physical or virtual. Interfaces of an endpoint can operate on different layers, most prominently what is now commonly called layer 2 and 3. Within a layer, interfaces can be nested.
-On layer 2, a root interface is typically associated with a physical interface port and nested interfaces are virtual interfaces. In the case of a virtual endpoint, a root interface can be a virtual interface. Virtual layer 2 interfaces of one or more endpoints can also
-constitute an aggregated group of links that act as one. On layer 3, nested interfaces typically constitute virtual tunnels or networks.
+: An endpoint is connected to a network via one or more network interfaces. Network interfaces can be physical or virtual. Network interfaces of an endpoint can operate on different layers, most prominently what is now commonly called layer 2 and 3. Within a layer, interfaces can be nested.
+
+: On layer 2, a root interface is typically associated with a physical interface port and nested interfaces are virtual interfaces. In the case of a virtual endpoint, a root interface can be a virtual interface. Virtual layer 2 interfaces of one or more endpoints can also constitute an aggregated group of links that act as one.
+
+: On layer 3, nested interfaces typically constitute virtual tunnels or virtual (mesh) networks.
 
 : Examples include: physical Ethernet port, layer 2 VLAN interface, a MC-LAG setup, layer 3 Point-to-Point tunnel ingress or egress. 
 
@@ -344,6 +371,10 @@ SACM Component Discovery:
 
 : Output: a list of SACM components including metadata
 
+SACM Component Label:
+
+: A specific endpoint label that is used to identify a SACM component. If used in content-metadata, this label is called data origin.
+
 SACM Domain:
 
 : Endpoints that include a SACM component compose a SACM domain. (To be revised, additional definition content TBD, possible dependencies to SACM architecture)
@@ -378,7 +409,9 @@ Software Instance:
 
 Statement: 
 
-: The output of a provider, e.g. a report or an assertion acquired via a collection result from a collector, that includes metadata about the data origin and the point in time the statement was created at. A statement can be accompanied by evidence of the validity of its metadata.
+: The output of a provider, e.g. a report or an assertion about a collection result, that includes content-elements and statement-metadata (e.g. data origin or the point in time the statement was created at). A statement can be accompanied by evidence of the validity of its metadata.
+
+: The structure of statements is defined in the SACM information model.
 
 Supplicant:
 
@@ -428,7 +461,7 @@ Target Endpoint Identifier:
 
 Target Endpoint Label:
 
-: An artificially created id that references a distinct set of identifying attributes (Target Endpoint Identifier). A target endpoint label is unique in a SACM domain and created by a SACM component that provides the appropriate function as a capability.
+: A specific endpoint label that is used to identify a specific Target Endpoint; also referred to as TE label. If used in content-metadata, this label is called data source.
 
 Target Endpoint Profile:
 
@@ -465,11 +498,15 @@ Vulnerability Description Information:
 
 Vulnerability Detection Data:
 
-: A type of guidance extracted from vulnerability description information that describes the specific mechanisms of vulnerability detection that is used by an enterprise's vulnerability management capability to determine if a vulnerability is present on an endpoint.
+: A type of guidance extracted or derived from vulnerability description information that describes the specific mechanisms of vulnerability detection that is used by an enterprise's vulnerability management capabilities to determine if a vulnerability is present on an endpoint.
 
-Vulnerability Management Capability:  
+Vulnerability Management Capabilities:  
 
-: An enterprise IT capability managing endpoint vulnerabilities and associated metadata on an ongoing basis by ingesting vulnerability description information and vulnerability detection data, and performing a vulnerability assessment.
+: An enterprise IT department's ability to manage endpoint vulnerabilities and associated metadata on an ongoing basis by ingesting vulnerability description information and vulnerability detection data, and performing vulnerability assessments.
+
+Vulnerability assessment capabilities:
+
+: An enterprise IT department's ability to determine whether a set of endpoints is vulnerable according to the information contained in the vulnerability description information.
 
 Workflow:
 
