@@ -60,6 +60,7 @@ informative:
   RFC3444:
   RFC4949:
   RFC5209:
+  RFC5792:
   RFC6192:
   X.1252:
     title: "ITU-T X.1252 (04/2010)"
@@ -634,9 +635,19 @@ Changes from version 09 to version 10:
 
 * Minor Updates to Guidance, SACM Component Discovery, Target Endpoint Label, Target Endpoint Profile
 
-* Relabled SACM Task
+* Relabeled SACM Task
 
 * Removed Target Endpoint Discovery
+
+Changes from version 10 to version 11:
+
+* Added Content Element, Content Metadata, Endpoint Label, Information Element, Metadata, SACM Component Label, Workflow
+
+* Major Updates to Assessment, Capability, Collector, Endpoint Management Capabilities, Guidance, Vulnerability Assessment Capabilities, Vulnerability Detection Data, Vulnerability Assessment Capabilities
+
+* Minor updates to Collection Result, Control Plane, Data in Motion, Data at Rest, Data Origin, Network Interface, Statement, Target Endpoint Label,  
+
+* Relabeled Endpoint Management Capability, Vulnerability Management Capability, Vulnerability Assessment
 
 
 # Contributors
