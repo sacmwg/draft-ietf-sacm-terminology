@@ -100,7 +100,7 @@ Asset Management:
 
 Attribute:
 
-: Defined in {{RFC5209}} as "data element including any requisite meta-data describing an observed, expected, or the operational status of an endpoint feature (e.g., anti-virus software is currently in use)." If not indicated otherwise, attributes in SACM are represented and processed as attribute value pairs.
+: TODO, Update definition. Defined in {{RFC5209}} as "data element including any requisite meta-data describing an observed, expected, or the operational status of an endpoint feature (e.g., anti-virus software is currently in use)." If not indicated otherwise, attributes in SACM are represented and processed as attribute value pairs.
 
 Authentication: 
 
@@ -124,7 +124,7 @@ Capability:
 
 Collection Result:
 
-: Information about a target endpoint that is produced by a collector conducting a collection task. A collection result is composed as one ore more content-elements.
+: Information about a target endpoint that is produced by a collector conducting a collection task. A collection result is composed as one or more content-elements.
 
 Collection Task:
 
@@ -162,11 +162,11 @@ Consumer:
 
 Content Element:
 
-: Content elements constitute the payload data (content) transfered via statements subjects emitted by providers of information. Every content element subject includes a specific content subject and a corresponding content metadata subject.
+: Content elements constitute the payload data (content) transfered via statement Subjects emitted by providers of information. Every content element Subject includes a specific content Subject and a corresponding content metadata Subject.
 
 Content Metadata:
 
-: Data about content subjects. Every content-element includes a content metadata subject. The subject can include any information element that can annotate the content transefered. Examples include time stamps or data provenance subjects.
+: Data about content Subjects. Every content-element includes a content metadata Subject. The Subject can include any information element that can annotate the content transefered. Examples include time stamps or data provenance Subjects.
 
 Control Plane:
 
@@ -226,7 +226,7 @@ Endpoint:
 
 Endpoint Attribute:
 
-: In the context of SACM, endpoint attributes are information elements that describe a characteristic of a target endpoint. Endpoint Attributes typically constitute atomic information elements (AVP) that can be bundled into composite information elements (e.g. information about a specific network interface can be represented via a set of multiple AVP).
+: In the context of SACM, endpoint attributes are information elements that describe a characteristic of a target endpoint. Endpoint Attributes typically constitute Attributes that can be bundled into Subject (e.g. information about a specific network interface can be represented via a set of multiple AVP).
 
 Endpoint Characterization:
 
@@ -264,7 +264,7 @@ Excluded Endpoint:
 
 Expected Endpoint State:
 
-: The required state of an endpoint that is to be compared against. Sets of expected endpoint states are transported as guidance in target endpoint profiles via the management plane. This, for example, can be a policy, but also a recorded past state. An expected state is represented can be represented via a atomic information element or an composite information element that represents a set of multiple attribute value pairs.
+: The required state of an endpoint that is to be compared against. Sets of expected endpoint states are transported as guidance in target endpoint profiles via the management plane. This, for example, can be a policy, but also a recorded past state. An expected state is represented can be represented via an Attribute or an Subject that represents a set of multiple attribute value pairs.
 
 SACM Function:
 
@@ -315,7 +315,7 @@ Management Plane:
 
 Metadata:
 
-: Data about data. In the SACM information model, data is referred to as Content. Metadata about the content is referred to as Content-Metadata, respectively. Content and Content-Metadata are combined into Subjects called Content-Elements in the SACM information model. Some information elements defined by the SACM information model can be part of the Content or the Content-Metadata. Therefore, if an information element is considered data or data about data depends on which kind of Subject it is associated with. The SACM information model also defines metadata about the data origin via the subject Statement-Metadata. Typical examples of metadata are time stamps, data origin or data source. 
+: Data about data. In the SACM information model, data is referred to as Content. Metadata about the content is referred to as Content-Metadata, respectively. Content and Content-Metadata are combined into Subjects called Content-Elements in the SACM information model. Some information elements defined by the SACM information model can be part of the Content or the Content-Metadata. Therefore, if an information element is considered data or data about data depends on which kind of Subject it is associated with. The SACM information model also defines metadata about the data origin via the Subject Statement-Metadata. Typical examples of metadata are time stamps, data origin or data source. 
 
 Network Address:
 
@@ -373,7 +373,7 @@ SACM Component Discovery:
 
 SACM Component Label:
 
-: A specific endpoint label that is used to identify a SACM component. If used in content-metadata, this label is called data origin.
+: A specific endpoint label that is used to identify a SACM component. In content-metadata, this label is called data origin.
 
 SACM Domain:
 
@@ -409,9 +409,13 @@ Software Instance:
 
 Statement: 
 
-: The output of a provider, e.g. a report or an assertion about a collection result, that includes content-elements and statement-metadata (e.g. data origin or the point in time the statement was created at). A statement can be accompanied by evidence of the validity of its metadata.
+: An output of a provider, e.g. a report or an assertion about a collection result, that includes content-elements and statement-metadata (e.g. data origin or the point in time at which the statement was created). A statement can be accompanied by evidence of the validity of its metadata.
 
 : The structure of statements is defined in the SACM information model.
+
+Subject:
+
+: TODO, incorporate definition from SACM IM
 
 Supplicant:
 
@@ -461,7 +465,7 @@ Target Endpoint Identifier:
 
 Target Endpoint Label:
 
-: A specific endpoint label that is used to identify a specific Target Endpoint; also referred to as TE label. If used in content-metadata, this label is called data source.
+: A specific endpoint label that refers to a target endpoint identifier used to identify a specific target endpoint (also referred to as TE label).  In content-metadata, this label is called data source.
 
 Target Endpoint Profile:
 
@@ -486,7 +490,7 @@ Timestamps :
 
 : Defined in {{RFC4949}} as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object" and as "with respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.".
 
-: This term is used in SACM to describe a recorded point in time at which an endpoint attribute is created or updated by a target endpoint and observed, transmitted or processed by a SACM component. Timestamps can be created by target endpoints or SACM components and are associated with endpoint attributes provided or consumed by SACM components. Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain. In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.
+: This term is used in SACM to describe a recorded point in time at which, for example, an endpoint attribute is created or updated by a target endpoint and observed, transmitted or processed by a SACM component. Timestamps can be created by target endpoints or SACM components and are associated with endpoint attributes provided or consumed by SACM components. Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain. In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.
 
 Vulnerability Assessment:  
 
