@@ -470,7 +470,7 @@ ul.toc a:first-child {
 
   <meta name="dct.creator" content="Birkholz, H., Lu, J., Strassner, J., and N. Cam-Winget" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-terminology-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2016-9-12" />
+  <meta name="dct.issued" scheme="ISO8601" content="2016-9-21" />
   <meta name="dct.abstract" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
   <meta name="description" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
 
@@ -494,7 +494,7 @@ ul.toc a:first-child {
   <td class="right">J. Lu</td>
 </tr>
 <tr>
-  <td class="left">Expires: March 16, 2017</td>
+  <td class="left">Expires: March 25, 2017</td>
   <td class="right">Oracle Corporation</td>
 </tr>
 <tr>
@@ -515,7 +515,7 @@ ul.toc a:first-child {
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">September 12, 2016</td>
+  <td class="right">September 21, 2016</td>
 </tr>
 
     	
@@ -535,7 +535,7 @@ ul.toc a:first-child {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on March 16, 2017.</p>
+<p>This Internet-Draft will expire on March 25, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -569,17 +569,17 @@ ul.toc a:first-child {
 
 <dl>
   <dt>Assertion:</dt>
-  <dd style="margin-left: 8">Defined by the ITU in <a href="#X.1252">[X.1252]</a> as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is a collection result that includes metadata about the data source (and optionally a timestamp indicating the point in time the assertion was created at). The validity of an assertion cannot be verified.</dd>
+  <dd style="margin-left: 8">Defined by the ITU in <a href="#X.1252">[X.1252]</a> as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is the output of a SACM component in the form of a statement, including metadata about the data source and data origin (e.g. time stamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol , an assertion (and therfore a statement, respectivly) can be accompanied by evidence of the validity of its metadata provided by a SACM component.</dd>
   <dt>Assessment:</dt>
   <dd style="margin-left: 8">Defined in <a href="#RFC5209">[RFC5209]</a> as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."</dd>
   <dt></dt>
-  <dd style="margin-left: 8">Assessment is a specifc workflow that incorporates the SACM tasks discovery, collection and evaluation. A prominent instance of the assessment workflow is illustrated in the Vulnerability Assessement Scenario <a href="#I-D.ietf-sacm-vuln-scenario">[I-D.ietf-sacm-vuln-scenario]</a></dd>
+  <dd style="margin-left: 8">An assessment is a specifc workflow that incorporates the SACM tasks discovery, collection and evaluation. A prominent instance of the assessment workflow is illustrated in the Vulnerability Assessement Scenario <a href="#I-D.ietf-sacm-vuln-scenario">[I-D.ietf-sacm-vuln-scenario]</a>.</dd>
   <dt>Asset:</dt>
   <dd style="margin-left: 8">Defined in <a href="#RFC4949">[RFC4949]</a> as "a system resource that is (a) required to be protected by an information system's security policy, (b) intended to be protected by a countermeasure, or (c) required for a system's mission". In the scope of SACM, an asset can be composed of other assets. Examples of Assets include: Endpoints, Software, Guidance, or X.509 public key certificates. An asset is not necessarily owned by an organization.</dd>
   <dt>Asset Management:</dt>
   <dd style="margin-left: 8">The process by which assets are provisioned, updated, maintained and deprecated.</dd>
   <dt>Attribute:</dt>
-  <dd style="margin-left: 8">TODO, Update definition. Defined in <a href="#RFC5209">[RFC5209]</a> as "data element including any requisite meta-data describing an observed, expected, or the operational status of an endpoint feature (e.g., anti-virus software is currently in use)." If not indicated otherwise, attributes in SACM are represented and processed as attribute value pairs.</dd>
+  <dd style="margin-left: 8">Defined in <a href="#RFC5209">[RFC5209]</a> as "data element including any requisite meta-data describing an observed, expected, or the operational status of an endpoint feature (e.g., anti-virus software is currently in use)." In the context of SACM, attributes are "atomic" information elements and an equivalent to attribute-value-pairs. Attributes can be components of Subjects.</dd>
   <dt>Authentication:</dt>
   <dd style="margin-left: 8">Defined in <a href="#RFC4949">[RFC4949]</a> as "the process of verifying a claim that a system entity or system resource has a certain attribute value."</dd>
   <dt>Authorization:</dt>
@@ -698,12 +698,8 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">The list of hardware components that compose a specific endpoint representing its hardware configuration.</dd>
   <dt>Hardware Type:</dt>
   <dd style="margin-left: 8">Hardware types define specific and distinguishable categories of hardware components that can be part of endpoints, e.g. CPU or 802.11p interface. Typically, hardware types can be distinguished by their vendor assigned names, names of standards used, or a model name.</dd>
-</dl>
-<p id="rfc.section.2.p.3">Information Element:</p>
-<p id="rfc.section.2.p.4">A representation of information about physical and virtual "objects of interests". Information elements are the building blocks that constitute the SACM information model. In the context of SACM, an information element that expresses a single value with a specific name is referred to as an Attribute (analogous to an attribute-value-pair). A set of attributes that is bundled into a more complex composite information element is referred to as a Subject. Every information element in the SACM information model has a unique name. Endpoint attributes or time stamps, for example, are represented as information elements in the SACM information model.</p>
-<p/>
-
-<dl>
+  <dt>Information Element:</dt>
+  <dd style="margin-left: 8">A representation of information about physical and virtual "objects of interests". Information elements are the building blocks that constitute the SACM information model. In the context of SACM, an information element that expresses a single value with a specific name is referred to as an Attribute (analogous to an attribute-value-pair). A set of attributes that is bundled into a more complex composite information element is referred to as a Subject. Every information element in the SACM information model has a unique name. Endpoint attributes or time stamps, for example, are represented as information elements in the SACM information model.</dd>
   <dt>Information Model:</dt>
   <dd style="margin-left: 8">An information model is an abstract representation of data, their properties, relationships between data and the operations that can be performed on the data.  While there is some overlap with a data model, <a href="#RFC3444">[RFC3444]</a> distinguishes an information model as being protocol and implementation neutral whereas a data model would provide such details. The purpose of the SACM information model is to ensure interoperability between SACM data models (that are used as transport encoding) and to provide a standardized set of information elements for communication between SACM components.</dd>
   <dt>Interaction Model:</dt>
@@ -775,7 +771,7 @@ ul.toc a:first-child {
   <dt></dt>
   <dd style="margin-left: 8">The structure of statements is defined in the SACM information model.</dd>
   <dt>Subject:</dt>
-  <dd style="margin-left: 8">TODO, incorporate definition from SACM IM</dd>
+  <dd style="margin-left: 8">A composite information element. Like Attributes, subjects have a name and are composed of attributes and/or other subjects. Every IE that is part of a subject can have a quantitiy associated with it (e.g. zero-one, none-unbounded). The content IE of a subject can be an unordered or an ordered list.</dd>
   <dt>Supplicant:</dt>
   <dd style="margin-left: 8">The entity seeking to be authenticated by the Management Plane for the purpose of participating in the SACM architecture.</dd>
   <dt>System Resource:</dt>
@@ -847,8 +843,8 @@ ul.toc a:first-child {
   <dt>Vulnerability assessment capabilities:</dt>
   <dd style="margin-left: 8">An enterprise IT department's ability to determine whether a set of endpoints is vulnerable according to the information contained in the vulnerability description information.</dd>
 </dl>
-<p id="rfc.section.2.p.6">Workflow:</p>
-<p id="rfc.section.2.p.7">A workflow is a modular composiion of tasks. A workflow can contain loops, conditionals, multiple starting points and multiple endpoints. The most promiminant workflow in SACM is the assessment workflow.</p>
+<p id="rfc.section.2.p.3">Workflow:</p>
+<p id="rfc.section.2.p.4">A workflow is a modular composiion of tasks. A workflow can contain loops, conditionals, multiple starting points and multiple endpoints. The most promiminant workflow in SACM is the assessment workflow.</p>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#iana-considerations" id="iana-considerations">IANA Considerations</a></h1>
 <p id="rfc.section.3.p.1">This memo includes no request to IANA.</p>
 <h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> <a href="#security-considerations" id="security-considerations">Security Considerations</a></h1>

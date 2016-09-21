@@ -5,12 +5,12 @@
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                     J. Lu
-Expires: March 16, 2017                               Oracle Corporation
+Expires: March 25, 2017                               Oracle Corporation
                                                             J. Strassner
                                                      Huawei Technologies
                                                            N. Cam-Winget
                                                            Cisco Systems
-                                                      September 12, 2016
+                                                      September 21, 2016
 
 
      Secure Automation and Continuous Monitoring (SACM) Terminology
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 16, 2017.
+   This Internet-Draft will expire on March 25, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Birkholz, et al.         Expires March 16, 2017                 [Page 1]
+Birkholz, et al.         Expires March 25, 2017                 [Page 1]
 
 Internet-Draft              SACM Terminology              September 2016
 
@@ -91,28 +91,31 @@ Table of Contents
 
    Assertion:  Defined by the ITU in [X.1252] as "a statement made by an
       entity without accompanying evidence of its validity".  In the
-      context of SACM, an assertion is a collection result that includes
-      metadata about the data source (and optionally a timestamp
-      indicating the point in time the assertion was created at).  The
-      validity of an assertion cannot be verified.
+      context of SACM, an assertion is the output of a SACM component in
+      the form of a statement, including metadata about the data source
+      and data origin (e.g. time stamps).  While the validity of an
+      assertion cannot be verified without, for example, an additional
+      attestation protocol , an assertion (and therfore a statement,
+      respectivly) can be accompanied by evidence of the validity of its
+      metadata provided by a SACM component.
 
    Assessment:  Defined in [RFC5209] as "the process of collecting
       posture for a set of capabilities on the endpoint (e.g., host-
       based firewall) such that the appropriate validators may evaluate
       the posture against compliance policy."
 
-      Assessment is a specifc workflow that incorporates the SACM tasks
-      discovery, collection and evaluation.  A prominent instance of the
-      assessment workflow is illustrated in the Vulnerability
-      Assessement Scenario [I-D.ietf-sacm-vuln-scenario]
+      An assessment is a specifc workflow that incorporates the SACM
+      tasks discovery, collection and evaluation.  A prominent instance
 
 
 
-
-Birkholz, et al.         Expires March 16, 2017                 [Page 2]
+Birkholz, et al.         Expires March 25, 2017                 [Page 2]
 
 Internet-Draft              SACM Terminology              September 2016
 
+
+      of the assessment workflow is illustrated in the Vulnerability
+      Assessement Scenario [I-D.ietf-sacm-vuln-scenario].
 
    Asset:  Defined in [RFC4949] as "a system resource that is (a)
       required to be protected by an information system's security
@@ -125,12 +128,12 @@ Internet-Draft              SACM Terminology              September 2016
    Asset Management:  The process by which assets are provisioned,
       updated, maintained and deprecated.
 
-   Attribute:  TODO, Update definition.  Defined in [RFC5209] as "data
-      element including any requisite meta-data describing an observed,
-      expected, or the operational status of an endpoint feature (e.g.,
-      anti-virus software is currently in use)."  If not indicated
-      otherwise, attributes in SACM are represented and processed as
-      attribute value pairs.
+   Attribute:  Defined in [RFC5209] as "data element including any
+      requisite meta-data describing an observed, expected, or the
+      operational status of an endpoint feature (e.g., anti-virus
+      software is currently in use)."  In the context of SACM,
+      attributes are "atomic" information elements and an equivalent to
+      attribute-value-pairs.  Attributes can be components of Subjects.
 
    Authentication:  Defined in [RFC4949] as "the process of verifying a
       claim that a system entity or system resource has a certain
@@ -158,17 +161,17 @@ Internet-Draft              SACM Terminology              September 2016
       announced by a SACM component via the SACM component registration
       task and can be discovered by or negotiated with other SACM
       components.  For example, the capability of a SACM Provider may be
-      to provide endpoint management data, or only a subset of that
-      data.
 
 
 
 
-
-Birkholz, et al.         Expires March 16, 2017                 [Page 3]
+Birkholz, et al.         Expires March 25, 2017                 [Page 3]
 
 Internet-Draft              SACM Terminology              September 2016
 
+
+      to provide endpoint management data, or only a subset of that
+      data.
 
       The SACM Vulnerability Assessment Scenario
       [I-D.ietf-sacm-vuln-scenario] defines the terms Endpoint
@@ -215,16 +218,17 @@ Internet-Draft              SACM Terminology              September 2016
 
    Collector:  A piece of software that acquires information about one
       or more target endpoints by conducting collection tasks.  A
-      collector provides acquired information in the form of collection
-      results via a set of registered capabilities that can be
-      discovered by other SACM components.
 
 
 
-Birkholz, et al.         Expires March 16, 2017                 [Page 4]
+Birkholz, et al.         Expires March 25, 2017                 [Page 4]
 
 Internet-Draft              SACM Terminology              September 2016
 
+
+      collector provides acquired information in the form of collection
+      results via a set of registered capabilities that can be
+      discovered by other SACM components.
 
       A collector can be distributed across multiple endpoints, e.g.
       across a target endpoint and a SACM component.  The separate parts
@@ -269,19 +273,19 @@ Internet-Draft              SACM Terminology              September 2016
       interfaces to the control plane have knowledge of the capabilities
       of other SACM components within a SACM domain.
 
-   Controller:  A controller is a SACM role that is assigned to a SACM
-      component containing control plane functions that manage and
-      facilitate information sharing or execute on security functions.
-      There are three types of SACM controllers: Broker, Proxy, and
 
 
 
 
-Birkholz, et al.         Expires March 16, 2017                 [Page 5]
+Birkholz, et al.         Expires March 25, 2017                 [Page 5]
 
 Internet-Draft              SACM Terminology              September 2016
 
 
+   Controller:  A controller is a SACM role that is assigned to a SACM
+      component containing control plane functions that manage and
+      facilitate information sharing or execute on security functions.
+      There are three types of SACM controllers: Broker, Proxy, and
       Repository.  Depending on its type, a controller can also contain
       functions that have interfaces on the data plane.
 
@@ -326,17 +330,17 @@ Internet-Draft              SACM Terminology              September 2016
       encodings and corresponding operations defined by SACM data
       models.
 
-   Data Provenance:  A historical record of the sources, origins and
-      evolution of data that is influenced by inputs, entities,
-      functions and processes.
 
 
 
-
-Birkholz, et al.         Expires March 16, 2017                 [Page 6]
+Birkholz, et al.         Expires March 25, 2017                 [Page 6]
 
 Internet-Draft              SACM Terminology              September 2016
 
+
+   Data Provenance:  A historical record of the sources, origins and
+      evolution of data that is influenced by inputs, entities,
+      functions and processes.
 
    Data Source:  One or more properties that enable a SACM component to
       identify an (target) endpoint that is claimed to be the original
@@ -383,17 +387,16 @@ Internet-Draft              SACM Terminology              September 2016
       endpoint profile that is required as guidance for the tasks of
       endpoint classification or posture assessment.
 
-   Endpoint Classification:  The task by which a discovered target
-      endpoint is classified.  Endpoint classification requires guidance
-      in the form of an endpoint profile, discovery results and
 
 
-
-Birkholz, et al.         Expires March 16, 2017                 [Page 7]
+Birkholz, et al.         Expires March 25, 2017                 [Page 7]
 
 Internet-Draft              SACM Terminology              September 2016
 
 
+   Endpoint Classification:  The task by which a discovered target
+      endpoint is classified.  Endpoint classification requires guidance
+      in the form of an endpoint profile, discovery results and
       potentially collection results.  Types, classes or the
       characteristics of an individual target endpoint are defined via
       endpoint profiles.
@@ -439,16 +442,16 @@ Internet-Draft              SACM Terminology              September 2016
       transported as guidance in target endpoint profiles via the
       management plane.  This, for example, can be a policy, but also a
       recorded past state.  An expected state is represented can be
-      represented via an Attribute or an Subject that represents a set
-      of multiple attribute value pairs.
 
 
 
-
-Birkholz, et al.         Expires March 16, 2017                 [Page 8]
+Birkholz, et al.         Expires March 25, 2017                 [Page 8]
 
 Internet-Draft              SACM Terminology              September 2016
 
+
+      represented via an Attribute or an Subject that represents a set
+      of multiple attribute value pairs.
 
    SACM Function:  A behavioral aspect or capacity of a particular SACM
       component, which belies that SACM component's purpose.  For
@@ -495,32 +498,31 @@ Internet-Draft              SACM Terminology              September 2016
    Hardware Inventory:  The list of hardware components that compose a
       specific endpoint representing its hardware configuration.
 
-   Hardware Type:  Hardware types define specific and distinguishable
-      categories of hardware components that can be part of endpoints,
-      e.g.  CPU or 802.11p interface.  Typically, hardware types can be
 
 
 
-Birkholz, et al.         Expires March 16, 2017                 [Page 9]
+Birkholz, et al.         Expires March 25, 2017                 [Page 9]
 
 Internet-Draft              SACM Terminology              September 2016
 
 
+   Hardware Type:  Hardware types define specific and distinguishable
+      categories of hardware components that can be part of endpoints,
+      e.g.  CPU or 802.11p interface.  Typically, hardware types can be
       distinguished by their vendor assigned names, names of standards
       used, or a model name.
 
-   Information Element:
-
-   A representation of information about physical and virtual "objects
-   of interests".  Information elements are the building blocks that
-   constitute the SACM information model.  In the context of SACM, an
-   information element that expresses a single value with a specific
-   name is referred to as an Attribute (analogous to an attribute-value-
-   pair).  A set of attributes that is bundled into a more complex
-   composite information element is referred to as a Subject.  Every
-   information element in the SACM information model has a unique name.
-   Endpoint attributes or time stamps, for example, are represented as
-   information elements in the SACM information model.
+   Information Element:  A representation of information about physical
+      and virtual "objects of interests".  Information elements are the
+      building blocks that constitute the SACM information model.  In
+      the context of SACM, an information element that expresses a
+      single value with a specific name is referred to as an Attribute
+      (analogous to an attribute-value-pair).  A set of attributes that
+      is bundled into a more complex composite information element is
+      referred to as a Subject.  Every information element in the SACM
+      information model has a unique name.  Endpoint attributes or time
+      stamps, for example, are represented as information elements in
+      the SACM information model.
 
    Information Model:  An information model is an abstract
       representation of data, their properties, relationships between
@@ -552,16 +554,16 @@ Internet-Draft              SACM Terminology              September 2016
       Typically, a SACM component can fulfill its purpose without
       continuous input from the management plane.  In contrast, without
       continuous availability of control plane functions a typical SACM
-      component could not function properly.  In general, interaction on
-      the management plane is less frequent and less regular than on the
 
 
 
-Birkholz, et al.         Expires March 16, 2017                [Page 10]
+Birkholz, et al.         Expires March 25, 2017                [Page 10]
 
 Internet-Draft              SACM Terminology              September 2016
 
 
+      component could not function properly.  In general, interaction on
+      the management plane is less frequent and less regular than on the
       control plane.  Input via the management plane can be manual (e.g.
       via a CLI), or can be automated via management plane functions
       that are part of other SACM components.
@@ -611,9 +613,7 @@ Internet-Draft              SACM Terminology              September 2016
 
 
 
-
-
-Birkholz, et al.         Expires March 16, 2017                [Page 11]
+Birkholz, et al.         Expires March 25, 2017                [Page 11]
 
 Internet-Draft              SACM Terminology              September 2016
 
@@ -669,7 +669,7 @@ Internet-Draft              SACM Terminology              September 2016
 
 
 
-Birkholz, et al.         Expires March 16, 2017                [Page 12]
+Birkholz, et al.         Expires March 25, 2017                [Page 12]
 
 Internet-Draft              SACM Terminology              September 2016
 
@@ -725,7 +725,7 @@ Internet-Draft              SACM Terminology              September 2016
 
 
 
-Birkholz, et al.         Expires March 16, 2017                [Page 13]
+Birkholz, et al.         Expires March 25, 2017                [Page 13]
 
 Internet-Draft              SACM Terminology              September 2016
 
@@ -773,18 +773,21 @@ Internet-Draft              SACM Terminology              September 2016
       The structure of statements is defined in the SACM information
       model.
 
-   Subject:  TODO, incorporate definition from SACM IM
+   Subject:  A composite information element.  Like Attributes, subjects
+      have a name and are composed of attributes and/or other subjects.
+      Every IE that is part of a subject can have a quantitiy associated
+      with it (e.g. zero-one, none-unbounded).  The content IE of a
+      subject can be an unordered or an ordered list.
 
-   Supplicant:  The entity seeking to be authenticated by the Management
-      Plane for the purpose of participating in the SACM architecture.
 
 
-
-
-Birkholz, et al.         Expires March 16, 2017                [Page 14]
+Birkholz, et al.         Expires March 25, 2017                [Page 14]
 
 Internet-Draft              SACM Terminology              September 2016
 
+
+   Supplicant:  The entity seeking to be authenticated by the Management
+      Plane for the purpose of participating in the SACM architecture.
 
    System Resource:  Defined in [RFC4949] as "data contained in an
       information system; or a service provided by a system; or a system
@@ -831,17 +834,17 @@ Internet-Draft              SACM Terminology              September 2016
       the Classification Task in order to guide collection, evaluation
       or remediation tasks.
 
-   Target Endpoint Characterization Task:  An ongoing task of
-      continuously adding acquired endpoint attributes to a
-      corresponding record.  The TE characterization task manages the
 
 
 
-Birkholz, et al.         Expires March 16, 2017                [Page 15]
+Birkholz, et al.         Expires March 25, 2017                [Page 15]
 
 Internet-Draft              SACM Terminology              September 2016
 
 
+   Target Endpoint Characterization Task:  An ongoing task of
+      continuously adding acquired endpoint attributes to a
+      corresponding record.  The TE characterization task manages the
       representation of encountered target endpoints in the SACM domain
       in the form of characterization records.  For example, the output
       of a target endpoint discovery task or a collection task can be
@@ -887,17 +890,17 @@ Internet-Draft              SACM Terminology              September 2016
    Target Endpoint Identifier:  The target endpoint discovery task and
       the collection tasks can result in a set of identifying endpoint
       attributes added to a corresponding Characterization Record.  This
-      subset of the endpoint attributes included in the record is used
-      as a target endpoint identifier, by which a specific target
-      endpoint can be referenced.  Depending on the available
 
 
 
-Birkholz, et al.         Expires March 16, 2017                [Page 16]
+Birkholz, et al.         Expires March 25, 2017                [Page 16]
 
 Internet-Draft              SACM Terminology              September 2016
 
 
+      subset of the endpoint attributes included in the record is used
+      as a target endpoint identifier, by which a specific target
+      endpoint can be referenced.  Depending on the available
       identifying attributes, this reference can be ambiguous and is a
       "best-effort" mechanism.  Every distinct set of identifying
       endpoint attributes can be associated with a target endpoint label
@@ -944,15 +947,14 @@ Internet-Draft              SACM Terminology              September 2016
 
       SACM Component Discovery
 
-      SACM Component Authentication [TBD]
 
 
-
-
-Birkholz, et al.         Expires March 16, 2017                [Page 17]
+Birkholz, et al.         Expires March 25, 2017                [Page 17]
 
 Internet-Draft              SACM Terminology              September 2016
 
+
+      SACM Component Authentication [TBD]
 
       SACM Component Authorization [TBD]
 
@@ -1000,16 +1002,16 @@ Internet-Draft              SACM Terminology              September 2016
       information and vulnerability detection data, and performing
       vulnerability assessments.
 
-   Vulnerability assessment capabilities:  An enterprise IT department's
-      ability to determine whether a set of endpoints is vulnerable
 
 
 
-Birkholz, et al.         Expires March 16, 2017                [Page 18]
+Birkholz, et al.         Expires March 25, 2017                [Page 18]
 
 Internet-Draft              SACM Terminology              September 2016
 
 
+   Vulnerability assessment capabilities:  An enterprise IT department's
+      ability to determine whether a set of endpoints is vulnerable
       according to the information contained in the vulnerability
       description information.
 
@@ -1057,14 +1059,14 @@ Internet-Draft              SACM Terminology              September 2016
 
    Changes from version 04 to version 05:
 
-   o  TODO
 
 
-
-Birkholz, et al.         Expires March 16, 2017                [Page 19]
+Birkholz, et al.         Expires March 25, 2017                [Page 19]
 
 Internet-Draft              SACM Terminology              September 2016
 
+
+   o  TODO
 
    Changes from version 05 to version 06:
 
@@ -1113,14 +1115,14 @@ Internet-Draft              SACM Terminology              September 2016
 
    o  Endpoint Attributes added as a TODO.
 
-   o  Changed the structure of the Change Log.
 
 
-
-Birkholz, et al.         Expires March 16, 2017                [Page 20]
+Birkholz, et al.         Expires March 25, 2017                [Page 20]
 
 Internet-Draft              SACM Terminology              September 2016
 
+
+   o  Changed the structure of the Change Log.
 
    Changes from version 07 to version 08:
 
@@ -1167,16 +1169,17 @@ Internet-Draft              SACM Terminology              September 2016
       Hardware Type, SACM Interface, Target Endpoint Characterization
       Record, Target Endpoint Characterization Task, Target Endpoint
       Classification Task, Target Endpoint Discovery Task, Vulnerability
-      Description Information, Vulnerability Detection Data,
-      Vulnerability Management Capability, Vulnerability Assessment
 
 
 
 
-Birkholz, et al.         Expires March 16, 2017                [Page 21]
+Birkholz, et al.         Expires March 25, 2017                [Page 21]
 
 Internet-Draft              SACM Terminology              September 2016
 
+
+      Description Information, Vulnerability Detection Data,
+      Vulnerability Management Capability, Vulnerability Assessment
 
    o  Added references to i2nsf definitions in Capability, SACM
       Component, SACM Interface, SACM Role
@@ -1226,10 +1229,7 @@ Internet-Draft              SACM Terminology              September 2016
 
 
 
-
-
-
-Birkholz, et al.         Expires March 16, 2017                [Page 22]
+Birkholz, et al.         Expires March 25, 2017                [Page 22]
 
 Internet-Draft              SACM Terminology              September 2016
 
@@ -1285,7 +1285,7 @@ Internet-Draft              SACM Terminology              September 2016
 
 
 
-Birkholz, et al.         Expires March 16, 2017                [Page 23]
+Birkholz, et al.         Expires March 25, 2017                [Page 23]
 
 Internet-Draft              SACM Terminology              September 2016
 
@@ -1341,7 +1341,7 @@ Appendix A.  The Attic
 
 
 
-Birkholz, et al.         Expires March 16, 2017                [Page 24]
+Birkholz, et al.         Expires March 25, 2017                [Page 24]
 
 Internet-Draft              SACM Terminology              September 2016
 
@@ -1397,4 +1397,4 @@ Authors' Addresses
 
 
 
-Birkholz, et al.         Expires March 16, 2017                [Page 25]
+Birkholz, et al.         Expires March 25, 2017                [Page 25]
