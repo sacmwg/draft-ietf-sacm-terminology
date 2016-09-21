@@ -83,13 +83,13 @@ This section describes terms that have been defined by other RFC's and defines n
 
 Assertion:
 
-: Defined by the ITU in {{X.1252}} as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is a collection result that includes metadata about the data source (and optionally a timestamp indicating the point in time the assertion was created at). The validity of an assertion cannot be verified.
+: Defined by the ITU in {{X.1252}} as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is the output of a SACM component in the form of a statement, including metadata about the data source and data origin (e.g. time stamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol , an assertion (and therfore a statement, respectivly) can be accompanied by evidence of the validity of its metadata provided by a SACM component.
 
 Assessment:
 
 : Defined in {{RFC5209}} as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."
 
-: Assessment is a specifc workflow that incorporates the SACM tasks discovery, collection and evaluation. A prominent instance of the assessment workflow is illustrated in the Vulnerability Assessement Scenario {{-vulnass}} 
+: An assessment is a specifc workflow that incorporates the SACM tasks discovery, collection and evaluation. A prominent instance of the assessment workflow is illustrated in the Vulnerability Assessement Scenario {{-vulnass}}.
 
 Asset:
 
@@ -101,7 +101,7 @@ Asset Management:
 
 Attribute:
 
-: TODO, Update definition. Defined in {{RFC5209}} as "data element including any requisite meta-data describing an observed, expected, or the operational status of an endpoint feature (e.g., anti-virus software is currently in use)." If not indicated otherwise, attributes in SACM are represented and processed as attribute value pairs.
+: Defined in {{RFC5209}} as "data element including any requisite meta-data describing an observed, expected, or the operational status of an endpoint feature (e.g., anti-virus software is currently in use)." In the context of SACM, attributes are "atomic" information elements and an equivalent to attribute-value-pairs. Attributes can be components of Subjects.
 
 Authentication: 
 
@@ -295,7 +295,7 @@ Hardware Type:
 
 Information Element:
 
-A representation of information about physical and virtual “objects of interests”. Information elements are the building blocks that constitute the SACM information model. In the context of SACM, an information element that expresses a single value with a specific name is referred to as an Attribute (analogous to an attribute-value-pair). A set of attributes that is bundled into a more complex composite information element is referred to as a Subject. Every information element in the SACM information model has a unique name. Endpoint attributes or time stamps, for example, are represented as information elements in the SACM information model.
+: A representation of information about physical and virtual “objects of interests”. Information elements are the building blocks that constitute the SACM information model. In the context of SACM, an information element that expresses a single value with a specific name is referred to as an Attribute (analogous to an attribute-value-pair). A set of attributes that is bundled into a more complex composite information element is referred to as a Subject. Every information element in the SACM information model has a unique name. Endpoint attributes or time stamps, for example, are represented as information elements in the SACM information model.
 
 
 Information Model:
@@ -416,7 +416,7 @@ Statement:
 
 Subject:
 
-: TODO, incorporate definition from SACM IM
+: A composite information element. Like Attributes, subjects have a name and are composed of attributes and/or other subjects. Every IE that is part of a subject can have a quantitiy associated with it (e.g. zero-one, none-unbounded). The content IE of a subject can be an unordered or an ordered list.
 
 Supplicant:
 
