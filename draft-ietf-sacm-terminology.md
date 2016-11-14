@@ -163,7 +163,7 @@ Consumer:
 
 Content Element:
 
-: Content elements constitute the payload data (content) transfered via statement Subjects emitted by providers of information. Every content element Subject includes a specific content Subject and a corresponding content metadata Subject.
+: Content elements constitute the payload data (SACM content) transfered via statement Subjects emitted by providers of information. Every content element Subject includes a specific content Subject and a corresponding content metadata Subject.
 
 Content Metadata:
 
@@ -201,7 +201,7 @@ Data Origin:
 
 : One or more properties that enable a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source). Data Origin is expressed by an endpoint label.
 
-Data Plane:
+Data Plane (fix statement):
 
 : Typically used as a term in the context of routing (and used as a synonym for forwarding plane, e.g. {{RFC6192}}). In the context of SACM, the data plane is an architectural component providing operational functions to enable a SACM component to provide and consume SACM statements and therefore SACM content (the "payload"). The data plane is used to conduct distributed SACM tasks by transporting SACM content using transporting encodings and corresponding operations defined by SACM data models.
 
@@ -376,6 +376,10 @@ SACM Component Label:
 
 : A specific endpoint label that is used to identify a SACM component. In content-metadata, this label is called data origin.
 
+SACM Content:
+
+: The payload provided by SACM components to the SACM domain on the data plane. SACM content includes the SACM data models.
+
 SACM Domain:
 
 : Endpoints that include a SACM component compose a SACM domain. (To be revised, additional definition content TBD, possible dependencies to SACM architecture)
@@ -410,9 +414,9 @@ Software Instance:
 
 Statement: 
 
-: An output of a provider, e.g. a report or an assertion about a collection result, that includes content-elements and statement-metadata (e.g. data origin or the point in time at which the statement was created). A statement can be accompanied by evidence of the validity of its metadata.
+: A statement is a subject defined in the SACM information model.
 
-: The structure of statements is defined in the SACM information model.
+: When a statement is used to provide content to a SACM domain, it is a top-level subject that bundles Content Elements into one subject and includes  metadata about the data origin.
 
 Subject:
 
