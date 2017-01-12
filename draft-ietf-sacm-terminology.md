@@ -241,11 +241,11 @@ Endpoint Attribute:
 
 Endpoint Characterization:
 
-: The task by which a profile is composed out of endpoint attributes that describe the desired or expected posture of a type or class of target endpoints or even an individual target endpoint. The result of this task is an endpoint profile that is required as guidance for the tasks of endpoint classification or posture assessment.
+: The task by which a profile is composed out of endpoint attributes that describe the desired or expected posture of a type or class of target endpoints or even an individual target endpoint. The result of this task is an endpoint profile that is required as declarative guidance for the tasks of endpoint classification or posture assessment.
 
 Endpoint Classification:
 
-: The task by which a discovered target endpoint is classified. Endpoint classification requires guidance in the form of an endpoint profile, discovery results and potentially collection results. Types, classes or the characteristics of an individual target endpoint are defined via endpoint profiles.
+: The task by which a discovered target endpoint is classified. Endpoint classification requires declarative guidance in the form of an endpoint profile, discovery results and potentially collection results. Types, classes or the characteristics of an individual target endpoint are defined via endpoint profiles.
 
 Endpoint Label:
 
@@ -423,16 +423,9 @@ Software Instance:
 
 State:
 
-A volatile subset endpoint attributes of a (target) endpoint that is affected by a reboot-cycle. Local state is created by the interaction of a components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g. IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component that provides configuration via the control plane (e.g. provided by a DHCP server with a specific configuration).
-
-A non-volatile subset of the endpoint attributes of a (target) endpoint that is intended to be uneffected by a normal reboot-cylce.
-Configuration is a type of imperative guidance that is stored in files (files dedicated to contain configuration and/or files that are software components), directly on block devices, or on specific hardware components that can be accessed via corresponding software components.
-Modification of configuration can be conducted manually or automatically via management (plane) interfaces that support management protocols, such as SNMP or WMI.
-A change of configuration can occur during both run-time and down-time of an endpoint.
-It is common practive to scheduled a change of configuration during or directly after the completion of a boot-cycle via corresponding software components located on the target endpoint itself.
+: A volatile subset endpoint attributes of a (target) endpoint that is affected by a reboot-cycle. Local state is created by the interaction of a components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g. IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component that provides configuration via the control plane (e.g. provided by a DHCP server with a specific configuration).
 
 : Exmaples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.
-
 
 Statement: 
 
@@ -472,7 +465,7 @@ Target Endpoint Characterization Task:
 
 Target Endpoint Classification Task:
 
-: The task of associating a class from an extensible list of classes with an endpoint characterization record. TE classes function as guidance for collection, evaluation, remediation and security posture assessment in general.
+: The task of associating a class from an extensible list of classes with an endpoint characterization record. TE classes function as imperative and declarative guidance for collection, evaluation, remediation and security posture assessment in general.
 
 : Input: endpoint characterization records (without classification), guidance (how to classify a record)
 
@@ -529,7 +522,7 @@ Vulnerability Description Information:
 
 Vulnerability Detection Data:
 
-: A type of guidance extracted or derived from vulnerability description information that describes the specific mechanisms of vulnerability detection that is used by an enterprise's vulnerability management capabilities to determine if a vulnerability is present on an endpoint.
+: A type of imperative guidance extracted or derived from vulnerability description information that describes the specific mechanisms of vulnerability detection that is used by an enterprise's vulnerability management capabilities to determine if a vulnerability is present on an endpoint.
 
 Vulnerability Management Capabilities:  
 
