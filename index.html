@@ -470,7 +470,7 @@ ul.toc a:first-child {
 
   <meta name="dct.creator" content="Birkholz, H., Lu, J., Strassner, J., and N. Cam-Winget" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-terminology-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2016-11-14" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-1-12" />
   <meta name="dct.abstract" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
   <meta name="description" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
 
@@ -494,7 +494,7 @@ ul.toc a:first-child {
   <td class="right">J. Lu</td>
 </tr>
 <tr>
-  <td class="left">Expires: May 18, 2017</td>
+  <td class="left">Expires: July 16, 2017</td>
   <td class="right">Oracle Corporation</td>
 </tr>
 <tr>
@@ -515,7 +515,7 @@ ul.toc a:first-child {
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">November 14, 2016</td>
+  <td class="right">January 12, 2017</td>
 </tr>
 
     	
@@ -535,11 +535,11 @@ ul.toc a:first-child {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on May 18, 2017.</p>
+<p>This Internet-Draft will expire on July 16, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
-<p>Copyright (c) 2016 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>Copyright (c) 2017 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
 
   
@@ -616,8 +616,12 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">A piece of software that acquires information about one or more target endpoints by conducting collection tasks. A collector provides acquired information in the form of collection results via a set of registered capabilities that can be discovered by other SACM components.</dd>
   <dt></dt>
   <dd style="margin-left: 8">A collector can be distributed across multiple endpoints, e.g. across a target endpoint and a SACM component. The separate parts of the collector can communicate with a specialized protocol, such as PA-TNC <a href="#RFC5792">[RFC5792]</a>. At least one part of a distributed collector has to take on the role of a provider of information by providing SACM interfaces to propagate capabilities and to provide SACM content in the form of collection results.</dd>
+  <dt>Configuration:</dt>
+  <dd style="margin-left: 8">A non-volatile subset of the endpoint attributes of a (target) endpoint that is intended to be uneffected by a normal reboot-cylce.  Configuration is a type of imperative guidance that is stored in files (files dedicated to contain configuration and/or files that are software components), directly on block devices, or on specific hardware components that can be accessed via corresponding software components.  Modification of configuration can be conducted manually or automatically via management (plane) interfaces that support management protocols, such as SNMP or WMI.  A change of configuration can occur during both run-time and down-time of an endpoint.  It is common practive to scheduled a change of configuration during or directly after the completion of a boot-cycle via corresponding software components located on the target endpoint itself.</dd>
+  <dt></dt>
+  <dd style="margin-left: 8">Exmaples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.</dd>
   <dt>Configuration Drift:</dt>
-  <dd style="margin-left: 8">The discrepancy of endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components.</dd>
+  <dd style="margin-left: 8">The discrepancy of an targat endpoint's endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components.</dd>
   <dt>Consumer:</dt>
   <dd style="margin-left: 8">A consumer is a SACM role that is assigned to a SACM component that contains functions to receive information from other SACM components.</dd>
   <dt>Content Element:</dt>
@@ -625,15 +629,15 @@ ul.toc a:first-child {
   <dt>Content Metadata:</dt>
   <dd style="margin-left: 8">Data about content Subjects. Every content-element includes a content metadata Subject. The Subject can include any information element that can annotate the content transefered. Examples include time stamps or data provenance Subjects.</dd>
   <dt>Control Plane:</dt>
-  <dd style="margin-left: 8">Typically used as a term in the context of routing, e.g. <a href="#RFC6192">[RFC6192]</a>. In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation, and registration. The control plane orchestrates the flow on the data plane according to guidance received via the management plane. SACM components with interfaces to the control plane have knowledge of the capabilities of other SACM components within a SACM domain.</dd>
+  <dd style="margin-left: 8">Typically used as a term in the context of routing, e.g. <a href="#RFC6192">[RFC6192]</a>. In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, (capability) discovery or negotiation, registration and subscription. The control plane orchestrates the flow on the data plane according to imperative guidance (i.e. configuration) received via the management plane. SACM components with interfaces to the control plane have knowledge of the capabilities of other SACM components within a SACM domain.</dd>
   <dt>Controller:</dt>
   <dd style="margin-left: 8">A controller is a SACM role that is assigned to a SACM component containing control plane functions that manage and facilitate information sharing or execute on security functions. There are three types of SACM controllers: Broker, Proxy, and Repository. Depending on its type, a controller can also contain functions that have interfaces on the data plane.</dd>
   <dt>Data Confidentiality:</dt>
   <dd style="margin-left: 8">Defined in <a href="#RFC4949">[RFC4949]</a> as "the property that data is not disclosed to system entities unless they have been authorized to know the data."</dd>
   <dt>Data In Motion:</dt>
-  <dd style="margin-left: 8">Data that is being transported via a network; also referred to as Data in transit. Data in motion requires a data model to encode the data to be transferred. Typically, data in motion is serialized (marshalling) into a transport encoding by a provider of information and deserialized (unmarshalling) by a consumer of information.</dd>
+  <dd style="margin-left: 8">Data that is being transported via a network; also referred to as "Data in Transit" or "Data in Flight". Data in motion requires a data model to transfer the data using a specific encoding. Typically, data in motion is serialized (marshalling) into a transport encoding by a provider of information and deserialized (unmarshalling) by a consumer of information. The termination points of provider of information and consumer of information data is transferred between are interfaces. In regard to data in motion, the interpretation of the roles consumer of information and provider of information depends on the corresponding OSI layer (e.g. on layer2: between interfaces connected to a broadcast domain, on layer4: between interfaces that maintain a TCP connection). In the context of SACM, consumer of information and provider of information are SACM components.</dd>
   <dt></dt>
-  <dd style="margin-left: 8">SACM architecture and corresponding models focus on data in motion.</dd>
+  <dd style="margin-left: 8">The SACM architecture and corresponding models focus on data in motion.</dd>
   <dt>Data At Rest:</dt>
   <dd style="margin-left: 8">Data that is stored in a repository. Data at rest requires a data model to encode the data to be stored. In the context of SACM, data at rest located on a SACM component can be provided to other SACM components via discoverable capabilities.</dd>
   <dt></dt>
@@ -641,13 +645,13 @@ ul.toc a:first-child {
   <dt>Data Integrity:</dt>
   <dd style="margin-left: 8">Defined in <a href="#RFC4949">[RFC4949]</a> as "the property that data has not been changed, destroyed, or lost in an unauthorized or accidental manner."</dd>
   <dt>Data Origin:</dt>
-  <dd style="margin-left: 8">One or more properties that enable a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source). Data Origin is expressed by an endpoint label.</dd>
+  <dd style="margin-left: 8">One or more properties (i.e. endpoint attributes) that enable a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source) and made it available to a SACM domaini via a SACM statement. Data Origin can be expressed by an endpoint label information element (e.g. to be used as metadata in statement).</dd>
   <dt>Data Plane (fix statement):</dt>
   <dd style="margin-left: 8">Typically used as a term in the context of routing (and used as a synonym for forwarding plane, e.g. <a href="#RFC6192">[RFC6192]</a>). In the context of SACM, the data plane is an architectural component providing operational functions to enable a SACM component to provide and consume SACM statements and therefore SACM content (the "payload"). The data plane is used to conduct distributed SACM tasks by transporting SACM content using transporting encodings and corresponding operations defined by SACM data models.</dd>
   <dt>Data Provenance:</dt>
-  <dd style="margin-left: 8">A historical record of the sources, origins and evolution of data that is influenced by inputs, entities, functions and processes.</dd>
+  <dd style="margin-left: 8">A historical record of the sources, origins and evolution of data that is influenced by inputs, entities, functions and processes. In the context of SACM, data provenance is expressed as metadata that identifies SACM statements and corresponding content elements a new statement is created from. In a downstream process, this references can cascade, creating a data provenance tree that enables SACM components to trace back the original data sources involved in the creation of SACM statements and take into account their characteristics and trustworthiness.</dd>
   <dt>Data Source:</dt>
-  <dd style="margin-left: 8">One or more properties that enable a SACM component to identify an (target) endpoint that is claimed to be the original source of received data.</dd>
+  <dd style="margin-left: 8">One or more properties (i.e. endpoint attributes) that enable a SACM component to identify &#8211; and potentially characterize &#8211; a (target) endpoint that is claimed to be the original source of endpoint attributes in a SACM statement. Data Source can be expressed as metadata by an endpoint label information element or a corresponding subject of identifying endpoint attributes.</dd>
   <dt>Endpoint:</dt>
   <dd style="margin-left: 8">Defined in <a href="#RFC5209">[RFC5209]</a> as "any computing device that can be connected to a network.  Such devices normally are associated with a particular link layer address before joining the network and potentially an IP address once on the network.  This includes: laptops, desktops, servers, cell phones, or any device that may have an IP address."</dd>
   <dt></dt>
@@ -681,11 +685,11 @@ ul.toc a:first-child {
   <dt>Excluded Endpoint:</dt>
   <dd style="margin-left: 8">A specific designation, which is assigned to an endpoint that is not supposed to be the subject of a collection task (and therefore is not a target endpoint). Typically but not necessarily, endpoints that contain a SACM component (and are therefore part of the SACM domain) are designated as excluded endpoints. Target endpoints that contain a SACM component cannot be designated as excluded endpoints and are part of the SACM domain.</dd>
   <dt>Expected Endpoint State:</dt>
-  <dd style="margin-left: 8">The required state of an endpoint that is to be compared against. Sets of expected endpoint states are transported as guidance in target endpoint profiles via the management plane. This, for example, can be a policy, but also a recorded past state. An expected state is represented can be represented via an Attribute or an Subject that represents a set of multiple attribute value pairs.</dd>
+  <dd style="margin-left: 8">The required state of an endpoint that is to be compared against. Sets of expected endpoint states are transported as declarative guidance in target endpoint profiles via the management plane. This, for example, can be a policy, but also a recorded past state. An expected state is represented can be represented via an Attribute or an Subject that represents a set of multiple attribute value pairs.</dd>
   <dt>SACM Function:</dt>
   <dd style="margin-left: 8">A behavioral aspect or capacity of a particular SACM component, which belies that SACM component's purpose.  For example, a SACM function with interfaces on the control plane can provide a brokering function to other SACM components. Via data plane interfaces, a function can act as a provider and/or as a consumer of information. SACM functions can be propagated as the capabilities of a SACM component and can be discovered by or negotiated with other SACM components.</dd>
   <dt>Guidance:</dt>
-  <dd style="margin-left: 8">Input instructions to processes and tasks, such as collection, evaluation or remediation. Guidance influences the behavior of a SACM component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic.</dd>
+  <dd style="margin-left: 8">Input instructions to processes, such as automated device management or remediation, and SACM tasks, such as collection, evaluation. Guidance influences the behavior of a SACM component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic.</dd>
   <dt></dt>
   <dd style="margin-left: 8">There are two types of guidance:</dd>
   <dt></dt>
@@ -703,7 +707,7 @@ ul.toc a:first-child {
   <dt>Information Model:</dt>
   <dd style="margin-left: 8">An information model is an abstract representation of data, their properties, relationships between data and the operations that can be performed on the data.  While there is some overlap with a data model, <a href="#RFC3444">[RFC3444]</a> distinguishes an information model as being protocol and implementation neutral whereas a data model would provide such details. The purpose of the SACM information model is to ensure interoperability between SACM data models (that are used as transport encoding) and to provide a standardized set of information elements for communication between SACM components.</dd>
   <dt>Interaction Model:</dt>
-  <dd style="margin-left: 8">For now this is a Place-Holder. Is an interaction model that defines, for example, the operations on the control plane, such as registration or SACM component discovery, required?</dd>
+  <dd style="margin-left: 8">The definition of specific sequences regarding the exchange of messages (data in motion), including, for exmaple,  conditional branching, thresholds and timers. An interaction model, for example, can be used to define operations, such as registration or discovery, on the control plane. A composition of data models for data in motion and a corresponding interaction model is a protocol.</dd>
   <dt>Internal Collector:</dt>
   <dd style="margin-left: 8">Internal Collector: a collector that runs on a target endpoint to acquire information from that target endpoint. (TBD: An internal collector is not a SACM component and therefore not part of a SACM domain).</dd>
   <dt>Management Plane:</dt>
@@ -768,6 +772,22 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">A software package installed on an endpoint, including a unique serial number if present (e.g. a text editor associated with a unique license key).</dd>
   <dt>Software Instance:</dt>
   <dd style="margin-left: 8">A running instance of the software component (e.g. on a multi-user system, one logged-in user has one instance of a text editor running and another logged-in user has another instance of the same text editor running, or on a single-user system, a user could have multiple independent instances of the same text editor running).</dd>
+</dl>
+<p id="rfc.section.2.p.3">State:</p>
+<p id="rfc.section.2.p.4">A volatile subset endpoint attributes of a (target) endpoint that is affected by a reboot-cycle. Local state is created by the interaction of a components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g. IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component that provides configuration via the control plane (e.g. provided by a DHCP server with a specific configuration).</p>
+<p/>
+
+<dl>
+  <dt>A non-volatile subset of the endpoint attributes of a (target) endpoint that is intended to be uneffected by a normal reboot-cylce.</dt>
+  <dd style="margin-left: 8"/>
+  <dt>Configuration is a type of imperative guidance that is stored in files (files dedicated to contain configuration and/or files that are software components), directly on block devices, or on specific hardware components that can be accessed via corresponding software components.</dt>
+  <dd style="margin-left: 8"/>
+  <dt>Modification of configuration can be conducted manually or automatically via management (plane) interfaces that support management protocols, such as SNMP or WMI.</dt>
+  <dd style="margin-left: 8"/>
+  <dt>A change of configuration can occur during both run-time and down-time of an endpoint.</dt>
+  <dd style="margin-left: 8"/>
+  <dt>It is common practive to scheduled a change of configuration during or directly after the completion of a boot-cycle via corresponding software components located on the target endpoint itself.</dt>
+  <dd style="margin-left: 8">Exmaples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.</dd>
   <dt>Statement:</dt>
   <dd style="margin-left: 8">A statement is a subject defined in the SACM information model.</dd>
   <dt></dt>
@@ -775,7 +795,7 @@ ul.toc a:first-child {
   <dt>Subject:</dt>
   <dd style="margin-left: 8">A composite information element. Like Attributes, subjects have a name and are composed of attributes and/or other subjects. Every IE that is part of a subject can have a quantitiy associated with it (e.g. zero-one, none-unbounded). The content IE of a subject can be an unordered or an ordered list.</dd>
   <dt>Supplicant:</dt>
-  <dd style="margin-left: 8">The entity seeking to be authenticated by the Management Plane for the purpose of participating in the SACM architecture.</dd>
+  <dd style="margin-left: 8">A SACM component seeking to be authenticated via the control plane for the purpose of participating in a SACM domain.</dd>
   <dt>System Resource:</dt>
   <dd style="margin-left: 8">Defined in <a href="#RFC4949">[RFC4949]</a> as "data contained in an information system; or a service provided by a system; or a system capacity, such as processing power or communication bandwidth; or an item of system equipment (i.e., hardware, firmware, software, or documentation); or a facility that houses system operations and equipment.</dd>
   <dt>Target Endpoint:</dt>
@@ -845,8 +865,8 @@ ul.toc a:first-child {
   <dt>Vulnerability assessment capabilities:</dt>
   <dd style="margin-left: 8">An enterprise IT department's ability to determine whether a set of endpoints is vulnerable according to the information contained in the vulnerability description information.</dd>
 </dl>
-<p id="rfc.section.2.p.3">Workflow:</p>
-<p id="rfc.section.2.p.4">A workflow is a modular composiion of tasks. A workflow can contain loops, conditionals, multiple starting points and multiple endpoints. The most promiminant workflow in SACM is the assessment workflow.</p>
+<p id="rfc.section.2.p.6">Workflow:</p>
+<p id="rfc.section.2.p.7">A workflow is a modular composiion of tasks. A workflow can contain loops, conditionals, multiple starting points and multiple endpoints. The most promiminant workflow in SACM is the assessment workflow.</p>
 <h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#iana-considerations" id="iana-considerations">IANA Considerations</a></h1>
 <p id="rfc.section.3.p.1">This memo includes no request to IANA.</p>
 <h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> <a href="#security-considerations" id="security-considerations">Security Considerations</a></h1>
