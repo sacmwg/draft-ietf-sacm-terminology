@@ -65,8 +65,8 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Terms and Definitions . . . . . . . . . . . . . . . . . . . .   2
-   3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  21
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  21
+   3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  20
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  20
    5.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  21
    6.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .  21
    7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  24
@@ -432,13 +432,13 @@ Internet-Draft              SACM Terminology                January 2017
       out of endpoint attributes that describe the desired or expected
       posture of a type or class of target endpoints or even an
       individual target endpoint.  The result of this task is an
-      endpoint profile that is required as guidance for the tasks of
-      endpoint classification or posture assessment.
+      endpoint profile that is required as declarative guidance for the
+      tasks of endpoint classification or posture assessment.
 
    Endpoint Classification:  The task by which a discovered target
-      endpoint is classified.  Endpoint classification requires guidance
-      in the form of an endpoint profile, discovery results and
-      potentially collection results.  Types, classes or the
+      endpoint is classified.  Endpoint classification requires
+      declarative guidance in the form of an endpoint profile, discovery
+      results and potentially collection results.  Types, classes or the
       characteristics of an individual target endpoint are defined via
       endpoint profiles.
 
@@ -824,16 +824,16 @@ Internet-Draft              SACM Terminology                January 2017
       system, a user could have multiple independent instances of the
       same text editor running).
 
-   State:
+   State:  A volatile subset endpoint attributes of a (target) endpoint
+      that is affected by a reboot-cycle.  Local state is created by the
+      interaction of a components with other components via the control
+      plane, via processing data plane payload, or via the functional
+      properties of local hardware and software components.  Dynamic
+      configuration (e.g.  IP address distributed dynamically via an
+      address distribution and management services, such as DHCP) is
+      considered state that is the result of the interaction with
+      another component that provides configuration via the control
 
-   A volatile subset endpoint attributes of a (target) endpoint that is
-   affected by a reboot-cycle.  Local state is created by the
-   interaction of a components with other components via the control
-   plane, via processing data plane payload, or via the functional
-   properties of local hardware and software components.  Dynamic
-   configuration (e.g.  IP address distributed dynamically via an
-   address distribution and management services, such as DHCP) is
-   considered state that is the result of the interaction with another
 
 
 
@@ -842,29 +842,9 @@ Birkholz, et al.          Expires July 16, 2017                [Page 15]
 Internet-Draft              SACM Terminology                January 2017
 
 
-   component that provides configuration via the control plane (e.g.
-   provided by a DHCP server with a specific configuration).
+      plane (e.g. provided by a DHCP server with a specific
+      configuration).
 
-   A non-volatile subset of the endpoint attributes of a (target)
-   endpoint that is intended to be uneffected by a normal reboot-cylce.
-
-
-   Configuration is a type of imperative guidance that is stored in
-   files (files dedicated to contain configuration and/or files that are
-    software components), directly on block devices, or on specific
-   hardware components that can be accessed via corresponding software
-   components.
-
-   Modification of configuration can be conducted manually or
-   automatically via management (plane) interfaces that support
-   management protocols, such as SNMP or WMI.
-
-   A change of configuration can occur during both run-time and down-
-   time of an endpoint.
-
-   It is common practive to scheduled a change of configuration during
-   or directly after the completion of a boot-cycle via corresponding
-   software components located on the target endpoint itself.
       Exmaples: The static association of an IP address and a MAC
       address in a DHCP server configuration, a directory-path that
       identifies a log-file directory, a registry entry.
@@ -889,15 +869,6 @@ Internet-Draft              SACM Terminology                January 2017
       information system; or a service provided by a system; or a system
       capacity, such as processing power or communication bandwidth; or
       an item of system equipment (i.e., hardware, firmware, software,
-
-
-
-
-Birkholz, et al.          Expires July 16, 2017                [Page 16]
-
-Internet-Draft              SACM Terminology                January 2017
-
-
       or documentation); or a facility that houses system operations and
       equipment.
 
@@ -919,6 +890,14 @@ Internet-Draft              SACM Terminology                January 2017
       is intended to be a representation of an endpoint.  It cannot be
       assured that a record distinctly represents a single target
       endpoint unless a set of one or more endpoint attributes that
+
+
+
+Birkholz, et al.          Expires July 16, 2017                [Page 16]
+
+Internet-Draft              SACM Terminology                January 2017
+
+
       compose a unique set of identifying endpoint attributes are
       included in the record.  Otherwise, the set of identifying
       attributes included in a record can match more than one target
@@ -946,14 +925,6 @@ Internet-Draft              SACM Terminology                January 2017
       in the form of characterization records.  For example, the output
       of a target endpoint discovery task or a collection task can be
       processed by the characterization task and added to the record.
-
-
-
-Birkholz, et al.          Expires July 16, 2017                [Page 17]
-
-Internet-Draft              SACM Terminology                January 2017
-
-
       The TE characterization Task also manages these representations of
       target endpoints encountered in the SACM domain by splitting or
       merging the corresponding records as new or more refined endpoint
@@ -966,14 +937,22 @@ Internet-Draft              SACM Terminology                January 2017
 
    Target Endpoint Classification Task:  The task of associating a class
       from an extensible list of classes with an endpoint
-      characterization record.  TE classes function as guidance for
-      collection, evaluation, remediation and security posture
-      assessment in general.
+      characterization record.  TE classes function as imperative and
+      declarative guidance for collection, evaluation, remediation and
+      security posture assessment in general.
 
       Input: endpoint characterization records (without classification),
       guidance (how to classify a record)
 
       Output: endpoint characterization records (with classification)
+
+
+
+
+Birkholz, et al.          Expires July 16, 2017                [Page 17]
+
+Internet-Draft              SACM Terminology                January 2017
+
 
    Target Endpoint Discovery Task:  The ongoing task of detecting
       previously unknown interaction of a potential target endpoint in
@@ -1003,13 +982,6 @@ Internet-Draft              SACM Terminology                January 2017
       endpoint attributes can be associated with a target endpoint label
       that is unique in a SACM domain.
 
-
-
-Birkholz, et al.          Expires July 16, 2017                [Page 18]
-
-Internet-Draft              SACM Terminology                January 2017
-
-
    Target Endpoint Label:  A specific endpoint label that refers to a
       target endpoint identifier used to identify a specific target
       endpoint (also referred to as TE label).  In content-metadata,
@@ -1030,6 +1002,14 @@ Internet-Draft              SACM Terminology                January 2017
       endpoint characterization).  A SACM task can be triggered by other
       operations or functions (e.g. a query from another SACM component
       or an unsolicited push on the data plane due to an ongoing
+
+
+
+Birkholz, et al.          Expires July 16, 2017                [Page 18]
+
+Internet-Draft              SACM Terminology                January 2017
+
+
       subscription).  A task is part of a SACM process chain.  A task
       starts at a given point in time and ends in a deterministic state.
       With the exception of a collection task, a SACM task consumes SACM
@@ -1057,15 +1037,6 @@ Internet-Draft              SACM Terminology                January 2017
 
       SACM Component Registration [TBD]
 
-
-
-
-
-Birkholz, et al.          Expires July 16, 2017                [Page 19]
-
-Internet-Draft              SACM Terminology                January 2017
-
-
    Timestamps :  Defined in [RFC4949] as "with respect to a data object,
       a label or marking in which is recorded the time (time of day or
       other instant of elapsed time) at which the label or marking was
@@ -1085,6 +1056,16 @@ Internet-Draft              SACM Terminology                January 2017
       general, it cannot be simply assumed that the source of time a
       target endpoint uses is synchronized or trustworthy.
 
+
+
+
+
+
+Birkholz, et al.          Expires July 16, 2017                [Page 19]
+
+Internet-Draft              SACM Terminology                January 2017
+
+
    Vulnerability Assessment:  The process of determining whether a set
       of endpoints is vulnerable according to the information contained
       in the vulnerability description information.
@@ -1096,11 +1077,12 @@ Internet-Draft              SACM Terminology                January 2017
       description information should contain enough information to
       support vulnerability detection.
 
-   Vulnerability Detection Data:  A type of guidance extracted or
-      derived from vulnerability description information that describes
-      the specific mechanisms of vulnerability detection that is used by
-      an enterprise's vulnerability management capabilities to determine
-      if a vulnerability is present on an endpoint.
+   Vulnerability Detection Data:  A type of imperative guidance
+      extracted or derived from vulnerability description information
+      that describes the specific mechanisms of vulnerability detection
+      that is used by an enterprise's vulnerability management
+      capabilities to determine if a vulnerability is present on an
+      endpoint.
 
    Vulnerability Management Capabilities:  An enterprise IT department's
       ability to manage endpoint vulnerabilities and associated metadata
@@ -1115,13 +1097,6 @@ Internet-Draft              SACM Terminology                January 2017
 
    Workflow:
 
-
-
-Birkholz, et al.          Expires July 16, 2017                [Page 20]
-
-Internet-Draft              SACM Terminology                January 2017
-
-
    A workflow is a modular composiion of tasks.  A workflow can contain
    loops, conditionals, multiple starting points and multiple endpoints.
    The most promiminant workflow in SACM is the assessment workflow.
@@ -1134,6 +1109,18 @@ Internet-Draft              SACM Terminology                January 2017
 
    This memo documents terminology for security automation.  While it is
    about security, it does not affect security.
+
+
+
+
+
+
+
+
+Birkholz, et al.          Expires July 16, 2017                [Page 20]
+
+Internet-Draft              SACM Terminology                January 2017
+
 
 5.  Acknowledgements
 
@@ -1170,14 +1157,6 @@ Internet-Draft              SACM Terminology                January 2017
 
    o  Updated author information.
 
-
-
-
-Birkholz, et al.          Expires July 16, 2017                [Page 21]
-
-Internet-Draft              SACM Terminology                January 2017
-
-
    o  Combined "Pre-defined Terms" with "New Terms and Definitions".
 
    o  Removed "Requirements language".
@@ -1191,6 +1170,13 @@ Internet-Draft              SACM Terminology                January 2017
    o  Added placeholders for missing change log entries.
 
    Changes from version 06 to version 07:
+
+
+
+Birkholz, et al.          Expires July 16, 2017                [Page 21]
+
+Internet-Draft              SACM Terminology                January 2017
+
 
    o  Added Contributors section.
 
@@ -1225,15 +1211,6 @@ Internet-Draft              SACM Terminology                January 2017
 
    Changes from version 07 to version 08:
 
-
-
-
-
-Birkholz, et al.          Expires July 16, 2017                [Page 22]
-
-Internet-Draft              SACM Terminology                January 2017
-
-
    o  Added Assertion, Collection Result, Collector, Excluded Endpoint,
       Internal Collector, Network Address, Network Interface, SACM
       Domain, Statement, Target Endpoint Identifier, Target Endpoint
@@ -1248,6 +1225,14 @@ Internet-Draft              SACM Terminology                January 2017
       Data Provenance, Endpoint, Management Plane, Posture, Posture
       Attribute, SACM Component, SACM Component Discovery, Target
       Endpoint Discovery.
+
+
+
+
+Birkholz, et al.          Expires July 16, 2017                [Page 22]
+
+Internet-Draft              SACM Terminology                January 2017
+
 
    o  Relabeled Function to SACM Function.
 
@@ -1283,13 +1268,6 @@ Internet-Draft              SACM Terminology                January 2017
    o  Added references to i2nsf definitions in Capability, SACM
       Component, SACM Interface, SACM Role
 
-
-
-Birkholz, et al.          Expires July 16, 2017                [Page 23]
-
-Internet-Draft              SACM Terminology                January 2017
-
-
    o  Added i2nsf Terminology I-D Reference
 
    o  Major Updates to Endpoint, SACM Task, Target Endpoint Identifier
@@ -1302,6 +1280,15 @@ Internet-Draft              SACM Terminology                January 2017
    o  Removed Target Endpoint Discovery
 
    Changes from version 10 to version 11:
+
+
+
+
+
+Birkholz, et al.          Expires July 16, 2017                [Page 23]
+
+Internet-Draft              SACM Terminology                January 2017
+
 
    o  Added Content Element, Content Metadata, Endpoint Label,
       Information Element, Metadata, SACM Component Label, Workflow
@@ -1319,6 +1306,19 @@ Internet-Draft              SACM Terminology                January 2017
       Capability, Vulnerability Assessment
 
 7.  Contributors
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
