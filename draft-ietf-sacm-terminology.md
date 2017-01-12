@@ -153,9 +153,19 @@ Collector:
 
 : A collector can be distributed across multiple endpoints, e.g. across a target endpoint and a SACM component. The separate parts of the collector can communicate with a specialized protocol, such as PA-TNC {{RFC5792}}. At least one part of a distributed collector has to take on the role of a provider of information by providing SACM interfaces to propagate capabilities and to provide SACM content in the form of collection results.
 
+Configuration:
+
+: A non-volatile subset of the endpoint attributes of a (target) endpoint that is intended to be uneffected by a normal reboot-cylce.
+Configuration is a type of imperative guidance that is stored in files (files dedicated to contain configuration and/or files that are software components), directly on block devices, or on specific hardware components that can be accessed via corresponding software components.
+Modification of configuration can be conducted manually or automatically via management (plane) interfaces that support management protocols, such as SNMP or WMI.
+A change of configuration can occur during both run-time and down-time of an endpoint.
+It is common practive to scheduled a change of configuration during or directly after the completion of a boot-cycle via corresponding software components located on the target endpoint itself.
+
+: Exmaples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.
+
 Configuration Drift: 
 
-: The discrepancy of endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components. 
+: The discrepancy of an targat endpoint's endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components. 
 
 Consumer:
 
@@ -171,7 +181,7 @@ Content Metadata:
 
 Control Plane:
 
-: Typically used as a term in the context of routing, e.g. {{RFC6192}}. In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, capability discovery or negotiation, and registration. The control plane orchestrates the flow on the data plane according to guidance received via the management plane. SACM components with interfaces to the control plane have knowledge of the capabilities of other SACM components within a SACM domain. 
+: Typically used as a term in the context of routing, e.g. {{RFC6192}}. In the context of SACM, the control plane is an architectural component providing common control functions to all SACM components, including authentication, authorization, (capability) discovery or negotiation, registration and subscription. The control plane orchestrates the flow on the data plane according to imperative guidance (i.e. configuration) received via the management plane. SACM components with interfaces to the control plane have knowledge of the capabilities of other SACM components within a SACM domain. 
 
 Controller:
 
@@ -183,9 +193,9 @@ Data Confidentiality:
 
 Data In Motion:
 
-: Data that is being transported via a network; also referred to as Data in transit. Data in motion requires a data model to encode the data to be transferred. Typically, data in motion is serialized (marshalling) into a transport encoding by a provider of information and deserialized (unmarshalling) by a consumer of information.
+: Data that is being transported via a network; also referred to as "Data in Transit" or "Data in Flight". Data in motion requires a data model to transfer the data using a specific encoding. Typically, data in motion is serialized (marshalling) into a transport encoding by a provider of information and deserialized (unmarshalling) by a consumer of information. The termination points of provider of information and consumer of information data is transferred between are interfaces. In regard to data in motion, the interpretation of the roles consumer of information and provider of information depends on the corresponding OSI layer (e.g. on layer2: between interfaces connected to a broadcast domain, on layer4: between interfaces that maintain a TCP connection). In the context of SACM, consumer of information and provider of information are SACM components.
 
-: SACM architecture and corresponding models focus on data in motion.
+: The SACM architecture and corresponding models focus on data in motion.
 
 Data At Rest:
 
@@ -199,7 +209,7 @@ Data Integrity:
 
 Data Origin:
 
-: One or more properties that enable a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source). Data Origin is expressed by an endpoint label.
+: One or more properties (i.e. endpoint attributes) that enable a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source) and made it available to a SACM domaini via a SACM statement. Data Origin can be expressed by an endpoint label information element (e.g. to be used as metadata in statement).
 
 Data Plane (fix statement):
 
@@ -207,11 +217,11 @@ Data Plane (fix statement):
 
 Data Provenance:
 
-: A historical record of the sources, origins and evolution of data that is influenced by inputs, entities, functions and processes.
+: A historical record of the sources, origins and evolution of data that is influenced by inputs, entities, functions and processes. In the context of SACM, data provenance is expressed as metadata that identifies SACM statements and corresponding content elements a new statement is created from. In a downstream process, this references can cascade, creating a data provenance tree that enables SACM components to trace back the original data sources involved in the creation of SACM statements and take into account their characteristics and trustworthiness.
 
 Data Source:
 
-: One or more properties that enable a SACM component to identify an (target) endpoint that is claimed to be the original source of received data.
+: One or more properties (i.e. endpoint attributes) that enable a SACM component to identify -- and potentially characterize -- a (target) endpoint that is claimed to be the original source of endpoint attributes in a SACM statement. Data Source can be expressed as metadata by an endpoint label information element or a corresponding subject of identifying endpoint attributes.
 
 Endpoint:
 
@@ -265,7 +275,7 @@ Excluded Endpoint:
 
 Expected Endpoint State:
 
-: The required state of an endpoint that is to be compared against. Sets of expected endpoint states are transported as guidance in target endpoint profiles via the management plane. This, for example, can be a policy, but also a recorded past state. An expected state is represented can be represented via an Attribute or an Subject that represents a set of multiple attribute value pairs.
+: The required state of an endpoint that is to be compared against. Sets of expected endpoint states are transported as declarative guidance in target endpoint profiles via the management plane. This, for example, can be a policy, but also a recorded past state. An expected state is represented can be represented via an Attribute or an Subject that represents a set of multiple attribute value pairs.
 
 SACM Function:
 
@@ -273,7 +283,7 @@ SACM Function:
 
 Guidance:
 
-: Input instructions to processes and tasks, such as collection, evaluation or remediation. Guidance influences the behavior of a SACM component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic.
+: Input instructions to processes, such as automated device management or remediation, and SACM tasks, such as collection, evaluation. Guidance influences the behavior of a SACM component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic.
 
 : There are two types of guidance:
 
@@ -297,14 +307,13 @@ Information Element:
 
 : A representation of information about physical and virtual “objects of interests”. Information elements are the building blocks that constitute the SACM information model. In the context of SACM, an information element that expresses a single value with a specific name is referred to as an Attribute (analogous to an attribute-value-pair). A set of attributes that is bundled into a more complex composite information element is referred to as a Subject. Every information element in the SACM information model has a unique name. Endpoint attributes or time stamps, for example, are represented as information elements in the SACM information model.
 
-
 Information Model:
 
 : An information model is an abstract representation of data, their properties, relationships between data and the operations that can be performed on the data.  While there is some overlap with a data model, {{RFC3444}} distinguishes an information model as being protocol and implementation neutral whereas a data model would provide such details. The purpose of the SACM information model is to ensure interoperability between SACM data models (that are used as transport encoding) and to provide a standardized set of information elements for communication between SACM components.
 
 Interaction Model:
 
-: For now this is a Place-Holder. Is an interaction model that defines, for example, the operations on the control plane, such as registration or SACM component discovery, required?
+: The definition of specific sequences regarding the exchange of messages (data in motion), including, for exmaple,  conditional branching, thresholds and timers. An interaction model, for example, can be used to define operations, such as registration or discovery, on the control plane. A composition of data models for data in motion and a corresponding interaction model is a protocol.
 
 Internal Collector:
 
@@ -412,6 +421,19 @@ Software Instance:
 
 : A running instance of the software component (e.g. on a multi-user system, one logged-in user has one instance of a text editor running and another logged-in user has another instance of the same text editor running, or on a single-user system, a user could have multiple independent instances of the same text editor running).
 
+State:
+
+A volatile subset endpoint attributes of a (target) endpoint that is affected by a reboot-cycle. Local state is created by the interaction of a components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g. IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component that provides configuration via the control plane (e.g. provided by a DHCP server with a specific configuration).
+
+A non-volatile subset of the endpoint attributes of a (target) endpoint that is intended to be uneffected by a normal reboot-cylce.
+Configuration is a type of imperative guidance that is stored in files (files dedicated to contain configuration and/or files that are software components), directly on block devices, or on specific hardware components that can be accessed via corresponding software components.
+Modification of configuration can be conducted manually or automatically via management (plane) interfaces that support management protocols, such as SNMP or WMI.
+A change of configuration can occur during both run-time and down-time of an endpoint.
+It is common practive to scheduled a change of configuration during or directly after the completion of a boot-cycle via corresponding software components located on the target endpoint itself.
+
+: Exmaples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.
+
+
 Statement: 
 
 : A statement is a subject defined in the SACM information model.
@@ -424,7 +446,7 @@ Subject:
 
 Supplicant:
 
-: The entity seeking to be authenticated by the Management Plane for the purpose of participating in the SACM architecture.
+: A SACM component seeking to be authenticated via the control plane for the purpose of participating in a SACM domain.
 
 System Resource:
 
