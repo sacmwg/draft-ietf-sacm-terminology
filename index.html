@@ -5,7 +5,7 @@
 <head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
 
-  <title>Secure Automation and Continuous Monitoring (SACM) Terminology</title>
+  <title>Security Automation and Continuous Monitoring (SACM) Terminology</title>
 
   <style type="text/css" title="Xml2Rfc (sans serif)">
   /*<![CDATA[*/
@@ -470,7 +470,7 @@ ul.toc a:first-child {
 
   <meta name="dct.creator" content="Birkholz, H., Lu, J., Strassner, J., and N. Cam-Winget" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-terminology-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-1-12" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-1-18" />
   <meta name="dct.abstract" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
   <meta name="description" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
 
@@ -494,7 +494,7 @@ ul.toc a:first-child {
   <td class="right">J. Lu</td>
 </tr>
 <tr>
-  <td class="left">Expires: July 16, 2017</td>
+  <td class="left">Expires: July 22, 2017</td>
   <td class="right">Oracle Corporation</td>
 </tr>
 <tr>
@@ -515,14 +515,14 @@ ul.toc a:first-child {
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">January 12, 2017</td>
+  <td class="right">January 18, 2017</td>
 </tr>
 
     	
     </tbody>
   </table>
 
-  <p class="title">Secure Automation and Continuous Monitoring (SACM) Terminology<br />
+  <p class="title">Security Automation and Continuous Monitoring (SACM) Terminology<br />
   <span class="filename">draft-ietf-sacm-terminology-latest</span></p>
   
   <h1 id="rfc.abstract">
@@ -535,7 +535,7 @@ ul.toc a:first-child {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on July 16, 2017.</p>
+<p>This Internet-Draft will expire on July 22, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -569,7 +569,7 @@ ul.toc a:first-child {
 
 <dl>
   <dt>Assertion:</dt>
-  <dd style="margin-left: 8">Defined by the ITU in <a href="#X.1252">[X.1252]</a> as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is the output of a SACM component in the form of a statement, including metadata about the data source and data origin (e.g. time stamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol , an assertion (and therfore a statement, respectivly) can be accompanied by evidence of the validity of its metadata provided by a SACM component.</dd>
+  <dd style="margin-left: 8">Defined by the ITU in <a href="#X.1252">[X.1252]</a> as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is the output of a SACM component in the form of a statement (including metadata about the data source and data origin, e.g. time stamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol, an assertion (and therfore a statement, respectivly) can be accompanied by evidence of the validity of its metadata provided by a SACM component.</dd>
   <dt>Assessment:</dt>
   <dd style="margin-left: 8">Defined in <a href="#RFC5209">[RFC5209]</a> as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."</dd>
   <dt></dt>
@@ -621,7 +621,7 @@ ul.toc a:first-child {
   <dt></dt>
   <dd style="margin-left: 8">Exmaples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.</dd>
   <dt>Configuration Drift:</dt>
-  <dd style="margin-left: 8">The discrepancy of an targat endpoint's endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components.</dd>
+  <dd style="margin-left: 8">The discrepancy of a target endpoint's endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components.</dd>
   <dt>Consumer:</dt>
   <dd style="margin-left: 8">A consumer is a SACM role that is assigned to a SACM component that contains functions to receive information from other SACM components.</dd>
   <dt>Content Element:</dt>
@@ -689,7 +689,7 @@ ul.toc a:first-child {
   <dt>SACM Function:</dt>
   <dd style="margin-left: 8">A behavioral aspect or capacity of a particular SACM component, which belies that SACM component's purpose.  For example, a SACM function with interfaces on the control plane can provide a brokering function to other SACM components. Via data plane interfaces, a function can act as a provider and/or as a consumer of information. SACM functions can be propagated as the capabilities of a SACM component and can be discovered by or negotiated with other SACM components.</dd>
   <dt>Guidance:</dt>
-  <dd style="margin-left: 8">Input instructions to processes, such as automated device management or remediation, and SACM tasks, such as collection, evaluation. Guidance influences the behavior of a SACM component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic.</dd>
+  <dd style="margin-left: 8">Input instructions to processes, such as automated device management or remediation, and SACM tasks, such as collection or evaluation. Guidance influences the behavior of a SACM component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic.</dd>
   <dt></dt>
   <dd style="margin-left: 8">There are two types of guidance:</dd>
   <dt></dt>
@@ -773,7 +773,7 @@ ul.toc a:first-child {
   <dt>Software Instance:</dt>
   <dd style="margin-left: 8">A running instance of the software component (e.g. on a multi-user system, one logged-in user has one instance of a text editor running and another logged-in user has another instance of the same text editor running, or on a single-user system, a user could have multiple independent instances of the same text editor running).</dd>
   <dt>State:</dt>
-  <dd style="margin-left: 8">A volatile subset endpoint attributes of a (target) endpoint that is affected by a reboot-cycle. Local state is created by the interaction of a components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g. IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component that provides configuration via the control plane (e.g. provided by a DHCP server with a specific configuration).</dd>
+  <dd style="margin-left: 8">A volatile subset endpoint attributes of a (target) endpoint that is affected by a reboot-cycle. Local state is created by the interaction of components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g. IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component that provides configuration via the control plane (e.g. provided by a DHCP server with a specific configuration).</dd>
   <dt></dt>
   <dd style="margin-left: 8">Exmaples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.</dd>
   <dt>Statement:</dt>

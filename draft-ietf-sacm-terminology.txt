@@ -5,15 +5,15 @@
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                     J. Lu
-Expires: July 16, 2017                                Oracle Corporation
+Expires: July 22, 2017                                Oracle Corporation
                                                             J. Strassner
                                                      Huawei Technologies
                                                            N. Cam-Winget
                                                            Cisco Systems
-                                                        January 12, 2017
+                                                        January 18, 2017
 
 
-     Secure Automation and Continuous Monitoring (SACM) Terminology
+    Security Automation and Continuous Monitoring (SACM) Terminology
                    draft-ietf-sacm-terminology-latest
 
 Abstract
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 16, 2017.
+   This Internet-Draft will expire on July 22, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Birkholz, et al.          Expires July 16, 2017                 [Page 1]
+Birkholz, et al.          Expires July 22, 2017                 [Page 1]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -92,10 +92,10 @@ Table of Contents
    Assertion:  Defined by the ITU in [X.1252] as "a statement made by an
       entity without accompanying evidence of its validity".  In the
       context of SACM, an assertion is the output of a SACM component in
-      the form of a statement, including metadata about the data source
-      and data origin (e.g. time stamps).  While the validity of an
+      the form of a statement (including metadata about the data source
+      and data origin, e.g. time stamps).  While the validity of an
       assertion cannot be verified without, for example, an additional
-      attestation protocol , an assertion (and therfore a statement,
+      attestation protocol, an assertion (and therfore a statement,
       respectivly) can be accompanied by evidence of the validity of its
       metadata provided by a SACM component.
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Birkholz, et al.          Expires July 16, 2017                 [Page 2]
+Birkholz, et al.          Expires July 22, 2017                 [Page 2]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -165,7 +165,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                 [Page 3]
+Birkholz, et al.          Expires July 22, 2017                 [Page 3]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -221,7 +221,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                 [Page 4]
+Birkholz, et al.          Expires July 22, 2017                 [Page 4]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -257,16 +257,15 @@ Internet-Draft              SACM Terminology                January 2017
       address in a DHCP server configuration, a directory-path that
       identifies a log-file directory, a registry entry.
 
-   Configuration Drift:  The discrepancy of an targat endpoint's
-      endpoint attributes representing the actual composition of a
-      target endpoint (is-state) and its intended composition (should-
-      state) in the scope of a valid target endpoint composition (could-
-      state) due to continuous alteration of a target endpoint's
-      composition over time.  Configuration drift exists for both
-      hardware components and software components.  Typically, the
-      frequency and scale of configuration drift of software components
-      is significantly higher than the configuration drift of hardware
-      components.
+   Configuration Drift:  The discrepancy of a target endpoint's endpoint
+      attributes representing the actual composition of a target
+      endpoint (is-state) and its intended composition (should-state) in
+      the scope of a valid target endpoint composition (could-state) due
+      to continuous alteration of a target endpoint's composition over
+      time.  Configuration drift exists for both hardware components and
+      software components.  Typically, the frequency and scale of
+      configuration drift of software components is significantly higher
+      than the configuration drift of hardware components.
 
    Consumer:  A consumer is a SACM role that is assigned to a SACM
       component that contains functions to receive information from
@@ -277,7 +276,8 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                 [Page 5]
+
+Birkholz, et al.          Expires July 22, 2017                 [Page 5]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -333,7 +333,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                 [Page 6]
+Birkholz, et al.          Expires July 22, 2017                 [Page 6]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -389,7 +389,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                 [Page 7]
+Birkholz, et al.          Expires July 22, 2017                 [Page 7]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -445,7 +445,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                 [Page 8]
+Birkholz, et al.          Expires July 22, 2017                 [Page 8]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -501,7 +501,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                 [Page 9]
+Birkholz, et al.          Expires July 22, 2017                 [Page 9]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -512,7 +512,7 @@ Internet-Draft              SACM Terminology                January 2017
       negotiated with other SACM components.
 
    Guidance:  Input instructions to processes, such as automated device
-      management or remediation, and SACM tasks, such as collection,
+      management or remediation, and SACM tasks, such as collection or
       evaluation.  Guidance influences the behavior of a SACM component
       and is considered content of the management plane.  In the context
       of SACM, guidance is machine-readable and can be manually or
@@ -557,7 +557,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 10]
+Birkholz, et al.          Expires July 22, 2017                [Page 10]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -613,7 +613,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 11]
+Birkholz, et al.          Expires July 22, 2017                [Page 11]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -669,7 +669,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 12]
+Birkholz, et al.          Expires July 22, 2017                [Page 12]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -725,7 +725,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 13]
+Birkholz, et al.          Expires July 22, 2017                [Page 13]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -781,7 +781,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 14]
+Birkholz, et al.          Expires July 22, 2017                [Page 14]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -826,7 +826,7 @@ Internet-Draft              SACM Terminology                January 2017
 
    State:  A volatile subset endpoint attributes of a (target) endpoint
       that is affected by a reboot-cycle.  Local state is created by the
-      interaction of a components with other components via the control
+      interaction of components with other components via the control
       plane, via processing data plane payload, or via the functional
       properties of local hardware and software components.  Dynamic
       configuration (e.g.  IP address distributed dynamically via an
@@ -837,7 +837,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 15]
+Birkholz, et al.          Expires July 22, 2017                [Page 15]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -893,7 +893,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 16]
+Birkholz, et al.          Expires July 22, 2017                [Page 16]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -949,7 +949,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 17]
+Birkholz, et al.          Expires July 22, 2017                [Page 17]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -1005,7 +1005,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 18]
+Birkholz, et al.          Expires July 22, 2017                [Page 18]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -1061,7 +1061,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 19]
+Birkholz, et al.          Expires July 22, 2017                [Page 19]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -1117,7 +1117,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 20]
+Birkholz, et al.          Expires July 22, 2017                [Page 20]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -1173,7 +1173,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 21]
+Birkholz, et al.          Expires July 22, 2017                [Page 21]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -1229,7 +1229,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 22]
+Birkholz, et al.          Expires July 22, 2017                [Page 22]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -1285,7 +1285,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 23]
+Birkholz, et al.          Expires July 22, 2017                [Page 23]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -1341,7 +1341,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 24]
+Birkholz, et al.          Expires July 22, 2017                [Page 24]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -1397,7 +1397,7 @@ Internet-Draft              SACM Terminology                January 2017
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 25]
+Birkholz, et al.          Expires July 22, 2017                [Page 25]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -1453,7 +1453,7 @@ Appendix A.  The Attic
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 26]
+Birkholz, et al.          Expires July 22, 2017                [Page 26]
 
 Internet-Draft              SACM Terminology                January 2017
 
@@ -1509,4 +1509,4 @@ Authors' Addresses
 
 
 
-Birkholz, et al.          Expires July 16, 2017                [Page 27]
+Birkholz, et al.          Expires July 22, 2017                [Page 27]
