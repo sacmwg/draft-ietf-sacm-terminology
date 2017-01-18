@@ -1,5 +1,5 @@
 ---
-title: Secure Automation and Continuous Monitoring (SACM) Terminology
+title: Security Automation and Continuous Monitoring (SACM) Terminology
 abbrev: SACM Terminology
 docname: draft-ietf-sacm-terminology-latest
 stand_alone: true
@@ -83,7 +83,7 @@ This section describes terms that have been defined by other RFC's and defines n
 
 Assertion:
 
-: Defined by the ITU in {{X.1252}} as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is the output of a SACM component in the form of a statement, including metadata about the data source and data origin (e.g. time stamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol , an assertion (and therfore a statement, respectivly) can be accompanied by evidence of the validity of its metadata provided by a SACM component.
+: Defined by the ITU in {{X.1252}} as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is the output of a SACM component in the form of a statement (including metadata about the data source and data origin, e.g. time stamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol, an assertion (and therfore a statement, respectivly) can be accompanied by evidence of the validity of its metadata provided by a SACM component.
 
 Assessment:
 
@@ -165,7 +165,7 @@ It is common practive to scheduled a change of configuration during or directly 
 
 Configuration Drift: 
 
-: The discrepancy of an targat endpoint's endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components. 
+: The discrepancy of a target endpoint's endpoint attributes representing the actual composition of a target endpoint (is-state) and its intended composition (should-state) in the scope of a valid target endpoint composition (could-state) due to continuous alteration of a target endpoint's composition over time. Configuration drift exists for both hardware components and software components. Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components. 
 
 Consumer:
 
@@ -283,7 +283,7 @@ SACM Function:
 
 Guidance:
 
-: Input instructions to processes, such as automated device management or remediation, and SACM tasks, such as collection, evaluation. Guidance influences the behavior of a SACM component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic.
+: Input instructions to processes, such as automated device management or remediation, and SACM tasks, such as collection or evaluation. Guidance influences the behavior of a SACM component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be be sporadic.
 
 : There are two types of guidance:
 
@@ -423,7 +423,7 @@ Software Instance:
 
 State:
 
-: A volatile subset endpoint attributes of a (target) endpoint that is affected by a reboot-cycle. Local state is created by the interaction of a components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g. IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component that provides configuration via the control plane (e.g. provided by a DHCP server with a specific configuration).
+: A volatile subset endpoint attributes of a (target) endpoint that is affected by a reboot-cycle. Local state is created by the interaction of components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g. IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component that provides configuration via the control plane (e.g. provided by a DHCP server with a specific configuration).
 
 : Exmaples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.
 
