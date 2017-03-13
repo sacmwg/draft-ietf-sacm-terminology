@@ -429,9 +429,8 @@ Internet-Draft              SACM Terminology                  March 2017
       multiple AVP).
 
    Endpoint Characteristic:  The state, configuration and composition an
-      endpoint is in and observerable corresponding behavior of the
-      behavior via, for example, sys-calls, log-files, or PSU emission
-      on a network.
+      endpoint is in, including observerable behavior, e.g. sys-calls,
+      log-files, or PDU emission on a network.
 
    Endpoint Characterization:  The task by which a profile is composed
       out of endpoint attributes that describe the desired or expected
@@ -442,6 +441,7 @@ Internet-Draft              SACM Terminology                  March 2017
 
    Endpoint Classification:  The task by which a discovered target
       endpoint is classified.  Endpoint classification requires
+      declarative guidance in the form of an endpoint profile, discovery
 
 
 
@@ -450,7 +450,6 @@ Birkholz, et al.       Expires September 14, 2017               [Page 8]
 Internet-Draft              SACM Terminology                  March 2017
 
 
-      declarative guidance in the form of an endpoint profile, discovery
       results and potentially collection results.  Types, classes or the
       characteristics of an individual target endpoint are defined via
       endpoint profiles.
@@ -498,6 +497,7 @@ Internet-Draft              SACM Terminology                  March 2017
       endpoints.  Target endpoints that contain a SACM component cannot
       be designated as excluded endpoints and are part of the SACM
       domain.
+
 
 
 
