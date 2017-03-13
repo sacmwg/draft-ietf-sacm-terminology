@@ -241,7 +241,7 @@ Endpoint Attribute:
 
 Endpoint Characteristic:
 
-: The state, configuration and composition an endpoint is in and observerable corresponding behavior of the behavior via, for example,  sys-calls, log-files, or PSU emission on a network.
+: The state, configuration and composition an endpoint is in, including observerable behavior, e.g. sys-calls, log-files, or PDU emission on a network.
 
 Endpoint Characterization:
 
