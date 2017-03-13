@@ -654,13 +654,13 @@ Changes from version 09 to version 10:
 
 * Added Configuration Drift, Data in Motion, Data at Rest, Endpoint Management Capability, Hardware Component, Hardware Inventory, Hardware Type, SACM Interface, Target Endpoint Characterization Record, Target Endpoint Characterization Task, Target Endpoint Classification Task, Target Endpoint Discovery Task, Vulnerability Description Information, Vulnerability Detection Data, Vulnerability Management Capability, Vulnerability Assessment
 
-* Added references to i2nsf definitions in Capability, SACM Component, SACM Interface, SACM Role
+* Added references to i2nsf definitions in Capability, SACM Component, SACM Interface, SACM Role.
 
-* Added i2nsf Terminology I-D Reference
+* Added i2nsf Terminology I-D Reference.
 
-* Major Updates to Endpoint, SACM Task, Target Endpoint Identifier
+* Major Updates to Endpoint, SACM Task, Target Endpoint Identifier.
 
-* Minor Updates to Guidance, SACM Component Discovery, Target Endpoint Label, Target Endpoint Profile
+* Minor Updates to Guidance, SACM Component Discovery, Target Endpoint Label, Target Endpoint Profile.
 
 * Relabeled SACM Task
 
@@ -668,13 +668,21 @@ Changes from version 09 to version 10:
 
 Changes from version 10 to version 11:
 
-* Added Content Element, Content Metadata, Endpoint Label, Information Element, Metadata, SACM Component Label, Workflow
+* Added Content Element, Content Metadata, Endpoint Label, Information Element, Metadata, SACM Component Label, Workflow.
 
-* Major Updates to Assessment, Capability, Collector, Endpoint Management Capabilities, Guidance, Vulnerability Assessment Capabilities, Vulnerability Detection Data, Vulnerability Assessment Capabilities
+* Major Updates to Assessment, Capability, Collector, Endpoint Management Capabilities, Guidance, Vulnerability Assessment Capabilities, Vulnerability Detection Data, Vulnerability Assessment Capabilities.
 
-* Minor updates to Collection Result, Control Plane, Data in Motion, Data at Rest, Data Origin, Network Interface, Statement, Target Endpoint Label,  
+* Minor updates to Collection Result, Control Plane, Data in Motion, Data at Rest, Data Origin, Network Interface, Statement, Target Endpoint Label.
 
-* Relabeled Endpoint Management Capability, Vulnerability Management Capability, Vulnerability Assessment
+* Relabeled Endpoint Management Capability, Vulnerability Management Capability, Vulnerability Assessment.
+
+Changes from verion 11 to version 12:
+
+* Added Configuration, Endpoint Characteristic, Event, SACM Content, State, Subject.
+
+* Major Updates to Asserition, Data in Motion, Data Provenance, Data Source, Interaction Model.
+
+* Minor Updates to Attribute, Control Plane, Data Origin, Data Provenance, Expected Endpoint State, Guidance, Target Endpoint Classification Task, Vulnerability Detection Data.
 
 
 # Contributors
