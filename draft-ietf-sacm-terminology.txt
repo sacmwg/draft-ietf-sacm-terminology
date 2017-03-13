@@ -1276,11 +1276,11 @@ Internet-Draft              SACM Terminology                  March 2017
       Vulnerability Management Capability, Vulnerability Assessment
 
    o  Added references to i2nsf definitions in Capability, SACM
-      Component, SACM Interface, SACM Role
+      Component, SACM Interface, SACM Role.
 
-   o  Added i2nsf Terminology I-D Reference
+   o  Added i2nsf Terminology I-D Reference.
 
-   o  Major Updates to Endpoint, SACM Task, Target Endpoint Identifier
+   o  Major Updates to Endpoint, SACM Task, Target Endpoint Identifier.
 
 
 
@@ -1291,7 +1291,7 @@ Internet-Draft              SACM Terminology                  March 2017
 
 
    o  Minor Updates to Guidance, SACM Component Discovery, Target
-      Endpoint Label, Target Endpoint Profile
+      Endpoint Label, Target Endpoint Profile.
 
    o  Relabeled SACM Task
 
@@ -1300,33 +1300,33 @@ Internet-Draft              SACM Terminology                  March 2017
    Changes from version 10 to version 11:
 
    o  Added Content Element, Content Metadata, Endpoint Label,
-      Information Element, Metadata, SACM Component Label, Workflow
+      Information Element, Metadata, SACM Component Label, Workflow.
 
    o  Major Updates to Assessment, Capability, Collector, Endpoint
       Management Capabilities, Guidance, Vulnerability Assessment
       Capabilities, Vulnerability Detection Data, Vulnerability
-      Assessment Capabilities
+      Assessment Capabilities.
 
    o  Minor updates to Collection Result, Control Plane, Data in Motion,
       Data at Rest, Data Origin, Network Interface, Statement, Target
-      Endpoint Label,
+      Endpoint Label.
 
    o  Relabeled Endpoint Management Capability, Vulnerability Management
-      Capability, Vulnerability Assessment
+      Capability, Vulnerability Assessment.
+
+   Changes from verion 11 to version 12:
+
+   o  Added Configuration, Endpoint Characteristic, Event, SACM Content,
+      State, Subject.
+
+   o  Major Updates to Asserition, Data in Motion, Data Provenance, Data
+      Source, Interaction Model.
+
+   o  Minor Updates to Attribute, Control Plane, Data Origin, Data
+      Provenance, Expected Endpoint State, Guidance, Target Endpoint
+      Classification Task, Vulnerability Detection Data.
 
 7.  Contributors
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
