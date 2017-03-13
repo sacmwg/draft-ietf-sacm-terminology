@@ -470,7 +470,7 @@ ul.toc a:first-child {
 
   <meta name="dct.creator" content="Birkholz, H., Lu, J., Strassner, J., and N. Cam-Winget" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-terminology-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-1-18" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-3-13" />
   <meta name="dct.abstract" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
   <meta name="description" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
 
@@ -494,7 +494,7 @@ ul.toc a:first-child {
   <td class="right">J. Lu</td>
 </tr>
 <tr>
-  <td class="left">Expires: July 22, 2017</td>
+  <td class="left">Expires: September 14, 2017</td>
   <td class="right">Oracle Corporation</td>
 </tr>
 <tr>
@@ -515,7 +515,7 @@ ul.toc a:first-child {
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">January 18, 2017</td>
+  <td class="right">March 13, 2017</td>
 </tr>
 
     	
@@ -535,7 +535,7 @@ ul.toc a:first-child {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on July 22, 2017.</p>
+<p>This Internet-Draft will expire on September 14, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -663,7 +663,9 @@ ul.toc a:first-child {
   <dt></dt>
   <dd style="margin-left: 8">Based on the definition of an asset, an endpoint is a type of asset.</dd>
   <dt>Endpoint Attribute:</dt>
-  <dd style="margin-left: 8">In the context of SACM, endpoint attributes are information elements that describe a characteristic of a target endpoint. Endpoint Attributes typically constitute Attributes that can be bundled into Subject (e.g. information about a specific network interface can be represented via a set of multiple AVP).</dd>
+  <dd style="margin-left: 8">In the context of SACM, endpoint attributes are information elements that describe an endpoint characteristic of a target endpoint. Endpoint Attributes typically constitute Attributes that can be bundled into Subject (e.g. information about a specific network interface can be represented via a set of multiple AVP).</dd>
+  <dt>Endpoint Characteristic:</dt>
+  <dd style="margin-left: 8">The state, configuration and composition an endpoint is in and observerable corresponding behavior of the behavior via, for example,  sys-calls, log-files, or PSU emission on a network.</dd>
   <dt>Endpoint Characterization:</dt>
   <dd style="margin-left: 8">The task by which a profile is composed out of endpoint attributes that describe the desired or expected posture of a type or class of target endpoints or even an individual target endpoint. The result of this task is an endpoint profile that is required as declarative guidance for the tasks of endpoint classification or posture assessment.</dd>
   <dt>Endpoint Classification:</dt>
@@ -682,6 +684,8 @@ ul.toc a:first-child {
   <dd style="margin-left: 8">The task by which endpoint attributes are evaluated.</dd>
   <dt>Evaluation Result:</dt>
   <dd style="margin-left: 8">The resulting value from having evaluated a set of posture attributes.</dd>
+  <dt>Event:</dt>
+  <dd style="margin-left: 8">The change of a target endpoint characteristics at a specific point in time. In the context of SACM, an event is a statement (and therefore data in motion) that includes the new target endpoint characteristics and optional also the past ones, annotated with corresponding metedata (most prominently, the collection time of the data that constitutes the observation of the event regarding te target endpoint).</dd>
   <dt>Excluded Endpoint:</dt>
   <dd style="margin-left: 8">A specific designation, which is assigned to an endpoint that is not supposed to be the subject of a collection task (and therefore is not a target endpoint). Typically but not necessarily, endpoints that contain a SACM component (and are therefore part of the SACM domain) are designated as excluded endpoints. Target endpoints that contain a SACM component cannot be designated as excluded endpoints and are part of the SACM domain.</dd>
   <dt>Expected Endpoint State:</dt>
@@ -1012,7 +1016,7 @@ Email: merike@doubleshotsecurity.com
       <td class="reference">
         <b id="I-D.ietf-i2nsf-terminology">[I-D.ietf-i2nsf-terminology]</b>
       </td>
-      <td class="top"><a>Hares, S.</a>, <a>Strassner, J.</a>, <a>Lopez, D.</a>, <a>Xia, L.</a> and <a>H. Birkholz</a>, "<a href="http://tools.ietf.org/html/draft-ietf-i2nsf-terminology-02">Interface to Network Security Functions (I2NSF) Terminology</a>", Internet-Draft draft-ietf-i2nsf-terminology-02, October 2016.</td>
+      <td class="top"><a>Hares, S.</a>, <a>Strassner, J.</a>, <a>Lopez, D.</a>, <a>Xia, L.</a> and <a>H. Birkholz</a>, "<a href="http://tools.ietf.org/html/draft-ietf-i2nsf-terminology-03">Interface to Network Security Functions (I2NSF) Terminology</a>", Internet-Draft draft-ietf-i2nsf-terminology-03, March 2017.</td>
     </tr>
     <tr>
       <td class="reference">
