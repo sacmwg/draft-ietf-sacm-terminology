@@ -237,7 +237,11 @@ Endpoint:
 
 Endpoint Attribute:
 
-: In the context of SACM, endpoint attributes are information elements that describe a characteristic of a target endpoint. Endpoint Attributes typically constitute Attributes that can be bundled into Subject (e.g. information about a specific network interface can be represented via a set of multiple AVP).
+: In the context of SACM, endpoint attributes are information elements that describe an endpoint characteristic of a target endpoint. Endpoint Attributes typically constitute Attributes that can be bundled into Subject (e.g. information about a specific network interface can be represented via a set of multiple AVP).
+
+Endpoint Characteristic:
+
+: The state, configuration and composition an endpoint is in and observerable corresponding behavior of the behavior via, for example,  sys-calls, log-files, or PSU emission on a network.
 
 Endpoint Characterization:
 
@@ -268,6 +272,10 @@ Evaluation Task:
 Evaluation Result:
 
 : The resulting value from having evaluated a set of posture attributes.
+
+Event:
+
+: The change of a target endpoint characteristics at a specific point in time. In the context of SACM, an event is a statement (and therefore data in motion) that includes the new target endpoint characteristics and optional also the past ones, annotated with corresponding metedata (most prominently, the collection time of the data that constitutes the observation of the event regarding te target endpoint).
 
 Excluded Endpoint:
 
