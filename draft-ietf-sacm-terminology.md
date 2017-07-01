@@ -568,7 +568,7 @@ Vulnerability assessment capabilities:
 
 Workflow:
 
-A workflow is a modular composition of tasks. A workflow can contain loops, conditionals, multiple starting points and multiple endpoints. The most prominant workflow in SACM is the assessment workflow.
+: A workflow is a modular composition of tasks. A workflow can contain loops, conditionals, multiple starting points and multiple endpoints. The most prominant workflow in SACM is the assessment workflow.
 
 #  IANA Considerations
 
