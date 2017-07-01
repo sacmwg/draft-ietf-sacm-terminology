@@ -54,6 +54,7 @@ author:
 
 normative:
   RFC6933:
+  RFC5792:
 
 informative:
   I-D.ietf-i2nsf-terminology: i2nsft
@@ -61,9 +62,8 @@ informative:
   RFC3444:
   RFC4949:
   RFC5209:
-  RFC5792:
   RFC6192:
-  I-D.ietf-netmod-entity: YANG-HW-Management
+  I-D.ietf-netmod-entity: yang-hw
   X.1252:
     title: "ITU-T X.1252 (04/2010)"
 
@@ -309,7 +309,7 @@ Hardware Component:
 
 : Hardware components are the distinguishable physical components that compose an endpoint. The composition of an endpoint can be changed over time by adding or removing hardware components. In essence, every physical endpoint is potentially a composite of multiple hardware components, typically resulting in a hierarchical composition of hardware components. The composition of hardware components is based on interconnects provided by specific hardware types (e.g. a mainboard is a hardware type that provides local busses as an interconnect or an FRU is a hardware type that is itself a connected via an interconnect to a chassis and can provide further interconnects for additional hardware components, such as interfaces modules). In general, a hardware component can be distinguished by its serial number. Occasionally, hardware components are referred to as power sucking aliens.
 
-: The Entity MIB version 4 {{RFC6933}} and the YANG Data Model for Hardware Management {{-YANG-HW-Management}} provide common examples of target endpoint characteristics about hardware components.
+: The Entity MIB version 4 {{RFC6933}} and the YANG Data Model for Hardware Management {{-yang-hw}} provide common examples of target endpoint characteristics about hardware components.
 
 Hardware Inventory: 
 
@@ -319,7 +319,7 @@ Hardware Type:
 
 : Hardware types define specific and distinguishable categories of hardware components that can be part of endpoints, e.g. CPU or 802.11p interface. Typically, hardware types can be distinguished by their vendor assigned names, names of standards used, or a model name.
 
-: The IANAPhysicalClass {{RFC6933}} and corresponding iana-entity YANG module {{-YANG-HW-Management}} provide the standard references for physical hardware components. 
+: The IANAPhysicalClass {{RFC6933}} and corresponding iana-entity YANG module {{-yang-hw}} provide the standard references for physical hardware components. 
 
 Information Element:
 
