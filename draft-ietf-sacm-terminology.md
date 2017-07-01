@@ -53,6 +53,7 @@ author:
   country: USA
 
 normative:
+  RFC6933:
 
 informative:
   I-D.ietf-i2nsf-terminology: i2nsft
@@ -62,6 +63,7 @@ informative:
   RFC5209:
   RFC5792:
   RFC6192:
+  I-D.ietf-netmod-entity: YANG-HW-Management
   X.1252:
     title: "ITU-T X.1252 (04/2010)"
 
@@ -83,13 +85,13 @@ This section describes terms that have been defined by other RFC's and defines n
 
 Assertion:
 
-: Defined by the ITU in {{X.1252}} as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is the output of a SACM component in the form of a statement (including metadata about the data source and data origin, e.g. time stamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol, an assertion (and therfore a statement, respectivly) can be accompanied by evidence of the validity of its metadata provided by a SACM component.
+: Defined by the ITU in {{X.1252}} as "a statement made by an entity without accompanying evidence of its validity". In the context of SACM, an assertion is the output of a SACM component in the form of a statement (including metadata about the data source and data origin, e.g. timestamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol, an assertion (and therefore a statement, respectively) can be accompanied by evidence of the validity of its metadata provided by a SACM component.
 
 Assessment:
 
 : Defined in {{RFC5209}} as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."
 
-: An assessment is a specifc workflow that incorporates the SACM tasks discovery, collection and evaluation. A prominent instance of the assessment workflow is illustrated in the Vulnerability Assessement Scenario {{-vulnass}}.
+: An assessment is a specific workflow that incorporates the SACM tasks discovery, collection and evaluation. A prominent instance of the assessment workflow is illustrated in the Vulnerability Assessment Scenario {{-vulnass}}.
 
 Asset:
 
@@ -117,11 +119,13 @@ Broker:
 
 Capability:
 
-: In {{-i2nsft}} a capability "defines a set of features that are available from a managed entity. Examples of "managed entities" are NSFs and Controllers, where NSF Capabilities and Controller Capabilities define functionality of an NSF and a Controller that may, but do not have to, be used, respectively. All Capabilities are announced through the Registration Interface."
+: In {{-i2nsft}} a capability is "a set of features that are available from an I2NSF Component. These functions may, but do not have to, be used. All Capabilities are announced through the I2NSF Registration Interface. Examples are Capabilities that are available from an NSF Server."
 
-: In the context of SACM, the extent of a SACM component's ability is enabled by the functions it is composed of.  Capabilities are announced by a SACM component via the SACM component registration task and can be discovered by or negotiated with other SACM components. For example, the capability of a SACM Provider may be to provide endpoint management data, or only a subset of that data.
+: In the context of SACM, the extent of a SACM component's ability is enabled by the functions it is composed of. Capabilities are registered at a SACM broker (potentially also at a proxy or a repository component if it includes broker functions) by a SACM component via the SACM component registration task and can be discovered by or negotiated with other SACM components via the corresponding tasks. For example, the capability of a SACM provider may be to provide target endpoint records (declarative guidance about well-known or potential target endpoints), or only a subset of that data.
 
-: The SACM Vulnerability Assessment Scenario {{-vulnass}} defines the terms Endpoint Management Capabilities, Vulnerability Management Capabilities, and Vulnerability Assessment Capabilities, which illustrate specific sets of SACM capabilities, which are required to conduct workflows illustrated by the scenario definition.
+: A capability's description is in itself imperative guidance on what functions are exposed to other SACM components in a SACM domain and how to use them in workflows.
+
+: The SACM Vulnerability Assessment Scenario {{-vulnass}} defines the terms Endpoint Management Capabilities, Vulnerability Management Capabilities, and Vulnerability Assessment Capabilities, which illustrate specific sets of SACM capabilities on an enterprise IT department's point of view and therefore compose sets of declarative guidance. 
 
 Collection Result:
 
@@ -131,9 +135,11 @@ Collection Task:
 
 : The task by which endpoint attributes and/or corresponding attribute values about a target endpoint are collected. The collection tasks are targeted at specific target endpoints and therefore are targeted tasks.
 
-: There are three types of frequency collection tasks can be conducted with:
+: There are four types of frequency collection tasks can be conducted with:
 
-: ad-hoc, e.g. triggered by a specific event or a query
+: ad-hoc, e.g. triggered by a unsolicited query
+
+: conditional, e.g. triggered on a case-to-case basis in due to policies included in the compositions of workflows
 
 : scheduled, e.g. in regular intervals, such as every minute or weekly
 
@@ -155,13 +161,13 @@ Collector:
 
 Configuration:
 
-: A non-volatile subset of the endpoint attributes of a (target) endpoint that is intended to be uneffected by a normal reboot-cylce.
+: A non-volatile subset of the endpoint attributes of a (target) endpoint that is intended to be unaffected by a normal reboot-cycle.
 Configuration is a type of imperative guidance that is stored in files (files dedicated to contain configuration and/or files that are software components), directly on block devices, or on specific hardware components that can be accessed via corresponding software components.
 Modification of configuration can be conducted manually or automatically via management (plane) interfaces that support management protocols, such as SNMP or WMI.
 A change of configuration can occur during both run-time and down-time of an endpoint.
-It is common practive to scheduled a change of configuration during or directly after the completion of a boot-cycle via corresponding software components located on the target endpoint itself.
+It is common practice to scheduled a change of configuration during or directly after the completion of a boot-cycle via corresponding software components located on the target endpoint itself.
 
-: Exmaples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.
+: Examples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.
 
 Configuration Drift: 
 
@@ -173,11 +179,11 @@ Consumer:
 
 Content Element:
 
-: Content elements constitute the payload data (SACM content) transfered via statement Subjects emitted by providers of information. Every content element Subject includes a specific content Subject and a corresponding content metadata Subject.
+: Content elements constitute the payload data (SACM content) transferred via statement Subjects emitted by providers of information. Every content element Subject includes a specific content Subject and a corresponding content metadata Subject.
 
 Content Metadata:
 
-: Data about content Subjects. Every content-element includes a content metadata Subject. The Subject can include any information element that can annotate the content transefered. Examples include time stamps or data provenance Subjects.
+: Data about content Subjects. Every content-element includes a content metadata Subject. The Subject can include any information element that can annotate the content transeferred. Examples include time stamps or data provenance Subjects.
 
 Control Plane:
 
@@ -209,11 +215,11 @@ Data Integrity:
 
 Data Origin:
 
-: One or more properties (i.e. endpoint attributes) that enable a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source) and made it available to a SACM domaini via a SACM statement. Data Origin can be expressed by an endpoint label information element (e.g. to be used as metadata in statement).
+: One or more properties (i.e. endpoint attributes) that enable a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source) and made it available to a SACM domain via a SACM statement. Data Origin can be expressed by an endpoint label information element (e.g. to be used as metadata in statement).
 
 Data Plane (fix statement):
 
-: Typically used as a term in the context of routing (and used as a synonym for forwarding plane, e.g. {{RFC6192}}). In the context of SACM, the data plane is an architectural component providing operational functions to enable a SACM component to provide and consume SACM statements and therefore SACM content (the "payload"). The data plane is used to conduct distributed SACM tasks by transporting SACM content using transporting encodings and corresponding operations defined by SACM data models.
+: Typically used as a term in the context of routing (and used as a synonym for forwarding plane, e.g. {{RFC6192}}). In the context of SACM, the data plane is an architectural component providing operational functions to enable a SACM component to provide and consume SACM statements and therefore SACM content, which composes the actual SACM content. The data plane in a SACM domain is used to conduct distributed SACM tasks by transporting SACM content via specific transport encodings and corresponding operations defined by SACM data models.
 
 Data Provenance:
 
@@ -239,9 +245,9 @@ Endpoint Attribute:
 
 : In the context of SACM, endpoint attributes are information elements that describe an endpoint characteristic of a target endpoint. Endpoint Attributes typically constitute Attributes that can be bundled into Subject (e.g. information about a specific network interface can be represented via a set of multiple AVP).
 
-Endpoint Characteristic:
+Endpoint Characteristics:
 
-: The state, configuration and composition an endpoint is in, including observerable behavior, e.g. sys-calls, log-files, or PDU emission on a network.
+: The state, configuration and composition of the software components and (virtual) hardware components a target endpoint is composed of, including observable behavior, e.g. sys-calls, log-files, or PDU emission on a network.
 
 Endpoint Characterization:
 
@@ -275,7 +281,7 @@ Evaluation Result:
 
 Event:
 
-: The change of a target endpoint characteristics at a specific point in time. In the context of SACM, an event is a statement (and therefore data in motion) that includes the new target endpoint characteristics and optional also the past ones, annotated with corresponding metedata (most prominently, the collection time of the data that constitutes the observation of the event regarding te target endpoint).
+: The change of a target endpoint characteristics at a specific point in time. In the context of SACM, an event is a statement (and therefore data in motion) that includes the new target endpoint characteristics and optional also the past ones, annotated with corresponding metedata (most prominently, the collection time of the data that constitutes the observation of the event regarding the target endpoint).
 
 Excluded Endpoint:
 
@@ -301,7 +307,9 @@ Guidance:
 
 Hardware Component: 
 
-: Hardware components are the distinguishable physical components that compose an endpoint. The composition of an endpoint can be changed over time by adding or removing hardware components. In essence, every physical endpoint is potentially a composite of multiple hardware components, typically resulting in a hierarchical composition of hardware components. The composition of hardware components is based on interconnects provided by specific hardware types (e.g. mainboard is a hardware type that provides local busses as an interconnect). In general, a hardware component can be distinguished by its serial number. Occasionally, hardware components are refered to as power sucking aliens.
+: Hardware components are the distinguishable physical components that compose an endpoint. The composition of an endpoint can be changed over time by adding or removing hardware components. In essence, every physical endpoint is potentially a composite of multiple hardware components, typically resulting in a hierarchical composition of hardware components. The composition of hardware components is based on interconnects provided by specific hardware types (e.g. a mainboard is a hardware type that provides local busses as an interconnect or an FRU is a hardware type that is itself a connected via an interconnect to a chassis and can provide further interconnects for additional hardware components, such as interfaces modules). In general, a hardware component can be distinguished by its serial number. Occasionally, hardware components are referred to as power sucking aliens.
+
+: The Entity MIB version 4 {{RFC6933}} and the YANG Data Model for Hardware Management {{-YANG-HW-Management}} provide common examples of target endpoint characteristics about hardware components.
 
 Hardware Inventory: 
 
@@ -310,6 +318,8 @@ Hardware Inventory:
 Hardware Type: 
 
 : Hardware types define specific and distinguishable categories of hardware components that can be part of endpoints, e.g. CPU or 802.11p interface. Typically, hardware types can be distinguished by their vendor assigned names, names of standards used, or a model name.
+
+: The IANAPhysicalClass {{RFC6933}} and corresponding iana-entity YANG module {{-YANG-HW-Management}} provide the standard references for physical hardware components. 
 
 Information Element:
 
@@ -405,7 +415,7 @@ SACM Interface:
 
 : An interface is defined in {{-i2nsft}} as "A set of operations one object knows it can invoke on, and expose to, another object.  This decouples the implementation of the operation from its specification. An interface is a subset of all operations that a given object implements. The same object may have multiple types of interfaces to serve different purposes."
 
-: In the context of SACM, SACM Funktions provide SACM Interfaces on the management, control, or data plane. Operations a SACM Interface provides are based on corresponding data model defined by SACM. SACM Interfaces are used for communication between SACM components.
+: In the context of SACM, SACM Functions provide SACM Interfaces on the management, control, or data plane. Operations a SACM Interface provides are based on corresponding data model defined by SACM. SACM Interfaces are used for communication between SACM components.
 
 SACM Role:
 
@@ -415,7 +425,7 @@ SACM Role:
 
 Security Automation:
 
-: The process of which security alerts can be automated through the use of different tools to monitor, evaluate and analyze endpoint and network traffic for the purposes of detecting misconfigurations, misbehaviors or threats.
+: The process of which security alerts can be automated through the use of different components to monitor, analyze and assess endpoints and network traffic for the purposes of detecting miss-configurations, miss-behaviors or threats. Security Automation is intended to identify target endpoints that cannot be trusted (see "trusted" in {{RFC4949}}. This goal is achieved by creating and processing evidence (assessment statements) that a target endpoint is not a trusted system {{RFC4949}}.
 
 Software Package:
 
@@ -433,7 +443,7 @@ State:
 
 : A volatile subset endpoint attributes of a (target) endpoint that is affected by a reboot-cycle. Local state is created by the interaction of components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g. IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component that provides configuration via the control plane (e.g. provided by a DHCP server with a specific configuration).
 
-: Exmaples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.
+: Examples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.
 
 Statement: 
 
@@ -444,6 +454,10 @@ Statement:
 Subject:
 
 : A composite information element. Like Attributes, subjects have a name and are composed of attributes and/or other subjects. Every IE that is part of a subject can have a quantitiy associated with it (e.g. zero-one, none-unbounded). The content IE of a subject can be an unordered or an ordered list.
+
+: In contrast to the definitions of subject provided by {{RFC4949}}, a subject in the scope of SACM is neither "a system entity that causes information to flow among objects or changes the system state" nor "a name of a system entity that is bound to the data items in a digital certificate".
+
+: In the context of SACM, a subject is a semantic composite of information elements about a system entity that is a target endpoint. Every acquirable subject---as defined in the scope of SACM---about a target endpoint represents and therefore identifies every subject---as defined by {{RFC4949}}---that is a component of that target endpoint. The semantic difference between both definitions can be subtle in practice and is in consequence important to highlight.
 
 Supplicant:
 
@@ -457,7 +471,9 @@ Target Endpoint:
 
 : A target endpoint is an "endpoint under assessment" (even if it is not actively under assessment at all times) or "endpoint of interest". Every endpoint that is not specifically designated as an excluded endpoint is a target endpoint. A target endpoint is not part of a SACM domain unless it contains a SACM component (e.g. a SACM component that publishes collection results coming from an internal collector).
 
-: A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria.
+: A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria and as referenced by {{RFC4949}.
+
+: In respect to {{RFC4949}} a target endpoint is an information system and therefore a composite that is a system entity composed of system components or system entities, respectively.
 
 Target Endpoint Characterization Record:
 
@@ -497,7 +513,11 @@ Target Endpoint Label:
 
 Target Endpoint Profile:
 
-: A bundle of expected or desired configurations and states (typically a composition of endpoint attribute value pairs) that can be associated with a target endpoint. The corresponding task by which the association with a target endpoint takes places is the endpoint classification. The task by which an endpoint profile is created is the endpoint characterization. A type or class of target endpoints is defined within a target endpoint profile, e.g. printer, smartphone, or an office PC.
+: A bundle of expected or desired component composition, configurations and states---therefore a composition of information elements that constitute declarative guidance---associated with a target endpoint.
+
+: The corresponding task by which the association with a target endpoint takes places is the endpoint classification task. The task by which an endpoint profile is created is the endpoint characterization task. A type or class of target endpoints can be defined via a target endpoint profile. Examples include:  printers, smartphones, or an office PC.
+
+: In respect to {{RFC4949}}, a target endpoint profile is a protection profile as defined by Common Criteria (analogous to the target endpoint being the target of evaluation).
 
 SACM Task:
 
@@ -518,7 +538,13 @@ Timestamps :
 
 : Defined in {{RFC4949}} as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object" and as "with respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.".
 
-: This term is used in SACM to describe a recorded point in time at which, for example, an endpoint attribute is created or updated by a target endpoint and observed, transmitted or processed by a SACM component. Timestamps can be created by target endpoints or SACM components and are associated with endpoint attributes provided or consumed by SACM components. Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain. In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.
+: This term is used in SACM to describe a recorded point in time at which, for example, an information element is created or updated on a target endpoint, and observed, transmitted or processed by a SACM component. Timestamps can be created by target endpoints or SACM components and are associated with SACM statements provided or consumed by SACM components. Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain. In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.
+
+Virtual Component:
+
+: A target endpoint can be composed entirely of logical system entities (see {{RFC4949}}. The most common example is a virtual machine/host running on a target endpoint.
+
+: Effectively, target endpoints can be nested and at the time of this writing the most common example of target endpoint characteristics about virtual components is the EntLogicalEntry in {{RFC6933}}.
 
 Vulnerability Assessment:  
 
@@ -542,7 +568,7 @@ Vulnerability assessment capabilities:
 
 Workflow:
 
-A workflow is a modular composiion of tasks. A workflow can contain loops, conditionals, multiple starting points and multiple endpoints. The most promiminant workflow in SACM is the assessment workflow.
+A workflow is a modular composition of tasks. A workflow can contain loops, conditionals, multiple starting points and multiple endpoints. The most prominant workflow in SACM is the assessment workflow.
 
 #  IANA Considerations
 
