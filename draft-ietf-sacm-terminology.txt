@@ -1462,6 +1462,11 @@ Internet-Draft              SACM Terminology                   July 2017
 
 8.1.  Normative References
 
+   [RFC5792]  Sangster, P. and K. Narayan, "PA-TNC: A Posture Attribute
+              (PA) Protocol Compatible with Trusted Network Connect
+              (TNC)", RFC 5792, DOI 10.17487/RFC5792, March 2010,
+              <http://www.rfc-editor.org/info/rfc5792>.
+
    [RFC6933]  Bierman, A., Romascanu, D., Quittek, J., and M.
               Chandramouli, "Entity MIB (Version 4)", RFC 6933,
               DOI 10.17487/RFC6933, May 2013,
@@ -1499,11 +1504,6 @@ Internet-Draft              SACM Terminology                   July 2017
               Tardo, "Network Endpoint Assessment (NEA): Overview and
               Requirements", RFC 5209, DOI 10.17487/RFC5209, June 2008,
               <http://www.rfc-editor.org/info/rfc5209>.
-
-   [RFC5792]  Sangster, P. and K. Narayan, "PA-TNC: A Posture Attribute
-              (PA) Protocol Compatible with Trusted Network Connect
-              (TNC)", RFC 5792, DOI 10.17487/RFC5792, March 2010,
-              <http://www.rfc-editor.org/info/rfc5792>.
 
 
 
