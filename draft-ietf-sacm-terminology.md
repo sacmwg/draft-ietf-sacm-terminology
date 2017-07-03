@@ -139,7 +139,7 @@ Collection Task:
 
 : ad-hoc, e.g. triggered by a unsolicited query
 
-: conditional, e.g. triggered on a case-to-case basis in due to policies included in the compositions of workflows
+: conditional, e.g. triggered in accordance with policies included in the compositions of workflows
 
 : scheduled, e.g. in regular intervals, such as every minute or weekly
 
@@ -307,7 +307,7 @@ Guidance:
 
 Hardware Component: 
 
-: Hardware components are the distinguishable physical components that compose an endpoint. The composition of an endpoint can be changed over time by adding or removing hardware components. In essence, every physical endpoint is potentially a composite of multiple hardware components, typically resulting in a hierarchical composition of hardware components. The composition of hardware components is based on interconnects provided by specific hardware types (e.g. a mainboard is a hardware type that provides local busses as an interconnect or an FRU is a hardware type that is itself a connected via an interconnect to a chassis and can provide further interconnects for additional hardware components, such as interfaces modules). In general, a hardware component can be distinguished by its serial number. Occasionally, hardware components are referred to as power sucking aliens.
+: Hardware components are the distinguishable physical components that compose an endpoint. The composition of an endpoint can be changed over time by adding or removing hardware components. In essence, every physical endpoint is potentially a composite of multiple hardware components, typically resulting in a hierarchical composition of hardware components. The composition of hardware components is based on interconnects provided by specific hardware types (e.g. a mainboard is a hardware type that provides local busses as an interconnect or an FRU is a hardware type that is itself connected via an interconnect to a chassis and can provide further interconnects for additional hardware components, such as interfaces modules). In general, a hardware component can be distinguished by its serial number. Occasionally, hardware components are referred to as power sucking aliens.
 
 : The Entity MIB version 4 {{RFC6933}} and the YANG Data Model for Hardware Management {{-yang-hw}} provide common examples of target endpoint characteristics about hardware components.
 
@@ -319,7 +319,7 @@ Hardware Type:
 
 : Hardware types define specific and distinguishable categories of hardware components that can be part of endpoints, e.g. CPU or 802.11p interface. Typically, hardware types can be distinguished by their vendor assigned names, names of standards used, or a model name.
 
-: The IANAPhysicalClass {{RFC6933}} and corresponding iana-entity YANG module {{-yang-hw}} provide the standard references for physical hardware components. 
+: The IANAPhysicalClass {{RFC6933}} and corresponding iana-entity YANG module {{-yang-hw}} provide the standard references for physical hardware types. 
 
 Information Element:
 
