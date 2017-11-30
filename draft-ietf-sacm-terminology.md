@@ -51,6 +51,10 @@ author:
   city: San Jose
   region: CA 
   country: USA
+- ins: A. Montville
+  name: Adam Montville
+  org: CIS
+  email: adam.w.montville@gmail.com
 
 normative:
   RFC6933:
@@ -702,14 +706,21 @@ Changes from version 10 to version 11:
 
 * Relabeled Endpoint Management Capability, Vulnerability Management Capability, Vulnerability Assessment.
 
-Changes from verion 11 to version 12:
+Changes from version 11 to version 12:
 
 * Added Configuration, Endpoint Characteristic, Event, SACM Content, State, Subject.
 
-* Major Updates to Asserition, Data in Motion, Data Provenance, Data Source, Interaction Model.
+* Major Updates to Assertion, Data in Motion, Data Provenance, Data Source, Interaction Model.
 
 * Minor Updates to Attribute, Control Plane, Data Origin, Data Provenance, Expected Endpoint State, Guidance, Target Endpoint Classification Task, Vulnerability Detection Data.
 
+Changes from version 12 to version 13:
+
+* Added Virtual Component.
+
+* Major Updates to Capability, Collection Task, Hardware Component, Hardware Type, Security Automation, Subject, Target Endpoint, Target Endpoint Profile.
+
+* Minor Updates to Assertion, Data Plane, Endpoint Characteristics.
 
 # Contributors
 
