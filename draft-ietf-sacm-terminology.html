@@ -23,22 +23,21 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    right: calc(50vw - 500px);
+    right: calc(50vw - 525px);
     width: 300px;
-    padding: 0 1em;
     z-index: 1;
   }
   #rfc\.toc {
-    top: 16px;
+    top: 15px;
   }
   ul.toc {
     top: 80px;
     overflow: auto;
+    overscroll-behavior: contain;
   }
 
   body {
-    padding-left: 1.5em;
-    padding-right: 29em;
+    padding-right: 350px;
   }
 }
 
@@ -47,7 +46,7 @@ body {
   color: #333;
   font-size-adjust: 0.5;
   line-height: 130%;
-  margin: 2.5em auto;
+  margin: 25px auto;
   max-width: 724px;
 }
 
@@ -291,12 +290,12 @@ address {
 <link href="#rfc.authors" rel="Chapter">
 
 
-  <meta name="generator" content="xml2rfc version 2.7.0 - http://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.8.2 - https://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
-  <meta name="dct.creator" content="Birkholz, H., Lu, J., Strassner, J., and N. Cam-Winget" />
+  <meta name="dct.creator" content="Birkholz, H., Lu, J., Strassner, J., Cam-Winget, N., and A. Montville" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-terminology-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-7-03" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-11-30" />
   <meta name="dct.abstract" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
   <meta name="description" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
 
@@ -320,7 +319,7 @@ address {
 <td class="right">J. Lu</td>
 </tr>
 <tr>
-<td class="left">Expires: January 4, 2018</td>
+<td class="left">Expires: June 3, 2018</td>
 <td class="right">Oracle Corporation</td>
 </tr>
 <tr>
@@ -341,7 +340,15 @@ address {
 </tr>
 <tr>
 <td class="left"></td>
-<td class="right">July 03, 2017</td>
+<td class="right">A. Montville</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">CIS</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">November 30, 2017</td>
 </tr>
 
     	
@@ -355,12 +362,12 @@ address {
 <p>This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring).</p>
 <h1 id="rfc.status"><a href="#rfc.status">Status of This Memo</a></h1>
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
-<p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
+<p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on January 4, 2018.</p>
+<p>This Internet-Draft will expire on June 3, 2018.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
 <p>Copyright (c) 2017 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
-<p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
+<p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
 
   
   <hr class="noprint" />
@@ -822,13 +829,21 @@ address {
 <li>Minor updates to Collection Result, Control Plane, Data in Motion, Data at Rest, Data Origin, Network Interface, Statement, Target Endpoint Label.</li>
 <li>Relabeled Endpoint Management Capability, Vulnerability Management Capability, Vulnerability Assessment.</li>
 </ul>
-<p id="rfc.section.6.p.23">Changes from verion 11 to version 12:</p>
+<p id="rfc.section.6.p.23">Changes from version 11 to version 12:</p>
 <p></p>
 
 <ul>
 <li>Added Configuration, Endpoint Characteristic, Event, SACM Content, State, Subject.</li>
-<li>Major Updates to Asserition, Data in Motion, Data Provenance, Data Source, Interaction Model.</li>
+<li>Major Updates to Assertion, Data in Motion, Data Provenance, Data Source, Interaction Model.</li>
 <li>Minor Updates to Attribute, Control Plane, Data Origin, Data Provenance, Expected Endpoint State, Guidance, Target Endpoint Classification Task, Vulnerability Detection Data.</li>
+</ul>
+<p id="rfc.section.6.p.25">Changes from version 12 to version 13:</p>
+<p></p>
+
+<ul>
+<li>Added Virtual Component.</li>
+<li>Major Updates to Capability, Collection Task, Hardware Component, Hardware Type, Security Automation, Subject, Target Endpoint, Target Endpoint Profile.</li>
+<li>Minor Updates to Assertion, Data Plane, Endpoint Characteristics.</li>
 </ul>
 <h1 id="rfc.section.7">
 <a href="#rfc.section.7">7.</a> <a href="#contributors" id="contributors">Contributors</a>
@@ -885,12 +900,12 @@ Email: merike@doubleshotsecurity.com
 <tr>
 <td class="reference"><b id="RFC5792">[RFC5792]</b></td>
 <td class="top">
-<a>Sangster, P.</a> and <a>K. Narayan</a>, "<a href="http://tools.ietf.org/html/rfc5792">PA-TNC: A Posture Attribute (PA) Protocol Compatible with Trusted Network Connect (TNC)</a>", RFC 5792, DOI 10.17487/RFC5792, March 2010.</td>
+<a>Sangster, P.</a> and <a>K. Narayan</a>, "<a href="https://tools.ietf.org/html/rfc5792">PA-TNC: A Posture Attribute (PA) Protocol Compatible with Trusted Network Connect (TNC)</a>", RFC 5792, DOI 10.17487/RFC5792, March 2010.</td>
 </tr>
 <tr>
 <td class="reference"><b id="RFC6933">[RFC6933]</b></td>
 <td class="top">
-<a>Bierman, A.</a>, <a>Romascanu, D.</a>, <a>Quittek, J.</a> and <a>M. Chandramouli</a>, "<a href="http://tools.ietf.org/html/rfc6933">Entity MIB (Version 4)</a>", RFC 6933, DOI 10.17487/RFC6933, May 2013.</td>
+<a>Bierman, A.</a>, <a>Romascanu, D.</a>, <a>Quittek, J.</a> and <a>M. Chandramouli</a>, "<a href="https://tools.ietf.org/html/rfc6933">Entity MIB (Version 4)</a>", RFC 6933, DOI 10.17487/RFC6933, May 2013.</td>
 </tr>
 </tbody></table>
 <h1 id="rfc.references.2">
@@ -899,37 +914,37 @@ Email: merike@doubleshotsecurity.com
 <tr>
 <td class="reference"><b id="I-D.ietf-i2nsf-terminology">[I-D.ietf-i2nsf-terminology]</b></td>
 <td class="top">
-<a>Hares, S.</a>, <a>Strassner, J.</a>, <a>Lopez, D.</a>, <a>Xia, L.</a> and <a>H. Birkholz</a>, "<a href="http://tools.ietf.org/html/draft-ietf-i2nsf-terminology-03">Interface to Network Security Functions (I2NSF) Terminology</a>", Internet-Draft draft-ietf-i2nsf-terminology-03, March 2017.</td>
+<a>Hares, S.</a>, <a>Strassner, J.</a>, <a>Lopez, D.</a>, <a>Xia, L.</a> and <a>H. Birkholz</a>, "<a href="https://tools.ietf.org/html/draft-ietf-i2nsf-terminology-04">Interface to Network Security Functions (I2NSF) Terminology</a>", Internet-Draft draft-ietf-i2nsf-terminology-04, July 2017.</td>
 </tr>
 <tr>
 <td class="reference"><b id="I-D.ietf-netmod-entity">[I-D.ietf-netmod-entity]</b></td>
 <td class="top">
-<a>Bierman, A.</a>, <a>Bjorklund, M.</a>, <a>Dong, J.</a> and <a>D. Romascanu</a>, "<a href="http://tools.ietf.org/html/draft-ietf-netmod-entity-03">A YANG Data Model for Hardware Management</a>", Internet-Draft draft-ietf-netmod-entity-03, March 2017.</td>
+<a>Bierman, A.</a>, <a>Bjorklund, M.</a>, <a>Dong, J.</a> and <a>D. Romascanu</a>, "<a href="https://tools.ietf.org/html/draft-ietf-netmod-entity-05">A YANG Data Model for Hardware Management</a>", Internet-Draft draft-ietf-netmod-entity-05, October 2017.</td>
 </tr>
 <tr>
 <td class="reference"><b id="I-D.ietf-sacm-vuln-scenario">[I-D.ietf-sacm-vuln-scenario]</b></td>
 <td class="top">
-<a>Coffin, C.</a>, <a>Cheikes, B.</a>, <a>Schmidt, C.</a>, <a>Haynes, D.</a>, <a>Fitzgerald-McKay, J.</a> and <a>D. Waltermire</a>, "<a href="http://tools.ietf.org/html/draft-ietf-sacm-vuln-scenario-02">SACM Vulnerability Assessment Scenario</a>", Internet-Draft draft-ietf-sacm-vuln-scenario-02, September 2016.</td>
+<a>Coffin, C.</a>, <a>Cheikes, B.</a>, <a>Schmidt, C.</a>, <a>Haynes, D.</a>, <a>Fitzgerald-McKay, J.</a> and <a>D. Waltermire</a>, "<a href="https://tools.ietf.org/html/draft-ietf-sacm-vuln-scenario-02">SACM Vulnerability Assessment Scenario</a>", Internet-Draft draft-ietf-sacm-vuln-scenario-02, September 2016.</td>
 </tr>
 <tr>
 <td class="reference"><b id="RFC3444">[RFC3444]</b></td>
 <td class="top">
-<a>Pras, A.</a> and <a>J. Schoenwaelder</a>, "<a href="http://tools.ietf.org/html/rfc3444">On the Difference between Information Models and Data Models</a>", RFC 3444, DOI 10.17487/RFC3444, January 2003.</td>
+<a>Pras, A.</a> and <a>J. Schoenwaelder</a>, "<a href="https://tools.ietf.org/html/rfc3444">On the Difference between Information Models and Data Models</a>", RFC 3444, DOI 10.17487/RFC3444, January 2003.</td>
 </tr>
 <tr>
 <td class="reference"><b id="RFC4949">[RFC4949]</b></td>
 <td class="top">
-<a>Shirey, R.</a>, "<a href="http://tools.ietf.org/html/rfc4949">Internet Security Glossary, Version 2</a>", FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007.</td>
+<a>Shirey, R.</a>, "<a href="https://tools.ietf.org/html/rfc4949">Internet Security Glossary, Version 2</a>", FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007.</td>
 </tr>
 <tr>
 <td class="reference"><b id="RFC5209">[RFC5209]</b></td>
 <td class="top">
-<a>Sangster, P.</a>, <a>Khosravi, H.</a>, <a>Mani, M.</a>, <a>Narayan, K.</a> and <a>J. Tardo</a>, "<a href="http://tools.ietf.org/html/rfc5209">Network Endpoint Assessment (NEA): Overview and Requirements</a>", RFC 5209, DOI 10.17487/RFC5209, June 2008.</td>
+<a>Sangster, P.</a>, <a>Khosravi, H.</a>, <a>Mani, M.</a>, <a>Narayan, K.</a> and <a>J. Tardo</a>, "<a href="https://tools.ietf.org/html/rfc5209">Network Endpoint Assessment (NEA): Overview and Requirements</a>", RFC 5209, DOI 10.17487/RFC5209, June 2008.</td>
 </tr>
 <tr>
 <td class="reference"><b id="RFC6192">[RFC6192]</b></td>
 <td class="top">
-<a>Dugal, D.</a>, <a>Pignataro, C.</a> and <a>R. Dunn</a>, "<a href="http://tools.ietf.org/html/rfc6192">Protecting the Router Control Plane</a>", RFC 6192, DOI 10.17487/RFC6192, March 2011.</td>
+<a>Dugal, D.</a>, <a>Pignataro, C.</a> and <a>R. Dunn</a>, "<a href="https://tools.ietf.org/html/rfc6192">Protecting the Router Control Plane</a>", RFC 6192, DOI 10.17487/RFC6192, March 2011.</td>
 </tr>
 <tr>
 <td class="reference"><b id="X.1252">[X.1252]</b></td>
@@ -1039,6 +1054,27 @@ Email: merike@doubleshotsecurity.com
 	  <span class="country-name vcardline">USA</span>
 	</span>
 	<span class="vcardline">EMail: <a href="mailto:ncamwing@cisco.com">ncamwing@cisco.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Adam Montville</span> 
+	  <span class="n hidden">
+		<span class="family-name">Montville</span>
+	  </span>
+	</span>
+	<span class="org vcardline">CIS</span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality"></span> 
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline"></span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:adam.w.montville@gmail.com">adam.w.montville@gmail.com</a></span>
 
   </address>
 </div>
