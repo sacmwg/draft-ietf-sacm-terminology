@@ -364,7 +364,9 @@ Information Model:
 
 Interaction Model:
 
-: The definition of specific sequences regarding the exchange of messages (data in motion), including, for example,  conditional branching, thresholds and timers. An interaction model, for example, can be used to define operations, such as registration or discovery, on the control plane. A composition of data models for data in motion and a corresponding interaction model is a protocol.
+: The definition of specific sequences regarding the exchange of messages (data in motion), including, for example,  conditional branching, thresholds and timers.
+
+: An interaction model, for example, can be used to define operations, such as registration or discovery, on the control plane. A composition of data models for data in motion and a corresponding interaction model is a protocol.
 
 
 
