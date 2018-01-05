@@ -543,8 +543,6 @@ address {
 <dd style="margin-left: 8">Endpoint Attributes typically constitute Attributes that can be bundled into Subject (e.g. information about a specific network interface can be represented via a set of multiple AVP).</dd>
 <dt>Endpoint Characteristics:</dt>
 <dd style="margin-left: 8">The state, configuration and composition of the software components and (virtual) hardware components a target endpoint is composed of, including observable behavior, e.g. sys-calls, log-files, or PDU emission on a network.</dd>
-<dt>Endpoint Characterization:</dt>
-<dd style="margin-left: 8">The description of the distinctive nature of an endpoint, that is based on its characteristics.</dd>
 <dt>Endpoint Characterization Task:</dt>
 <dd style="margin-left: 8">The task of endpoint characterization that uses endpoint attributes that represent distinct endpoint characteristics.</dd>
 <dt>Endpoint Classification:</dt>
@@ -622,11 +620,9 @@ address {
 <dt></dt>
 <dd style="margin-left: 8">In the context of SACM, a set of SACM functions composes a SACM component.  A SACM component conducts SACM tasks, acting on control plane, data plane and/or management plane via corresponding SACM interfaces.  SACM defines a set of standard components (e.g. a collector, a broker, or a data store).  A SACM component contains at least a basic set of control plane functions and can contain data plane and management plane functions.  A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of.  A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly.  For example, a SACM component that is composed solely of functions that provide information would only take on the role of a provider.</dd>
 <dt>SACM Component Discovery:</dt>
-<dd style="margin-left: 8">The task of brokering appropriate SACM components according to their capabilities or roles on request.</dd>
+<dd style="margin-left: 8">The task of discovering the capabilities provided by SACM components within a SACM domain.</dd>
 <dt></dt>
-<dd style="margin-left: 8">Input: Query</dd>
-<dt></dt>
-<dd style="margin-left: 8">Output: a list of SACM components including metadata</dd>
+<dd style="margin-left: 8">This is likely to be performed via an appropriate set of control plane functions.</dd>
 <dt>SACM Component Label:</dt>
 <dd style="margin-left: 8">A specific endpoint label that is used to identify a SACM component.</dd>
 <dt></dt>
@@ -698,32 +694,22 @@ address {
 <dd style="margin-left: 8">Every endpoint that is not specifically designated as an excluded endpoint is a target endpoint.  A target endpoint is not part of a SACM domain unless it contains a SACM component (e.g. a SACM component that publishes collection results coming from an internal collector).</dd>
 <dt></dt>
 <dd style="margin-left: 8">A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria and as referenced by {{RFC4949}.</dd>
+<dt>Target Endpoint Characterization:</dt>
+<dd style="margin-left: 8">The description of the distinctive nature of a target endpoint, that is based on its characteristics.</dd>
 <dt>Target Endpoint Characterization Record:</dt>
 <dd style="margin-left: 8">A set of endpoint attributes about a target endpoint that was encountered in a SACM domain, which are associated with that target endpoint as a result of a Target Endpoint Characterization Task.</dd>
 <dt></dt>
 <dd style="margin-left: 8">A characterization record is intended to be a representation of an endpoint. It cannot be assured that a record distinctly represents a single target endpoint unless a set of one or more endpoint attributes that compose a unique set of identifying endpoint attributes are included in the record. Otherwise, the set of identifying attributes included in a record can match more than one target endpoints, which are - in consequence - indistinguishable to a SACM domain until more qualifying endpoint attributes can be acquired and added to the record. A characterization record is maintained over time in order to assert that acquired endpoint attributes are either about an endpoint that was encountered before or an endpoint that has not been encountered before in a SACM domain. A characterization record can include, for example, acquired configuration, state or observed behavior of a specific target endpoint. Multiple and even conflicting instances of this information can be included in a characterization record by using timestamps and/or data origins to differentiate them. The endpoint attributes included in a characterization record can be used to re-identify a distinct target endpoint over time. Classes or profiles can be associated with a characterization record via the Classification Task in order to guide collection, evaluation or remediation tasks.</dd>
 <dt>Target Endpoint Characterization Task:</dt>
 <dd style="margin-left: 8">An ongoing task of continuously adding acquired endpoint attributes to a corresponding record. The TE characterization task manages the representation of encountered target endpoints in the SACM domain in the form of characterization records. For example, the output of a target endpoint discovery task or a collection task can be processed by the characterization task and added to the record. The TE characterization Task also manages these representations of target endpoints encountered in the SACM domain by splitting or merging the corresponding records as new or more refined endpoint attributes become available.</dd>
-<dt></dt>
-<dd style="margin-left: 8">Input: discovered target endpoint attributes, endpoint attribute collection, existing characterization records</dd>
-<dt></dt>
-<dd style="margin-left: 8">Output: target endpoint characterization records</dd>
 <dt>Target Endpoint Classification Task:</dt>
 <dd style="margin-left: 8">The task of associating a class from an extensible list of classes with an endpoint characterization record. TE classes function as imperative and declarative guidance for collection, evaluation, remediation and security posture assessment in general.</dd>
-<dt></dt>
-<dd style="margin-left: 8">Input: endpoint characterization records (without classification), guidance (how to classify a record)</dd>
-<dt></dt>
-<dd style="margin-left: 8">Output: endpoint characterization records (with classification)</dd>
 <dt>Target Endpoint Discovery Task:</dt>
 <dd style="margin-left: 8">The ongoing task of detecting previously unknown interaction of a potential target endpoint in the SACM domain. TE Discovery is not directly targeted at a specific target endpoint and therefore an un-targeted task. SACM Components conducting the discovery task as a part of their function are typically distributed and located, for example, on infrastructure components or collect from those remotely via appropriate interfaces. Examples of infrastructure components that are of interest to the discovery task include routers, switches, VM hosting or VM managing components, AAA servers, or servers handling dynamic address distribution.</dd>
-<dt></dt>
-<dd style="margin-left: 8">Input: endpoint attributes acquired via local or remote interfaces</dd>
-<dt></dt>
-<dd style="margin-left: 8">Output: endpoint attributes including metadata such as data source or data origin</dd>
 <dt>Target Endpoint Identifier:</dt>
 <dd style="margin-left: 8">The target endpoint discovery task and the collection tasks can result in a set of identifying endpoint attributes added to a corresponding Characterization Record. This subset of the endpoint attributes included in the record is used as a target endpoint identifier, by which a specific target endpoint can be referenced. Depending on the available identifying attributes, this reference can be ambiguous and is a "best-effort" mechanism. Every distinct set of identifying endpoint attributes can be associated with a target endpoint label that is unique in a SACM domain.</dd>
 <dt>Target Endpoint Label:</dt>
-<dd style="margin-left: 8">A specific endpoint label that refers to a target endpoint identifier used to identify a specific target endpoint (also referred to as TE label).  In content-metadata, this label is called data source.</dd>
+<dd style="margin-left: 8">An endpoint label that identifies a specific target endpoint.</dd>
 <dt>Target Endpoint Profile:</dt>
 <dd style="margin-left: 8">A bundle of expected or desired component composition, configurations and states that is associated with a target endpoint.</dd>
 <dt></dt>
@@ -760,12 +746,10 @@ address {
 <dd style="margin-left: 8">Defined in <a href="#RFC4949" class="xref">[RFC4949]</a> as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object" and as "with respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.".</dd>
 <dt></dt>
 <dd style="margin-left: 8">This term is used in SACM to describe a recorded point in time at which, for example, an information element is created or updated on a target endpoint, and observed, transmitted or processed by a SACM component.  Timestamps can be created by target endpoints or SACM components and are associated with SACM statements provided or consumed by SACM components.  Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain.  In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.</dd>
-<dt>Virtual Component:</dt>
-<dd style="margin-left: 8">A target endpoint can be composed entirely of logical system entities (see <a href="#RFC4949" class="xref">[RFC4949]</a>.</dd>
+<dt>Virtual Endpoint:</dt>
+<dd style="margin-left: 8">An endpoint composed entirely of logical system components (see <a href="#RFC4949" class="xref">[RFC4949]</a>).</dd>
 <dt></dt>
-<dd style="margin-left: 8">The most common example is a virtual machine/host running on a target endpoint.</dd>
-<dt></dt>
-<dd style="margin-left: 8">Effectively, target endpoints can be nested and at the time of this writing the most common example of target endpoint characteristics about virtual components is the EntLogicalEntry in <a href="#RFC6933" class="xref">[RFC6933]</a>.</dd>
+<dd style="margin-left: 8">The most common example is a virtual machine/host running on a target endpoint. Effectively, target endpoints can be nested and at the time of this writing the most common example of target endpoint characteristics about virtual components is the EntLogicalEntry in <a href="#RFC6933" class="xref">[RFC6933]</a>.</dd>
 <dt>Vulnerability Assessment:</dt>
 <dd style="margin-left: 8">An assessment specifically tailored to determining whether a set of endpoints is vulnerable according to the information contained in the vulnerability description information.</dd>
 <dt>Vulnerability Description Information:</dt>
