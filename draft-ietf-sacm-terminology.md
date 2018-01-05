@@ -291,9 +291,6 @@ Endpoint Characteristics:
 
 : The state, configuration and composition of the software components and (virtual) hardware components a target endpoint is composed of, including observable behavior, e.g. sys-calls, log-files, or PDU emission on a network.
 
-Endpoint Characterization:
-
-: The description of the distinctive nature of an endpoint, that is based on its characteristics.
 
 Endpoint Characterization Task:
 
@@ -430,14 +427,9 @@ SACM Component:
 
 SACM Component Discovery:
 
-: The task of brokering appropriate SACM components according to their capabilities or roles on request.
+: The task of discovering the capabilities provided by SACM components within a SACM domain.
 
-
-
-: Input: Query
-
-: Output: a list of SACM components including metadata
-
+: This is likely to be performed via an appropriate set of control plane functions.
 
 
 SACM Component Label:
@@ -557,6 +549,10 @@ Target Endpoint:
 : A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria and as referenced by {{RFC4949}.
 
 
+Target Endpoint Characterization:
+
+: The description of the distinctive nature of a target endpoint, that is based on its characteristics.
+
 Target Endpoint Characterization Record:
 
 : A set of endpoint attributes about a target endpoint that was encountered in a SACM domain, which are associated with that target endpoint as a result of a Target Endpoint Characterization Task.
@@ -569,29 +565,16 @@ Target Endpoint Characterization Task:
 
 : An ongoing task of continuously adding acquired endpoint attributes to a corresponding record. The TE characterization task manages the representation of encountered target endpoints in the SACM domain in the form of characterization records. For example, the output of a target endpoint discovery task or a collection task can be processed by the characterization task and added to the record. The TE characterization Task also manages these representations of target endpoints encountered in the SACM domain by splitting or merging the corresponding records as new or more refined endpoint attributes become available.
 
-: Input: discovered target endpoint attributes, endpoint attribute collection, existing characterization records
-
-: Output: target endpoint characterization records
-
-
 
 Target Endpoint Classification Task:
 
 : The task of associating a class from an extensible list of classes with an endpoint characterization record. TE classes function as imperative and declarative guidance for collection, evaluation, remediation and security posture assessment in general.
-
-: Input: endpoint characterization records (without classification), guidance (how to classify a record)
-
-: Output: endpoint characterization records (with classification)
 
 
 
 Target Endpoint Discovery Task:
 
 : The ongoing task of detecting previously unknown interaction of a potential target endpoint in the SACM domain. TE Discovery is not directly targeted at a specific target endpoint and therefore an un-targeted task. SACM Components conducting the discovery task as a part of their function are typically distributed and located, for example, on infrastructure components or collect from those remotely via appropriate interfaces. Examples of infrastructure components that are of interest to the discovery task include routers, switches, VM hosting or VM managing components, AAA servers, or servers handling dynamic address distribution.
-
-: Input: endpoint attributes acquired via local or remote interfaces
-
-: Output: endpoint attributes including metadata such as data source or data origin
 
 
 
@@ -603,7 +586,7 @@ Target Endpoint Identifier:
 
 Target Endpoint Label:
 
-: A specific endpoint label that refers to a target endpoint identifier used to identify a specific target endpoint (also referred to as TE label).  In content-metadata, this label is called data source.
+: An endpoint label that identifies a specific target endpoint.
 
 
 
@@ -642,13 +625,11 @@ Timestamps :
 
 
 
-Virtual Component:
+Virtual Endpoint:
 
-: A target endpoint can be composed entirely of logical system entities (see {{RFC4949}}.
+: An endpoint composed entirely of logical system components (see {{RFC4949}}).
 
-: The most common example is a virtual machine/host running on a target endpoint.
-
-: Effectively, target endpoints can be nested and at the time of this writing the most common example of target endpoint characteristics about virtual components is the EntLogicalEntry in {{RFC6933}}.
+: The most common example is a virtual machine/host running on a target endpoint. Effectively, target endpoints can be nested and at the time of this writing the most common example of target endpoint characteristics about virtual components is the EntLogicalEntry in {{RFC6933}}.
 
 
 
