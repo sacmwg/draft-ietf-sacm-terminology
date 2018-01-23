@@ -101,11 +101,6 @@ Assessment:
 
 : Defined in {{RFC5209}} as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."
 
-
-Asset:
-
-: Is a system resource, as defined in {{RFC4949}}, that may be composed of other assets.
-
 : Examples of Assets include: Endpoints, Software, Guidance, or X.509 public key certificates. An asset is not necessarily owned by an organization.
 
 Asset Management:
