@@ -97,16 +97,13 @@ Assertion:
 
 : Defined by the ITU in {{X.1252}} as "a statement made by an entity without accompanying evidence of its validity".
 
+In the context of SACM, an assertion is the output of a SACM component in the form of a statement (including metadata about the data source and data origin, e.g. timestamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol, an assertion (and therefore a statement, respectively) can be accomplished by evidence of the validity of its metadata provided by a SACM component.
+
 Assessment:
 
 : Defined in {{RFC5209}} as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."
 
-
-Asset:
-
-: Is a system resource, as defined in {{RFC4949}}, that may be composed of other assets.
-
-: Examples of Assets include: Endpoints, Software, Guidance, or X.509 public key certificates. An asset is not necessarily owned by an organization.
+: An assessment is a specific workflow that incorporates the SACM tasks discovery, collection and evaluation. A prominent instance of the assessment workflow is illustrated in the Vulnerability Assessment Scenario {{-vulnass}}.
 
 Asset Management:
 
@@ -118,8 +115,6 @@ Attribute:
 
 : In the context of SACM, attributes are "atomic" information elements and an equivalent to attribute-value-pairs.  Attributes can be components of Subjects.
 
-
-
 Authentication:
 
 : Defined in {{RFC4949}} as "the process of verifying a claim that a system entity or system resource has a certain attribute value."
@@ -127,7 +122,6 @@ Authentication:
 Authorization:
 
 : Defined in {{RFC4949}} as "an approval that is granted to a system entity to access a system resource."
-
 
 Capability:
 
@@ -139,7 +133,7 @@ Capability:
 
 : A capability’s description is in itself imperative guidance on what functions are exposed to other SACM components in a SACM domain and how to use them in workflows.
 
-: The SACM Vulnerability Assessment Scenario [I-D.ietf-sacm-vuln-scenario] defines the terms Endpoint Management Capabilities, Vulnerability Management Capabilities, and Vulnerability Assessment Capabilities, which illustrate specific sets of SACM capabilities on an enterprise IT department’s point of view and therefore compose sets of declarative guidance.
+: The SACM Vulnerability Assessment Scenario {{-vulnass}} defines the terms Endpoint Management Capabilities, Vulnerability Management Capabilities, and Vulnerability Assessment Capabilities, which illustrate specific sets of SACM capabilities on an enterprise IT department’s point of view and therefore compose sets of declarative guidance.
 
 
 Collection Result:
@@ -181,8 +175,6 @@ Configuration:
 : Configuration is a type of imperative guidance that is stored in files (files dedicated to contain configuration and/ or files that are software components), directly on block devices, or on specific hardware components that can be accessed via corresponding software components.  Modification of configuration can be conducted manually or automatically via management (plane) interfaces that support management protocols, such as SNMP or WMI. A change of configuration can occur during both run-time and down- time of an endpoint.  It is common practice to scheduled a change of configuration during or directly after the completion of a boot-cycle via corresponding software components located on the target endpoint itself.
 
 : Examples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.
-
-
 
 Configuration Drift:
 
@@ -291,9 +283,6 @@ Endpoint Characteristics:
 
 : The state, configuration and composition of the software components and (virtual) hardware components a target endpoint is composed of, including observable behavior, e.g. sys-calls, log-files, or PDU emission on a network.
 
-Endpoint Characterization:
-
-: The description of the distinctive nature of an endpoint, that is based on its characteristics.
 
 Endpoint Characterization Task:
 
@@ -333,10 +322,14 @@ Expected Endpoint Attribute State:
 
 : The policy-compliant state of an endpoint attribute that is to be compared against.
 
+: Sets of expected endpoint attribute states are transported as declarative guidance in target endpoint profiles via the management plane. This, for example, can be a policy, but also a recorded past state. An expected state is represented by an Attribute or a Subject that represents a set of multiple attribute value pairs.
+
 
 Guidance:
 
 : Input directing SACM processes or tasks.
+
+: Examples of such processes/tasks include automated device management, remediation, collection, evaluation. Guidance influences the behavior of a SACM Component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be sporadic.
 
 : There are two types of guidance:
 
@@ -349,6 +342,11 @@ Endpoint Hardware Inventory:
 
 : The set of hardware components that compose a specific endpoint representing its hardware configuration.
 
+Hardware Component:
+
+: A distinguishable physical component used to compose an endpoint.  
+
+: The composition of an endpoint can be changed over time by adding or removing hardware components.  In essence, every physical endpoint is potentially a composite of multiple hardware components, typically resulting in a hierarchical composition of hardware components. The composition of hardware components is based on interconnects provided by specific hardware types (e.g. a mainboard is a hardware type that provides local busses as an interconnect or an FRU is a hardware type that is itself connected via an interconnect to a chassis and can provide further interconnects for additional hardware components, such as interfaces modules). In general, a hardware component can be distinguished by its serial number.  Occasionally, hardware components are referred to as power sucking aliens.
 
 Information Element:
 
@@ -364,13 +362,15 @@ Information Model:
 
 Interaction Model:
 
-: The definition of specific sequences regarding the exchange of messages (data in motion), including, for example,  conditional branching, thresholds and timers. An interaction model, for example, can be used to define operations, such as registration or discovery, on the control plane. A composition of data models for data in motion and a corresponding interaction model is a protocol.
+: The definition of specific sequences regarding the exchange of messages (data in motion), including, for example,  conditional branching, thresholds and timers.
+
+: An interaction model, for example, can be used to define operations, such as registration or discovery, on the control plane. A composition of data models for data in motion and a corresponding interaction model is a protocol.
 
 
 
 Internal Collector:
 
-: Internal Collector: a collector that runs on a target endpoint to acquire information from that target endpoint.
+: A collector that runs on a target endpoint to acquire information from that target endpoint.
 
 Management Plane:
 
@@ -383,8 +383,6 @@ Metadata:
 : Data about data.
 
 : In the SACM information model, data is referred to as Content. Metadata about the content is referred to as Content-Metadata, respectively. Content and Content-Metadata are combined into Subjects called Content-Elements in the SACM information model. Some information elements defined by the SACM information model can be part of the Content or the Content-Metadata. Therefore, if an information element is considered data or data about data depends on which kind of Subject it is associated with. The SACM information model also defines metadata about the data origin via the Subject Statement-Metadata. Typical examples of metadata are time stamps, data origin or data source.
-
-
 
 : Examples include: physical Ethernet port with a MAC address, layer 2 VLAN interface with a MAC address, layer 3 interface with multiple IPv6 addresses, layer 3 tunnel ingress or egress with an IPv4 address.
 
@@ -428,14 +426,9 @@ SACM Component:
 
 SACM Component Discovery:
 
-: The task of brokering appropriate SACM components according to their capabilities or roles on request.
+: The task of discovering the capabilities provided by SACM components within a SACM domain.
 
-
-
-: Input: Query
-
-: Output: a list of SACM components including metadata
-
+: This is likely to be performed via an appropriate set of control plane functions.
 
 
 SACM Component Label:
@@ -478,7 +471,7 @@ SACM Role:
 
 SACM Statement:
 
-: Is SACM component output that represents an assertion.
+: Is an assertion that is made by a SACM Component.
 
 Security Automation:
 
@@ -555,6 +548,10 @@ Target Endpoint:
 : A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria and as referenced by {{RFC4949}.
 
 
+Target Endpoint Characterization:
+
+: The description of the distinctive nature of a target endpoint, that is based on its characteristics.
+
 Target Endpoint Characterization Record:
 
 : A set of endpoint attributes about a target endpoint that was encountered in a SACM domain, which are associated with that target endpoint as a result of a Target Endpoint Characterization Task.
@@ -567,29 +564,16 @@ Target Endpoint Characterization Task:
 
 : An ongoing task of continuously adding acquired endpoint attributes to a corresponding record. The TE characterization task manages the representation of encountered target endpoints in the SACM domain in the form of characterization records. For example, the output of a target endpoint discovery task or a collection task can be processed by the characterization task and added to the record. The TE characterization Task also manages these representations of target endpoints encountered in the SACM domain by splitting or merging the corresponding records as new or more refined endpoint attributes become available.
 
-: Input: discovered target endpoint attributes, endpoint attribute collection, existing characterization records
-
-: Output: target endpoint characterization records
-
-
 
 Target Endpoint Classification Task:
 
 : The task of associating a class from an extensible list of classes with an endpoint characterization record. TE classes function as imperative and declarative guidance for collection, evaluation, remediation and security posture assessment in general.
-
-: Input: endpoint characterization records (without classification), guidance (how to classify a record)
-
-: Output: endpoint characterization records (with classification)
 
 
 
 Target Endpoint Discovery Task:
 
 : The ongoing task of detecting previously unknown interaction of a potential target endpoint in the SACM domain. TE Discovery is not directly targeted at a specific target endpoint and therefore an un-targeted task. SACM Components conducting the discovery task as a part of their function are typically distributed and located, for example, on infrastructure components or collect from those remotely via appropriate interfaces. Examples of infrastructure components that are of interest to the discovery task include routers, switches, VM hosting or VM managing components, AAA servers, or servers handling dynamic address distribution.
-
-: Input: endpoint attributes acquired via local or remote interfaces
-
-: Output: endpoint attributes including metadata such as data source or data origin
 
 
 
@@ -601,7 +585,7 @@ Target Endpoint Identifier:
 
 Target Endpoint Label:
 
-: A specific endpoint label that refers to a target endpoint identifier used to identify a specific target endpoint (also referred to as TE label).  In content-metadata, this label is called data source.
+: An endpoint label that identifies a specific target endpoint.
 
 
 
@@ -640,13 +624,11 @@ Timestamps :
 
 
 
-Virtual Component:
+Virtual Endpoint:
 
-: A target endpoint can be composed entirely of logical system entities (see {{RFC4949}}.
+: An endpoint composed entirely of logical system components (see {{RFC4949}}).
 
-: The most common example is a virtual machine/host running on a target endpoint.
-
-: Effectively, target endpoints can be nested and at the time of this writing the most common example of target endpoint characteristics about virtual components is the EntLogicalEntry in {{RFC6933}}.
+: The most common example is a virtual machine/host running on a target endpoint. Effectively, target endpoints can be nested and at the time of this writing the most common example of target endpoint characteristics about virtual components is the EntLogicalEntry in {{RFC6933}}.
 
 
 
