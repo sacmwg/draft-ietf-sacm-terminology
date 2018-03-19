@@ -19,21 +19,31 @@
 }
 
 @media screen and (min-width: 1024px) {
-  ul.toc, #rfc\.toc {
+  body>ul.toc, body>#rfc\.toc {
     position: fixed;
     bottom: 0;
     right: 0;
-    right: calc(50vw - 525px);
+    right: calc(50vw - 550px);
     width: 300px;
     z-index: 1;
   }
   #rfc\.toc {
-    top: 15px;
-  }
-  ul.toc {
-    top: 80px;
+    top: 55px;
     overflow: auto;
     overscroll-behavior: contain;
+  }
+  ul.toc, #rfc\.toc {
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+  ul.toc li, #rfc\.toc li {
+    font-size: 15px;
+    line-height: 20px;
+    text-indent: 0;
+    padding-left: 1em;
+  }
+  body>ul.toc {
+    top: 140px;
   }
 
   body {
@@ -42,11 +52,11 @@
 }
 
 body {
-  font: 15px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #333;
   font-size-adjust: 0.5;
-  line-height: 130%;
-  margin: 25px auto;
+  line-height: 24px;
+  margin: 75px auto;
   max-width: 724px;
 }
 
@@ -59,7 +69,7 @@ body {
   margin: 0.8em 0 0.3em;
 }
 .title { font-size: 36px; }
-h1 { font-size: 30px; }
+h1 { font-size: 36px; }
 h2 { font-size: 24px; }
 h3, h4 { font-size: 18px; }
 h1 a[href], h2 a[href], h3 a[href], h4 a[href] {
@@ -122,10 +132,9 @@ table.header td {
   height: auto;
   line-height: 100%;
 }
-#rfc\.abstract+p {
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 130%;
+#rfc\.abstract+p, #rfc\.abstract p {
+  font-size: 18px;
+  line-height: 27px%;
 }
 
 samp, tt, code, pre {
@@ -193,6 +202,9 @@ ul.empty li {
 hr {
   border: 0;
   border-top: 1px solid #eee;
+}
+hr.noprint {
+  display: none;
 }
 
 a {
@@ -290,12 +302,12 @@ address {
 <link href="#rfc.authors" rel="Chapter">
 
 
-  <meta name="generator" content="xml2rfc version 2.8.2 - https://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.9.6 - https://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Birkholz, H., Lu, J., Strassner, J., Cam-Winget, N., and A. Montville" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-terminology-latest" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-12-10" />
+  <meta name="dct.issued" scheme="ISO8601" content="2018-03-19" />
   <meta name="dct.abstract" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
   <meta name="description" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
 
@@ -319,7 +331,7 @@ address {
 <td class="right">J. Lu</td>
 </tr>
 <tr>
-<td class="left">Expires: June 13, 2018</td>
+<td class="left">Expires: September 20, 2018</td>
 <td class="right">Oracle Corporation</td>
 </tr>
 <tr>
@@ -348,7 +360,7 @@ address {
 </tr>
 <tr>
 <td class="left"></td>
-<td class="right">December 10, 2017</td>
+<td class="right">March 19, 2018</td>
 </tr>
 
     	
@@ -364,9 +376,9 @@ address {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on June 13, 2018.</p>
+<p>This Internet-Draft will expire on September 20, 2018.</p>
 <h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
-<p>Copyright (c) 2017 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>Copyright (c) 2018 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
 
   
@@ -415,12 +427,15 @@ address {
 <dl>
 <dt>Assertion:</dt>
 <dd style="margin-left: 8">Defined by the ITU in <a href="#X.1252" class="xref">[X.1252]</a> as "a statement made by an entity without accompanying evidence of its validity".</dd>
+</dl>
+<p id="rfc.section.2.p.3">In the context of SACM, an assertion is the output of a SACM component in the form of a statement (including metadata about the data source and data origin, e.g. timestamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol, an assertion (and therefore a statement, respectively) can be accomplished by evidence of the validity of its metadata provided by a SACM component.</p>
+<p></p>
+
+<dl>
 <dt>Assessment:</dt>
 <dd style="margin-left: 8">Defined in <a href="#RFC5209" class="xref">[RFC5209]</a> as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."</dd>
-<dt>Asset:</dt>
-<dd style="margin-left: 8">Is a system resource, as defined in <a href="#RFC4949" class="xref">[RFC4949]</a>, that may be composed of other assets.</dd>
 <dt></dt>
-<dd style="margin-left: 8">Examples of Assets include: Endpoints, Software, Guidance, or X.509 public key certificates. An asset is not necessarily owned by an organization.</dd>
+<dd style="margin-left: 8">An assessment is a specific workflow that incorporates the SACM tasks discovery, collection and evaluation. A prominent instance of the assessment workflow is illustrated in the Vulnerability Assessment Scenario <a href="#I-D.ietf-sacm-vuln-scenario" class="xref">[I-D.ietf-sacm-vuln-scenario]</a>.</dd>
 <dt>Asset Management:</dt>
 <dd style="margin-left: 8">The IT process by which assets are provisioned, updated, maintained and deprecated.</dd>
 <dt>Attribute:</dt>
@@ -541,8 +556,6 @@ address {
 <dd style="margin-left: 8">Endpoint Attributes typically constitute Attributes that can be bundled into Subject (e.g. information about a specific network interface can be represented via a set of multiple AVP).</dd>
 <dt>Endpoint Characteristics:</dt>
 <dd style="margin-left: 8">The state, configuration and composition of the software components and (virtual) hardware components a target endpoint is composed of, including observable behavior, e.g. sys-calls, log-files, or PDU emission on a network.</dd>
-<dt>Endpoint Characterization:</dt>
-<dd style="margin-left: 8">The description of the distinctive nature of an endpoint, that is based on its characteristics.</dd>
 <dt>Endpoint Characterization Task:</dt>
 <dd style="margin-left: 8">The task of endpoint characterization that uses endpoint attributes that represent distinct endpoint characteristics.</dd>
 <dt>Endpoint Classification:</dt>
@@ -563,8 +576,12 @@ address {
 <dd style="margin-left: 8">The resulting value from having evaluated a set of posture attributes.</dd>
 <dt>Expected Endpoint Attribute State:</dt>
 <dd style="margin-left: 8">The policy-compliant state of an endpoint attribute that is to be compared against.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Sets of expected endpoint attribute states are transported as declarative guidance in target endpoint profiles via the management plane. This, for example, can be a policy, but also a recorded past state. An expected state is represented by an Attribute or a Subject that represents a set of multiple attribute value pairs.</dd>
 <dt>Guidance:</dt>
 <dd style="margin-left: 8">Input directing SACM processes or tasks.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Examples of such processes/tasks include automated device management, remediation, collection, evaluation. Guidance influences the behavior of a SACM Component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be sporadic.</dd>
 <dt></dt>
 <dd style="margin-left: 8">There are two types of guidance:</dd>
 <dt></dt>
@@ -573,6 +590,10 @@ address {
 <dd style="margin-left: 8">Imperative Guidance: Guidance that prescribes specific actions to be conducted or methods to be used in order to achieve an outcome. Examples include a targeted Collection Task or the IP-Address of a SACM Component that provides a registration function.</dd>
 <dt>Endpoint Hardware Inventory:</dt>
 <dd style="margin-left: 8">The set of hardware components that compose a specific endpoint representing its hardware configuration.</dd>
+<dt>Hardware Component:</dt>
+<dd style="margin-left: 8">A distinguishable physical component used to compose an endpoint.</dd>
+<dt></dt>
+<dd style="margin-left: 8">The composition of an endpoint can be changed over time by adding or removing hardware components.  In essence, every physical endpoint is potentially a composite of multiple hardware components, typically resulting in a hierarchical composition of hardware components. The composition of hardware components is based on interconnects provided by specific hardware types (e.g. a mainboard is a hardware type that provides local busses as an interconnect or an FRU is a hardware type that is itself connected via an interconnect to a chassis and can provide further interconnects for additional hardware components, such as interfaces modules). In general, a hardware component can be distinguished by its serial number.  Occasionally, hardware components are referred to as power sucking aliens.</dd>
 <dt>Information Element:</dt>
 <dd style="margin-left: 8">A representation of information about physical and virtual "objects of interest".</dd>
 <dt></dt>
@@ -582,9 +603,11 @@ address {
 <dt></dt>
 <dd style="margin-left: 8">While there is some overlap with a data model, <a href="#RFC3444" class="xref">[RFC3444]</a> distinguishes an information model as being protocol and implementation neutral whereas a data model would provide such details. The purpose of the SACM information model is to ensure interoperability between SACM data models (that are used as transport encoding) and to provide a standardized set of information elements for communication between SACM components.</dd>
 <dt>Interaction Model:</dt>
-<dd style="margin-left: 8">The definition of specific sequences regarding the exchange of messages (data in motion), including, for example,  conditional branching, thresholds and timers. An interaction model, for example, can be used to define operations, such as registration or discovery, on the control plane. A composition of data models for data in motion and a corresponding interaction model is a protocol.</dd>
+<dd style="margin-left: 8">The definition of specific sequences regarding the exchange of messages (data in motion), including, for example,  conditional branching, thresholds and timers.</dd>
+<dt></dt>
+<dd style="margin-left: 8">An interaction model, for example, can be used to define operations, such as registration or discovery, on the control plane. A composition of data models for data in motion and a corresponding interaction model is a protocol.</dd>
 <dt>Internal Collector:</dt>
-<dd style="margin-left: 8">Internal Collector: a collector that runs on a target endpoint to acquire information from that target endpoint.</dd>
+<dd style="margin-left: 8">A collector that runs on a target endpoint to acquire information from that target endpoint.</dd>
 <dt>Management Plane:</dt>
 <dd style="margin-left: 8">Is an architectural component providing common functions to steer the behavior of SACM components, e.g. their behavior on the control plane.</dd>
 <dt></dt>
@@ -618,11 +641,9 @@ address {
 <dt></dt>
 <dd style="margin-left: 8">In the context of SACM, a set of SACM functions composes a SACM component.  A SACM component conducts SACM tasks, acting on control plane, data plane and/or management plane via corresponding SACM interfaces.  SACM defines a set of standard components (e.g. a collector, a broker, or a data store).  A SACM component contains at least a basic set of control plane functions and can contain data plane and management plane functions.  A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of.  A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly.  For example, a SACM component that is composed solely of functions that provide information would only take on the role of a provider.</dd>
 <dt>SACM Component Discovery:</dt>
-<dd style="margin-left: 8">The task of brokering appropriate SACM components according to their capabilities or roles on request.</dd>
+<dd style="margin-left: 8">The task of discovering the capabilities provided by SACM components within a SACM domain.</dd>
 <dt></dt>
-<dd style="margin-left: 8">Input: Query</dd>
-<dt></dt>
-<dd style="margin-left: 8">Output: a list of SACM components including metadata</dd>
+<dd style="margin-left: 8">This is likely to be performed via an appropriate set of control plane functions.</dd>
 <dt>SACM Component Label:</dt>
 <dd style="margin-left: 8">A specific endpoint label that is used to identify a SACM component.</dd>
 <dt></dt>
@@ -651,7 +672,7 @@ address {
 <dt></dt>
 <dd style="margin-left: 8">In the context of SACM, SACM roles are associated with SACM components and are defined by the set of functions and interfaces a SACM component includes.  There are three SACM roles: provider, consumer, and controller.  The roles associated with a SACM component are determined by the purpose of the SACM functions and corresponding SACM interfaces the SACM component is composed of.</dd>
 <dt>SACM Statement:</dt>
-<dd style="margin-left: 8">Is SACM component output that represents an assertion.</dd>
+<dd style="margin-left: 8">Is an assertion that is made by a SACM Component.</dd>
 <dt>Security Automation:</dt>
 <dd style="margin-left: 8">The process of which security alerts can be automated through the use of different components to monitor, analyze and assess endpoints and network traffic for the purposes of detecting misconfigurations, misbehaviors or threats.</dd>
 <dt></dt>
@@ -694,32 +715,22 @@ address {
 <dd style="margin-left: 8">Every endpoint that is not specifically designated as an excluded endpoint is a target endpoint.  A target endpoint is not part of a SACM domain unless it contains a SACM component (e.g. a SACM component that publishes collection results coming from an internal collector).</dd>
 <dt></dt>
 <dd style="margin-left: 8">A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria and as referenced by {{RFC4949}.</dd>
+<dt>Target Endpoint Characterization:</dt>
+<dd style="margin-left: 8">The description of the distinctive nature of a target endpoint, that is based on its characteristics.</dd>
 <dt>Target Endpoint Characterization Record:</dt>
 <dd style="margin-left: 8">A set of endpoint attributes about a target endpoint that was encountered in a SACM domain, which are associated with that target endpoint as a result of a Target Endpoint Characterization Task.</dd>
 <dt></dt>
 <dd style="margin-left: 8">A characterization record is intended to be a representation of an endpoint. It cannot be assured that a record distinctly represents a single target endpoint unless a set of one or more endpoint attributes that compose a unique set of identifying endpoint attributes are included in the record. Otherwise, the set of identifying attributes included in a record can match more than one target endpoints, which are - in consequence - indistinguishable to a SACM domain until more qualifying endpoint attributes can be acquired and added to the record. A characterization record is maintained over time in order to assert that acquired endpoint attributes are either about an endpoint that was encountered before or an endpoint that has not been encountered before in a SACM domain. A characterization record can include, for example, acquired configuration, state or observed behavior of a specific target endpoint. Multiple and even conflicting instances of this information can be included in a characterization record by using timestamps and/or data origins to differentiate them. The endpoint attributes included in a characterization record can be used to re-identify a distinct target endpoint over time. Classes or profiles can be associated with a characterization record via the Classification Task in order to guide collection, evaluation or remediation tasks.</dd>
 <dt>Target Endpoint Characterization Task:</dt>
 <dd style="margin-left: 8">An ongoing task of continuously adding acquired endpoint attributes to a corresponding record. The TE characterization task manages the representation of encountered target endpoints in the SACM domain in the form of characterization records. For example, the output of a target endpoint discovery task or a collection task can be processed by the characterization task and added to the record. The TE characterization Task also manages these representations of target endpoints encountered in the SACM domain by splitting or merging the corresponding records as new or more refined endpoint attributes become available.</dd>
-<dt></dt>
-<dd style="margin-left: 8">Input: discovered target endpoint attributes, endpoint attribute collection, existing characterization records</dd>
-<dt></dt>
-<dd style="margin-left: 8">Output: target endpoint characterization records</dd>
 <dt>Target Endpoint Classification Task:</dt>
 <dd style="margin-left: 8">The task of associating a class from an extensible list of classes with an endpoint characterization record. TE classes function as imperative and declarative guidance for collection, evaluation, remediation and security posture assessment in general.</dd>
-<dt></dt>
-<dd style="margin-left: 8">Input: endpoint characterization records (without classification), guidance (how to classify a record)</dd>
-<dt></dt>
-<dd style="margin-left: 8">Output: endpoint characterization records (with classification)</dd>
 <dt>Target Endpoint Discovery Task:</dt>
 <dd style="margin-left: 8">The ongoing task of detecting previously unknown interaction of a potential target endpoint in the SACM domain. TE Discovery is not directly targeted at a specific target endpoint and therefore an un-targeted task. SACM Components conducting the discovery task as a part of their function are typically distributed and located, for example, on infrastructure components or collect from those remotely via appropriate interfaces. Examples of infrastructure components that are of interest to the discovery task include routers, switches, VM hosting or VM managing components, AAA servers, or servers handling dynamic address distribution.</dd>
-<dt></dt>
-<dd style="margin-left: 8">Input: endpoint attributes acquired via local or remote interfaces</dd>
-<dt></dt>
-<dd style="margin-left: 8">Output: endpoint attributes including metadata such as data source or data origin</dd>
 <dt>Target Endpoint Identifier:</dt>
 <dd style="margin-left: 8">The target endpoint discovery task and the collection tasks can result in a set of identifying endpoint attributes added to a corresponding Characterization Record. This subset of the endpoint attributes included in the record is used as a target endpoint identifier, by which a specific target endpoint can be referenced. Depending on the available identifying attributes, this reference can be ambiguous and is a "best-effort" mechanism. Every distinct set of identifying endpoint attributes can be associated with a target endpoint label that is unique in a SACM domain.</dd>
 <dt>Target Endpoint Label:</dt>
-<dd style="margin-left: 8">A specific endpoint label that refers to a target endpoint identifier used to identify a specific target endpoint (also referred to as TE label).  In content-metadata, this label is called data source.</dd>
+<dd style="margin-left: 8">An endpoint label that identifies a specific target endpoint.</dd>
 <dt>Target Endpoint Profile:</dt>
 <dd style="margin-left: 8">A bundle of expected or desired component composition, configurations and states that is associated with a target endpoint.</dd>
 <dt></dt>
@@ -756,12 +767,10 @@ address {
 <dd style="margin-left: 8">Defined in <a href="#RFC4949" class="xref">[RFC4949]</a> as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object" and as "with respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.".</dd>
 <dt></dt>
 <dd style="margin-left: 8">This term is used in SACM to describe a recorded point in time at which, for example, an information element is created or updated on a target endpoint, and observed, transmitted or processed by a SACM component.  Timestamps can be created by target endpoints or SACM components and are associated with SACM statements provided or consumed by SACM components.  Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain.  In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.</dd>
-<dt>Virtual Component:</dt>
-<dd style="margin-left: 8">A target endpoint can be composed entirely of logical system entities (see <a href="#RFC4949" class="xref">[RFC4949]</a>.</dd>
+<dt>Virtual Endpoint:</dt>
+<dd style="margin-left: 8">An endpoint composed entirely of logical system components (see <a href="#RFC4949" class="xref">[RFC4949]</a>).</dd>
 <dt></dt>
-<dd style="margin-left: 8">The most common example is a virtual machine/host running on a target endpoint.</dd>
-<dt></dt>
-<dd style="margin-left: 8">Effectively, target endpoints can be nested and at the time of this writing the most common example of target endpoint characteristics about virtual components is the EntLogicalEntry in <a href="#RFC6933" class="xref">[RFC6933]</a>.</dd>
+<dd style="margin-left: 8">The most common example is a virtual machine/host running on a target endpoint. Effectively, target endpoints can be nested and at the time of this writing the most common example of target endpoint characteristics about virtual components is the EntLogicalEntry in <a href="#RFC6933" class="xref">[RFC6933]</a>.</dd>
 <dt>Vulnerability Assessment:</dt>
 <dd style="margin-left: 8">An assessment specifically tailored to determining whether a set of endpoints is vulnerable according to the information contained in the vulnerability description information.</dd>
 <dt>Vulnerability Description Information:</dt>
@@ -977,12 +986,12 @@ Email: merike@doubleshotsecurity.com
 <tr>
 <td class="reference"><b id="I-D.ietf-i2nsf-terminology">[I-D.ietf-i2nsf-terminology]</b></td>
 <td class="top">
-<a>Hares, S.</a>, <a>Strassner, J.</a>, <a>Lopez, D.</a>, <a>Xia, L.</a> and <a>H. Birkholz</a>, "<a href="https://tools.ietf.org/html/draft-ietf-i2nsf-terminology-04">Interface to Network Security Functions (I2NSF) Terminology</a>", Internet-Draft draft-ietf-i2nsf-terminology-04, July 2017.</td>
+<a>Hares, S.</a>, <a>Strassner, J.</a>, <a>Lopez, D.</a>, <a>Xia, L.</a> and <a>H. Birkholz</a>, "<a href="https://tools.ietf.org/html/draft-ietf-i2nsf-terminology-05">Interface to Network Security Functions (I2NSF) Terminology</a>", Internet-Draft draft-ietf-i2nsf-terminology-05, January 2018.</td>
 </tr>
 <tr>
 <td class="reference"><b id="I-D.ietf-netmod-entity">[I-D.ietf-netmod-entity]</b></td>
 <td class="top">
-<a>Bierman, A.</a>, <a>Bjorklund, M.</a>, <a>Dong, J.</a> and <a>D. Romascanu</a>, "<a href="https://tools.ietf.org/html/draft-ietf-netmod-entity-05">A YANG Data Model for Hardware Management</a>", Internet-Draft draft-ietf-netmod-entity-05, October 2017.</td>
+<a>Bierman, A.</a>, <a>Bjorklund, M.</a>, <a>Dong, J.</a> and <a>D. Romascanu</a>, "<a href="https://tools.ietf.org/html/draft-ietf-netmod-entity-08">A YANG Data Model for Hardware Management</a>", Internet-Draft draft-ietf-netmod-entity-08, January 2018.</td>
 </tr>
 <tr>
 <td class="reference"><b id="I-D.ietf-sacm-vuln-scenario">[I-D.ietf-sacm-vuln-scenario]</b></td>
@@ -1143,6 +1152,5 @@ Email: merike@doubleshotsecurity.com
   </address>
 </div>
 
-  <div class="github-fork-ribbon-wrapper"><div class="github-fork-ribbon"><a href="https://github.com/sacmwg/draft-ietf-sacm-terminology">Fork me on GitHub</a></div></div>
 </body>
 </html>
