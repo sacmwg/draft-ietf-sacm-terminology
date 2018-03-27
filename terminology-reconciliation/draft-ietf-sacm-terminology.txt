@@ -5,14 +5,14 @@
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                     J. Lu
-Expires: September 20, 2018                           Oracle Corporation
+Expires: September 28, 2018                           Oracle Corporation
                                                             J. Strassner
                                                      Huawei Technologies
                                                            N. Cam-Winget
                                                            Cisco Systems
                                                             A. Montville
                                                                      CIS
-                                                          March 19, 2018
+                                                          March 27, 2018
 
 
     Security Automation and Continuous Monitoring (SACM) Terminology
@@ -38,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 20, 2018.
+   This Internet-Draft will expire on September 28, 2018.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 1]
+Birkholz, et al.       Expires September 28, 2018               [Page 1]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 2]
+Birkholz, et al.       Expires September 28, 2018               [Page 2]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -165,7 +165,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 3]
+Birkholz, et al.       Expires September 28, 2018               [Page 3]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -221,7 +221,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 4]
+Birkholz, et al.       Expires September 28, 2018               [Page 4]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -277,7 +277,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 5]
+Birkholz, et al.       Expires September 28, 2018               [Page 5]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -333,7 +333,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 6]
+Birkholz, et al.       Expires September 28, 2018               [Page 6]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -389,7 +389,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 7]
+Birkholz, et al.       Expires September 28, 2018               [Page 7]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -445,7 +445,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 8]
+Birkholz, et al.       Expires September 28, 2018               [Page 8]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -501,7 +501,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 9]
+Birkholz, et al.       Expires September 28, 2018               [Page 9]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -557,7 +557,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 10]
+Birkholz, et al.       Expires September 28, 2018              [Page 10]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -613,7 +613,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 11]
+Birkholz, et al.       Expires September 28, 2018              [Page 11]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -638,11 +638,6 @@ Internet-Draft              SACM Terminology                  March 2018
       the Subject Statement-Metadata.  Typical examples of metadata are
       time stamps, data origin or data source.
 
-      Examples include: physical Ethernet port with a MAC address, layer
-      2 VLAN interface with a MAC address, layer 3 interface with
-      multiple IPv6 addresses, layer 3 tunnel ingress or egress with an
-      IPv4 address.
-
    Posture:  Defined in [RFC5209] as "configuration and/or status of
       hardware or software on an endpoint as it pertains to an
       organization's security policy."
@@ -666,17 +661,18 @@ Internet-Draft              SACM Terminology                  March 2018
       The phrase "features of the endpoint" highlighted above refers to
       installed software or software components.
 
-
-
-
-Birkholz, et al.       Expires September 20, 2018              [Page 12]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
    Provider:  A provider is a SACM role assigned to a SACM component
       that provides role-specific functions to provide information to
       other SACM components.
+
+
+
+
+
+Birkholz, et al.       Expires September 28, 2018              [Page 12]
+
+Internet-Draft              SACM Terminology                  March 2018
+
 
    Repository:  A repository is a controller that contains functions to
       consume, store and provide information of a particular kind.
@@ -723,14 +719,16 @@ Internet-Draft              SACM Terminology                  March 2018
    SACM Component Label:  A specific endpoint label that is used to
       identify a SACM component.
 
+      In content-metadata, this label is called data origin.
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 13]
+
+
+
+Birkholz, et al.       Expires September 28, 2018              [Page 13]
 
 Internet-Draft              SACM Terminology                  March 2018
 
-
-      In content-metadata, this label is called data origin.
 
    SACM Content:  The payload provided by SACM components to the SACM
       domain on the data plane.
@@ -781,7 +779,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 14]
+
+
+Birkholz, et al.       Expires September 28, 2018              [Page 14]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -837,7 +837,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 15]
+Birkholz, et al.       Expires September 28, 2018              [Page 15]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -893,7 +893,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 16]
+Birkholz, et al.       Expires September 28, 2018              [Page 16]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -949,7 +949,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 17]
+Birkholz, et al.       Expires September 28, 2018              [Page 17]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1005,7 +1005,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 18]
+Birkholz, et al.       Expires September 28, 2018              [Page 18]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1061,7 +1061,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 19]
+Birkholz, et al.       Expires September 28, 2018              [Page 19]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1117,7 +1117,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 20]
+Birkholz, et al.       Expires September 28, 2018              [Page 20]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1173,7 +1173,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 21]
+Birkholz, et al.       Expires September 28, 2018              [Page 21]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1229,7 +1229,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 22]
+Birkholz, et al.       Expires September 28, 2018              [Page 22]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1285,7 +1285,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 23]
+Birkholz, et al.       Expires September 28, 2018              [Page 23]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1341,7 +1341,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 24]
+Birkholz, et al.       Expires September 28, 2018              [Page 24]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1397,7 +1397,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 25]
+Birkholz, et al.       Expires September 28, 2018              [Page 25]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1453,7 +1453,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 26]
+Birkholz, et al.       Expires September 28, 2018              [Page 26]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1509,7 +1509,7 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 27]
+Birkholz, et al.       Expires September 28, 2018              [Page 27]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1565,7 +1565,7 @@ Authors' Addresses
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 28]
+Birkholz, et al.       Expires September 28, 2018              [Page 28]
 
 Internet-Draft              SACM Terminology                  March 2018
 
@@ -1621,4 +1621,4 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 29]
+Birkholz, et al.       Expires September 28, 2018              [Page 29]
