@@ -5,14 +5,14 @@
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                     J. Lu
-Expires: September 28, 2018                           Oracle Corporation
+Expires: November 2, 2018                             Oracle Corporation
                                                             J. Strassner
                                                      Huawei Technologies
                                                            N. Cam-Winget
                                                            Cisco Systems
                                                             A. Montville
                                                                      CIS
-                                                          March 27, 2018
+                                                            May 01, 2018
 
 
     Security Automation and Continuous Monitoring (SACM) Terminology
@@ -38,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 28, 2018.
+   This Internet-Draft will expire on November 2, 2018.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Birkholz, et al.       Expires September 28, 2018               [Page 1]
+Birkholz, et al.        Expires November 2, 2018                [Page 1]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
    to this document.  Code Components extracted from this document must
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Birkholz, et al.       Expires September 28, 2018               [Page 2]
+Birkholz, et al.        Expires November 2, 2018                [Page 2]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
    respectively) can be accomplished by evidence of the validity of its
@@ -165,9 +165,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 28, 2018               [Page 3]
+Birkholz, et al.        Expires November 2, 2018                [Page 3]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
       A capability's description is in itself imperative guidance on
@@ -221,9 +221,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 28, 2018               [Page 4]
+Birkholz, et al.        Expires November 2, 2018                [Page 4]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
    Collector:  A piece of software that acquires information about one
@@ -277,9 +277,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 28, 2018               [Page 5]
+Birkholz, et al.        Expires November 2, 2018                [Page 5]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
    Content Metadata:  Data about content Subjects.  Every content-
@@ -329,27 +329,19 @@ Internet-Draft              SACM Terminology                  March 2018
       SACM, consumer of information and provider of information are SACM
       components.
 
-
-
-
-
-Birkholz, et al.       Expires September 28, 2018               [Page 6]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
-      The SACM architecture and corresponding models focus on data in
-      motion.
-
    Data At Rest:  Data that is stored.
+
+
+
+Birkholz, et al.        Expires November 2, 2018                [Page 6]
+
+Internet-Draft              SACM Terminology                    May 2018
+
 
       Data at rest requires a data model to encode the data to be
       stored.  In the context of SACM, data at rest located on a SACM
       component can be provided to other SACM components via
       discoverable capabilities.
-
-      In the context of SACM, data models for data at rest are out of
-      scope.
 
    Data Integrity:  Defined in [RFC4949] as "the property that data has
       not been changed, destroyed, or lost in an unauthorized or
@@ -386,14 +378,6 @@ Internet-Draft              SACM Terminology                  March 2018
       Additional Information - In the context of SACM, data provenance
       is expressed as metadata that identifies SACM statements and
       corresponding content elements a new statement is created from.
-
-
-
-Birkholz, et al.       Expires September 28, 2018               [Page 7]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       In a downstream process, this references can cascade, creating a
       data provenance tree that enables SACM components to trace back
       the original data sources involved in the creation of SACM
@@ -402,6 +386,13 @@ Internet-Draft              SACM Terminology                  March 2018
 
    Data Source:  Is an endpoint from which a particular set of
       attributes and/or attribute values have been collected.
+
+
+
+Birkholz, et al.        Expires November 2, 2018                [Page 7]
+
+Internet-Draft              SACM Terminology                    May 2018
+
 
       Data Source enables a SACM component to identify - and potentially
       characterize - a (target) endpoint that is claimed to be the
@@ -442,14 +433,6 @@ Internet-Draft              SACM Terminology                  March 2018
    Endpoint Attribute:  Is a discreet endpoint characteristic that is
       computably observable.
 
-
-
-
-Birkholz, et al.       Expires September 28, 2018               [Page 8]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       Endpoint Attributes typically constitute Attributes that can be
       bundled into Subject (e.g. information about a specific network
       interface can be represented via a set of multiple AVP).
@@ -458,6 +441,14 @@ Internet-Draft              SACM Terminology                  March 2018
       of the software components and (virtual) hardware components a
       target endpoint is composed of, including observable behavior,
       e.g. sys-calls, log-files, or PDU emission on a network.
+
+
+
+
+Birkholz, et al.        Expires November 2, 2018                [Page 8]
+
+Internet-Draft              SACM Terminology                    May 2018
+
 
    Endpoint Characterization Task:  The task of endpoint
       characterization that uses endpoint attributes that represent
@@ -498,14 +489,6 @@ Internet-Draft              SACM Terminology                  March 2018
       Sets of expected endpoint attribute states are transported as
       declarative guidance in target endpoint profiles via the
       management plane.  This, for example, can be a policy, but also a
-
-
-
-Birkholz, et al.       Expires September 28, 2018               [Page 9]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       recorded past state.  An expected state is represented by an
       Attribute or a Subject that represents a set of multiple attribute
       value pairs.
@@ -515,6 +498,14 @@ Internet-Draft              SACM Terminology                  March 2018
       Examples of such processes/tasks include automated device
       management, remediation, collection, evaluation.  Guidance
       influences the behavior of a SACM Component and is considered
+
+
+
+Birkholz, et al.        Expires November 2, 2018                [Page 9]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
       content of the management plane.  In the context of SACM, guidance
       is machine-readable and can be manually or automatically generated
       or provided.  Typically, the tasks that provide guidance to SACM
@@ -554,14 +545,6 @@ Internet-Draft              SACM Terminology                  March 2018
       distinguished by its serial number.  Occasionally, hardware
       components are referred to as power sucking aliens.
 
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 10]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
    Information Element:  A representation of information about physical
       and virtual "objects of interest".
 
@@ -571,6 +554,14 @@ Internet-Draft              SACM Terminology                  March 2018
       referred to as an Attribute (analogous to an attribute-value-
       pair).  A set of attributes that is bundled into a more complex
       composite information element is referred to as a Subject.  Every
+
+
+
+Birkholz, et al.        Expires November 2, 2018               [Page 10]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
       information element in the SACM information model has a unique
       name.  Endpoint attributes or time stamps, for example, are
       represented as information elements in the SACM information model.
@@ -603,21 +594,32 @@ Internet-Draft              SACM Terminology                  March 2018
       functions to steer the behavior of SACM components, e.g. their
       behavior on the control plane.
 
+   Network Address:  Is a layer-specific address that follows a layer-
+      specific address scheme.
+
+      Each interface of a specific layer can be associated with one or
+      more addresses appropriate for that layer.  There is no guarantee
+      that an address is globally unique.  In general, there is a scope
+      to an address in which it is intended to be unique.  Examples
+      include: physical Ethernet port with a MAC address, layer 2 VLAN
+      interface with a MAC address, layer 3 interface with multiple IPv6
+      addresses, layer 3 tunnel ingress or egress with an IPv4 address.
+
       Prominent examples include: modification of the configuration of a
       SACM component or updating a target endpoint profile that resides
       on an evaluator.  In essence, guidance is transported via the
       management plane.  Typically, a SACM component can fulfill its
       purpose without continuous input from the management plane.  In
+
+
+
+Birkholz, et al.        Expires November 2, 2018               [Page 11]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
       contrast, without continuous availability of control plane
       functions a typical SACM component could not function properly.
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 11]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       In general, interaction on the management plane is less frequent
       and less regular than on the control plane.  Input via the
       management plane can be manual (e.g. via a CLI), or can be
@@ -667,11 +669,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 12]
+Birkholz, et al.        Expires November 2, 2018               [Page 12]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
    Repository:  A repository is a controller that contains functions to
@@ -725,9 +725,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 28, 2018              [Page 13]
+Birkholz, et al.        Expires November 2, 2018               [Page 13]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
    SACM Content:  The payload provided by SACM components to the SACM
@@ -781,9 +781,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 28, 2018              [Page 14]
+Birkholz, et al.        Expires November 2, 2018               [Page 14]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
       In the context of SACM, SACM roles are associated with SACM
@@ -837,9 +837,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 28, 2018              [Page 15]
+Birkholz, et al.        Expires November 2, 2018               [Page 15]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
       Examples: The static association of an IP address and a MAC
@@ -893,9 +893,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 28, 2018              [Page 16]
+Birkholz, et al.        Expires November 2, 2018               [Page 16]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
       Every endpoint that is not specifically designated as an excluded
@@ -907,6 +907,19 @@ Internet-Draft              SACM Terminology                  March 2018
       A target endpoint is similar to a device that is a Target of
       Evaluation (TOE) as defined in Common Criteria and as referenced
       by {{RFC4949}.
+
+   Target Endpoint Address:  An address that is layer specific and which
+      follows layer specific address schemes.
+
+      Each interface of a specific layer can be associated with one or
+      more addresses appropriate for that layer.  There is no guarantee
+      that an address is globally unique.  In general, there is a scope
+      to an address in which it is intended to be unique.
+
+      Examples include: physical Ethernet port with a MAC address, layer
+      2 VLAN interface with a MAC address, layer 3 interface with
+      multiple IPv6 addresses, layer 3 tunnel ingress or egress with an
+      IPv4 address.
 
    Target Endpoint Characterization:  The description of the distinctive
       nature of a target endpoint, that is based on its characteristics.
@@ -933,6 +946,14 @@ Internet-Draft              SACM Terminology                  March 2018
       observed behavior of a specific target endpoint.  Multiple and
       even conflicting instances of this information can be included in
       a characterization record by using timestamps and/or data origins
+
+
+
+Birkholz, et al.        Expires November 2, 2018               [Page 17]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
       to differentiate them.  The endpoint attributes included in a
       characterization record can be used to re-identify a distinct
       target endpoint over time.  Classes or profiles can be associated
@@ -946,14 +967,6 @@ Internet-Draft              SACM Terminology                  March 2018
       in the form of characterization records.  For example, the output
       of a target endpoint discovery task or a collection task can be
       processed by the characterization task and added to the record.
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 17]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       The TE characterization Task also manages these representations of
       target endpoints encountered in the SACM domain by splitting or
       merging the corresponding records as new or more refined endpoint
@@ -988,6 +1001,15 @@ Internet-Draft              SACM Terminology                  March 2018
       endpoint attributes can be associated with a target endpoint label
       that is unique in a SACM domain.
 
+
+
+
+
+Birkholz, et al.        Expires November 2, 2018               [Page 18]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
    Target Endpoint Label:  An endpoint label that identifies a specific
       target endpoint.
 
@@ -1001,14 +1023,6 @@ Internet-Draft              SACM Terminology                  March 2018
       characterization task.  A type or class of target endpoints can be
       defined via a target endpoint profile.  Examples include:
       printers, smartphones, or an office PC.
-
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 18]
-
-Internet-Draft              SACM Terminology                  March 2018
-
 
       In respect to [RFC4949], a target endpoint profile is a protection
       profile as defined by Common Criteria (analogous to the target
@@ -1044,6 +1058,14 @@ Internet-Draft              SACM Terminology                  March 2018
 
       SACM Component Authentication [TBD]
 
+
+
+
+Birkholz, et al.        Expires November 2, 2018               [Page 19]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
       SACM Component Authorization [TBD]
 
       SACM Component Registration [TBD]
@@ -1058,14 +1080,6 @@ Internet-Draft              SACM Terminology                  March 2018
 
       This term is used in SACM to describe a recorded point in time at
       which, for example, an information element is created or updated
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 19]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       on a target endpoint, and observed, transmitted or processed by a
       SACM component.  Timestamps can be created by target endpoints or
       SACM components and are associated with SACM statements provided
@@ -1100,6 +1114,14 @@ Internet-Draft              SACM Terminology                  March 2018
    Vulnerability Detection Data:  A type of imperative guidance
       extracted or derived from vulnerability description information
       that describes the specific mechanisms of vulnerability detection
+
+
+
+Birkholz, et al.        Expires November 2, 2018               [Page 20]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
       that is used by an enterprise's vulnerability management
       capabilities to determine if a vulnerability is present on an
       endpoint.
@@ -1113,14 +1135,6 @@ Internet-Draft              SACM Terminology                  March 2018
    Vulnerability assessment capabilities:  An assessment capability that
       is tailored toward determining whether a set of endpoints is
       vulnerable according to vulnerability description information.
-
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 20]
-
-Internet-Draft              SACM Terminology                  March 2018
-
 
    Workflow:  A workflow is a modular composition of tasks that can
       contain loops, conditionals, multiple starting points and multiple
@@ -1155,6 +1169,15 @@ Internet-Draft              SACM Terminology                  March 2018
 
    Changes from version 02 to version 03:
 
+
+
+
+
+Birkholz, et al.        Expires November 2, 2018               [Page 21]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
    o  Removed Section 2.1.  Cleaned up some editing nits; broke terms
       into 2 sections (predefined and newly defined terms).  Added some
       of the relevant terms per the proposed list discussed in the IETF
@@ -1169,14 +1192,6 @@ Internet-Draft              SACM Terminology                  March 2018
    o  TODO
 
    Changes from version 05 to version 06:
-
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 21]
-
-Internet-Draft              SACM Terminology                  March 2018
-
 
    o  Updated author information.
 
@@ -1212,6 +1227,13 @@ Internet-Draft              SACM Terminology                  March 2018
    o  Major updates to Building Block, Function, SACM Role, Target
       Endpoint.
 
+
+
+Birkholz, et al.        Expires November 2, 2018               [Page 22]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
    o  Minor updates to Broker, Capability, Collection Task, Evaluation
       Task, Posture.
 
@@ -1226,13 +1248,6 @@ Internet-Draft              SACM Terminology                  March 2018
    o  Changed the structure of the Change Log.
 
    Changes from version 07 to version 08:
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 22]
-
-Internet-Draft              SACM Terminology                  March 2018
-
 
    o  Added Assertion, Collection Result, Collector, Excluded Endpoint,
       Internal Collector, Network Address, Network Interface, SACM
@@ -1268,6 +1283,13 @@ Internet-Draft              SACM Terminology                  March 2018
    o  Minor updates to Attribute, Capabilities, SACM Function, SACM
       Component, Collection Task.
 
+
+
+Birkholz, et al.        Expires November 2, 2018               [Page 23]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
    o  Moved Asset Characterization to The Attic.
 
    Changes from version 09 to version 10:
@@ -1282,13 +1304,6 @@ Internet-Draft              SACM Terminology                  March 2018
 
    o  Added references to i2nsf definitions in Capability, SACM
       Component, SACM Interface, SACM Role.
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 23]
-
-Internet-Draft              SACM Terminology                  March 2018
-
 
    o  Added i2nsf Terminology I-D Reference.
 
@@ -1323,6 +1338,14 @@ Internet-Draft              SACM Terminology                  March 2018
    o  Added Configuration, Endpoint Characteristic, Event, SACM Content,
       State, Subject.
 
+
+
+
+Birkholz, et al.        Expires November 2, 2018               [Page 24]
+
+Internet-Draft              SACM Terminology                    May 2018
+
+
    o  Major Updates to Assertion, Data in Motion, Data Provenance, Data
       Source, Interaction Model.
 
@@ -1337,14 +1360,6 @@ Internet-Draft              SACM Terminology                  March 2018
    o  Major Updates to Capability, Collection Task, Hardware Component,
       Hardware Type, Security Automation, Subject, Target Endpoint,
       Target Endpoint Profile.
-
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 24]
-
-Internet-Draft              SACM Terminology                  March 2018
-
 
    o  Minor Updates to Assertion, Data Plane, Endpoint Characteristics.
 
@@ -1382,24 +1397,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.       Expires September 28, 2018              [Page 25]
+Birkholz, et al.        Expires November 2, 2018               [Page 25]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
    David Waltermire
@@ -1453,9 +1453,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 28, 2018              [Page 26]
+Birkholz, et al.        Expires November 2, 2018               [Page 26]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
 8.1.  Normative References
@@ -1509,9 +1509,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 28, 2018              [Page 27]
+Birkholz, et al.        Expires November 2, 2018               [Page 27]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
    [X.1252]   "ITU-T X.1252 (04/2010)", n.d..
@@ -1565,9 +1565,9 @@ Authors' Addresses
 
 
 
-Birkholz, et al.       Expires September 28, 2018              [Page 28]
+Birkholz, et al.        Expires November 2, 2018               [Page 28]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                    May 2018
 
 
    Nancy Cam-Winget
@@ -1621,4 +1621,4 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 28, 2018              [Page 29]
+Birkholz, et al.        Expires November 2, 2018               [Page 29]
