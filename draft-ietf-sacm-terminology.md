@@ -216,19 +216,11 @@ Data In Motion:
 
 : Data in motion requires a data model to transfer the data using a specific encoding. Typically, data in motion is serialized (marshalling) into a transport encoding by a provider of information and deserialized (unmarshalling) by a consumer of information. The termination points of provider of information and consumer of information data is transferred between are interfaces. In regard to data in motion, the interpretation of the roles consumer of information and provider of information depends on the corresponding OSI layer (e.g. on layer2: between interfaces connected to a broadcast domain, on layer4: between interfaces that maintain a TCP connection). In the context of SACM, consumer of information and provider of information are SACM components.
 
-: The SACM architecture and corresponding models focus on data in motion.
-
-
-
 Data At Rest:
 
 : Data that is stored.
 
 : Data at rest requires a data model to encode the data to be stored. In the context of SACM, data at rest located on a SACM component can be provided to other SACM components via discoverable capabilities.
-
-: In the context of SACM, data models for data at rest are out of scope.
-
-
 
 Data Integrity:
 
@@ -375,6 +367,12 @@ Internal Collector:
 Management Plane:
 
 : Is an architectural component providing common functions to steer the behavior of SACM components, e.g. their behavior on the control plane.
+
+Network Address:
+
+: Is a layer-specific address that follows a layer-specific address scheme.
+
+: Each interface of a specific layer can be associated with one or more addresses appropriate for that layer.  There is no guarantee that an address is globally unique.  In general, there is a scope to an address in which it is intended to be unique. Examples include: physical Ethernet port with a MAC address, layer 2 VLAN interface with a MAC address, layer 3 interface with multiple IPv6 addresses, layer 3 tunnel ingress or egress with an IPv4 address.
 
 : Prominent examples include: modification of the configuration of a SACM component or updating a target endpoint profile that resides on an evaluator. In essence, guidance is transported via the management plane. Typically, a SACM component can fulfill its purpose without continuous input from the management plane. In contrast, without continuous availability of control plane functions a typical SACM component could not function properly. In general, interaction on the management plane is less frequent and less regular than on the control plane. Input via the management plane can be manual (e.g. via a CLI), or can be automated via management plane functions that are part of other SACM components.
 
@@ -545,6 +543,13 @@ Target Endpoint:
 
 : A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria and as referenced by {{RFC4949}.
 
+Target Endpoint Address:
+
+: An address that is layer specific and which follows layer specific address schemes.  
+
+: Each interface of a specific layer can be associated with one or more addresses appropriate for that layer.  There is no guarantee that an address is globally unique.  In general, there is a scope to an address in which it is intended to be unique.
+
+: Examples include: physical Ethernet port with a MAC address, layer 2 VLAN interface with a MAC address, layer 3 interface with multiple IPv6 addresses, layer 3 tunnel ingress or egress with an IPv4 address.
 
 Target Endpoint Characterization:
 
