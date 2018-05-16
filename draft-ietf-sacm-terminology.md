@@ -97,13 +97,16 @@ Assertion:
 
 : Defined by the ITU in {{X.1252}} as "a statement made by an entity without accompanying evidence of its validity".
 
-In the context of SACM, an assertion is the output of a SACM component in the form of a statement (including metadata about the data source and data origin, e.g. timestamps). While the validity of an assertion cannot be verified without, for example, an additional attestation protocol, an assertion (and therefore a statement, respectively) can be accomplished by evidence of the validity of its metadata provided by a SACM component.
-
 Assessment:
 
 : Defined in {{RFC5209}} as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."
 
-: An assessment is a specific workflow that incorporates the SACM tasks discovery, collection and evaluation. A prominent instance of the assessment workflow is illustrated in the Vulnerability Assessment Scenario {{-vulnass}}.
+
+Asset:
+
+: Is a system resource, as defined in {{RFC4949}}, that may be composed of other assets.
+
+: Examples of Assets include: Endpoints, Software, Guidance, or X.509 public key certificates. An asset is not necessarily owned by an organization.
 
 Asset Management:
 
@@ -115,11 +118,8 @@ Attribute:
 
 : In the context of SACM, attributes are "atomic" information elements and an equivalent to attribute-value-pairs.  Attributes can be components of Subjects.
 
-Authentication:
 
-: Defined in {{RFC4949}} as "the process of verifying a claim that a system entity or system resource has a certain attribute value."
 
-Authorization:
 
 : Defined in {{RFC4949}} as "an approval that is granted to a system entity to access a system resource."
 
@@ -631,11 +631,9 @@ SACM Task:
 
 Timestamps :
 
-: Defined in {{RFC4949}} as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object" and as "with respect to a recorded network event, a data field in which is recorded the time (time of day or other instant of elapsed time) at which the event took place.".
+: Defined in {{RFC4949}} as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object".
 
-: This term is used in SACM to describe a recorded point in time at which, for example, an information element is created or updated on a target endpoint, and observed, transmitted or processed by a SACM component.  Timestamps can be created by target endpoints or SACM components and are associated with SACM statements provided or consumed by SACM components.  Outside of the domain of SACM components the assurance of correctness of time stamps is typically significantly lower than inside a SACM domain.  In general, it cannot be simply assumed that the source of time a target endpoint uses is synchronized or trustworthy.
-
-
+: A timestamp always requires context, i.e. additional information elements that are associated with it. Therefore, all timestamps wrt information elements are always metadata. Timestamps in SACM Content Elements may be generated outside a SACM Domain and may be encoded in an unknown representation. Inside a SACM domain the representation of timestamps is well-defined and unambiguous. 
 
 Virtual Endpoint:
 
@@ -813,6 +811,11 @@ Changes from version 11 to version 12:
 
 * Minor Updates to Attribute, Control Plane, Data Origin, Data Provenance, Expected Endpoint State, Guidance, Target Endpoint Classification Task, Vulnerability Detection Data.
 
+Changes from version 12 to version 13:
+
+* Added Virtual Component.
+
+* Major Updates to Capability, Collection Task, Hardware Component, Hardware Type, Security Automation, Subject, Target Endpoint, Target Endpoint Profile.
 Changes from version 12 to version 13:
 
 * Added Virtual Component.
