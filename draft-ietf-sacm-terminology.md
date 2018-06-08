@@ -97,6 +97,8 @@ Assertion:
 
 : Defined by the ITU in {{X.1252}} as "a statement made by an entity without accompanying evidence of its validity".
 
+: In the context of SACM, an assertion is the output of a SACM Component in the form of a SACM Statement (including metadata about the data source and data origin, e.g. timestamps). While the validity of an assertion about Content and Content Metadata cannot be verified without, for example, Integrity Proofing of the Data Source, an assertion (and therefore a SACM statement, respectively) of the validity of Statement Metadata can by enabled by including corresponding Integrity Evidence created by the Data Origin.
+
 Assessment:
 
 : Defined in {{RFC5209}} as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."
@@ -120,6 +122,7 @@ Attribute:
 
 
 
+Broken remnant of a term again, but this time left here to show how much the last submit of -14 broke the document (this is actually not a term definition, apparently, but if you are curious this was "Authorization", became a second paragraph of expositional text to the definition of Attribute and now became the universal disclaimer of "please alter the structure of the document with care") - until removal by a less annoyed editor:
 
 : Defined in {{RFC4949}} as "an approval that is granted to a system entity to access a system resource."
 
@@ -184,7 +187,7 @@ Configuration Drift:
 
 Consumer:
 
-: Is a SACM Role that contains functions to receive information from other SACM Components.
+: A SACM Role that requires a SACM Component to include SACM Functions enabling it to receive information from other SACM Components.
 
 Content Element:
 
@@ -275,6 +278,8 @@ Endpoint Characteristics:
 
 : The state, configuration and composition of the software components and (virtual) hardware components a target endpoint is composed of, including observable behavior, e.g. sys-calls, log-files, or PDU emission on a network.
 
+: In SACM work-flows, (Target) Endpoint Characteristics are represented via Information Elements.
+
 
 Endpoint Characterization Task:
 
@@ -319,7 +324,7 @@ Expected Endpoint Attribute State:
 
 Guidance:
 
-: Input directing SACM processes or tasks.
+: Machine-processable input directing SACM processes or tasks.
 
 : Examples of such processes/tasks include automated device management, remediation, collection, evaluation. Guidance influences the behavior of a SACM Component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be sporadic.
 
@@ -329,7 +334,7 @@ Guidance:
 
 : Imperative Guidance: Guidance that prescribes specific actions to be conducted or methods to be used in order to achieve an outcome. Examples include a targeted Collection Task or the IP-Address of a SACM Component that provides a registration function.
 
-: Prominent examples include: modification of the configuration of a SACM component or updating a target endpoint profile that resides on an evaluator. In essence, guidance is transported via the management plane. Typically, a SACM component can fulfill its purpose without continuous input from the management plane. In contrast, without continuous availability of control plane functions a typical SACM component could not function properly. In general, interaction on the management plane is less frequent and less regular than on the control plane. Input via the management plane can be manual (e.g. via a CLI), or can be automated via management plane functions that are part of other SACM components.
+: Prominent examples include: modification of the configuration of a SACM component or updating a target endpoint profile that resides on an evaluator. In essence, guidance is transported via the management plane. 
 
 Endpoint Hardware Inventory:
 
@@ -355,7 +360,7 @@ Information Model:
 
 Interaction Model:
 
-: The definition of specific sequences regarding the exchange of messages (data in motion), including, for example,  conditional branching, thresholds and timers.
+: The definition of specific sequences regarding the exchange of messages (data in motion), including, for example, conditional branching, thresholds and timers.
 
 : An interaction model, for example, can be used to define operations, such as registration or discovery, on the control plane. A composition of data models for data in motion and a corresponding interaction model is a protocol.
 
@@ -367,7 +372,9 @@ Internal Collector:
 
 Management Plane:
 
-: Is an architectural component providing common functions to steer the behavior of SACM components, e.g. their behavior on the control plane.
+: An architectural component providing common functions to steer the behavior of SACM components, e.g. their behavior on the control plane.
+
+: Typically, a SACM component can fulfill its purpose without continuous input from the management plane. In contrast, without continuous availability of control plane functions a typical SACM component could not function properly. In general, interaction on the management plane is less frequent and less regular than on the control plane. Input via the management plane can be manual (e.g. via a CLI), or can be automated via management plane functions that are part of other SACM components.
 
 Network Address:
 
@@ -436,7 +443,6 @@ SACM Component Discovery:
 
 : This is likely to be performed via an appropriate set of control plane functions.
 
-
 SACM Component Label:
 
 : A specific endpoint label that is used to identify a SACM component.
@@ -454,6 +460,12 @@ SACM Domain:
 : Endpoints that include a SACM component compose a SACM domain.
 
 : (To be revised, additional definition content TBD, possible dependencies to SACM architecture)
+
+SACM Function:
+
+: A behavioral aspect of a SACM component that provides external SACM Interfaces or internal interfaces to other SACM Functionse.
+
+: For example, a SACM Function with SACM Interfaces on the Control Plane can provide a brokering function to other SACM Components. Via Data Plane interfaces, a SACM Function can act as a provider and/or as a consumer of information. SACM Functions can be propagated as the Capabilities of a SACM Component and can be discovered by or negotiated with other SACM Components.
 
 SACM Interface:
 
@@ -513,15 +525,15 @@ State:
 
 : A volatile set of endpoint attributes of a (target) endpoint that is affected by a reboot-cycle.
 
-: Local state is created by the interaction of components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components.  Dynamic configuration (e.g.  IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component that provides configuration via the control plane (e.g. provided by a DHCP server with a specific configuration).
+: Local state is created by the interaction of components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g.  IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component (e.g. provided by a DHCP server with a specific configuration).
 
 : Examples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.
 
 Statement:
 
-: A statement is a subject defined in the SACM information model.
+: A statement is the root/top-level subject defined in the SACM information model.
 
-: When a statement is used to provide content to a SACM domain, it is a top-level subject that bundles Content Elements into one subject and includes  metadata about the data origin.
+: A statement is used to bundle Content Elements into one subject and includes metadata about the data origin.
 
 
 
@@ -811,11 +823,6 @@ Changes from version 11 to version 12:
 
 * Minor Updates to Attribute, Control Plane, Data Origin, Data Provenance, Expected Endpoint State, Guidance, Target Endpoint Classification Task, Vulnerability Detection Data.
 
-Changes from version 12 to version 13:
-
-* Added Virtual Component.
-
-* Major Updates to Capability, Collection Task, Hardware Component, Hardware Type, Security Automation, Subject, Target Endpoint, Target Endpoint Profile.
 Changes from version 12 to version 13:
 
 * Added Virtual Component.
