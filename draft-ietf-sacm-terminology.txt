@@ -5,14 +5,14 @@
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                     J. Lu
-Expires: September 20, 2018                           Oracle Corporation
+Expires: December 15, 2018                            Oracle Corporation
                                                             J. Strassner
                                                      Huawei Technologies
                                                            N. Cam-Winget
                                                            Cisco Systems
                                                             A. Montville
                                                                      CIS
-                                                          March 19, 2018
+                                                           June 13, 2018
 
 
     Security Automation and Continuous Monitoring (SACM) Terminology
@@ -38,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 20, 2018.
+   This Internet-Draft will expire on December 15, 2018.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 1]
+Birkholz, et al.        Expires December 15, 2018               [Page 1]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
    to this document.  Code Components extracted from this document must
@@ -67,16 +67,16 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Terms and Definitions . . . . . . . . . . . . . . . . . . . .   2
-   3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  21
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  21
-   5.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  21
-   6.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .  21
-   7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  25
-   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  26
-     8.1.  Normative References  . . . . . . . . . . . . . . . . . .  27
-     8.2.  Informative References  . . . . . . . . . . . . . . . . .  27
-   Appendix A.  The Attic  . . . . . . . . . . . . . . . . . . . . .  28
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  28
+   3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  22
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  22
+   5.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  22
+   6.  Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .  22
+   7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  26
+   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  27
+     8.1.  Normative References  . . . . . . . . . . . . . . . . . .  28
+     8.2.  Informative References  . . . . . . . . . . . . . . . . .  28
+   Appendix A.  The Attic  . . . . . . . . . . . . . . . . . . . . .  29
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  29
 
 1.  Introduction
 
@@ -101,31 +101,35 @@ Table of Contents
    Assertion:  Defined by the ITU in [X.1252] as "a statement made by an
       entity without accompanying evidence of its validity".
 
-   In the context of SACM, an assertion is the output of a SACM
-   component in the form of a statement (including metadata about the
-   data source and data origin, e.g. timestamps).  While the validity of
-   an assertion cannot be verified without, for example, an additional
-   attestation protocol, an assertion (and therefore a statement,
+      In the context of SACM, an assertion is the output of a SACM
+      Component in the form of a SACM Statement (including metadata
+      about the data source and data origin, e.g. timestamps).  While
+      the validity of an assertion about Content and Content Metadata
+      cannot be verified without, for example, Integrity Proofing of the
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 2]
+Birkholz, et al.        Expires December 15, 2018               [Page 2]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
-   respectively) can be accomplished by evidence of the validity of its
-   metadata provided by a SACM component.
+      Data Source, an assertion (and therefore a SACM statement,
+      respectively) of the validity of Statement Metadata can by enabled
+      by including corresponding Integrity Evidence created by the Data
+      Origin.
 
    Assessment:  Defined in [RFC5209] as "the process of collecting
       posture for a set of capabilities on the endpoint (e.g., host-
       based firewall) such that the appropriate validators may evaluate
       the posture against compliance policy."
 
-      An assessment is a specific workflow that incorporates the SACM
-      tasks discovery, collection and evaluation.  A prominent instance
-      of the assessment workflow is illustrated in the Vulnerability
-      Assessment Scenario [I-D.ietf-sacm-vuln-scenario].
+   Asset:  Is a system resource, as defined in [RFC4949], that may be
+      composed of other assets.
+
+      Examples of Assets include: Endpoints, Software, Guidance, or
+      X.509 public key certificates.  An asset is not necessarily owned
+      by an organization.
 
    Asset Management:  The IT process by which assets are provisioned,
       updated, maintained and deprecated.
@@ -137,12 +141,15 @@ Internet-Draft              SACM Terminology                  March 2018
       elements and an equivalent to attribute-value-pairs.  Attributes
       can be components of Subjects.
 
-   Authentication:  Defined in [RFC4949] as "the process of verifying a
-      claim that a system entity or system resource has a certain
-      attribute value."
-
-   Authorization:  Defined in [RFC4949] as "an approval that is granted
-      to a system entity to access a system resource."
+   Broken remnant of a term again, but this time left here to show how
+   much the last submit of -14 broke the document (this is actually not
+   a term definition, apparently, but if you are curious this was
+   "Authorization", became a second paragraph of expositional text to
+   the definition of Attribute and now became the universal disclaimer
+   of "please alter the structure of the document with care") - until
+   removal by a less annoyed editor:
+      Defined in [RFC4949] as "an approval that is granted to a system
+      entity to access a system resource."
 
    Capability:  A set of features that are available from a SACM
       Component.
@@ -155,20 +162,18 @@ Internet-Draft              SACM Terminology                  March 2018
       repository component if it includes broker functions) by a SACM
       component via the SACM component registration task and can be
       discovered by or negotiated with other SACM components via the
+
+
+
+Birkholz, et al.        Expires December 15, 2018               [Page 3]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
       corresponding tasks.  For example, the capability of a SACM
       provider may be to provide target endpoint records (declarative
       guidance about well-known or potential target endpoints), or only
       a subset of that data.
-
-
-
-
-
-
-Birkholz, et al.       Expires September 20, 2018               [Page 3]
-
-Internet-Draft              SACM Terminology                  March 2018
-
 
       A capability's description is in itself imperative guidance on
       what functions are exposed to other SACM components in a SACM
@@ -214,17 +219,17 @@ Internet-Draft              SACM Terminology                  March 2018
       via interfaces available on the target endpoint, e.g.  SNMP/
       NETCONF or WMI.
 
+
+
+Birkholz, et al.        Expires December 15, 2018               [Page 4]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
       Behavior-Observation: A SACM component located on an Endpoint
       different from the target endpoint observes network traffic
       related to the target endpoint and conducts the collection task
       via interpretation of that network traffic.
-
-
-
-Birkholz, et al.       Expires September 20, 2018               [Page 4]
-
-Internet-Draft              SACM Terminology                  March 2018
-
 
    Collector:  A piece of software that acquires information about one
       or more target endpoints by conducting collection tasks.
@@ -266,21 +271,21 @@ Internet-Draft              SACM Terminology                  March 2018
       configuration drift of software components is significantly higher
       than the configuration drift of hardware components.
 
-   Consumer:  Is a SACM Role that contains functions to receive
-      information from other SACM Components.
+   Consumer:  A SACM Role that requires a SACM Component to include SACM
+      Functions enabling it to receive information from other SACM
+      Components.
+
+
+
+Birkholz, et al.        Expires December 15, 2018               [Page 5]
+
+Internet-Draft              SACM Terminology                   June 2018
+
 
    Content Element:  Content elements constitute the payload data (SACM
       content) transferred via statement Subjects emitted by providers
       of information.  Every content element Subject includes a specific
       content Subject and a corresponding content metadata Subject.
-
-
-
-
-Birkholz, et al.       Expires September 20, 2018               [Page 5]
-
-Internet-Draft              SACM Terminology                  March 2018
-
 
    Content Metadata:  Data about content Subjects.  Every content-
       element includes a content metadata Subject.  The Subject can
@@ -325,21 +330,17 @@ Internet-Draft              SACM Terminology                  March 2018
       the roles consumer of information and provider of information
       depends on the corresponding OSI layer (e.g. on layer2: between
       interfaces connected to a broadcast domain, on layer4: between
+
+
+
+Birkholz, et al.        Expires December 15, 2018               [Page 6]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
       interfaces that maintain a TCP connection).  In the context of
       SACM, consumer of information and provider of information are SACM
       components.
-
-
-
-
-
-Birkholz, et al.       Expires September 20, 2018               [Page 6]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
-      The SACM architecture and corresponding models focus on data in
-      motion.
 
    Data At Rest:  Data that is stored.
 
@@ -347,9 +348,6 @@ Internet-Draft              SACM Terminology                  March 2018
       stored.  In the context of SACM, data at rest located on a SACM
       component can be provided to other SACM components via
       discoverable capabilities.
-
-      In the context of SACM, data models for data at rest are out of
-      scope.
 
    Data Integrity:  Defined in [RFC4949] as "the property that data has
       not been changed, destroyed, or lost in an unauthorized or
@@ -386,16 +384,16 @@ Internet-Draft              SACM Terminology                  March 2018
       Additional Information - In the context of SACM, data provenance
       is expressed as metadata that identifies SACM statements and
       corresponding content elements a new statement is created from.
-
-
-
-Birkholz, et al.       Expires September 20, 2018               [Page 7]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       In a downstream process, this references can cascade, creating a
       data provenance tree that enables SACM components to trace back
+
+
+
+Birkholz, et al.        Expires December 15, 2018               [Page 7]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
       the original data sources involved in the creation of SACM
       statements and take into account their characteristics and
       trustworthiness.
@@ -445,9 +443,11 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018               [Page 8]
+
+
+Birkholz, et al.        Expires December 15, 2018               [Page 8]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
       Endpoint Attributes typically constitute Attributes that can be
@@ -458,6 +458,9 @@ Internet-Draft              SACM Terminology                  March 2018
       of the software components and (virtual) hardware components a
       target endpoint is composed of, including observable behavior,
       e.g. sys-calls, log-files, or PDU emission on a network.
+
+      In SACM work-flows, (Target) Endpoint Characteristics are
+      represented via Information Elements.
 
    Endpoint Characterization Task:  The task of endpoint
       characterization that uses endpoint attributes that represent
@@ -495,22 +498,23 @@ Internet-Draft              SACM Terminology                  March 2018
    Expected Endpoint Attribute State:  The policy-compliant state of an
       endpoint attribute that is to be compared against.
 
+
+
+
+Birkholz, et al.        Expires December 15, 2018               [Page 9]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
       Sets of expected endpoint attribute states are transported as
       declarative guidance in target endpoint profiles via the
       management plane.  This, for example, can be a policy, but also a
-
-
-
-Birkholz, et al.       Expires September 20, 2018               [Page 9]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       recorded past state.  An expected state is represented by an
       Attribute or a Subject that represents a set of multiple attribute
       value pairs.
 
-   Guidance:  Input directing SACM processes or tasks.
+   Guidance:  Machine-processable input directing SACM processes or
+      tasks.
 
       Examples of such processes/tasks include automated device
       management, remediation, collection, evaluation.  Guidance
@@ -533,6 +537,11 @@ Internet-Draft              SACM Terminology                  March 2018
       Examples include a targeted Collection Task or the IP-Address of a
       SACM Component that provides a registration function.
 
+      Prominent examples include: modification of the configuration of a
+      SACM component or updating a target endpoint profile that resides
+      on an evaluator.  In essence, guidance is transported via the
+      management plane.
+
    Endpoint Hardware Inventory:  The set of hardware components that
       compose a specific endpoint representing its hardware
       configuration.
@@ -545,22 +554,19 @@ Internet-Draft              SACM Terminology                  March 2018
       endpoint is potentially a composite of multiple hardware
       components, typically resulting in a hierarchical composition of
       hardware components.  The composition of hardware components is
-      based on interconnects provided by specific hardware types (e.g. a
-      mainboard is a hardware type that provides local busses as an
-      interconnect or an FRU is a hardware type that is itself connected
-      via an interconnect to a chassis and can provide further
-      interconnects for additional hardware components, such as
-      interfaces modules).  In general, a hardware component can be
-      distinguished by its serial number.  Occasionally, hardware
-      components are referred to as power sucking aliens.
 
 
 
-
-Birkholz, et al.       Expires September 20, 2018              [Page 10]
+Birkholz, et al.        Expires December 15, 2018              [Page 10]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
+
+      based on interconnects provided by specific hardware types (e.g.
+      FRU in a chassis are connected via redundant busses).  In general,
+      a hardware component can be distinguished by its serial number.
+      Occasionally, hardware components are referred to as power sucking
+      aliens.
 
    Information Element:  A representation of information about physical
       and virtual "objects of interest".
@@ -599,30 +605,59 @@ Internet-Draft              SACM Terminology                  March 2018
    Internal Collector:  A collector that runs on a target endpoint to
       acquire information from that target endpoint.
 
-   Management Plane:  Is an architectural component providing common
+   Management Plane:  An architectural component providing common
       functions to steer the behavior of SACM components, e.g. their
       behavior on the control plane.
 
-      Prominent examples include: modification of the configuration of a
-      SACM component or updating a target endpoint profile that resides
-      on an evaluator.  In essence, guidance is transported via the
-      management plane.  Typically, a SACM component can fulfill its
-      purpose without continuous input from the management plane.  In
-      contrast, without continuous availability of control plane
-      functions a typical SACM component could not function properly.
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 11]
+
+Birkholz, et al.        Expires December 15, 2018              [Page 11]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
-      In general, interaction on the management plane is less frequent
-      and less regular than on the control plane.  Input via the
-      management plane can be manual (e.g. via a CLI), or can be
-      automated via management plane functions that are part of other
-      SACM components.
+      Typically, a SACM component can fulfill its purpose without
+      continuous input from the management plane.  In contrast, without
+      continuous availability of control plane functions a typical SACM
+      component could not function properly.  In general, interaction on
+      the management plane is less frequent and less regular than on the
+      control plane.  Input via the management plane can be manual (e.g.
+      via a CLI), or can be automated via management plane functions
+      that are part of other SACM components.
+
+   Network Address:  A layer-specific address that follows a layer-
+      specific address scheme.
+
+      The following characteristics are a summery derived from the
+      Common Information Model and ITU-T X.213.  Each Network Interface
+      of a specific layer can be associated with one or more addresses
+      appropriate for that layer.  There is no guarantee that a network
+      address is globally unique.  A dedicated authority entity can
+      provide a level of assurance that a network address is unique in
+      its given scope.  In essence, there is always a scope to a network
+      address, in which it is intended to be unique.
+
+      Examples include: physical Ethernet port with a MAC address, layer
+      2 VLAN interface with a MAC address, layer 3 interface with
+      multiple IPv6 addresses, layer 3 tunnel ingress or egress with an
+      IPv4 address.
+
+   Network Interface:  An Endpoint is connected to a network via one or
+      more Network Interfaces.  Network Interfaces can be physical
+      (Hardware Component) or logical (virtual Hardware component, i.e.
+      a dedicated Software Component).  Network Interfaces of an
+      Endpoint can operate on different layers, most prominently what is
+      now commonly called layer 2 and 3.  Within a layer, interfaces can
+      be nested.
+
+      In SACM, the association of Endpoints and Network Addresses via
+      Network Interfaces is vital to maintain interdependent autonomous
+      processes that can be targeted at Target Endpoints, unambiguously.
+
+      Examples include: physical Ethernet port, layer 2 VLAN interface,
+      a MC-LAG setup, layer 3 Point-to-Point tunnel ingress or egress.
 
    Metadata:  Data about data.
 
@@ -631,17 +666,20 @@ Internet-Draft              SACM Terminology                  March 2018
       respectively.  Content and Content-Metadata are combined into
       Subjects called Content-Elements in the SACM information model.
       Some information elements defined by the SACM information model
+
+
+
+Birkholz, et al.        Expires December 15, 2018              [Page 12]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
       can be part of the Content or the Content-Metadata.  Therefore, if
       an information element is considered data or data about data
       depends on which kind of Subject it is associated with.  The SACM
       information model also defines metadata about the data origin via
       the Subject Statement-Metadata.  Typical examples of metadata are
       time stamps, data origin or data source.
-
-      Examples include: physical Ethernet port with a MAC address, layer
-      2 VLAN interface with a MAC address, layer 3 interface with
-      multiple IPv6 addresses, layer 3 tunnel ingress or egress with an
-      IPv4 address.
 
    Posture:  Defined in [RFC5209] as "configuration and/or status of
       hardware or software on an endpoint as it pertains to an
@@ -666,14 +704,6 @@ Internet-Draft              SACM Terminology                  March 2018
       The phrase "features of the endpoint" highlighted above refers to
       installed software or software components.
 
-
-
-
-Birkholz, et al.       Expires September 20, 2018              [Page 12]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
    Provider:  A provider is a SACM role assigned to a SACM component
       that provides role-specific functions to provide information to
       other SACM components.
@@ -691,6 +721,14 @@ Internet-Draft              SACM Terminology                  March 2018
       that contains control plane functions to provide and/or connect
       services on behalf of other SACM components via interfaces on the
       control plane.
+
+
+
+
+Birkholz, et al.        Expires December 15, 2018              [Page 13]
+
+Internet-Draft              SACM Terminology                   June 2018
+
 
       A broker may provide, for example, authorization services and
       find, upon request, SACM components providing requested services.
@@ -723,13 +761,6 @@ Internet-Draft              SACM Terminology                  March 2018
    SACM Component Label:  A specific endpoint label that is used to
       identify a SACM component.
 
-
-
-Birkholz, et al.       Expires September 20, 2018              [Page 13]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       In content-metadata, this label is called data origin.
 
    SACM Content:  The payload provided by SACM components to the SACM
@@ -742,6 +773,25 @@ Internet-Draft              SACM Terminology                  March 2018
 
       (To be revised, additional definition content TBD, possible
       dependencies to SACM architecture)
+
+   SACM Function:  A behavioral aspect of a SACM component that provides
+      external SACM Interfaces or internal interfaces to other SACM
+      Functionse.
+
+
+
+
+Birkholz, et al.        Expires December 15, 2018              [Page 14]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
+      For example, a SACM Function with SACM Interfaces on the Control
+      Plane can provide a brokering function to other SACM Components.
+      Via Data Plane interfaces, a SACM Function can act as a provider
+      and/or as a consumer of information.  SACM Functions can be
+      propagated as the Capabilities of a SACM Component and can be
+      discovered by or negotiated with other SACM Components.
 
    SACM Interface:  An interface, as defined in
       [I-D.ietf-i2nsf-terminology], that provides SACM-specific
@@ -779,17 +829,19 @@ Internet-Draft              SACM Terminology                  March 2018
       the Roles of a Component from the Applications that use that
       Component."
 
-
-
-Birkholz, et al.       Expires September 20, 2018              [Page 14]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       In the context of SACM, SACM roles are associated with SACM
       components and are defined by the set of functions and interfaces
       a SACM component includes.  There are three SACM roles: provider,
       consumer, and controller.  The roles associated with a SACM
+
+
+
+
+Birkholz, et al.        Expires December 15, 2018              [Page 15]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
       component are determined by the purpose of the SACM functions and
       corresponding SACM interfaces the SACM component is composed of.
 
@@ -830,28 +882,27 @@ Internet-Draft              SACM Terminology                  March 2018
       software components.  Dynamic configuration (e.g.  IP address
       distributed dynamically via an address distribution and management
       services, such as DHCP) is considered state that is the result of
-      the interaction with another component that provides configuration
-      via the control plane (e.g. provided by a DHCP server with a
-      specific configuration).
-
-
-
-
-Birkholz, et al.       Expires September 20, 2018              [Page 15]
-
-Internet-Draft              SACM Terminology                  March 2018
-
+      the interaction with another component (e.g. provided by a DHCP
+      server with a specific configuration).
 
       Examples: The static association of an IP address and a MAC
       address in a DHCP server configuration, a directory-path that
       identifies a log-file directory, a registry entry.
 
-   Statement:  A statement is a subject defined in the SACM information
-      model.
 
-      When a statement is used to provide content to a SACM domain, it
-      is a top-level subject that bundles Content Elements into one
-      subject and includes metadata about the data origin.
+
+
+
+Birkholz, et al.        Expires December 15, 2018              [Page 16]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
+   Statement:  A statement is the root/top-level subject defined in the
+      SACM information model.
+
+      A statement is used to bundle Content Elements into one subject
+      and includes metadata about the data origin.
 
    Subject:  A semantic composite information element pertaining to a
       system entity that is a target endpoint.
@@ -890,23 +941,35 @@ Internet-Draft              SACM Terminology                  March 2018
    Target Endpoint:  Is an endpoint that is under assessment at some
       point in, or region of, time.
 
-
-
-
-Birkholz, et al.       Expires September 20, 2018              [Page 16]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       Every endpoint that is not specifically designated as an excluded
       endpoint is a target endpoint.  A target endpoint is not part of a
       SACM domain unless it contains a SACM component (e.g. a SACM
       component that publishes collection results coming from an
       internal collector).
 
+
+
+Birkholz, et al.        Expires December 15, 2018              [Page 17]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
       A target endpoint is similar to a device that is a Target of
       Evaluation (TOE) as defined in Common Criteria and as referenced
       by {{RFC4949}.
+
+   Target Endpoint Address:  An address that is layer specific and which
+      follows layer specific address schemes.
+
+      Each interface of a specific layer can be associated with one or
+      more addresses appropriate for that layer.  There is no guarantee
+      that an address is globally unique.  In general, there is a scope
+      to an address in which it is intended to be unique.
+
+      Examples include: physical Ethernet port with a MAC address, layer
+      2 VLAN interface with a MAC address, layer 3 interface with
+      multiple IPv6 addresses, layer 3 tunnel ingress or egress with an
+      IPv4 address.
 
    Target Endpoint Characterization:  The description of the distinctive
       nature of a target endpoint, that is based on its characteristics.
@@ -939,6 +1002,14 @@ Internet-Draft              SACM Terminology                  March 2018
       with a characterization record via the Classification Task in
       order to guide collection, evaluation or remediation tasks.
 
+
+
+
+Birkholz, et al.        Expires December 15, 2018              [Page 18]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
    Target Endpoint Characterization Task:  An ongoing task of
       continuously adding acquired endpoint attributes to a
       corresponding record.  The TE characterization task manages the
@@ -946,14 +1017,6 @@ Internet-Draft              SACM Terminology                  March 2018
       in the form of characterization records.  For example, the output
       of a target endpoint discovery task or a collection task can be
       processed by the characterization task and added to the record.
-
-
-
-Birkholz, et al.       Expires September 20, 2018              [Page 17]
-
-Internet-Draft              SACM Terminology                  March 2018
-
-
       The TE characterization Task also manages these representations of
       target endpoints encountered in the SACM domain by splitting or
       merging the corresponding records as new or more refined endpoint
@@ -995,20 +1058,20 @@ Internet-Draft              SACM Terminology                  March 2018
       composition, configurations and states that is associated with a
       target endpoint.
 
+
+
+
+Birkholz, et al.        Expires December 15, 2018              [Page 19]
+
+Internet-Draft              SACM Terminology                   June 2018
+
+
       The corresponding task by which the association with a target
       endpoint takes places is the endpoint classification task.  The
       task by which an endpoint profile is created is the endpoint
       characterization task.  A type or class of target endpoints can be
       defined via a target endpoint profile.  Examples include:
       printers, smartphones, or an office PC.
-
-
-
-
-Birkholz, et al.       Expires September 20, 2018              [Page 18]
-
-Internet-Draft              SACM Terminology                  March 2018
-
 
       In respect to [RFC4949], a target endpoint profile is a protection
       profile as defined by Common Criteria (analogous to the target
@@ -1050,30 +1113,24 @@ Internet-Draft              SACM Terminology                  March 2018
 
    Timestamps :  Defined in [RFC4949] as "with respect to a data object,
       a label or marking in which is recorded the time (time of day or
-      other instant of elapsed time) at which the label or marking was
-      affixed to the data object" and as "with respect to a recorded
-      network event, a data field in which is recorded the time (time of
-      day or other instant of elapsed time) at which the event took
-      place.".
-
-      This term is used in SACM to describe a recorded point in time at
-      which, for example, an information element is created or updated
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 19]
+
+Birkholz, et al.        Expires December 15, 2018              [Page 20]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
-      on a target endpoint, and observed, transmitted or processed by a
-      SACM component.  Timestamps can be created by target endpoints or
-      SACM components and are associated with SACM statements provided
-      or consumed by SACM components.  Outside of the domain of SACM
-      components the assurance of correctness of time stamps is
-      typically significantly lower than inside a SACM domain.  In
-      general, it cannot be simply assumed that the source of time a
-      target endpoint uses is synchronized or trustworthy.
+      other instant of elapsed time) at which the label or marking was
+      affixed to the data object".
+
+      A timestamp always requires context, i.e. additional information
+      elements that are associated with it.  Therefore, all timestamps
+      wrt information elements are always metadata.  Timestamps in SACM
+      Content Elements may be generated outside a SACM Domain and may be
+      encoded in an unknown representation.  Inside a SACM domain the
+      representation of timestamps is well-defined and unambiguous.
 
    Virtual Endpoint:  An endpoint composed entirely of logical system
       components (see [RFC4949]).
@@ -1116,10 +1173,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-
-Birkholz, et al.       Expires September 20, 2018              [Page 20]
+Birkholz, et al.        Expires December 15, 2018              [Page 21]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
    Workflow:  A workflow is a modular composition of tasks that can
@@ -1173,9 +1229,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 21]
+Birkholz, et al.        Expires December 15, 2018              [Page 22]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
    o  Updated author information.
@@ -1229,9 +1285,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 22]
+Birkholz, et al.        Expires December 15, 2018              [Page 23]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
    o  Added Assertion, Collection Result, Collector, Excluded Endpoint,
@@ -1285,9 +1341,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 23]
+Birkholz, et al.        Expires December 15, 2018              [Page 24]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
    o  Added i2nsf Terminology I-D Reference.
@@ -1341,9 +1397,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 24]
+Birkholz, et al.        Expires December 15, 2018              [Page 25]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
    o  Minor Updates to Assertion, Data Plane, Endpoint Characteristics.
@@ -1397,9 +1453,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 25]
+Birkholz, et al.        Expires December 15, 2018              [Page 26]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
    David Waltermire
@@ -1453,9 +1509,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 26]
+Birkholz, et al.        Expires December 15, 2018              [Page 27]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
 8.1.  Normative References
@@ -1509,9 +1565,9 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 27]
+Birkholz, et al.        Expires December 15, 2018              [Page 28]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
    [X.1252]   "ITU-T X.1252 (04/2010)", n.d..
@@ -1565,9 +1621,9 @@ Authors' Addresses
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 28]
+Birkholz, et al.        Expires December 15, 2018              [Page 29]
 
-Internet-Draft              SACM Terminology                  March 2018
+Internet-Draft              SACM Terminology                   June 2018
 
 
    Nancy Cam-Winget
@@ -1621,4 +1677,4 @@ Internet-Draft              SACM Terminology                  March 2018
 
 
 
-Birkholz, et al.       Expires September 20, 2018              [Page 29]
+Birkholz, et al.        Expires December 15, 2018              [Page 30]
