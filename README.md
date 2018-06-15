@@ -1,6 +1,6 @@
-# Security Automation and Continuous Monitoring (SACM) Terminology
+#  Security Automation and Continuous Monitoring (SACM) Terminology
 
-This is the working area for the IETF SACM Working Group Internet-Draft, "Security Automation and Continuous Monitoring (SACM) Terminology".
+This is the working area for the IETF [SACM Working Group](https://datatracker.ietf.org/wg/sacm/documents/) Internet-Draft, " Security Automation and Continuous Monitoring (SACM) Terminology".
 
 * [Editor's Copy](https://sacmwg.github.io/draft-ietf-sacm-terminology/#go.draft-ietf-sacm-terminology.html)
 * [Working Group Draft](https://tools.ietf.org/html/draft-ietf-sacm-terminology)
