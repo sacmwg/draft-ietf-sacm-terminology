@@ -5,14 +5,14 @@
 SACM Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                     J. Lu
-Expires: December 15, 2018                            Oracle Corporation
+Expires: December 17, 2018                            Oracle Corporation
                                                             J. Strassner
                                                      Huawei Technologies
                                                            N. Cam-Winget
                                                            Cisco Systems
                                                             A. Montville
                                                                      CIS
-                                                           June 13, 2018
+                                                           June 15, 2018
 
 
     Security Automation and Continuous Monitoring (SACM) Terminology
@@ -38,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on December 15, 2018.
+   This Internet-Draft will expire on December 17, 2018.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Birkholz, et al.        Expires December 15, 2018               [Page 1]
+Birkholz, et al.        Expires December 17, 2018               [Page 1]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Birkholz, et al.        Expires December 15, 2018               [Page 2]
+Birkholz, et al.        Expires December 17, 2018               [Page 2]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -165,7 +165,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018               [Page 3]
+Birkholz, et al.        Expires December 17, 2018               [Page 3]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -221,7 +221,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018               [Page 4]
+Birkholz, et al.        Expires December 17, 2018               [Page 4]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -277,7 +277,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018               [Page 5]
+Birkholz, et al.        Expires December 17, 2018               [Page 5]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -333,7 +333,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018               [Page 6]
+Birkholz, et al.        Expires December 17, 2018               [Page 6]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -389,7 +389,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018               [Page 7]
+Birkholz, et al.        Expires December 17, 2018               [Page 7]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -445,7 +445,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018               [Page 8]
+Birkholz, et al.        Expires December 17, 2018               [Page 8]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -501,7 +501,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018               [Page 9]
+Birkholz, et al.        Expires December 17, 2018               [Page 9]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -557,7 +557,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 10]
+Birkholz, et al.        Expires December 17, 2018              [Page 10]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -613,7 +613,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 11]
+Birkholz, et al.        Expires December 17, 2018              [Page 11]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -669,7 +669,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 12]
+Birkholz, et al.        Expires December 17, 2018              [Page 12]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -725,7 +725,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 13]
+Birkholz, et al.        Expires December 17, 2018              [Page 13]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -781,7 +781,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 14]
+Birkholz, et al.        Expires December 17, 2018              [Page 14]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -837,7 +837,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 15]
+Birkholz, et al.        Expires December 17, 2018              [Page 15]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -893,7 +893,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 16]
+Birkholz, et al.        Expires December 17, 2018              [Page 16]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -949,7 +949,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 17]
+Birkholz, et al.        Expires December 17, 2018              [Page 17]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1005,7 +1005,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 18]
+Birkholz, et al.        Expires December 17, 2018              [Page 18]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1061,7 +1061,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 19]
+Birkholz, et al.        Expires December 17, 2018              [Page 19]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1117,7 +1117,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 20]
+Birkholz, et al.        Expires December 17, 2018              [Page 20]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1173,7 +1173,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 21]
+Birkholz, et al.        Expires December 17, 2018              [Page 21]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1229,7 +1229,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 22]
+Birkholz, et al.        Expires December 17, 2018              [Page 22]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1285,7 +1285,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 23]
+Birkholz, et al.        Expires December 17, 2018              [Page 23]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1341,7 +1341,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 24]
+Birkholz, et al.        Expires December 17, 2018              [Page 24]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1397,7 +1397,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 25]
+Birkholz, et al.        Expires December 17, 2018              [Page 25]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1453,7 +1453,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 26]
+Birkholz, et al.        Expires December 17, 2018              [Page 26]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1509,7 +1509,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 27]
+Birkholz, et al.        Expires December 17, 2018              [Page 27]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1565,7 +1565,7 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 28]
+Birkholz, et al.        Expires December 17, 2018              [Page 28]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1621,7 +1621,7 @@ Authors' Addresses
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 29]
+Birkholz, et al.        Expires December 17, 2018              [Page 29]
 
 Internet-Draft              SACM Terminology                   June 2018
 
@@ -1677,4 +1677,4 @@ Internet-Draft              SACM Terminology                   June 2018
 
 
 
-Birkholz, et al.        Expires December 15, 2018              [Page 30]
+Birkholz, et al.        Expires December 17, 2018              [Page 30]
