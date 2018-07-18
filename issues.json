@@ -1,6 +1,60 @@
 [
 
   {
+    "url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/92",
+    "repository_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology",
+    "labels_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/92/labels{/name}",
+    "comments_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/92/comments",
+    "events_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/92/events",
+    "html_url": "https://github.com/sacmwg/draft-ietf-sacm-terminology/pull/92",
+    "id": 342394108,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MjAyMzAzOTg2",
+    "number": 92,
+    "title": "Issue #82",
+    "user": {
+      "login": "adammontville",
+      "id": 2183724,
+      "node_id": "MDQ6VXNlcjIxODM3MjQ=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2183724?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adammontville",
+      "html_url": "https://github.com/adammontville",
+      "followers_url": "https://api.github.com/users/adammontville/followers",
+      "following_url": "https://api.github.com/users/adammontville/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adammontville/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adammontville/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adammontville/subscriptions",
+      "organizations_url": "https://api.github.com/users/adammontville/orgs",
+      "repos_url": "https://api.github.com/users/adammontville/repos",
+      "events_url": "https://api.github.com/users/adammontville/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adammontville/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2018-07-18T16:03:40Z",
+    "updated_at": "2018-07-18T16:03:40Z",
+    "closed_at": null,
+    "author_association": "MEMBER",
+    "pull_request": {
+      "url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/pulls/92",
+      "html_url": "https://github.com/sacmwg/draft-ietf-sacm-terminology/pull/92",
+      "diff_url": "https://github.com/sacmwg/draft-ietf-sacm-terminology/pull/92.diff",
+      "patch_url": "https://github.com/sacmwg/draft-ietf-sacm-terminology/pull/92.patch"
+    },
+    "body": "Added term \"information security program\"\r\nAdded ISO reference\r\nUpdated definition for \"security automation\""
+  },
+  {
     "url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/91",
     "repository_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology",
     "labels_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/91/labels{/name}",
@@ -1577,7 +1631,10 @@
     "closed_at": null,
     "author_association": "MEMBER",
     "body": "I believe we have poor definitions for configuration and state.\r\n\r\nWe define configuration as non-volatile endpoint attributes and state as volatile endpoint attributes. This feels dissatisfying. I would propose that we take an approach indicating that endpoint state embodies endpoint attributes (they may as well be synonymous), and that state may be volatile or non-volatile. Then, configuration is sometimes used interchangeably with state or attributes."
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/62",
     "repository_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology",
@@ -1632,10 +1689,7 @@
     "closed_at": null,
     "author_association": "MEMBER",
     "body": "The present definition of attribute: `Is a data element, as defined in RFC5209, that is atomic.` This amounts to refining the definition of the term without giving it a more specific label."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/61",
     "repository_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology",
@@ -3973,7 +4027,10 @@
       "patch_url": "https://github.com/sacmwg/draft-ietf-sacm-terminology/pull/33.patch"
     },
     "body": "fixed a typo.\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/32",
     "repository_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology",
@@ -4027,10 +4084,7 @@
       "patch_url": "https://github.com/sacmwg/draft-ietf-sacm-terminology/pull/32.patch"
     },
     "body": "Clarifying the definition of guidance to make it clear that it is a set of input instructions to processes, tasks, etc.\n\nThis change is based on the following mailing list discussion.\n\nhttps://www.ietf.org/mail-archive/web/sacm/current/msg04085.html\n"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/31",
     "repository_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology",
@@ -5547,7 +5601,10 @@
     "closed_at": "2017-01-13T16:42:20Z",
     "author_association": "MEMBER",
     "body": "The current definition of the term Management Plane includes the comment “TBD per list; was \"Control Plane””.\n\nIs there already a consensus about which term to use? This should be decided soon (and then fixed consistently).\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/2",
     "repository_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology",
@@ -5595,10 +5652,7 @@
     "closed_at": "2017-01-13T16:49:16Z",
     "author_association": "MEMBER",
     "body": "This was started by the use of non-repudiation in the requirements draft security considerations section.  It is not clear that it was the correct term, and discussion showed that a common agreement on the term had not been reached.\n\nThis is to suggest adding definitions (perhaps just by reference) for some common security terms:\n\ndata confidentiality:  The property that data is not disclosed to system entities unless they have been authorized to know the data.  (From RFC 4949.)\n\ndata integrity: The property that data has not been changed, destroyed, or lost in an unauthorized or accidental manner. (From RFC 4949.)\n\ndata origination: A property that verifies the identity of a system entity that is claimed to be the original source of received data. (Derived from data origination authentication service in RFC 4949.)\n\nauthorization: An approval that is granted to a system entity to access a system resource. (From RFC 4949)\n\nauthentication: The process of verifying a claim that a system entity or system resource has a certain attribute value. (From RFC 4949.)\n\nIf you want more verbiage (for example what types of security operations are needed to provide the service), let me know what you feel is lacking and I can provide it.\n"
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology/issues/1",
     "repository_url": "https://api.github.com/repos/sacmwg/draft-ietf-sacm-terminology",
