@@ -1,0 +1,1168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+
+  <title>Security Automation and Continuous Monitoring (SACM) Terminology</title>
+
+  
+<style type="text/css">/*<![CDATA[*/
+
+body {
+  font: 16px "Helvetica Neue","Open Sans",Helvetica,Calibri,sans-serif;
+  color: #333;
+  font-size-adjust: 0.5;
+  line-height: 24px;
+  margin: 75px auto;
+  max-width: 624px;
+  padding: 0 5px;
+}
+
+.title, .filename, h1, h2, h3, h4, h5 {
+  font: 16px "Roboto Condensed","Helvetica Neue","Open Sans",Helvetica,Calibri,sans-serif;
+  font-size-adjust: 0.5;
+  font-weight: bold;
+  color: #333;
+  line-height: 100%;
+  margin: 1.2em 0 0.3em;
+}
+.title, #rfc\.title h1 { font-size: 32px; }
+h1, section h1, h2, section h2, section h3, nav h2 { font-size: 20px; }
+h3, section h4, h4, section h5 { font-size: 16px; }
+h1 a[href], h2 a[href], h3 a[href], h4 a[href] {
+  color: #333;
+}
+
+table {
+  margin-left: 0em;
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+td {
+  border-top: 1px solid #ddd;
+  vertical-align: top;
+}
+tr:nth-child(2n+1) > td,
+tr:nth-child(2n+1) > th {
+  background-color: #f9f9f9;
+}
+td.reference {
+  max-width: 200px;
+  border-top: none;
+  padding-right: 1em;
+}
+.right {
+  text-align: right;
+}
+
+
+table.header, table#rfc\.headerblock {
+  width: 100%;
+}
+table.header td, table#rfc\.headerblock td {
+  border: none;
+  background-color: transparent;
+  color: black;
+  padding: 0;
+}
+.filename {
+  display: block;
+  color: rgb(119, 119, 119);
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 100%;
+  margin: 10px 0 32px;
+}
+#rfc\.abstract+p, #rfc\.abstract p {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+samp, tt, code, pre {
+  font: 15px Consolas, monospace;
+  font-size-adjust: none;
+}
+pre {
+  background-color: #eee;
+  border: 1px solid #ddd;
+  overflow-x: auto;
+  padding: 5px;
+  margin: 5px;
+}
+.figure, caption {
+  font-style: italic;
+  margin: 0 1.5em;
+  text-align: left;
+}
+
+address {
+  margin: 16px 2px;
+  line-height: 20px;
+}
+.vcard {
+  font-style: normal;
+}
+.vcardline {
+  display: block;
+}
+.vcardline .fn, address b {
+  font-weight: normal;
+}
+.vcardline .hidden {
+  display: none;
+}
+
+dl {
+  margin-left: 1em;
+}
+dl.dl-horizontal: {
+  margin-left: 0;
+}
+dl > dt {
+  float: left;
+  margin-right: 1em;
+}
+dl.nohang > dt {
+  float: none;
+}
+dl > dd {
+  margin-bottom: .5em;
+}
+dl.compact > dd {
+  margin-bottom: 0em;
+}
+dl > dd > dl {
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+}
+ul.empty {
+  list-style-type: none;
+}
+ul.empty li {
+  margin-top: .5em;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+}
+hr.noprint {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+a[href] {
+  color: #2a6496;
+}
+a[href]:hover {
+  background-color: #eee;
+}
+
+p, ol, ul, li {
+  padding: 0;
+}
+p {
+  margin: 0.5em 0;
+}
+ol, ul {
+  margin: 0.2em 0 0.2em 2em;
+}
+li {
+  margin: 0.2em 0;
+}
+address {
+  font-style: normal;
+}
+
+ul.toc ul {
+  margin: 0 0 0 2em;
+}
+ul.toc li {
+  list-style: none;
+  margin: 0;
+}
+
+@media screen and (min-width: 924px) {
+  body {
+    padding-right: 350px;
+  }
+  body>ul.toc, body>#rfc\.toc {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    right: calc(50vw - 500px);
+    width: 300px;
+    z-index: 1;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+  body>#rfc\.toc {
+    top: 55px;
+  }
+  body>ul.toc {
+    top: 100px;
+  }
+
+  ul.toc {
+    margin: 0 0 0 4px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  ul.toc ul {
+    margin-left: 1.2em;
+  }
+}
+
+.github-fork-ribbon-wrapper {
+  display: none;
+}
+@media screen and (min-width: 800px) {
+  /* "Fork me on GitHub" CSS ribbon based on
+   * https://github.com/simonwhitaker/github-fork-ribbon-css
+   */
+  .github-fork-ribbon {
+    position: absolute;
+    padding: 2px 0;
+    background-color: #a00;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+    font: 700 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    pointer-events: auto;
+
+    top: 38px;
+    right: -45px;
+
+    transform: rotate(45deg);
+  }
+
+  .github-fork-ribbon a[href],
+  .github-fork-ribbon a[href]:hover {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+    text-align: center;
+
+    width: 190px;
+    line-height: 18px;
+
+    display: inline-block;
+    padding: 2px 0;
+
+    border: 1.5px dotted #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .github-fork-ribbon-wrapper {
+    display: block;
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    overflow: hidden;
+    top: 0; right: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .github-fork-ribbon-wrapper {
+    position: fixed;
+  }
+  /*]]>*/</style>
+  <meta name="viewport" content="initial-scale=1.0">
+
+
+  <link href="#rfc.toc" rel="Contents">
+<link href="#rfc.section.1" rel="Chapter" title="1 Introduction">
+<link href="#rfc.section.2" rel="Chapter" title="2 Terms and Definitions">
+<link href="#rfc.section.3" rel="Chapter" title="3 IANA Considerations">
+<link href="#rfc.section.4" rel="Chapter" title="4 Security Considerations">
+<link href="#rfc.section.5" rel="Chapter" title="5 Acknowledgements">
+<link href="#rfc.section.6" rel="Chapter" title="6 Change Log">
+<link href="#rfc.section.7" rel="Chapter" title="7 Contributors">
+<link href="#rfc.references" rel="Chapter" title="8 References">
+<link href="#rfc.references.1" rel="Chapter" title="8.1 Normative References">
+<link href="#rfc.references.2" rel="Chapter" title="8.2 Informative References">
+<link href="#rfc.appendix.A" rel="Chapter" title="A The Attic">
+<link href="#rfc.authors" rel="Chapter">
+
+
+  <meta name="generator" content="xml2rfc version 2.9.9 - https://tools.ietf.org/tools/xml2rfc" />
+  <link rel="schema.dct" href="http://purl.org/dc/terms/" />
+
+  <meta name="dct.creator" content="Birkholz, H., Lu, J., Strassner, J., Cam-Winget, N., and A. Montville" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-terminology-latest" />
+  <meta name="dct.issued" scheme="ISO8601" content="2018-07-18" />
+  <meta name="dct.abstract" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
+  <meta name="description" content="This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring)." />
+
+</head>
+
+<body>
+
+  <table class="header">
+    <tbody>
+    
+    	<tr>
+<td class="left">SACM Working Group</td>
+<td class="right">H. Birkholz</td>
+</tr>
+<tr>
+<td class="left">Internet-Draft</td>
+<td class="right">Fraunhofer SIT</td>
+</tr>
+<tr>
+<td class="left">Intended status: Informational</td>
+<td class="right">J. Lu</td>
+</tr>
+<tr>
+<td class="left">Expires: January 19, 2019</td>
+<td class="right">Oracle Corporation</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">J. Strassner</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">Huawei Technologies</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">N. Cam-Winget</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">Cisco Systems</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">A. Montville</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">CIS</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">July 18, 2018</td>
+</tr>
+
+    	
+    </tbody>
+  </table>
+
+  <p class="title">Security Automation and Continuous Monitoring (SACM) Terminology<br />
+  <span class="filename">draft-ietf-sacm-terminology-latest</span></p>
+  
+  <h1 id="rfc.abstract"><a href="#rfc.abstract">Abstract</a></h1>
+<p>This memo documents terminology used in the documents produced by SACM (Security Automation and Continuous Monitoring).</p>
+<h1 id="rfc.status"><a href="#rfc.status">Status of This Memo</a></h1>
+<p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
+<p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
+<p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
+<p>This Internet-Draft will expire on January 19, 2019.</p>
+<h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
+<p>Copyright (c) 2018 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
+
+  
+  <hr class="noprint" />
+  <h1 class="np" id="rfc.toc"><a href="#rfc.toc">Table of Contents</a></h1>
+  <ul class="toc">
+
+  	<li>1.   <a href="#rfc.section.1">Introduction</a>
+</li>
+<li>2.   <a href="#rfc.section.2">Terms and Definitions</a>
+</li>
+<li>3.   <a href="#rfc.section.3">IANA Considerations</a>
+</li>
+<li>4.   <a href="#rfc.section.4">Security Considerations</a>
+</li>
+<li>5.   <a href="#rfc.section.5">Acknowledgements</a>
+</li>
+<li>6.   <a href="#rfc.section.6">Change Log</a>
+</li>
+<li>7.   <a href="#rfc.section.7">Contributors</a>
+</li>
+<li>8.   <a href="#rfc.references">References</a>
+</li>
+<ul><li>8.1.   <a href="#rfc.references.1">Normative References</a>
+</li>
+<li>8.2.   <a href="#rfc.references.2">Informative References</a>
+</li>
+</ul><li>Appendix A.   <a href="#rfc.appendix.A">The Attic</a>
+</li>
+<li><a href="#rfc.authors">Authors' Addresses</a>
+</li>
+
+
+  </ul>
+
+  <h1 id="rfc.section.1">
+<a href="#rfc.section.1">1.</a> <a href="#introduction" id="introduction">Introduction</a>
+</h1>
+<p id="rfc.section.1.p.1">Our goal with this document is to improve our agreement on the terminology used in documents produced by the IETF Working Group for Security Automation and Continuous Monitoring.  Agreeing on terminology should help reach consensus on which problems we're trying to solve, and propose solutions and decide which ones to use.</p>
+<h1 id="rfc.section.2">
+<a href="#rfc.section.2">2.</a> <a href="#terms-and-definitions" id="terms-and-definitions">Terms and Definitions</a>
+</h1>
+<p id="rfc.section.2.p.1">This section describes terms that have been defined by other RFC's and defines new ones.  The predefined terms will reference the RFC and where appropriate will be annotated with the specific context by which the term is used in SACM. Note that explanatory or informational augmentation to definitions are segregated from the definitions themselves. The definition for the term immediately follows the term on the same line, whereas expositional text is contained in subsequent paragraphs immediately following the definition.</p>
+<p></p>
+
+<dl>
+<dt>Assertion:</dt>
+<dd style="margin-left: 8">Defined by the ITU in <a href="#X.1252" class="xref">[X.1252]</a> as "a statement made by an entity without accompanying evidence of its validity".</dd>
+<dt></dt>
+<dd style="margin-left: 8">In the context of SACM, an assertion is the output of a SACM Component in the form of a SACM Statement (including metadata about the data source and data origin, e.g. timestamps). While the validity of an assertion about Content and Content Metadata cannot be verified without, for example, Integrity Proofing of the Data Source, an assertion (and therefore a SACM statement, respectively) of the validity of Statement Metadata can by enabled by including corresponding Integrity Evidence created by the Data Origin.</dd>
+<dt>Assessment:</dt>
+<dd style="margin-left: 8">Defined in <a href="#RFC5209" class="xref">[RFC5209]</a> as "the process of collecting posture for a set of capabilities on the endpoint (e.g., host-based firewall) such that the appropriate validators may evaluate the posture against compliance policy."</dd>
+<dt>Asset:</dt>
+<dd style="margin-left: 8">Is a system resource, as defined in <a href="#RFC4949" class="xref">[RFC4949]</a>, that may be composed of other assets.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Examples of Assets include: Endpoints, Software, Guidance, or X.509 public key certificates. An asset is not necessarily owned by an organization.</dd>
+<dt>Asset Management:</dt>
+<dd style="margin-left: 8">The IT process by which assets are provisioned, updated, maintained and deprecated.</dd>
+<dt>Attribute:</dt>
+<dd style="margin-left: 8">Is a data element, as defined in <a href="#RFC5209" class="xref">[RFC5209]</a>, that is atomic.</dd>
+<dt></dt>
+<dd style="margin-left: 8">In the context of SACM, attributes are "atomic" information elements and an equivalent to attribute-value-pairs.  Attributes can be components of Subjects.</dd>
+<dt>Broken remnant of a term again, but this time left here to show how much the last submit of -14 broke the document (this is actually not a term definition, apparently, but if you are curious this was "Authorization", became a second paragraph of expositional text to the definition of Attribute and now became the universal disclaimer of "please alter the structure of the document with care") - until removal by a less annoyed editor:</dt>
+<dd style="margin-left: 8">Defined in <a href="#RFC4949" class="xref">[RFC4949]</a> as "an approval that is granted to a system entity to access a system resource."</dd>
+<dt>Capability:</dt>
+<dd style="margin-left: 8">A set of features that are available from a SACM Component.</dd>
+<dt></dt>
+<dd style="margin-left: 8">See also "capability" in <a href="#I-D.ietf-i2nsf-terminology" class="xref">[I-D.ietf-i2nsf-terminology]</a>.</dd>
+<dt></dt>
+<dd style="margin-left: 8">In the context of SACM, the extent of a SACM component's ability is enabled by the functions it is composed of.  Capabilities are registered at a SACM broker (potentially also at a proxy or a repository component if it includes broker functions) by a SACM component via the SACM component registration task and can be discovered by or negotiated with other SACM components via the corresponding tasks.  For example, the capability of a SACM provider may be to provide target endpoint records (declarative guidance about well-known or potential target endpoints), or only a subset of that data.</dd>
+<dt></dt>
+<dd style="margin-left: 8">A capability's description is in itself imperative guidance on what functions are exposed to other SACM components in a SACM domain and how to use them in workflows.</dd>
+<dt></dt>
+<dd style="margin-left: 8">The SACM Vulnerability Assessment Scenario <a href="#I-D.ietf-sacm-vuln-scenario" class="xref">[I-D.ietf-sacm-vuln-scenario]</a> defines the terms Endpoint Management Capabilities, Vulnerability Management Capabilities, and Vulnerability Assessment Capabilities, which illustrate specific sets of SACM capabilities on an enterprise IT department's point of view and therefore compose sets of declarative guidance.</dd>
+<dt>Collection Result:</dt>
+<dd style="margin-left: 8">Is a composition of one or more content elements carrying information about a target endpoint, that is produced by a collector when conducting a collection task.</dd>
+<dt>Collection Task:</dt>
+<dd style="margin-left: 8">A targeted task that collects attributes and/or corresponding attribute values from target endpoint.</dd>
+<dt></dt>
+<dd style="margin-left: 8">There are four types of frequency collection tasks can be conducted with:</dd>
+<dt></dt>
+<dd style="margin-left: 8">ad-hoc, e.g. triggered by a unsolicited query</dd>
+<dt></dt>
+<dd style="margin-left: 8">conditional, e.g. triggered in accordance with policies included in the compositions of workflows</dd>
+<dt></dt>
+<dd style="margin-left: 8">scheduled, e.g. in regular intervals, such as every minute or weekly</dd>
+<dt></dt>
+<dd style="margin-left: 8">continuously, e.g. a network behavior observation</dd>
+<dt></dt>
+<dd style="margin-left: 8">There are three types of collection methods, each requiring an appropriate set of functions to be included in the SACM component conducting the collection task:</dd>
+<dt></dt>
+<dd style="margin-left: 8">Self-Reporting: A SACM component located on the target endpoint itself conducts the collection task.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Remote-Acquisition: A SACM component located on an Endpoint different from the target endpoint conducts the collection task via interfaces available on the target endpoint, e.g. SNMP/NETCONF or WMI.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Behavior-Observation: A SACM component located on an Endpoint different from the target endpoint observes network traffic related to the target endpoint and conducts the collection task via interpretation of that network traffic.</dd>
+<dt>Collector:</dt>
+<dd style="margin-left: 8">A piece of software that acquires information about one or more target endpoints by conducting collection tasks.</dd>
+<dt></dt>
+<dd style="margin-left: 8">A collector can be distributed across multiple endpoints, e.g. across a target endpoint and a SACM component.  The separate parts of the collector can communicate with a specialized protocol, such as PA-TNC <a href="#RFC5792" class="xref">[RFC5792]</a>.  At least one part of a distributed collector has to take on the role of a provider of information by providing SACM interfaces to propagate capabilities and to provide SACM content in the form of collection results.</dd>
+<dt>Configuration:</dt>
+<dd style="margin-left: 8">A non-volatile subset of the endpoint attributes of a endpoint that is intended to be unaffected by a normal reboot-cycle.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Configuration is a type of imperative guidance that is stored in files (files dedicated to contain configuration and/ or files that are software components), directly on block devices, or on specific hardware components that can be accessed via corresponding software components.  Modification of configuration can be conducted manually or automatically via management (plane) interfaces that support management protocols, such as SNMP or WMI. A change of configuration can occur during both run-time and down- time of an endpoint.  It is common practice to scheduled a change of configuration during or directly after the completion of a boot-cycle via corresponding software components located on the target endpoint itself.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Examples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.</dd>
+<dt>Configuration Drift:</dt>
+<dd style="margin-left: 8">The disposition of endpoint characteristics to change over time.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Configuration drift exists for both hardware components and software components.  Typically, the frequency and scale of configuration drift of software components is significantly higher than the configuration drift of hardware components.</dd>
+<dt>Consumer:</dt>
+<dd style="margin-left: 8">A SACM Role that requires a SACM Component to include SACM Functions enabling it to receive information from other SACM Components.</dd>
+<dt>Content Element:</dt>
+<dd style="margin-left: 8">Content elements constitute the payload data (SACM content) transferred via statement Subjects emitted by providers of information. Every content element Subject includes a specific content Subject and a corresponding content metadata Subject.</dd>
+<dt>Content Metadata:</dt>
+<dd style="margin-left: 8">Data about content Subjects. Every content-element includes a content metadata Subject. The Subject can include any information element that can annotate the content transferred. Examples include time stamps or data provenance Subjects.</dd>
+<dt>Control Plane:</dt>
+<dd style="margin-left: 8">An architectural component that provides common control functions to all SACM components.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Typically used as a term in the context of routing, e.g. <a href="#RFC6192" class="xref">[RFC6192]</a>. SACM components may include authentication, authorization, (capability) discovery or negotiation, registration and subscription. The control plane orchestrates the flow on the data plane according to imperative guidance (i.e. configuration) received via the management plane. SACM components with interfaces to the control plane have knowledge of the capabilities of other SACM components within a SACM domain.</dd>
+<dt>Controller:</dt>
+<dd style="margin-left: 8">A controller is a SACM Role that is assigned to a SACM component containing control plane functions managing and facilitating information sharing or execute on security functions.</dd>
+<dt></dt>
+<dd style="margin-left: 8">There are three types of SACM controllers: Broker, Proxy, and Repository. Depending on its type, a controller can also contain functions that have interfaces on the data plane.</dd>
+<dt>Data Confidentiality:</dt>
+<dd style="margin-left: 8">Defined in <a href="#RFC4949" class="xref">[RFC4949]</a> as "the property that data is not disclosed to system entities unless they have been authorized to know the data."</dd>
+<dt>Data In Motion:</dt>
+<dd style="margin-left: 8">Data that is being transported via a network; also referred to as "Data in Transit" or "Data in Flight".</dd>
+<dt></dt>
+<dd style="margin-left: 8">Data in motion requires a data model to transfer the data using a specific encoding. Typically, data in motion is serialized (marshalling) into a transport encoding by a provider of information and deserialized (unmarshalling) by a consumer of information. The termination points of provider of information and consumer of information data is transferred between are interfaces. In regard to data in motion, the interpretation of the roles consumer of information and provider of information depends on the corresponding OSI layer (e.g. on layer2: between interfaces connected to a broadcast domain, on layer4: between interfaces that maintain a TCP connection). In the context of SACM, consumer of information and provider of information are SACM components.</dd>
+<dt>Data At Rest:</dt>
+<dd style="margin-left: 8">Data that is stored.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Data at rest requires a data model to encode the data to be stored. In the context of SACM, data at rest located on a SACM component can be provided to other SACM components via discoverable capabilities.</dd>
+<dt>Data Integrity:</dt>
+<dd style="margin-left: 8">Defined in <a href="#RFC4949" class="xref">[RFC4949]</a> as "the property that data has not been changed, destroyed, or lost in an unauthorized or accidental manner."</dd>
+<dt>Data Origin:</dt>
+<dd style="margin-left: 8">The SACM Component that initially acquired or produced data about an endpoint.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Data Origin enables a SACM component to identify the SACM component that initially acquired or produced data about a (target) endpoint (e.g. via collection from a data source) and made it available to a SACM domain via a SACM statement.  Data Origin can be expressed by an endpoint label information element (e.g. to be used as metadata in statement).</dd>
+<dt>Data Plane:</dt>
+<dd style="margin-left: 8">Is an architectural component providing operational functions enabling information exchange that is not command and control or management related.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Typically used as a term in the context of routing (and used as a synonym for forwarding plane, e.g. <a href="#RFC6192" class="xref">[RFC6192]</a>). In the context of SACM, the data plane is an architectural component providing operational functions to enable a SACM component to provide and consume SACM statements and therefore SACM content, which composes the actual SACM content. The data plane in a SACM domain is used to conduct distributed SACM tasks by transporting SACM content via specific transport encodings and corresponding operations defined by SACM data models.</dd>
+<dt>Data Provenance:</dt>
+<dd style="margin-left: 8">An historical record of the sources, origins and evolution, as it pertains to data, that is influenced by inputs, entities, functions and processes.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Additional Information - In the context of SACM, data provenance is expressed as metadata that identifies SACM statements and corresponding content elements a new statement is created from. In a downstream process, this references can cascade, creating a data provenance tree that enables SACM components to trace back the original data sources involved in the creation of SACM statements and take into account their characteristics and trustworthiness.</dd>
+<dt>Data Source:</dt>
+<dd style="margin-left: 8">Is an endpoint from which a particular set of attributes and/or attribute values have been collected.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Data Source enables a SACM component to identify - and potentially characterize - a (target) endpoint that is claimed to be the original source of endpoint attributes in a SACM statement.  Data Source can be expressed as metadata by an endpoint label information element or a corresponding subject of identifying endpoint attributes.</dd>
+<dt>Endpoint:</dt>
+<dd style="margin-left: 8">Defined in <a href="#RFC5209" class="xref">[RFC5209]</a> as "any computing device that can be connected to a network."</dd>
+<dt></dt>
+<dd style="margin-left: 8">Additional Information - The <a href="#RFC5209" class="xref">[RFC5209]</a> definition continues, "Such devices normally are associated with a particular link layer address before joining the network and potentially an IP address once on the network.  This includes: laptops, desktops, servers, cell phones, or any device that may have an IP address."</dd>
+<dt></dt>
+<dd style="margin-left: 8">To further clarify the <a href="#RFC5209" class="xref">[RFC5209]</a> definition, an endpoint is any physical or virtual device that may have a network address.  Note that, network infrastructure devices (e.g. switches, routers, firewalls), which fit the definition, are also considered to be endpoints within this document.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Physical endpoints are always composites that are composed of hardware components and software components. Virtual endpoints are composed entirely of software components and rely on software components that provide functions equivalent to hardware components.</dd>
+<dt></dt>
+<dd style="margin-left: 8">The SACM architecture differentiates two essential categories of endpoints: Endpoints whose security posture is intended to be assessed (target endpoints) and endpoints that are specifically excluded from endpoint posture assessment (excluded endpoints).</dd>
+<dt></dt>
+<dd style="margin-left: 8">Based on the definition of an asset, an endpoint is a type of asset.</dd>
+<dt>Endpoint Attribute:</dt>
+<dd style="margin-left: 8">Is a discreet endpoint characteristic that is computably observable.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Endpoint Attributes typically constitute Attributes that can be bundled into Subject (e.g. information about a specific network interface can be represented via a set of multiple AVP).</dd>
+<dt>Endpoint Characteristics:</dt>
+<dd style="margin-left: 8">The state, configuration and composition of the software components and (virtual) hardware components a target endpoint is composed of, including observable behavior, e.g. sys-calls, log-files, or PDU emission on a network.</dd>
+<dt></dt>
+<dd style="margin-left: 8">In SACM work-flows, (Target) Endpoint Characteristics are represented via Information Elements.</dd>
+<dt>Endpoint Characterization Task:</dt>
+<dd style="margin-left: 8">The task of endpoint characterization that uses endpoint attributes that represent distinct endpoint characteristics.</dd>
+<dt>Endpoint Classification:</dt>
+<dd style="margin-left: 8">The categorization of of the endpoint into one or more taxonomic structures.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Endpoint classification requires declarative guidance in the form of an endpoint profile, discovery results and potentially collection results. Types, classes or the characteristics of an individual target endpoint are defined via endpoint profiles.</dd>
+<dt>Endpoint Classification Task:</dt>
+<dd style="margin-left: 8">The task of endpoint classification that uses an endpoint's characteristics to determine how to categorize the given endpoint into one or more taxonomic structures.</dd>
+<dt>Endpoint Label:</dt>
+<dd style="margin-left: 8">A unique label associated with a unique endpoint.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Endpoint specializations have corresponding endpoint label specializations. For example, an endpoint label used on a SACM Component is a SACM Component Label.</dd>
+<dt>Endpoint Management Capabilities:</dt>
+<dd style="margin-left: 8">Enterprise IT management capabilities that are tailored to manage endpoint identity, endpoint information, and associated metadata.</dd>
+<dt>Evaluation Task:</dt>
+<dd style="margin-left: 8">A task by which an endpoint's asserted attribute value is evaluated against a policy-compliant attribute value.</dd>
+<dt>Evaluation Result:</dt>
+<dd style="margin-left: 8">The resulting value from having evaluated a set of posture attributes.</dd>
+<dt>Expected Endpoint Attribute State:</dt>
+<dd style="margin-left: 8">The policy-compliant state of an endpoint attribute that is to be compared against.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Sets of expected endpoint attribute states are transported as declarative guidance in target endpoint profiles via the management plane. This, for example, can be a policy, but also a recorded past state. An expected state is represented by an Attribute or a Subject that represents a set of multiple attribute value pairs.</dd>
+<dt>Guidance:</dt>
+<dd style="margin-left: 8">Machine-processable input directing SACM processes or tasks.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Examples of such processes/tasks include automated device management, remediation, collection, evaluation. Guidance influences the behavior of a SACM Component and is considered content of the management plane. In the context of SACM, guidance is machine-readable and can be manually or automatically generated or provided. Typically, the tasks that provide guidance to SACM components have a low-frequency and tend to be sporadic.</dd>
+<dt></dt>
+<dd style="margin-left: 8">There are two types of guidance:</dd>
+<dt></dt>
+<dd style="margin-left: 8">Declarative Guidance: Guidance that defines the configuration or state an endpoint is supposed to be in, without providing specific actions or methods to produce that desired state. Examples include Target Endpoint Profiles or network topology based requirements.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Imperative Guidance: Guidance that prescribes specific actions to be conducted or methods to be used in order to achieve an outcome. Examples include a targeted Collection Task or the IP-Address of a SACM Component that provides a registration function.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Prominent examples include: modification of the configuration of a SACM component or updating a target endpoint profile that resides on an evaluator. In essence, guidance is transported via the management plane.</dd>
+<dt>Endpoint Hardware Inventory:</dt>
+<dd style="margin-left: 8">The set of hardware components that compose a specific endpoint representing its hardware configuration.</dd>
+<dt>Hardware Component:</dt>
+<dd style="margin-left: 8">A distinguishable physical component used to compose an endpoint.</dd>
+<dt></dt>
+<dd style="margin-left: 8">The composition of an endpoint can be changed over time by adding or removing hardware components. In essence, every physical endpoint is potentially a composite of multiple hardware components, typically resulting in a hierarchical composition of hardware components. The composition of hardware components is based on interconnects provided by specific hardware types (e.g. FRU in a chassis are connected via redundant busses). In general, a hardware component can be distinguished by its serial number. Occasionally, hardware components are referred to as power sucking aliens.</dd>
+<dt>Identifying Information Elements:</dt>
+<dd style="margin-left: 8">Endpoint Identifier is a subset of endpoint attributes included in an endpoint characterization record, that is used to identify a given endpoint.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Depending on the available identifying attributes, this reference can be ambiguous and is a "best-effort" mechanism. Every distinct set of identifying endpoint attributes can be associated with a target endpoint label that is unique in a SACM domain.</dd>
+<dt>Information Element:</dt>
+<dd style="margin-left: 8">A representation of information about physical and virtual "objects of interest".</dd>
+<dt></dt>
+<dd style="margin-left: 8">Information elements are the building blocks that constitute the SACM information model. In the context of SACM, an information element that expresses a single value with a specific name is referred to as an Attribute (analogous to an attribute-value-pair). A set of attributes that is bundled into a more complex composite information element is referred to as a Subject. Every information element in the SACM information model has a unique name. Endpoint attributes or time stamps, for example, are represented as information elements in the SACM information model.</dd>
+<dt>Information Model:</dt>
+<dd style="margin-left: 8">An abstract representation of data, their properties, relationships between data and the operations that can be performed on the data.</dd>
+<dt></dt>
+<dd style="margin-left: 8">While there is some overlap with a data model, <a href="#RFC3444" class="xref">[RFC3444]</a> distinguishes an information model as being protocol and implementation neutral whereas a data model would provide such details. The purpose of the SACM information model is to ensure interoperability between SACM data models (that are used as transport encoding) and to provide a standardized set of information elements for communication between SACM components.</dd>
+<dt>Interaction Model:</dt>
+<dd style="margin-left: 8">The definition of specific sequences regarding the exchange of messages (data in motion), including, for example, conditional branching, thresholds and timers.</dd>
+<dt></dt>
+<dd style="margin-left: 8">An interaction model, for example, can be used to define operations, such as registration or discovery, on the control plane. A composition of data models for data in motion and a corresponding interaction model is a protocol.</dd>
+<dt>Internal Collector:</dt>
+<dd style="margin-left: 8">A collector that runs on a target endpoint to acquire information from that target endpoint.</dd>
+<dt>Management Plane:</dt>
+<dd style="margin-left: 8">An architectural component providing common functions to steer the behavior of SACM components, e.g. their behavior on the control plane.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Typically, a SACM component can fulfill its purpose without continuous input from the management plane. In contrast, without continuous availability of control plane functions a typical SACM component could not function properly. In general, interaction on the management plane is less frequent and less regular than on the control plane. Input via the management plane can be manual (e.g. via a CLI), or can be automated via management plane functions that are part of other SACM components.</dd>
+<dt>Network Address:</dt>
+<dd style="margin-left: 8">A layer-specific address that follows a layer-specific address scheme.</dd>
+<dt></dt>
+<dd style="margin-left: 8">The following characteristics are a summery derived from the Common Information Model and ITU-T X.213. Each Network Interface of a specific layer can be associated with one or more addresses appropriate for that layer. There is no guarantee that a network address is globally unique. A dedicated authority entity can provide a level of assurance that a network address is unique in its given scope. In essence, there is always a scope to a network address, in which it is intended to be unique.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Examples include: physical Ethernet port with a MAC address, layer 2 VLAN interface with a MAC address, layer 3 interface with multiple IPv6 addresses, layer 3 tunnel ingress or egress with an IPv4 address.</dd>
+<dt>Network Interface:</dt>
+<dd style="margin-left: 8">An Endpoint is connected to a network via one or more Network Interfaces. Network Interfaces can be physical (Hardware Component) or logical (virtual Hardware component, i.e. a dedicated Software Component). Network Interfaces of an Endpoint can operate on different layers, most prominently what is now commonly called layer 2 and 3. Within a layer, interfaces can be nested.</dd>
+<dt></dt>
+<dd style="margin-left: 8">In SACM, the association of Endpoints and Network Addresses via Network Interfaces is vital to maintain interdependent autonomous processes that can be targeted at Target Endpoints, unambiguously.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Examples include: physical Ethernet port, layer 2 VLAN interface, a MC-LAG setup, layer 3 Point-to-Point tunnel ingress or egress.</dd>
+<dt>Metadata:</dt>
+<dd style="margin-left: 8">Data about data.</dd>
+<dt></dt>
+<dd style="margin-left: 8">In the SACM information model, data is referred to as Content. Metadata about the content is referred to as Content-Metadata, respectively. Content and Content-Metadata are combined into Subjects called Content-Elements in the SACM information model. Some information elements defined by the SACM information model can be part of the Content or the Content-Metadata. Therefore, if an information element is considered data or data about data depends on which kind of Subject it is associated with. The SACM information model also defines metadata about the data origin via the Subject Statement-Metadata. Typical examples of metadata are time stamps, data origin or data source.</dd>
+<dt>Posture:</dt>
+<dd style="margin-left: 8">Defined in <a href="#RFC5209" class="xref">[RFC5209]</a> as "configuration and/or status of hardware or software on an endpoint as it pertains to an organization's security policy."</dd>
+<dt></dt>
+<dd style="margin-left: 8">This term is used within the scope of SACM to represent the configuration and state information that is collected from a target endpoint in the form of endpoint attributes (e.g. software/hardware inventory, configuration settings, dynamically assigned addresses).  This information may constitute one or more posture attributes.</dd>
+<dt>Posture Attributes:</dt>
+<dd style="margin-left: 8">Defined in <a href="#RFC5209" class="xref">[RFC5209]</a> as "attributes describing the configuration or status (posture) of a feature of the endpoint.  A Posture Attribute represents a single property of an observed state.  For example, a Posture Attribute might describe the version of the operating system installed on the system."</dd>
+<dt></dt>
+<dd style="margin-left: 8">Within this document this term represents a specific assertion about endpoint configuration or state (e.g. configuration setting, installed software, hardware) represented via endpoint attributes.  The phrase "features of the endpoint" highlighted above refers to installed software or software components.</dd>
+<dt>Provider:</dt>
+<dd style="margin-left: 8">A provider is a SACM role assigned to a SACM component that provides role-specific functions to provide information to other SACM components.</dd>
+<dt>Repository:</dt>
+<dd style="margin-left: 8">A repository is a controller that contains functions to consume, store and provide information of a particular kind.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Such information is typically data transported on the data plane, but potentially also data and metadata from the control and management plane.  A single repository may provide the functions of more than one specific repository type (i.e. configuration baseline repository, assessment results repository, etc.)</dd>
+<dt>SACM Broker Controller:</dt>
+<dd style="margin-left: 8">A SACM Broker Controller is a controller that contains control plane functions to provide and/or connect services on behalf of other SACM components via interfaces on the control plane.</dd>
+<dt></dt>
+<dd style="margin-left: 8">A broker may provide, for example, authorization services and find, upon request, SACM components providing requested services.</dd>
+<dt>SACM Component:</dt>
+<dd style="margin-left: 8">Is a component, as defined in <a href="#I-D.ietf-i2nsf-terminology" class="xref">[I-D.ietf-i2nsf-terminology]</a>, that is composed of SACM capabilities.</dd>
+<dt></dt>
+<dd style="margin-left: 8">In the context of SACM, a set of SACM functions composes a SACM component.  A SACM component conducts SACM tasks, acting on control plane, data plane and/or management plane via corresponding SACM interfaces.  SACM defines a set of standard components (e.g. a collector, a broker, or a data store).  A SACM component contains at least a basic set of control plane functions and can contain data plane and management plane functions.  A SACM component residing on an endpoint assigns one or more SACM roles to the corresponding endpoint due to the SACM functions it is composed of.  A SACM component "resides on" an endpoint and an endpoint "contains" a SACM component, correspondingly.  For example, a SACM component that is composed solely of functions that provide information would only take on the role of a provider.</dd>
+<dt>SACM Component Discovery:</dt>
+<dd style="margin-left: 8">The task of discovering the capabilities provided by SACM components within a SACM domain.</dd>
+<dt></dt>
+<dd style="margin-left: 8">This is likely to be performed via an appropriate set of control plane functions.</dd>
+<dt>SACM Component Label:</dt>
+<dd style="margin-left: 8">A specific endpoint label that is used to identify a SACM component.</dd>
+<dt></dt>
+<dd style="margin-left: 8">In content-metadata, this label is called data origin.</dd>
+<dt>SACM Content:</dt>
+<dd style="margin-left: 8">The payload provided by SACM components to the SACM domain on the data plane.</dd>
+<dt></dt>
+<dd style="margin-left: 8">SACM content includes the SACM data models.</dd>
+<dt>SACM Domain:</dt>
+<dd style="margin-left: 8">Endpoints that include a SACM component compose a SACM domain.</dd>
+<dt></dt>
+<dd style="margin-left: 8">(To be revised, additional definition content TBD, possible dependencies to SACM architecture)</dd>
+<dt>SACM Function:</dt>
+<dd style="margin-left: 8">A behavioral aspect of a SACM component that provides external SACM Interfaces or internal interfaces to other SACM Functionse.</dd>
+<dt></dt>
+<dd style="margin-left: 8">For example, a SACM Function with SACM Interfaces on the Control Plane can provide a brokering function to other SACM Components. Via Data Plane interfaces, a SACM Function can act as a provider and/or as a consumer of information. SACM Functions can be propagated as the Capabilities of a SACM Component and can be discovered by or negotiated with other SACM Components.</dd>
+<dt>SACM Interface:</dt>
+<dd style="margin-left: 8">An interface, as defined in <a href="#I-D.ietf-i2nsf-terminology" class="xref">[I-D.ietf-i2nsf-terminology]</a>, that provides SACM-specific operations.</dd>
+<dt></dt>
+<dd style="margin-left: 8">
+<a href="#I-D.ietf-i2nsf-terminology" class="xref">[I-D.ietf-i2nsf-terminology]</a> defines interface as a "set of operations one object knows it can invoke on, and expose to, another object," and further defines interface by stating that an interface "decouples the implementation of the operation from its specification. An interface is a subset of all operations that a given object implements. The same object may have multiple types of interfaces to serve different purposes."</dd>
+<dt></dt>
+<dd style="margin-left: 8">In the context of SACM, SACM Functions provide SACM Interfaces on the management, control, or data plane. Operations a SACM Interface provides are based on corresponding data model defined by SACM. SACM Interfaces are used for communication between SACM components.</dd>
+<dt>SACM Proxy Controller:</dt>
+<dd style="margin-left: 8">A SACM Proxy Controller is a controller that provides data plane and control plane functions, information, or services on behalf of another component, which is not directly participating in the SACM architecture.</dd>
+<dt>SACM Role:</dt>
+<dd style="margin-left: 8">Is a role, as defined in <a href="#I-D.ietf-i2nsf-terminology" class="xref">[I-D.ietf-i2nsf-terminology]</a>, that requires the SACM Component assuming the role to bear a set of SACM functions or interfaces.</dd>
+<dt></dt>
+<dd style="margin-left: 8">SACM Roles provide three important benefits.  First, it enables different behavior to be supported by the same Component for different contexts.  Second, it enables the behavior of a Component to be adjusted dynamically (i.e., at runtime, in response)to changes in context, by using one or more Roles to define the behavior desired for each context. Third, it decouples the Roles of a Component from the Applications that use that Component."</dd>
+<dt></dt>
+<dd style="margin-left: 8">In the context of SACM, SACM roles are associated with SACM components and are defined by the set of functions and interfaces a SACM component includes.  There are three SACM roles: provider, consumer, and controller.  The roles associated with a SACM component are determined by the purpose of the SACM functions and corresponding SACM interfaces the SACM component is composed of.</dd>
+<dt>SACM Statement:</dt>
+<dd style="margin-left: 8">Is an assertion that is made by a SACM Component.</dd>
+<dt>Security Automation:</dt>
+<dd style="margin-left: 8">The process of which security alerts can be automated through the use of different components to monitor, analyze and assess endpoints and network traffic for the purposes of detecting misconfigurations, misbehaviors or threats.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Security Automation is intended to identify target endpoints that cannot be trusted (see "trusted" in <a href="#RFC4949" class="xref">[RFC4949]</a>. This goal is achieved by creating and processing evidence (assessment statements) that a target endpoint is not a trusted system <a href="#RFC4949" class="xref">[RFC4949]</a>.</dd>
+<dt>Software Package:</dt>
+<dd style="margin-left: 8">A generic software package (e.g. a text editor).</dd>
+<dt>Software Component:</dt>
+<dd style="margin-left: 8">A software package installed on an endpoint.</dd>
+<dt></dt>
+<dd style="margin-left: 8">The software component may include a unique serial number (e.g. a text editor associated with a unique license key).</dd>
+<dt>Software Instance:</dt>
+<dd style="margin-left: 8">A running instance of a software component.</dd>
+<dt></dt>
+<dd style="margin-left: 8">For example, on a multi-user system, one logged-in user has one instance of a text editor running and another logged-in user has another instance of the same text editor running, or on a single-user system, a user could have multiple independent instances of the same text editor running.</dd>
+<dt>State:</dt>
+<dd style="margin-left: 8">A volatile set of endpoint attributes of a (target) endpoint that is affected by a reboot-cycle.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Local state is created by the interaction of components with other components via the control plane, via processing data plane payload, or via the functional properties of local hardware and software components. Dynamic configuration (e.g.  IP address distributed dynamically via an address distribution and management services, such as DHCP) is considered state that is the result of the interaction with another component (e.g. provided by a DHCP server with a specific configuration).</dd>
+<dt></dt>
+<dd style="margin-left: 8">Examples: The static association of an IP address and a MAC address in a DHCP server configuration, a directory-path that identifies a log-file directory, a registry entry.</dd>
+<dt>Statement:</dt>
+<dd style="margin-left: 8">A statement is the root/top-level subject defined in the SACM information model.</dd>
+<dt></dt>
+<dd style="margin-left: 8">A statement is used to bundle Content Elements into one subject and includes metadata about the data origin.</dd>
+<dt>Subject:</dt>
+<dd style="margin-left: 8">A semantic composite information element pertaining to a system entity that is a target endpoint.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Like Attributes, subjects have a name and are composed of attributes and/or other subjects. Every IE that is part of a subject can have a quantitiy associated with it (e.g. zero-one, none-unbounded).  The content IE of a subject can be an unordered or an ordered list.</dd>
+<dt></dt>
+<dd style="margin-left: 8">In contrast to the definitions of subject provided by <a href="#RFC4949" class="xref">[RFC4949]</a>, a subject in the scope of SACM is neither "a system entity that causes information to flow among objects or changes the system state" nor "a name of a system entity that is bound to the data items in a digital certificate".</dd>
+<dt></dt>
+<dd style="margin-left: 8">In the context of SACM, a subject is a semantic composite of information elements about a system entity that is a target endpoint.  Every acquirable subject&#8211;as defined in the scope of SACM&#8211;about a target endpoint represents and therefore identifies every subject&#8211;as defined by <a href="#RFC4949" class="xref">[RFC4949]</a>&#8211;that is a component of that target endpoint.  The semantic difference between both definitions can be subtle in practice and is in consequence important to highlight.</dd>
+<dt>Supplicant:</dt>
+<dd style="margin-left: 8">A  component seeking to be authenticated via the control plane for the purpose of participating in a SACM domain.</dd>
+<dt>System Resource:</dt>
+<dd style="margin-left: 8">Defined in <a href="#RFC4949" class="xref">[RFC4949]</a> as "data contained in an information system; or a service provided by a system; or a system capacity, such as processing power or communication bandwidth; or an item of system equipment (i.e., hardware, firmware, software, or documentation); or a facility that houses system operations and equipment."</dd>
+<dt>Target Endpoint:</dt>
+<dd style="margin-left: 8">Is an endpoint that is under assessment at some point in, or region of, time.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Every endpoint that is not specifically designated as an excluded endpoint is a target endpoint.  A target endpoint is not part of a SACM domain unless it contains a SACM component (e.g. a SACM component that publishes collection results coming from an internal collector).</dd>
+<dt></dt>
+<dd style="margin-left: 8">A target endpoint is similar to a device that is a Target of Evaluation (TOE) as defined in Common Criteria and as referenced by {{RFC4949}.</dd>
+<dt>Target Endpoint Address:</dt>
+<dd style="margin-left: 8">An address that is layer specific and which follows layer specific address schemes.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Each interface of a specific layer can be associated with one or more addresses appropriate for that layer.  There is no guarantee that an address is globally unique.  In general, there is a scope to an address in which it is intended to be unique.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Examples include: physical Ethernet port with a MAC address, layer 2 VLAN interface with a MAC address, layer 3 interface with multiple IPv6 addresses, layer 3 tunnel ingress or egress with an IPv4 address.</dd>
+<dt>Target Endpoint Characterization:</dt>
+<dd style="margin-left: 8">The description of the distinctive nature of a target endpoint, that is based on its characteristics.</dd>
+<dt>Target Endpoint Characterization Record:</dt>
+<dd style="margin-left: 8">A set of endpoint attributes about a target endpoint that was encountered in a SACM domain, which are associated with that target endpoint as a result of a Target Endpoint Characterization Task.</dd>
+<dt></dt>
+<dd style="margin-left: 8">A characterization record is intended to be a representation of an endpoint. It cannot be assured that a record distinctly represents a single target endpoint unless a set of one or more endpoint attributes that compose a unique set of identifying endpoint attributes are included in the record. Otherwise, the set of identifying attributes included in a record can match more than one target endpoints, which are - in consequence - indistinguishable to a SACM domain until more qualifying endpoint attributes can be acquired and added to the record. A characterization record is maintained over time in order to assert that acquired endpoint attributes are either about an endpoint that was encountered before or an endpoint that has not been encountered before in a SACM domain. A characterization record can include, for example, acquired configuration, state or observed behavior of a specific target endpoint. Multiple and even conflicting instances of this information can be included in a characterization record by using timestamps and/or data origins to differentiate them. The endpoint attributes included in a characterization record can be used to re-identify a distinct target endpoint over time. Classes or profiles can be associated with a characterization record via the Classification Task in order to guide collection, evaluation or remediation tasks.</dd>
+<dt>Target Endpoint Characterization Task:</dt>
+<dd style="margin-left: 8">An ongoing task of continuously adding acquired endpoint attributes to a corresponding record. The TE characterization task manages the representation of encountered target endpoints in the SACM domain in the form of characterization records. For example, the output of a target endpoint discovery task or a collection task can be processed by the characterization task and added to the record. The TE characterization Task also manages these representations of target endpoints encountered in the SACM domain by splitting or merging the corresponding records as new or more refined endpoint attributes become available.</dd>
+<dt>Target Endpoint Classification Task:</dt>
+<dd style="margin-left: 8">The task of associating a class from an extensible list of classes with an endpoint characterization record. TE classes function as imperative and declarative guidance for collection, evaluation, remediation and security posture assessment in general.</dd>
+<dt>Target Endpoint Discovery Task:</dt>
+<dd style="margin-left: 8">The ongoing task of detecting previously unknown interaction of a potential target endpoint in the SACM domain. TE Discovery is not directly targeted at a specific target endpoint and therefore an un-targeted task. SACM Components conducting the discovery task as a part of their function are typically distributed and located, for example, on infrastructure components or collect from those remotely via appropriate interfaces. Examples of infrastructure components that are of interest to the discovery task include routers, switches, VM hosting or VM managing components, AAA servers, or servers handling dynamic address distribution.</dd>
+<dt>Target Endpoint Label:</dt>
+<dd style="margin-left: 8">An endpoint label that identifies a specific target endpoint.</dd>
+<dt>Target Endpoint Profile:</dt>
+<dd style="margin-left: 8">A bundle of expected or desired component composition, configurations and states that is associated with a target endpoint.</dd>
+<dt></dt>
+<dd style="margin-left: 8">The corresponding task by which the association with a target endpoint takes places is the endpoint classification task. The task by which an endpoint profile is created is the endpoint characterization task. A type or class of target endpoints can be defined via a target endpoint profile. Examples include:  printers, smartphones, or an office PC.</dd>
+<dt></dt>
+<dd style="margin-left: 8">In respect to <a href="#RFC4949" class="xref">[RFC4949]</a>, a target endpoint profile is a protection profile as defined by Common Criteria (analogous to the target endpoint being the target of evaluation).</dd>
+<dt>SACM Task:</dt>
+<dd style="margin-left: 8">Is a task conducted within the scope of a SACM domain by one or more SACM functions that achieves a SACM-defined outcome.</dd>
+<dt></dt>
+<dd style="margin-left: 8">A SACM task can be triggered by other operations or functions (e.g. a query from another SACM component or an unsolicited push on the data plane due to an ongoing subscription).  A task is part of a SACM process chain.  A task starts at a given point in time and ends in a deterministic state. With the exception of a collection task, a SACM task consumes SACM statements provided by other SACM components.  The output of a task is a result that can be provided (e.g. published) on the data plane.</dd>
+<dt></dt>
+<dd style="margin-left: 8">The following tasks are defined by SACM:</dd>
+<dt></dt>
+<dd style="margin-left: 8">Target Endpoint Discovery</dd>
+<dt></dt>
+<dd style="margin-left: 8">Target Endpoint Characterization</dd>
+<dt></dt>
+<dd style="margin-left: 8">Target Endpoint Classification</dd>
+<dt></dt>
+<dd style="margin-left: 8">Collection</dd>
+<dt></dt>
+<dd style="margin-left: 8">Evaluation [TBD]</dd>
+<dt></dt>
+<dd style="margin-left: 8">Information Sharing [TBD]</dd>
+<dt></dt>
+<dd style="margin-left: 8">SACM Component Discovery</dd>
+<dt></dt>
+<dd style="margin-left: 8">SACM Component Authentication [TBD]</dd>
+<dt></dt>
+<dd style="margin-left: 8">SACM Component Authorization [TBD]</dd>
+<dt></dt>
+<dd style="margin-left: 8">SACM Component Registration [TBD]</dd>
+<dt>Timestamps :</dt>
+<dd style="margin-left: 8">Defined in <a href="#RFC4949" class="xref">[RFC4949]</a> as "with respect to a data object, a label or marking in which is recorded the time (time of day or other instant of elapsed time) at which the label or marking was affixed to the data object".</dd>
+<dt></dt>
+<dd style="margin-left: 8">A timestamp always requires context, i.e. additional information elements that are associated with it. Therefore, all timestamps wrt information elements are always metadata. Timestamps in SACM Content Elements may be generated outside a SACM Domain and may be encoded in an unknown representation. Inside a SACM domain the representation of timestamps is well-defined and unambiguous.</dd>
+<dt>Virtual Endpoint:</dt>
+<dd style="margin-left: 8">An endpoint composed entirely of logical system components (see <a href="#RFC4949" class="xref">[RFC4949]</a>).</dd>
+<dt></dt>
+<dd style="margin-left: 8">The most common example is a virtual machine/host running on a target endpoint. Effectively, target endpoints can be nested and at the time of this writing the most common example of target endpoint characteristics about virtual components is the EntLogicalEntry in <a href="#RFC6933" class="xref">[RFC6933]</a>.</dd>
+<dt>Vulnerability Assessment:</dt>
+<dd style="margin-left: 8">An assessment specifically tailored to determining whether a set of endpoints is vulnerable according to the information contained in the vulnerability description information.</dd>
+<dt>Vulnerability Description Information:</dt>
+<dd style="margin-left: 8">Information pertaining to the existence of a flaw or flaws in software, hardware, and/or firmware, which could potentially have an adverse impact on enterprise IT functionality and/or security.</dd>
+<dt></dt>
+<dd style="margin-left: 8">Vulnerability description information should contain enough information to support vulnerability detection.</dd>
+<dt>Vulnerability Detection Data:</dt>
+<dd style="margin-left: 8">A type of imperative guidance extracted or derived from vulnerability description information that describes the specific mechanisms of vulnerability detection that is used by an enterprise's vulnerability management capabilities to determine if a vulnerability is present on an endpoint.</dd>
+<dt>Vulnerability Management Capabilities:</dt>
+<dd style="margin-left: 8">An IT management capability tailored toward managing endpoint vulnerabilities and associated metadata on an ongoing basis by ingesting vulnerability description information and vulnerability detection data, and performing vulnerability assessments.</dd>
+<dt>Vulnerability assessment capabilities:</dt>
+<dd style="margin-left: 8">An assessment capability that is tailored toward determining whether a set of endpoints is vulnerable according to vulnerability description information.</dd>
+<dt>Workflow:</dt>
+<dd style="margin-left: 8">A workflow is a modular composition of tasks that can contain loops, conditionals, multiple starting points and multiple endpoints.</dd>
+<dt></dt>
+<dd style="margin-left: 8">The most prominent workflow in SACM is the assessment workflow.</dd>
+</dl>
+<h1 id="rfc.section.3">
+<a href="#rfc.section.3">3.</a> <a href="#iana-considerations" id="iana-considerations">IANA Considerations</a>
+</h1>
+<p id="rfc.section.3.p.1">This memo includes no request to IANA.</p>
+<h1 id="rfc.section.4">
+<a href="#rfc.section.4">4.</a> <a href="#security-considerations" id="security-considerations">Security Considerations</a>
+</h1>
+<p id="rfc.section.4.p.1">This memo documents terminology for security automation.  While it is about security, it does not affect security.</p>
+<h1 id="rfc.section.5">
+<a href="#rfc.section.5">5.</a> <a href="#acknowledgements" id="acknowledgements">Acknowledgements</a>
+</h1>
+<h1 id="rfc.section.6">
+<a href="#rfc.section.6">6.</a> <a href="#change-log" id="change-log">Change Log</a>
+</h1>
+<p id="rfc.section.6.p.1">Changes from version 00 to version 01:</p>
+<p></p>
+
+<ul><li>Added simple list of terms extracted from UC draft -05.  It is expected that comments will be received on this list of terms as to whether they should be kept in this document.  Those that are kept will be appropriately defined or cited.</li></ul>
+<p id="rfc.section.6.p.3">Changes from version 01 to version 02:</p>
+<p></p>
+
+<ul><li>Added Vulnerability, Vulnerability Management, xposure, Misconfiguration, and Software flaw.</li></ul>
+<p id="rfc.section.6.p.5">Changes from version 02 to version 03:</p>
+<p></p>
+
+<ul><li>Removed Section 2.1.  Cleaned up some editing nits; broke terms into 2 sections (predefined and newly defined terms).  Added some of the relevant terms per the proposed list discussed in the IETF 89 meeting.</li></ul>
+<p id="rfc.section.6.p.7">Changes from version 03 to version 04:</p>
+<p></p>
+
+<ul><li>TODO</li></ul>
+<p id="rfc.section.6.p.9">Changes from version 04 to version 05:</p>
+<p></p>
+
+<ul><li>TODO</li></ul>
+<p id="rfc.section.6.p.11">Changes from version 05 to version 06:</p>
+<p></p>
+
+<ul>
+<li>Updated author information.</li>
+<li>Combined "Pre-defined Terms" with "New Terms and Definitions".</li>
+<li>Removed "Requirements language".</li>
+<li>Removed unused reference to use case draft; resulted in removal of normative references.</li>
+<li>Removed introductory text from Section 1 indicating that this document is intended to be temporary.</li>
+<li>Added placeholders for missing change log entries.</li>
+</ul>
+<p id="rfc.section.6.p.13">Changes from version 06 to version 07:</p>
+<p></p>
+
+<ul>
+<li>Added Contributors section.</li>
+<li>Updated author list.</li>
+<li>Changed title from "Terminology for Security Assessment" to "Secure Automation and Continuous Monitoring (SACM) Terminology".</li>
+<li>Changed abbrev from "SACM-Terms" to "SACM Terminology".</li>
+<li>Added appendix The Attic to stash terms for future updates.</li>
+<li>Added Authentication, Authorization, Data Confidentiality, Data Integrity, Data Origin, Data Provenance, SACM Component, SACM Component Discovery, Target Endpoint Discovery.</li>
+<li>Major updates to Building Block, Function, SACM Role, Target Endpoint.</li>
+<li>Minor updates to Broker, Capability, Collection Task, Evaluation Task, Posture.</li>
+<li>Relabeled Role to SACM Role, Endpoint Target to Target Endpoint, Endpoint Discovery to Endpoint Identification.</li>
+<li>Moved Asset Targeting, Client, Endpoint Identification to The Attic.</li>
+<li>Endpoint Attributes added as a TODO.</li>
+<li>Changed the structure of the Change Log.</li>
+</ul>
+<p id="rfc.section.6.p.15">Changes from version 07 to version 08:</p>
+<p></p>
+
+<ul>
+<li>Added Assertion, Collection Result, Collector, Excluded Endpoint, Internal Collector, Network Address, Network Interface, SACM Domain, Statement, Target Endpoint Identifier, Target Endpoint Label, Timestamp.</li>
+<li>Major updates to Attributes, Broker, Collection Task, Consumer, Controller, Control Plane, Endpoint Attributes, Expected Endpoint State, SACM Function, Provider, Proxy, Repository, SACM Role, Target Endpoint.</li>
+<li>Minor updates to Asset, Building Block, Data Origin, Data Source, Data Provenance, Endpoint, Management Plane, Posture, Posture Attribute, SACM Component, SACM Component Discovery, Target Endpoint Discovery.</li>
+<li>Relabeled Function to SACM Function.</li>
+</ul>
+<p id="rfc.section.6.p.17">Changes from version 08 to version 09:</p>
+<p></p>
+
+<ul>
+<li>Updated author list.</li>
+<li>Added Data Plane, Endpoint Characterization, Endpoint Classification, Guidance, Interaction Model, Software Component, Software Instance, Software Package, Statement, Target Endpoint Profile, SACM Task.</li>
+<li>Removed Building Block.</li>
+<li>Major updates to Control Plane, Endpoint Attribute, Expected Endpoint State, Information Model, Management Plane.</li>
+<li>Minor updates to Attribute, Capabilities, SACM Function, SACM Component, Collection Task.</li>
+<li>Moved Asset Characterization to The Attic.</li>
+</ul>
+<p id="rfc.section.6.p.19">Changes from version 09 to version 10:</p>
+<p></p>
+
+<ul>
+<li>Added Configuration Drift, Data in Motion, Data at Rest, Endpoint Management Capability, Hardware Component, Hardware Inventory, Hardware Type, SACM Interface, Target Endpoint Characterization Record, Target Endpoint Characterization Task, Target Endpoint Classification Task, Target Endpoint Discovery Task, Vulnerability Description Information, Vulnerability Detection Data, Vulnerability Management Capability, Vulnerability Assessment</li>
+<li>Added references to i2nsf definitions in Capability, SACM Component, SACM Interface, SACM Role.</li>
+<li>Added i2nsf Terminology I-D Reference.</li>
+<li>Major Updates to Endpoint, SACM Task, Target Endpoint Identifier.</li>
+<li>Minor Updates to Guidance, SACM Component Discovery, Target Endpoint Label, Target Endpoint Profile.</li>
+<li>Relabeled SACM Task</li>
+<li>Removed Target Endpoint Discovery</li>
+</ul>
+<p id="rfc.section.6.p.21">Changes from version 10 to version 11:</p>
+<p></p>
+
+<ul>
+<li>Added Content Element, Content Metadata, Endpoint Label, Information Element, Metadata, SACM Component Label, Workflow.</li>
+<li>Major Updates to Assessment, Capability, Collector, Endpoint Management Capabilities, Guidance, Vulnerability Assessment Capabilities, Vulnerability Detection Data, Vulnerability Assessment Capabilities.</li>
+<li>Minor updates to Collection Result, Control Plane, Data in Motion, Data at Rest, Data Origin, Network Interface, Statement, Target Endpoint Label.</li>
+<li>Relabeled Endpoint Management Capability, Vulnerability Management Capability, Vulnerability Assessment.</li>
+</ul>
+<p id="rfc.section.6.p.23">Changes from version 11 to version 12:</p>
+<p></p>
+
+<ul>
+<li>Added Configuration, Endpoint Characteristic, Event, SACM Content, State, Subject.</li>
+<li>Major Updates to Assertion, Data in Motion, Data Provenance, Data Source, Interaction Model.</li>
+<li>Minor Updates to Attribute, Control Plane, Data Origin, Data Provenance, Expected Endpoint State, Guidance, Target Endpoint Classification Task, Vulnerability Detection Data.</li>
+</ul>
+<p id="rfc.section.6.p.25">Changes from version 12 to version 13:</p>
+<p></p>
+
+<ul>
+<li>Added Virtual Component.</li>
+<li>Major Updates to Capability, Collection Task, Hardware Component, Hardware Type, Security Automation, Subject, Target Endpoint, Target Endpoint Profile.</li>
+<li>Minor Updates to Assertion, Data Plane, Endpoint Characteristics.</li>
+</ul>
+<p id="rfc.section.6.p.27">Changes from version 13 to version 14:</p>
+<p></p>
+
+<ul>
+<li>Handled a plethora of issues listed in GitHub.</li>
+<li>Pruned some commonly understood terms.</li>
+<li>Narrowing term labels per their definitions.</li>
+<li>In some cases, excised expositional text.</li>
+<li>Where expositional text was left intact, it has been separated from the actual definition of a term.</li>
+</ul>
+<h1 id="rfc.section.7">
+<a href="#rfc.section.7">7.</a> <a href="#contributors" id="contributors">Contributors</a>
+</h1>
+<pre>
+David Waltermire
+National Institute of Standards and Technology
+100 Bureau Drive
+Gaithersburg, MD  20877
+USA
+
+Email: david.waltermire@nist.gov
+
+
+Adam W. Montville
+Center for Internet Security
+31 Tech Valley Drive
+East Greenbush, NY  12061
+USA
+
+Email: adam.w.montville@gmail.com
+
+
+David Harrington
+Effective Software
+50 Harding Rd
+Portsmouth, NH  03801
+USA
+
+Email: ietfdbh@comcast.net
+
+Brian Ford
+Lancope
+3650 Brookside Parkway, Suite 500
+Alpharetta, GA  30022
+USA
+
+Email: bford@lancope.com
+
+
+Merike Kaeo
+Double Shot Security
+3518 Fremont Avenue North, Suite 363
+Seattle, WA  98103
+USA
+
+Email: merike@doubleshotsecurity.com
+</pre>
+<h1 id="rfc.references">
+<a href="#rfc.references">8.</a> References</h1>
+<h1 id="rfc.references.1">
+<a href="#rfc.references.1">8.1.</a> Normative References</h1>
+<table><tbody>
+<tr>
+<td class="reference"><b id="RFC5792">[RFC5792]</b></td>
+<td class="top">
+<a>Sangster, P.</a> and <a>K. Narayan</a>, "<a href="https://tools.ietf.org/html/rfc5792">PA-TNC: A Posture Attribute (PA) Protocol Compatible with Trusted Network Connect (TNC)</a>", RFC 5792, DOI 10.17487/RFC5792, March 2010.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC6933">[RFC6933]</b></td>
+<td class="top">
+<a>Bierman, A.</a>, <a>Romascanu, D.</a>, <a>Quittek, J.</a> and <a>M. Chandramouli</a>, "<a href="https://tools.ietf.org/html/rfc6933">Entity MIB (Version 4)</a>", RFC 6933, DOI 10.17487/RFC6933, May 2013.</td>
+</tr>
+</tbody></table>
+<h1 id="rfc.references.2">
+<a href="#rfc.references.2">8.2.</a> Informative References</h1>
+<table><tbody>
+<tr>
+<td class="reference"><b id="I-D.ietf-i2nsf-terminology">[I-D.ietf-i2nsf-terminology]</b></td>
+<td class="top">
+<a>Hares, S.</a>, <a>Strassner, J.</a>, <a>Lopez, D.</a>, <a>Xia, L.</a> and <a>H. Birkholz</a>, "<a href="https://tools.ietf.org/html/draft-ietf-i2nsf-terminology-05">Interface to Network Security Functions (I2NSF) Terminology</a>", Internet-Draft draft-ietf-i2nsf-terminology-05, January 2018.</td>
+</tr>
+<tr>
+<td class="reference"><b id="I-D.ietf-netmod-entity">[I-D.ietf-netmod-entity]</b></td>
+<td class="top">
+<a>Bierman, A.</a>, <a>Bjorklund, M.</a>, <a>Dong, J.</a> and <a>D. Romascanu</a>, "<a href="https://tools.ietf.org/html/draft-ietf-netmod-entity-08">A YANG Data Model for Hardware Management</a>", Internet-Draft draft-ietf-netmod-entity-08, January 2018.</td>
+</tr>
+<tr>
+<td class="reference"><b id="I-D.ietf-sacm-vuln-scenario">[I-D.ietf-sacm-vuln-scenario]</b></td>
+<td class="top">
+<a>Coffin, C.</a>, <a>Cheikes, B.</a>, <a>Schmidt, C.</a>, <a>Haynes, D.</a>, <a>Fitzgerald-McKay, J.</a> and <a>D. Waltermire</a>, "<a href="https://tools.ietf.org/html/draft-ietf-sacm-vuln-scenario-02">SACM Vulnerability Assessment Scenario</a>", Internet-Draft draft-ietf-sacm-vuln-scenario-02, September 2016.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC3444">[RFC3444]</b></td>
+<td class="top">
+<a>Pras, A.</a> and <a>J. Schoenwaelder</a>, "<a href="https://tools.ietf.org/html/rfc3444">On the Difference between Information Models and Data Models</a>", RFC 3444, DOI 10.17487/RFC3444, January 2003.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC4949">[RFC4949]</b></td>
+<td class="top">
+<a>Shirey, R.</a>, "<a href="https://tools.ietf.org/html/rfc4949">Internet Security Glossary, Version 2</a>", FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC5209">[RFC5209]</b></td>
+<td class="top">
+<a>Sangster, P.</a>, <a>Khosravi, H.</a>, <a>Mani, M.</a>, <a>Narayan, K.</a> and <a>J. Tardo</a>, "<a href="https://tools.ietf.org/html/rfc5209">Network Endpoint Assessment (NEA): Overview and Requirements</a>", RFC 5209, DOI 10.17487/RFC5209, June 2008.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC6192">[RFC6192]</b></td>
+<td class="top">
+<a>Dugal, D.</a>, <a>Pignataro, C.</a> and <a>R. Dunn</a>, "<a href="https://tools.ietf.org/html/rfc6192">Protecting the Router Control Plane</a>", RFC 6192, DOI 10.17487/RFC6192, March 2011.</td>
+</tr>
+<tr>
+<td class="reference"><b id="X.1252">[X.1252]</b></td>
+<td class="top">"<a>ITU-T X.1252 (04/2010)</a>", n.d..</td>
+</tr>
+</tbody></table>
+<h1 id="rfc.appendix.A">
+<a href="#rfc.appendix.A">Appendix A.</a> <a href="#the-attic" id="the-attic">The Attic</a>
+</h1>
+<p id="rfc.section.A.p.1">The following terms are stashed for now and will be updated later:</p>
+<p></p>
+
+<dl>
+<dt>Asset Characterization:</dt>
+<dd style="margin-left: 8">Asset characterization is the process of defining attributes that describe properties of an identified asset.</dd>
+<dt>Asset Targeting:</dt>
+<dd style="margin-left: 8">Asset targeting is the use of asset identification and categorization information to drive human-directed, automated decision making for data collection and analysis in support of endpoint posture assessment.</dd>
+<dt>Client:</dt>
+<dd style="margin-left: 8">An architectural component receiving services from another architectural component.</dd>
+<dt>Endpoint Identification (TBD per list; was "Endpoint Discovery"):</dt>
+<dd style="margin-left: 8">The process by which an endpoint can be identified.</dd>
+</dl>
+<h1 id="rfc.authors"><a href="#rfc.authors">Authors' Addresses</a></h1>
+<div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Henk Birkholz</span> 
+	  <span class="n hidden">
+		<span class="family-name">Birkholz</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Fraunhofer SIT</span>
+	<span class="adr">
+	  <span class="vcardline">Rheinstrasse 75</span>
+
+	  <span class="vcardline">
+		<span class="locality">Darmstadt</span>,  
+		<span class="region"></span>
+		<span class="code">64295</span>
+	  </span>
+	  <span class="country-name vcardline">Germany</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:henk.birkholz@sit.fraunhofer.de">henk.birkholz@sit.fraunhofer.de</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Jarrett Lu</span> 
+	  <span class="n hidden">
+		<span class="family-name">Lu</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Oracle Corporation</span>
+	<span class="adr">
+	  <span class="vcardline">4180 Network Circle</span>
+
+	  <span class="vcardline">
+		<span class="locality">Santa Clara</span>,  
+		<span class="region">CA</span> 
+		<span class="code">95054</span>
+	  </span>
+	  <span class="country-name vcardline">USA</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:jarrett.lu@oracle.com">jarrett.lu@oracle.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">John Strassner</span> 
+	  <span class="n hidden">
+		<span class="family-name">Strassner</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Huawei Technologies</span>
+	<span class="adr">
+	  <span class="vcardline">2330 Central Expressway</span>
+
+	  <span class="vcardline">
+		<span class="locality">Santa Clara</span>,  
+		<span class="region">CA</span> 
+		<span class="code">95138</span>
+	  </span>
+	  <span class="country-name vcardline">USA</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:john.sc.strassner@huawei.com">john.sc.strassner@huawei.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Nancy Cam-Winget</span> 
+	  <span class="n hidden">
+		<span class="family-name">Cam-Winget</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Cisco Systems</span>
+	<span class="adr">
+	  <span class="vcardline">3550 Cisco Way</span>
+
+	  <span class="vcardline">
+		<span class="locality">San Jose</span>,  
+		<span class="region">CA</span> 
+		<span class="code">95134</span>
+	  </span>
+	  <span class="country-name vcardline">USA</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:ncamwing@cisco.com">ncamwing@cisco.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Adam Montville</span> 
+	  <span class="n hidden">
+		<span class="family-name">Montville</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Center for Internet Security</span>
+	<span class="adr">
+	  <span class="vcardline">31 Tech Valley Drive</span>
+
+	  <span class="vcardline">
+		<span class="locality">East Greenbush</span>,  
+		<span class="region">NY</span> 
+		<span class="code">12061</span>
+	  </span>
+	  <span class="country-name vcardline">USA</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:adam.w.montville@gmail.com">adam.w.montville@gmail.com</a></span>
+
+  </address>
+</div>
+
+</body>
+</html>
